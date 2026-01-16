@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,30 +9,358 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+        }
+
+        .about-section {
+            margin-bottom: 60px;
+        }
+
+        .about-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        .intro-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        .work-principles {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .work-principles li {
+            color: #555;
+            padding: 12px 0;
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        .work-principles li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .stack-category {
+            margin-bottom: 32px;
+        }
+
+        .stack-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-title {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-item {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #f5f5f5;
+            color: #333;
+            border-radius: 4px;
+            font-size: 0.95em;
+            font-weight: 500;
+            border: 1px solid #e0e0e0;
+        }
+
+        .experience-text {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05em;
+            margin-bottom: 0;
+        }
+
+        .focus-text {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05em;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 60px 15px 30px;
+            }
+
+            .section-title {
+                font-size: 1.7em;
+                margin-bottom: 20px;
+            }
+
+            .intro-text {
+                font-size: 1.05em;
+            }
+
+            .work-principles li {
+                font-size: 1em;
+                padding-left: 20px;
+            }
+
+            .category-title {
+                font-size: 1.2em;
+            }
+
+            .experience-text,
+            .focus-text {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-container {
+                padding: 55px 10px 25px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+                margin-bottom: 18px;
+            }
+
+            .intro-text {
+                font-size: 1em;
+            }
+
+            .work-principles li {
+                font-size: 0.95em;
+                padding-left: 18px;
+            }
+
+            .category-title {
+                font-size: 1.1em;
+            }
+
+            .tech-item {
+                font-size: 0.85em;
+                padding: 6px 12px;
+            }
+
+            .experience-text,
+            .focus-text {
+                font-size: 0.95em;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-translate="nav.projects">Projects</a></li>
+                <li><a href="about.html" data-translate="nav.about">About</a></li>
+                <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
             </ul>
+            <div class="language-selector">
+                <select id="languageSelect" onchange="changeLanguage(this.value)">
+                    <option value="pt">PT</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
         </nav>
     </header>
     <main>
-        <h1>About</h1>
-        <p>About page content.</p>
+        <div class="about-container">
+            <!-- Introdução -->
+            <section class="about-section">
+                <h1 class="section-title" data-translate="about.intro.title">Introdução</h1>
+                <p class="intro-text" data-translate="about.intro.content">
+                    Desenvolvedor <i>back-end</i> pleno com foco em sistemas em produção. Experiência com <i>APIs</i>, arquitetura <i>serverless</i> e integrações externas. <i>Stack</i> principal: Python, FastAPI, AWS (Lambda, API Gateway), DynamoDB, bancos relacionais e NoSQL.
+                </p>
+            </section>
+
+            <!-- Como trabalho -->
+            <section class="about-section">
+                <h2 class="section-title" data-translate="about.work.title">Como trabalho</h2>
+                <ul class="work-principles">
+                    <li data-translate="about.work.principle1">Código limpo</li>
+                    <li data-translate="about.work.principle2">Manutenibilidade</li>
+                    <li data-translate="about.work.principle3">Performance</li>
+                    <li data-translate="about.work.principle4">Integrações externas</li>
+                    <li data-translate="about.work.principle5">Responsabilidade sobre dados</li>
+                </ul>
+            </section>
+
+            <!-- Stack principal -->
+            <section class="about-section">
+                <h2 class="section-title" data-translate="about.stack.title">Stack principal</h2>
+                
+                <div class="stack-category">
+                    <h3 class="category-title" data-translate="about.stack.languages">Linguagens</h3>
+                    <div class="tech-list">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">Java</span>
+                        <span class="tech-item">Kotlin</span>
+                    </div>
+                </div>
+
+                <div class="stack-category">
+                    <h3 class="category-title" data-translate="about.stack.backend">Backend</h3>
+                    <div class="tech-list">
+                        <span class="tech-item">FastAPI</span>
+                        <span class="tech-item">Ruby on Rails</span>
+                        <span class="tech-item">Spring Boot</span>
+                    </div>
+                </div>
+
+                <div class="stack-category">
+                    <h3 class="category-title" data-translate="about.stack.databases">Bancos de dados</h3>
+                    <div class="tech-list">
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">MongoDB</span>
+                        <span class="tech-item">DynamoDB</span>
+                        <span class="tech-item">Elasticsearch</span>
+                    </div>
+                </div>
+
+                <div class="stack-category">
+                    <h3 class="category-title" data-translate="about.stack.cloud">Cloud / Infra</h3>
+                    <div class="tech-list">
+                        <span class="tech-item">AWS Lambda</span>
+                        <span class="tech-item">API Gateway</span>
+                        <span class="tech-item">Google Firebase</span>
+                        <span class="tech-item">Docker</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experiência profissional -->
+            <section class="about-section">
+                <h2 class="section-title" data-translate="about.experience.title">Experiência profissional</h2>
+                <p class="experience-text" data-translate="about.experience.content">
+                    Experiência com sistemas em produção, <i>APIs</i> e ambientes reais. Trabalho focado em entregar soluções robustas e escaláveis, sempre priorizando qualidade de código e manutenibilidade a longo prazo.
+                </p>
+            </section>
+
+            <!-- Foco profissional -->
+            <section class="about-section">
+                <h2 class="section-title" data-translate="about.focus.title">Foco profissional</h2>
+                <p class="focus-text" data-translate="about.focus.content">
+                    Busco resolver desafios técnicos complexos em sistemas de produção, com ênfase em arquitetura, performance e integrações. Me encaixo melhor em times que valorizam código limpo, boas práticas de engenharia e responsabilidade técnica sobre o produto.
+                </p>
+            </section>
+        </div>
     </main>
     <script>
-        // Highlight active page in navigation
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('nav a').forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
+        // Translation data
+        const translations = {
+            pt: {
+                'nav.projects': 'Projetos',
+                'nav.about': 'Sobre',
+                'nav.contact': 'Contato',
+                'about.intro.title': 'Introdução',
+                'about.intro.content': 'Desenvolvedor <i>back-end</i> pleno com foco em sistemas em produção. Experiência com <i>APIs</i>, arquitetura <i>serverless</i> e integrações externas. <i>Stack</i> principal: Python, FastAPI, AWS (Lambda, API Gateway), DynamoDB, bancos relacionais e NoSQL.',
+                'about.work.title': 'Como trabalho',
+                'about.work.principle1': 'Código limpo',
+                'about.work.principle2': 'Manutenibilidade',
+                'about.work.principle3': 'Performance',
+                'about.work.principle4': 'Integrações externas',
+                'about.work.principle5': 'Responsabilidade sobre dados',
+                'about.stack.title': 'Stack principal',
+                'about.stack.languages': 'Linguagens',
+                'about.stack.backend': 'Backend',
+                'about.stack.databases': 'Bancos de dados',
+                'about.stack.cloud': 'Cloud / Infra',
+                'about.experience.title': 'Experiência profissional',
+                'about.experience.content': 'Experiência com sistemas em produção, <i>APIs</i> e ambientes reais. Trabalho focado em entregar soluções robustas e escaláveis, sempre priorizando qualidade de código e manutenibilidade a longo prazo.',
+                'about.focus.title': 'Foco profissional',
+                'about.focus.content': 'Busco resolver desafios técnicos complexos em sistemas de produção, com ênfase em arquitetura, performance e integrações. Me encaixo melhor em times que valorizam código limpo, boas práticas de engenharia e responsabilidade técnica sobre o produto.'
+            },
+            en: {
+                'nav.projects': 'Projects',
+                'nav.about': 'About',
+                'nav.contact': 'Contact',
+                'about.intro.title': 'Introduction',
+                'about.intro.content': 'Mid-level back-end developer focused on production systems. Experience with APIs, serverless architecture, and external integrations. Main stack: Python, FastAPI, AWS (Lambda, API Gateway), DynamoDB, relational and NoSQL databases.',
+                'about.work.title': 'How I work',
+                'about.work.principle1': 'Clean code',
+                'about.work.principle2': 'Maintainability',
+                'about.work.principle3': 'Performance',
+                'about.work.principle4': 'External integrations',
+                'about.work.principle5': 'Data responsibility',
+                'about.stack.title': 'Main stack',
+                'about.stack.languages': 'Languages',
+                'about.stack.backend': 'Backend',
+                'about.stack.databases': 'Databases',
+                'about.stack.cloud': 'Cloud / Infra',
+                'about.experience.title': 'Professional experience',
+                'about.experience.content': 'Experience with production systems, APIs, and real-world environments. Work focused on delivering robust and scalable solutions, always prioritizing code quality and long-term maintainability.',
+                'about.focus.title': 'Professional focus',
+                'about.focus.content': 'I seek to solve complex technical challenges in production systems, with emphasis on architecture, performance, and integrations. I fit best in teams that value clean code, good engineering practices, and technical responsibility over the product.'
             }
+        };
+
+        // Get saved language or default to Portuguese
+        let currentLanguage = localStorage.getItem('language') || 'pt';
+
+        // Function to change language
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            applyTranslations();
+        }
+
+        // Function to apply translations
+        function applyTranslations() {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[currentLanguage][key];
+                    } else {
+                        element.innerHTML = translations[currentLanguage][key];
+                    }
+                }
+            });
+            
+            // Update language selector
+            const languageSelect = document.getElementById('languageSelect');
+            if (languageSelect) {
+                languageSelect.value = currentLanguage;
+            }
+        }
+
+        // Initialize translations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            applyTranslations();
+            
+            // Highlight active page in navigation
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
         });
     </script>
 </body>
 </html>
-
