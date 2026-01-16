@@ -1,17 +1,461 @@
-/* Default styles */
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
+    color: #333;
+    padding-top: 70px; /* Space for fixed header */
+    background-color: #f0f7f0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fixed header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    display: block;
+    padding: 20px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+nav a.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+/* Main content */
+main {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: calc(100vh - 70px);
 }
 
 h1 {
     color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 p {
     color: #666;
+    margin-bottom: 15px;
+}
+
+/* Project Section Styles */
+.project-section {
+    width: 100%;
+    height: 100vh;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.project-section:first-of-type {
+    padding-top: 50px;
+}
+
+/* Container interno para limitar largura do conteúdo */
+.project-section .project-layout {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Background colors alternados */
+.bg-green {
+    background-color: #f0f7f0;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+/* Separador entre seções */
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0;
+}
+
+
+.project-layout {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+}
+
+/* Layout invertido - conteúdo à esquerda, imagem à direita */
+.layout-right {
+    flex-direction: row;
+}
+
+.layout-right .project-left {
+    padding-right: 0;
+    padding-left: 20px;
+    order: 2;
+}
+
+.layout-right .project-right {
+    order: 1;
+}
+
+.project-left {
+    flex: 0 0 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.project-image-placeholder {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 0.9em;
+    border: 2px dashed #d0d0d0;
+}
+
+.project-header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    width: 100%;
+}
+
+.project-title {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.project-subtitle {
+    font-size: 1.3em;
+    color: #666;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.project-right {
+    flex: 1;
+    min-width: 0;
+}
+
+.project-block {
+    margin-bottom: 24px;
+}
+
+.block-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.block-content {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05em;
+    margin-bottom: 0;
+}
+
+/* Responsibilities List */
+.responsibilities-list {
+    list-style: none;
+    padding: 0;
+}
+
+.responsibilities-list li {
+    color: #555;
+    padding: 6px 0;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.7;
+    font-size: 1.05em;
+}
+
+.responsibilities-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Tech Badges */
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f5f5f5;
+    color: #333;
+    border-radius: 4px;
+    font-size: 0.95em;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    white-space: nowrap;
+}
+
+/* Challenges List */
+.challenges-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.challenge-item {
+    padding: 14px 16px;
+    background-color: #fafafa;
+    border-left: 3px solid #007bff;
+    border-radius: 4px;
+}
+
+.challenge-title {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.challenge-description {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    
+    nav li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav a {
+        padding: 15px;
+        width: 100%;
+    }
+    
+    main {
+        padding: 0;
+        min-height: calc(100vh - 60px);
+    }
+    
+    .project-section {
+        padding: 30px 0;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    
+    .project-section .project-layout {
+        padding: 0 15px;
+    }
+    
+    .layout-right {
+        flex-direction: column;
+    }
+    
+    .layout-right .project-left {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 55px;
+    }
+    
+    nav {
+        padding: 0 10px;
+    }
+    
+    nav a {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    main {
+        padding: 0;
+        min-height: calc(100vh - 55px);
+    }
+    
+    .project-section {
+        padding: 25px 0;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    
+    .project-section .project-layout {
+        padding: 0 10px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .project-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .layout-right {
+        flex-direction: column;
+    }
+    
+    .layout-right .project-left {
+        padding-left: 0;
+    }
+    
+    .project-left {
+        flex: 1;
+        width: 100%;
+    }
+    
+    .project-image-placeholder {
+        max-width: 400px;
+        margin: 0 auto 20px;
+    }
+    
+    .project-left {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .project-title {
+        font-size: 2em;
+        text-align: center;
+    }
+    
+    .project-subtitle {
+        text-align: center;
+    }
+    
+    .project-block {
+        margin-bottom: 30px;
+    }
+    
+    .tech-badges {
+        gap: 8px;
+    }
+    
+    .tech-badge {
+        font-size: 0.85em;
+        padding: 6px 12px;
+    }
+    
+    .challenge-item {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-layout {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+    
+    .project-left {
+        flex: 1;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .project-image-placeholder {
+        max-width: 100%;
+    }
+    
+    .project-title {
+        font-size: 1.8em;
+        text-align: center;
+    }
+    
+    .project-subtitle {
+        text-align: center;
+    }
 }
 

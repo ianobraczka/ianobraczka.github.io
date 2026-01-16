@@ -3,12 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Home</h1>
-    <p>Welcome to the homepage.</p>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Seção: Projeto Meetal -->
+        <section class="project-section bg-green">
+            <div class="project-layout layout-left">
+                <!-- Coluna A: Foto, Título e Subtítulo -->
+                <div class="project-left">
+                    <div class="project-image-placeholder">
+                        <!-- Placeholder para imagem do projeto -->
+                        <div class="image-placeholder">Imagem do Projeto</div>
+                    </div>
+                    <div class="project-header">
+                        <h1 class="project-title">Meetal</h1>
+                        <p class="project-subtitle">Plataforma de ERP em produção</p>
+                    </div>
+                </div>
+
+                <!-- Coluna B: Conteúdo -->
+                <div class="project-right">
+                    <!-- Resumo do projeto -->
+                    <div class="project-block">
+                        <h2 class="block-title">Resumo</h2>
+                        <p class="block-content">
+                            Meetal é uma plataforma de ERP para o ramo da reciclagem e sucata. Foi desenvolvida com arquitetura serverless, 
+                            atualmente em produção com clientes iniciais ativos. O sistema foi projetado 
+                            para oferecer escalabilidade e eficiência através de uma infraestrutura 
+                            baseada em serviços gerenciados da AWS.
+                        </p>
+                    </div>
+
+                    <!-- Responsabilidades -->
+                    <div class="project-block">
+                        <h2 class="block-title">Responsabilidades</h2>
+                        <ul class="responsibilities-list">
+                            <li>Manutenção de <i>schemas</i> e banco de dados</li>
+                            <li>Implementação de novas funcionalidades</li>
+                            <li>Integração com APIs externas</li>
+                        </ul>
+                    </div>
+
+                    <!-- Stack & Arquitetura -->
+                    <div class="project-block">
+                        <h2 class="block-title">Stack & Arquitetura</h2>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">AWS Lambda</span>
+                            <span class="tech-badge">API Gateway</span>
+                            <span class="tech-badge">DynamoDB</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">OpenAI</span>
+                        </div>
+                    </div>
+
+                    <!-- Desafios Técnicos -->
+                    <div class="project-block">
+                        <h2 class="block-title">Desafios Técnicos</h2>
+                        <div class="challenges-list">
+                            <div class="challenge-item">
+                                <h3 class="challenge-title">Performance</h3>
+                                <p class="challenge-description">
+                                    Otimização de consultas e demais operações.
+                                </p>
+                            </div>
+                            <div class="challenge-item">
+                                <h3 class="challenge-title">Integrações com Serviços Externos</h3>
+                                <p class="challenge-description">
+                                    Desenvolvimento de integrações robustas com APIs externas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separador -->
+        <div class="section-divider"></div>
+
+        <!-- Seção: Projeto ReUsa -->
+        <section class="project-section bg-white">
+            <div class="project-layout layout-right">
+                <!-- Coluna B: Foto, Título e Subtítulo -->
+                <div class="project-left">
+                    <div class="project-image-placeholder">
+                        <div class="image-placeholder">Imagem do Projeto</div>
+                    </div>
+                    <div class="project-header">
+                        <h1 class="project-title">ReUsa</h1>
+                        <p class="project-subtitle">Plataforma de reutilização sustentável</p>
+                    </div>
+                </div>
+
+                <!-- Coluna A: Conteúdo -->
+                <div class="project-right">
+                    <!-- Resumo do projeto -->
+                    <div class="project-block">
+                        <h2 class="block-title">Resumo</h2>
+                        <p class="block-content">
+                            ReUsa é uma plataforma desenvolvida para promover a reutilização e reciclagem de materiais. 
+                            O sistema conecta pessoas e empresas interessadas em dar nova vida a produtos e materiais, 
+                            contribuindo para um ambiente mais sustentável.
+                        </p>
+                    </div>
+
+                    <!-- Responsabilidades -->
+                    <div class="project-block">
+                        <h2 class="block-title">Responsabilidades</h2>
+                        <ul class="responsibilities-list">
+                            <li>Desenvolvimento de funcionalidades principais</li>
+                            <li>Integração com sistemas externos</li>
+                            <li>Otimização de performance</li>
+                        </ul>
+                    </div>
+
+                    <!-- Stack & Arquitetura -->
+                    <div class="project-block">
+                        <h2 class="block-title">Stack & Arquitetura</h2>
+                        <div class="tech-badges">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Express</span>
+                        </div>
+                    </div>
+
+                    <!-- Desafios Técnicos -->
+                    <div class="project-block">
+                        <h2 class="block-title">Desafios Técnicos</h2>
+                        <div class="challenges-list">
+                            <div class="challenge-item">
+                                <h3 class="challenge-title">Escalabilidade</h3>
+                                <p class="challenge-description">
+                                    Desenvolvimento de arquitetura que suporte crescimento de usuários e dados.
+                                </p>
+                            </div>
+                            <div class="challenge-item">
+                                <h3 class="challenge-title">UX/UI</h3>
+                                <p class="challenge-description">
+                                    Criação de interface intuitiva que facilite a conexão entre usuários.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separador -->
+        <div class="section-divider"></div>
+
+        <!-- Seção: Projeto Terceiro -->
+        <section class="project-section bg-green">
+            <div class="project-layout layout-left">
+                <!-- Coluna A: Foto, Título e Subtítulo -->
+                <div class="project-left">
+                    <div class="project-image-placeholder">
+                        <div class="image-placeholder">Imagem do Projeto</div>
+                    </div>
+                    <div class="project-header">
+                        <h1 class="project-title">Projeto Terceiro</h1>
+                        <p class="project-subtitle">Descrição do projeto</p>
+                    </div>
+                </div>
+
+                <!-- Coluna B: Conteúdo -->
+                <div class="project-right">
+                    <!-- Resumo do projeto -->
+                    <div class="project-block">
+                        <h2 class="block-title">Resumo</h2>
+                        <p class="block-content">
+                            Descrição do projeto terceiro. Este é um projeto desenvolvido com foco em 
+                            inovação e tecnologia, utilizando as melhores práticas de desenvolvimento.
+                        </p>
+                    </div>
+
+                    <!-- Responsabilidades -->
+                    <div class="project-block">
+                        <h2 class="block-title">Responsabilidades</h2>
+                        <ul class="responsibilities-list">
+                            <li>Desenvolvimento full-stack</li>
+                            <li>Arquitetura de sistema</li>
+                            <li>Testes e qualidade</li>
+                        </ul>
+                    </div>
+
+                    <!-- Stack & Arquitetura -->
+                    <div class="project-block">
+                        <h2 class="block-title">Stack & Arquitetura</h2>
+                        <div class="tech-badges">
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">Docker</span>
+                        </div>
+                    </div>
+
+                    <!-- Desafios Técnicos -->
+                    <div class="project-block">
+                        <h2 class="block-title">Desafios Técnicos</h2>
+                        <div class="challenges-list">
+                            <div class="challenge-item">
+                                <h3 class="challenge-title">Arquitetura</h3>
+                                <p class="challenge-description">
+                                    Desenvolvimento de arquitetura escalável e manutenível.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Highlight active page in navigation
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
 
