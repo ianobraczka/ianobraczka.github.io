@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>ianobraczka | portfolio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,10 +14,16 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-translate="nav.projects">Projects</a></li>
+                <li><a href="about.html" data-translate="nav.about">About</a></li>
+                <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
             </ul>
+            <div class="language-selector">
+                <select id="languageSelect" onchange="changeLanguage(this.value)">
+                    <option value="pt">PT</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
         </nav>
     </header>
     <main>
@@ -31,7 +38,7 @@
                     </div>
                     <div class="project-header">
                         <h1 class="project-title">Meetal</h1>
-                        <p class="project-subtitle">Plataforma de ERP em produção</p>
+                        <p class="project-subtitle" data-translate="meetal.subtitle">Plataforma de ERP em produção</p>
                     </div>
                 </div>
 
@@ -39,51 +46,49 @@
                 <div class="project-right">
                     <!-- Resumo do projeto -->
                     <div class="project-block">
-                        <h2 class="block-title">Resumo</h2>
-                        <p class="block-content">
-                            Meetal é uma plataforma de ERP para o ramo da reciclagem e sucata. Foi desenvolvida com arquitetura serverless, 
-                            atualmente em produção com clientes iniciais ativos. O sistema foi projetado 
-                            para oferecer escalabilidade e eficiência através de uma infraestrutura 
-                            baseada em serviços gerenciados da AWS.
+                        <h2 class="block-title" data-translate="meetal.summary.title">Resumo</h2>
+                        <p class="block-content" data-translate="meetal.summary.content">
+                            Meetal é uma plataforma de ERP para o ramo da reciclagem e sucata. Atualmente em produção com clientes iniciais ativos, sistema implementa modelos de AI e foi projetado 
+                            para oferecer escalabilidade, eficiência e monitoramento de alto nível.
                         </p>
                     </div>
 
                     <!-- Responsabilidades -->
                     <div class="project-block">
-                        <h2 class="block-title">Responsabilidades</h2>
+                        <h2 class="block-title" data-translate="meetal.responsibilities.title">Responsabilidades</h2>
                         <ul class="responsibilities-list">
-                            <li>Manutenção de <i>schemas</i> e banco de dados</li>
-                            <li>Implementação de novas funcionalidades</li>
-                            <li>Integração com APIs externas</li>
+                            <li data-translate="meetal.responsibilities.item1">Manutenção de <i>schemas</i> e banco de dados</li>
+                            <li data-translate="meetal.responsibilities.item2">Implementação de novas funcionalidades</li>
+                            <li data-translate="meetal.responsibilities.item3">Integração com APIs externas</li>
                         </ul>
                     </div>
 
                     <!-- Stack & Arquitetura -->
                     <div class="project-block">
-                        <h2 class="block-title">Stack & Arquitetura</h2>
+                        <h2 class="block-title" data-translate="meetal.stack.title">Stack & Arquitetura</h2>
                         <div class="tech-badges">
                             <span class="tech-badge">Python</span>
-                            <span class="tech-badge">AWS Lambda</span>
-                            <span class="tech-badge">API Gateway</span>
-                            <span class="tech-badge">DynamoDB</span>
                             <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">Alembic</span>
+                            <span class="tech-badge">DynamoDB</span>
+                            <span class="tech-badge">AWS tools</span>
                             <span class="tech-badge">OpenAI</span>
                         </div>
                     </div>
 
                     <!-- Desafios Técnicos -->
                     <div class="project-block">
-                        <h2 class="block-title">Desafios Técnicos</h2>
+                        <h2 class="block-title" data-translate="meetal.challenges.title">Desafios Técnicos</h2>
                         <div class="challenges-list">
                             <div class="challenge-item">
-                                <h3 class="challenge-title">Performance</h3>
-                                <p class="challenge-description">
+                                <h3 class="challenge-title" data-translate="meetal.challenges.performance.title">Performance</h3>
+                                <p class="challenge-description" data-translate="meetal.challenges.performance.description">
                                     Otimização de consultas e demais operações.
                                 </p>
                             </div>
                             <div class="challenge-item">
-                                <h3 class="challenge-title">Integrações com Serviços Externos</h3>
-                                <p class="challenge-description">
+                                <h3 class="challenge-title" data-translate="meetal.challenges.integrations.title">Integrações com Serviços Externos</h3>
+                                <p class="challenge-description" data-translate="meetal.challenges.integrations.description">
                                     Desenvolvimento de integrações robustas com APIs externas.
                                 </p>
                             </div>
@@ -91,6 +96,18 @@
                     </div>
                 </div>
             </div>
+            <!-- Botão de scroll para seção anterior -->
+            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <!-- Botão de scroll para próxima seção -->
+            <button class="scroll-down-btn" onclick="scrollToNextSection(this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </section>
 
         <!-- Separador -->
@@ -163,6 +180,18 @@
                     </div>
                 </div>
             </div>
+            <!-- Botão de scroll para seção anterior -->
+            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <!-- Botão de scroll para próxima seção -->
+            <button class="scroll-down-btn" onclick="scrollToNextSection(this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </section>
 
         <!-- Separador -->
@@ -228,16 +257,133 @@
                     </div>
                 </div>
             </div>
+            <!-- Botão de scroll para seção anterior -->
+            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </section>
     </main>
     <script>
-        // Highlight active page in navigation
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('nav a').forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
+        // Translations object
+        const translations = {
+            pt: {
+                'nav.projects': 'Projetos',
+                'nav.about': 'Sobre',
+                'nav.contact': 'Contato',
+                'meetal.subtitle': 'Plataforma de ERP em produção',
+                'meetal.summary.title': 'Resumo',
+                'meetal.summary.content': 'Meetal é uma plataforma de ERP para o ramo da reciclagem e sucata. Atualmente em produção com clientes iniciais ativos, sistema implementa modelos de AI e foi projetado para oferecer escalabilidade, eficiência e monitoramento de alto nível.',
+                'meetal.responsibilities.title': 'Responsabilidades',
+                'meetal.responsibilities.item1': 'Manutenção de schemas e banco de dados',
+                'meetal.responsibilities.item2': 'Implementação de novas funcionalidades',
+                'meetal.responsibilities.item3': 'Integração com APIs externas',
+                'meetal.stack.title': 'Stack & Arquitetura',
+                'meetal.challenges.title': 'Desafios Técnicos',
+                'meetal.challenges.performance.title': 'Performance',
+                'meetal.challenges.performance.description': 'Otimização de consultas e demais operações.',
+                'meetal.challenges.integrations.title': 'Integrações com Serviços Externos',
+                'meetal.challenges.integrations.description': 'Desenvolvimento de integrações robustas com APIs externas.'
+            },
+            en: {
+                'nav.projects': 'Projects',
+                'nav.about': 'About',
+                'nav.contact': 'Contact',
+                'meetal.subtitle': 'ERP Platform in production',
+                'meetal.summary.title': 'Summary',
+                'meetal.summary.content': 'Meetal is an ERP platform for the recycling and scrap industry. Currently in production with initial active clients, the system implements AI models and was designed to offer scalability, efficiency, and high-level monitoring.',
+                'meetal.responsibilities.title': 'Responsibilities',
+                'meetal.responsibilities.item1': 'Maintenance of schemas and database',
+                'meetal.responsibilities.item2': 'Implementation of new features',
+                'meetal.responsibilities.item3': 'Integration with external APIs',
+                'meetal.stack.title': 'Stack & Architecture',
+                'meetal.challenges.title': 'Technical Challenges',
+                'meetal.challenges.performance.title': 'Performance',
+                'meetal.challenges.performance.description': 'Optimization of queries and other operations.',
+                'meetal.challenges.integrations.title': 'External Service Integrations',
+                'meetal.challenges.integrations.description': 'Development of robust integrations with external APIs.'
             }
+        };
+
+        // Get saved language or default to Portuguese
+        let currentLanguage = localStorage.getItem('language') || 'pt';
+
+        // Function to change language
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            applyTranslations();
+        }
+
+        // Function to apply translations
+        function applyTranslations() {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[currentLanguage][key];
+                    } else {
+                        element.innerHTML = translations[currentLanguage][key];
+                    }
+                }
+            });
+            
+            // Update language selector
+            const languageSelect = document.getElementById('languageSelect');
+            if (languageSelect) {
+                languageSelect.value = currentLanguage;
+            }
+        }
+
+        // Initialize translations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            applyTranslations();
+            
+            // Highlight active page in navigation
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
         });
+
+        // Função para scroll suave para a próxima seção
+        function scrollToNextSection(button) {
+            const currentSection = button.closest('.project-section');
+            let nextElement = currentSection.nextElementSibling;
+            
+            // Pular o separador se existir
+            if (nextElement && nextElement.classList.contains('section-divider')) {
+                nextElement = nextElement.nextElementSibling;
+            }
+            
+            if (nextElement && nextElement.classList.contains('project-section')) {
+                nextElement.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Função para scroll suave para a seção anterior
+        function scrollToPreviousSection(button) {
+            const currentSection = button.closest('.project-section');
+            let previousElement = currentSection.previousElementSibling;
+            
+            // Pular o separador se existir
+            if (previousElement && previousElement.classList.contains('section-divider')) {
+                previousElement = previousElement.previousElementSibling;
+            }
+            
+            if (previousElement && previousElement.classList.contains('project-section')) {
+                previousElement.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
     </script>
 </body>
 </html>

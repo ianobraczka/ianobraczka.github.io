@@ -9,39 +9,53 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: #333;
-    padding-top: 70px; /* Space for fixed header */
     background-color: #f0f7f0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
-/* Fixed header */
+/* Sidebar header */
 header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 150px;
+    height: 100vh;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    flex: 1;
 }
 
 nav li {
-    margin: 0 10px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
 }
 
 nav a {
@@ -50,24 +64,65 @@ nav a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
 nav a:hover {
     color: #007bff;
+    background-color: rgba(0, 123, 255, 0.05);
 }
 
 nav a.active {
     color: #007bff;
-    border-bottom: 2px solid #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+    border-left: 3px solid #007bff;
+}
+
+/* Language selector */
+.language-selector {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+
+.language-selector select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 35px;
+}
+
+.language-selector select:hover {
+    border-color: #007bff;
+}
+
+.language-selector select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
 }
 
 /* Main content */
 main {
     max-width: 100%;
     margin: 0;
+    margin-left: 150px;
     padding: 0;
-    min-height: calc(100vh - 70px);
+    min-height: 100vh;
 }
 
 h1 {
@@ -96,15 +151,16 @@ p {
 .project-section {
     width: 100%;
     height: 100vh;
-    padding: 50px 0;
+    padding: 50px 0 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
+    position: relative;
 }
 
 .project-section:first-of-type {
-    padding-top: 50px;
+    padding-top: 0px;
 }
 
 /* Container interno para limitar largura do conteúdo */
@@ -121,6 +177,18 @@ p {
 
 .bg-white {
     background-color: #ffffff;
+    position: relative;
+}
+
+.bg-white::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150px;
+    width: 150px;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
 }
 
 /* Separador entre seções */
@@ -129,6 +197,84 @@ p {
     height: 1px;
     background-color: #e0e0e0;
     margin: 0;
+}
+
+/* Botão de scroll para próxima seção */
+.scroll-down-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.08);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    z-index: 10;
+}
+
+.scroll-down-btn:hover {
+    background: rgba(0, 0, 0, 0.15);
+    transform: translateX(-50%) translateY(2px);
+}
+
+.scroll-down-btn:active {
+    transform: translateX(-50%) translateY(4px);
+}
+
+.scroll-down-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Esconder botão na última seção */
+.project-section:last-of-type .scroll-down-btn {
+    display: none;
+}
+
+/* Botão de scroll para seção anterior */
+.scroll-up-btn {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.08);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    z-index: 10;
+}
+
+.scroll-up-btn:hover {
+    background: rgba(0, 0, 0, 0.15);
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.scroll-up-btn:active {
+    transform: translateX(-50%) translateY(-4px);
+}
+
+.scroll-up-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Esconder botão na primeira seção */
+.project-section:first-of-type .scroll-up-btn {
+    display: none;
 }
 
 
@@ -299,35 +445,88 @@ p {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    body {
-        padding-top: 60px;
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
         padding: 10px 0;
+        gap: 5px;
     }
     
     nav li {
-        margin: 5px 0;
-        width: 100%;
-        text-align: center;
+        margin: 0;
+        width: auto;
     }
     
     nav a {
-        padding: 15px;
+        padding: 15px 10px;
+        width: auto;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+    }
+    
+    nav a.active {
+        border-left: none;
+        border-bottom: 2px solid #007bff;
+        background-color: transparent;
+    }
+    
+    .language-selector {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
         width: 100%;
+        margin-top: 20px;
+        padding: 0 20px;
     }
     
     main {
-        padding: 0;
+        margin-left: 0;
+        padding-top: 60px;
         min-height: calc(100vh - 60px);
     }
     
+    .bg-white {
+        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+    
     .project-section {
-        padding: 30px 0;
+        padding: 30px 0 70px;
         height: 100vh;
         box-sizing: border-box;
+    }
+    
+    .scroll-down-btn {
+        bottom: 20px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .scroll-down-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .scroll-up-btn {
+        top: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .scroll-up-btn svg {
+        width: 18px;
+        height: 18px;
     }
     
     .project-section .project-layout {
@@ -344,8 +543,8 @@ p {
 }
 
 @media (max-width: 480px) {
-    body {
-        padding-top: 55px;
+    header {
+        height: auto;
     }
     
     nav {
@@ -353,19 +552,48 @@ p {
     }
     
     nav a {
-        padding: 12px;
+        padding: 12px 8px;
         font-size: 14px;
     }
     
     main {
-        padding: 0;
+        margin-left: 0;
+        padding-top: 55px;
         min-height: calc(100vh - 55px);
     }
     
+    .bg-white {
+        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+    
     .project-section {
-        padding: 25px 0;
+        padding: 25px 0 60px;
         height: 100vh;
         box-sizing: border-box;
+    }
+    
+    .scroll-down-btn {
+        bottom: 15px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .scroll-down-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .scroll-up-btn {
+        top: 10px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .scroll-up-btn svg {
+        width: 16px;
+        height: 16px;
     }
     
     .project-section .project-layout {
