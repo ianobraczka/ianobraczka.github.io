@@ -10,14 +10,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            background-color: #f8ede8;
+        }
+
         .about-container {
-            max-width: 900px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 80px 20px 40px;
+            padding: 60px 25px 30px;
+        }
+
+        .about-layout {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .about-left {
+            flex: 0 0 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-right {
+            flex: 1;
+            min-width: 0;
+            margin-left: 40px;
+        }
+
+        .about-photo {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            background-color: #f5f5f5;
+            border: 2px solid #e0e0e0;
         }
 
         .about-section {
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
 
         .about-section:last-child {
@@ -27,7 +61,7 @@
         .section-title {
             font-size: 2em;
             color: #333;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             font-weight: 600;
         }
 
@@ -36,6 +70,7 @@
             line-height: 1.8;
             color: #555;
             margin-bottom: 0;
+            text-align: left;
         }
 
         .work-principles {
@@ -46,11 +81,12 @@
 
         .work-principles li {
             color: #555;
-            padding: 12px 0;
+            padding: 10px 0;
             padding-left: 24px;
             position: relative;
             line-height: 1.7;
             font-size: 1.05em;
+            text-align: left;
         }
 
         .work-principles li::before {
@@ -62,7 +98,7 @@
         }
 
         .stack-category {
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         .stack-category:last-child {
@@ -72,7 +108,7 @@
         .category-title {
             font-size: 1.3em;
             color: #333;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
 
@@ -112,6 +148,21 @@
                 padding: 60px 15px 30px;
             }
 
+            .about-layout {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .about-left {
+                flex: 1;
+                width: 100%;
+            }
+
+            .about-photo {
+                width: 250px;
+                height: 250px;
+            }
+
             .section-title {
                 font-size: 1.7em;
                 margin-bottom: 20px;
@@ -139,6 +190,11 @@
         @media (max-width: 480px) {
             .about-container {
                 padding: 55px 10px 25px;
+            }
+
+            .about-photo {
+                width: 200px;
+                height: 200px;
             }
 
             .section-title {
@@ -189,84 +245,86 @@
     </header>
     <main>
         <div class="about-container">
-            <!-- Introdução -->
-            <section class="about-section">
-                <h1 class="section-title" data-translate="about.intro.title">Introdução</h1>
-                <p class="intro-text" data-translate="about.intro.content">
-                    Desenvolvedor <i>back-end</i> pleno com foco em sistemas em produção. Experiência com <i>APIs</i>, arquitetura <i>serverless</i> e integrações externas. <i>Stack</i> principal: Python, FastAPI, AWS (Lambda, API Gateway), DynamoDB, bancos relacionais e NoSQL.
-                </p>
-            </section>
-
-            <!-- Como trabalho -->
-            <section class="about-section">
-                <h2 class="section-title" data-translate="about.work.title">Como trabalho</h2>
-                <ul class="work-principles">
-                    <li data-translate="about.work.principle1">Código limpo</li>
-                    <li data-translate="about.work.principle2">Manutenibilidade</li>
-                    <li data-translate="about.work.principle3">Performance</li>
-                    <li data-translate="about.work.principle4">Integrações externas</li>
-                    <li data-translate="about.work.principle5">Responsabilidade sobre dados</li>
-                </ul>
-            </section>
-
-            <!-- Stack principal -->
-            <section class="about-section">
-                <h2 class="section-title" data-translate="about.stack.title">Stack principal</h2>
-                
-                <div class="stack-category">
-                    <h3 class="category-title" data-translate="about.stack.languages">Linguagens</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">Python</span>
-                        <span class="tech-item">Java</span>
-                        <span class="tech-item">Kotlin</span>
+            <div class="about-layout">
+                <!-- Seção 1: Foto + Introdução + Visão -->
+                <div class="about-left">
+                    <div class="about-photo" style="display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.9em;">
+                        <img src="images/profile.jpg" alt="Profile Photo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" onerror="this.style.display='none'; this.parentElement.textContent='Foto';">
                     </div>
+                    
+                    <!-- Introdução -->
+                    <section class="about-section">
+                        <p class="intro-text" data-translate="about.intro.content">
+                            Desenvolvedor <i>back-end</i> pleno com foco em sistemas em produção. Experiência com <i>APIs</i>, arquitetura <i>serverless</i> e integrações externas. <i>Stack</i> principal: Python, FastAPI, AWS (Lambda, API Gateway), DynamoDB, bancos relacionais e NoSQL.
+                        </p>
+                    </section>
+
+                    <!-- O que valorizo -->
+                    <section class="about-section">
+                        <h2 class="section-title" data-translate="about.work.title">O que valorizo</h2>
+                        <ul class="work-principles">
+                            <li data-translate="about.work.principle1">Código limpo</li>
+                            <li data-translate="about.work.principle2">Manutenibilidade</li>
+                            <li data-translate="about.work.principle3">Performance</li>
+                            <li data-translate="about.work.principle4">Integrações externas</li>
+                        </ul>
+                    </section>
                 </div>
 
-                <div class="stack-category">
-                    <h3 class="category-title" data-translate="about.stack.backend">Backend</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">FastAPI</span>
-                        <span class="tech-item">Ruby on Rails</span>
-                        <span class="tech-item">Spring Boot</span>
-                    </div>
+                <!-- Seção 2: Stack + Experiência + Foco -->
+                <div class="about-right">
+                    <!-- Stack principal -->
+                    <section class="about-section">
+                        <h2 class="section-title" data-translate="about.stack.title">Stack principal</h2>
+                        
+                        <div class="stack-category">
+                            <h3 class="category-title" data-translate="about.stack.languages">Linguagens</h3>
+                            <div class="tech-list">
+                                <span class="tech-item">Python</span>
+                                <span class="tech-item">Java</span>
+                                <span class="tech-item">Kotlin</span>
+                            </div>
+                        </div>
+
+                        <div class="stack-category">
+                            <h3 class="category-title" data-translate="about.stack.databases">Bancos de dados</h3>
+                            <div class="tech-list">
+                                <span class="tech-item">PostgreSQL</span>
+                                <span class="tech-item">MongoDB</span>
+                                <span class="tech-item">DynamoDB</span>
+                                <span class="tech-item">Elasticsearch</span>
+                            </div>
+                        </div>
+
+                        <div class="stack-category">
+                            <h3 class="category-title" data-translate="about.stack.cloud">Cloud / Infra</h3>
+                            <div class="tech-list">
+                                <span class="tech-item">FastAPI</span>
+                                <span class="tech-item">AWS Lambda</span>
+                                <span class="tech-item">API Gateway</span>
+                                <span class="tech-item">Google Firebase</span>
+                                <span class="tech-item">Docker</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Experiência profissional -->
+                    <section class="about-section">
+                        <h2 class="section-title" data-translate="about.experience.title">Experiência profissional</h2>
+                        <p class="experience-text" data-translate="about.experience.content">
+                            Experiência com sistemas em produção, <i>APIs</i> e ambientes reais. Trabalho focado em entregar soluções robustas e escaláveis, sempre priorizando qualidade de código e manutenibilidade a longo prazo.
+                        </p>
+                    </section>
+
+                    <!-- Foco profissional -->
+                    <section class="about-section">
+                        <h2 class="section-title" data-translate="about.focus.title">Foco profissional</h2>
+                        <p class="focus-text" data-translate="about.focus.content">
+                            Busco resolver desafios técnicos complexos em sistemas de produção, com ênfase em arquitetura, performance e integrações. Me encaixo melhor em times que valorizam código limpo, boas práticas de engenharia e responsabilidade técnica sobre o produto.
+                        </p>
+                    </section>
                 </div>
-
-                <div class="stack-category">
-                    <h3 class="category-title" data-translate="about.stack.databases">Bancos de dados</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">PostgreSQL</span>
-                        <span class="tech-item">MongoDB</span>
-                        <span class="tech-item">DynamoDB</span>
-                        <span class="tech-item">Elasticsearch</span>
-                    </div>
-                </div>
-
-                <div class="stack-category">
-                    <h3 class="category-title" data-translate="about.stack.cloud">Cloud / Infra</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">AWS Lambda</span>
-                        <span class="tech-item">API Gateway</span>
-                        <span class="tech-item">Google Firebase</span>
-                        <span class="tech-item">Docker</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experiência profissional -->
-            <section class="about-section">
-                <h2 class="section-title" data-translate="about.experience.title">Experiência profissional</h2>
-                <p class="experience-text" data-translate="about.experience.content">
-                    Experiência com sistemas em produção, <i>APIs</i> e ambientes reais. Trabalho focado em entregar soluções robustas e escaláveis, sempre priorizando qualidade de código e manutenibilidade a longo prazo.
-                </p>
-            </section>
-
-            <!-- Foco profissional -->
-            <section class="about-section">
-                <h2 class="section-title" data-translate="about.focus.title">Foco profissional</h2>
-                <p class="focus-text" data-translate="about.focus.content">
-                    Busco resolver desafios técnicos complexos em sistemas de produção, com ênfase em arquitetura, performance e integrações. Me encaixo melhor em times que valorizam código limpo, boas práticas de engenharia e responsabilidade técnica sobre o produto.
-                </p>
-            </section>
+            </div>
         </div>
     </main>
     <script>
@@ -276,17 +334,14 @@
                 'nav.projects': 'Projetos',
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contato',
-                'about.intro.title': 'Introdução',
                 'about.intro.content': 'Desenvolvedor <i>back-end</i> pleno com foco em sistemas em produção. Experiência com <i>APIs</i>, arquitetura <i>serverless</i> e integrações externas. <i>Stack</i> principal: Python, FastAPI, AWS (Lambda, API Gateway), DynamoDB, bancos relacionais e NoSQL.',
-                'about.work.title': 'Como trabalho',
+                'about.work.title': 'O que valorizo',
                 'about.work.principle1': 'Código limpo',
                 'about.work.principle2': 'Manutenibilidade',
                 'about.work.principle3': 'Performance',
                 'about.work.principle4': 'Integrações externas',
-                'about.work.principle5': 'Responsabilidade sobre dados',
                 'about.stack.title': 'Stack principal',
                 'about.stack.languages': 'Linguagens',
-                'about.stack.backend': 'Backend',
                 'about.stack.databases': 'Bancos de dados',
                 'about.stack.cloud': 'Cloud / Infra',
                 'about.experience.title': 'Experiência profissional',
@@ -298,17 +353,14 @@
                 'nav.projects': 'Projects',
                 'nav.about': 'About',
                 'nav.contact': 'Contact',
-                'about.intro.title': 'Introduction',
                 'about.intro.content': 'Mid-level back-end developer focused on production systems. Experience with APIs, serverless architecture, and external integrations. Main stack: Python, FastAPI, AWS (Lambda, API Gateway), DynamoDB, relational and NoSQL databases.',
-                'about.work.title': 'How I work',
+                'about.work.title': 'What I value',
                 'about.work.principle1': 'Clean code',
                 'about.work.principle2': 'Maintainability',
                 'about.work.principle3': 'Performance',
                 'about.work.principle4': 'External integrations',
-                'about.work.principle5': 'Data responsibility',
                 'about.stack.title': 'Main stack',
                 'about.stack.languages': 'Languages',
-                'about.stack.backend': 'Backend',
                 'about.stack.databases': 'Databases',
                 'about.stack.cloud': 'Cloud / Infra',
                 'about.experience.title': 'Professional experience',

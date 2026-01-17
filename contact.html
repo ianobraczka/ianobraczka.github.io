@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,28 +9,264 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #fff4e6;
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 25px 30px;
+        }
+
+        .contact-title {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .contact-intro {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .contact-card p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .contact-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            word-break: break-word;
+            display: inline-block;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        .contact-card a.contact-link {
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 60px 15px 30px;
+            }
+
+            .contact-title {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            .contact-intro {
+                font-size: 1.05em;
+                margin-bottom: 40px;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-container {
+                padding: 55px 10px 25px;
+            }
+
+            .contact-title {
+                font-size: 1.8em;
+                margin-bottom: 25px;
+            }
+
+            .contact-intro {
+                font-size: 1em;
+                margin-bottom: 35px;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+
+            .contact-icon {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-translate="nav.projects">Projects</a></li>
+                <li><a href="about.html" data-translate="nav.about">About</a></li>
+                <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
             </ul>
+            <div class="language-selector">
+                <select id="languageSelect" onchange="changeLanguage(this.value)">
+                    <option value="pt">PT</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
         </nav>
     </header>
     <main>
-        <h1>Contact</h1>
-        <p>Contact page content.</p>
+        <div class="contact-container">
+            <h1 class="contact-title" data-translate="contact.title">Contato</h1>
+            <p class="contact-intro" data-translate="contact.intro">
+                Estou sempre aberto a conversar sobre oportunidades, projetos interessantes ou apenas trocar ideias sobre tecnologia. Sinta-se à vontade para entrar em contato através dos canais abaixo.
+            </p>
+
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3 data-translate="contact.email.title">E-mail</h3>
+                    <p data-translate="contact.email.description">Para questões profissionais e oportunidades</p>
+                    <a href="mailto:ianobraczka@example.com" class="contact-link" data-translate="contact.email.address">ianobraczka@example.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <h3 data-translate="contact.linkedin.title">LinkedIn</h3>
+                    <p data-translate="contact.linkedin.description">Conecte-se e acompanhe minha trajetória profissional</p>
+                    <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer" class="contact-link" data-translate="contact.linkedin.handle">linkedin.com/in/ianobraczka</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">💻</div>
+                    <h3 data-translate="contact.github.title">GitHub</h3>
+                    <p data-translate="contact.github.description">Veja meus projetos e contribuições em código aberto</p>
+                    <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer" class="contact-link" data-translate="contact.github.handle">github.com/ianobraczka</a>
+                </div>
+            </div>
+        </div>
     </main>
     <script>
-        // Highlight active page in navigation
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('nav a').forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
+        // Translation data
+        const translations = {
+            pt: {
+                'nav.projects': 'Projetos',
+                'nav.about': 'Sobre',
+                'nav.contact': 'Contato',
+                'contact.title': 'Contato',
+                'contact.intro': 'Estou sempre aberto a conversar sobre oportunidades, projetos interessantes ou apenas trocar ideias sobre tecnologia. Sinta-se à vontade para entrar em contato através dos canais abaixo.',
+                'contact.email.title': 'E-mail',
+                'contact.email.description': 'Para questões profissionais e oportunidades',
+                'contact.email.address': 'ianobraczka@example.com',
+                'contact.linkedin.title': 'LinkedIn',
+                'contact.linkedin.description': 'Conecte-se e acompanhe minha trajetória profissional',
+                'contact.linkedin.handle': 'linkedin.com/in/ianobraczka',
+                'contact.github.title': 'GitHub',
+                'contact.github.description': 'Veja meus projetos e contribuições em código aberto',
+                'contact.github.handle': 'github.com/ianobraczka'
+            },
+            en: {
+                'nav.projects': 'Projects',
+                'nav.about': 'About',
+                'nav.contact': 'Contact',
+                'contact.title': 'Contact',
+                'contact.intro': 'I\'m always open to discussing opportunities, interesting projects, or just exchanging ideas about technology. Feel free to reach out through the channels below.',
+                'contact.email.title': 'E-mail',
+                'contact.email.description': 'For professional inquiries and opportunities',
+                'contact.email.address': 'ianobraczka@example.com',
+                'contact.linkedin.title': 'LinkedIn',
+                'contact.linkedin.description': 'Connect and follow my professional journey',
+                'contact.linkedin.handle': 'linkedin.com/in/ianobraczka',
+                'contact.github.title': 'GitHub',
+                'contact.github.description': 'See my projects and open source contributions',
+                'contact.github.handle': 'github.com/ianobraczka'
             }
+        };
+
+        // Get saved language or default to Portuguese
+        let currentLanguage = localStorage.getItem('language') || 'pt';
+
+        // Function to change language
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            applyTranslations();
+        }
+
+        // Function to apply translations
+        function applyTranslations() {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[currentLanguage][key];
+                    } else {
+                        element.innerHTML = translations[currentLanguage][key];
+                    }
+                }
+            });
+            
+            // Update language selector
+            const languageSelect = document.getElementById('languageSelect');
+            if (languageSelect) {
+                languageSelect.value = currentLanguage;
+            }
+        }
+
+        // Initialize translations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            applyTranslations();
+            
+            // Highlight active page in navigation
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
