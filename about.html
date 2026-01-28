@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+p<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -28,6 +28,8 @@
 
         .about-left {
             flex: 0 0 450px;
+            min-width: 0;
+            max-width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -52,10 +54,18 @@
 
         .about-section {
             margin-bottom: 30px;
+            min-height: 0;
         }
 
         .about-section:last-child {
             margin-bottom: 0;
+        }
+
+        .intro-text,
+        .experience-text,
+        .focus-text {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         .section-title {
@@ -143,24 +153,61 @@
             margin-bottom: 0;
         }
 
+        @media (max-width: 900px) {
+            .about-container {
+                padding: 24px 16px 30px;
+                max-width: 100%;
+            }
+            .about-layout {
+                flex-direction: column;
+                gap: 32px;
+                width: 100%;
+                min-width: 0;
+            }
+            .about-left {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 100%;
+            }
+            .about-right {
+                margin-left: 0;
+                width: 100%;
+            }
+            .about-photo {
+                width: 220px;
+                height: 220px;
+                max-width: 100%;
+            }
+        }
+
         @media (max-width: 768px) {
             .about-container {
-                padding: 60px 15px 30px;
+                padding: 24px 16px 30px;
+                max-width: 100%;
             }
 
             .about-layout {
                 flex-direction: column;
-                gap: 40px;
+                gap: 32px;
+                width: 100%;
+                min-width: 0;
             }
 
             .about-left {
-                flex: 1;
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .about-right {
+                margin-left: 0;
                 width: 100%;
             }
 
             .about-photo {
-                width: 250px;
-                height: 250px;
+                width: 220px;
+                height: 220px;
+                max-width: 100%;
             }
 
             .section-title {
@@ -189,17 +236,25 @@
 
         @media (max-width: 480px) {
             .about-container {
-                padding: 55px 10px 25px;
+                padding: 20px 12px 24px;
+            }
+
+            .about-layout {
+                gap: 28px;
             }
 
             .about-photo {
-                width: 200px;
-                height: 200px;
+                width: 180px;
+                height: 180px;
             }
 
             .section-title {
                 font-size: 1.5em;
-                margin-bottom: 18px;
+                margin-bottom: 16px;
+            }
+
+            .about-section {
+                margin-bottom: 24px;
             }
 
             .intro-text {

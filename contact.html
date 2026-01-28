@@ -16,8 +16,10 @@
 
         .contact-container {
             max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
             padding: 60px 25px 30px;
+            box-sizing: border-box;
         }
 
         .contact-title {
@@ -38,9 +40,10 @@
 
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
             gap: 30px;
             margin-bottom: 40px;
+            width: 100%;
         }
 
         .contact-card {
@@ -94,17 +97,18 @@
 
         @media (max-width: 768px) {
             .contact-container {
-                padding: 60px 15px 30px;
+                padding: 24px 16px 30px;
+                max-width: 100%;
             }
 
             .contact-title {
                 font-size: 2em;
-                margin-bottom: 30px;
+                margin-bottom: 28px;
             }
 
             .contact-intro {
                 font-size: 1.05em;
-                margin-bottom: 40px;
+                margin-bottom: 36px;
             }
 
             .contact-methods {
@@ -113,27 +117,33 @@
             }
 
             .contact-card {
-                padding: 25px;
+                padding: 24px;
+                min-width: 0;
             }
         }
 
         @media (max-width: 480px) {
             .contact-container {
-                padding: 55px 10px 25px;
+                padding: 20px 12px 24px;
             }
 
             .contact-title {
-                font-size: 1.8em;
-                margin-bottom: 25px;
+                font-size: 1.75em;
+                margin-bottom: 22px;
             }
 
             .contact-intro {
                 font-size: 1em;
-                margin-bottom: 35px;
+                margin-bottom: 28px;
+            }
+
+            .contact-methods {
+                gap: 16px;
             }
 
             .contact-card {
                 padding: 20px;
+                min-width: 0;
             }
 
             .contact-icon {
