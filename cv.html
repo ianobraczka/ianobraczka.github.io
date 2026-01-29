@@ -273,9 +273,29 @@
         }
 
         @media print {
-            .cv-page { margin-left: 0; background: #fff; padding: 24px; }
-            header, .cv-download, nav { display: none !important; }
-            body { background: #fff; }
+            @page { size: A4; margin: 0; }
+            html, body { margin: 0; padding: 0; background: #faf8f5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            header, .cv-download, nav, .language-selector { display: none !important; }
+            main.cv-page { margin: 0 auto !important; width: 100% !important; max-width: 100% !important; padding: 14mm 12mm !important; background: #faf8f5 !important; box-sizing: border-box; }
+            .cv-container { font-size: 85%; max-width: 180mm; margin: 0 auto; }
+            .cv-name { font-size: 1.85rem !important; }
+            .cv-headline { font-size: 0.9rem !important; margin-bottom: 10px; }
+            .cv-header { margin-bottom: 14px; padding-bottom: 12px; }
+            .cv-section { margin-bottom: 22px !important; page-break-inside: avoid; }
+            .cv-section:not(:first-of-type) { padding-top: 24px; }
+            .cv-section-title { font-size: 0.95rem !important; margin-bottom: 10px; }
+            .cv-timeline-item { padding-bottom: 12px !important; page-break-inside: avoid; }
+            .cv-job-title { font-size: 0.9rem; }
+            .cv-job-meta { font-size: 0.78rem; margin-bottom: 4px; }
+            .cv-block ul { margin-bottom: 8px; }
+            .cv-block li { font-size: 0.76rem; margin-bottom: 5px; line-height: 1.42; }
+            .cv-edu-item, .cv-workshop-item { padding: 10px 0; page-break-inside: avoid; }
+            .cv-edu-item strong, .cv-workshop-item strong { font-size: 0.88rem; }
+            .cv-skills-block { margin-bottom: 18px; }
+            .cv-skills-block:last-child { margin-bottom: 0; }
+            .cv-skills-subtitle { font-size: 0.7rem; margin-bottom: 6px; }
+            .cv-skills { justify-content: flex-start; flex-wrap: wrap; gap: 6px 8px; }
+            .cv-skill-tag { padding: 3px 6px; font-size: 0.65rem; flex-shrink: 0; }
         }
     </style>
 </head>
@@ -552,7 +572,7 @@
                 </div>
             </section>
 
-            <a href="Currículo_ inglês (1).pdf" class="cv-download" target="_blank" rel="noopener" data-translate="cv.download">Download PDF résumé</a>
+            <a href="#" class="cv-download" id="cv-download-btn" role="button" data-translate="cv.download">Download PDF résumé</a>
         </div>
     </main>
     <script>
@@ -909,6 +929,13 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             applyTranslations();
+            var dlBtn = document.getElementById('cv-download-btn');
+            if (dlBtn) {
+                dlBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.print();
+                });
+            }
             const currentPage = window.location.pathname.split('/').pop() || 'cv.html';
             document.querySelectorAll('nav a').forEach(link => {
                 if (link.getAttribute('href') === currentPage) link.classList.add('active');
