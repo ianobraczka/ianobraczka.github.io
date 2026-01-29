@@ -15,10 +15,10 @@
         }
 
         .contact-container {
-            max-width: 1200px;
+            max-width: 1100px;
             width: 100%;
             margin: 0 auto;
-            padding: 60px 25px 30px;
+            padding: 60px 24px 30px;
             box-sizing: border-box;
         }
 
@@ -40,10 +40,11 @@
 
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
             margin-bottom: 40px;
             width: 100%;
+            max-width: 100%;
         }
 
         .contact-card {
@@ -114,6 +115,7 @@
             .contact-methods {
                 grid-template-columns: 1fr;
                 gap: 20px;
+                max-width: 100%;
             }
 
             .contact-card {
@@ -159,6 +161,7 @@
                 <li><a href="index.html" data-translate="nav.projects">Projects</a></li>
                 <li><a href="about.html" data-translate="nav.about">About</a></li>
                 <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                <li><a href="cv.html" data-translate="nav.cv">Resume</a></li>
             </ul>
             <div class="language-selector">
                 <select id="languageSelect" onchange="changeLanguage(this.value)">
@@ -197,13 +200,6 @@
                     <p data-translate="contact.github.description">Veja meus projetos e contribuições em código aberto</p>
                     <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer" class="contact-link" data-translate="contact.github.handle">github.com/ianobraczka</a>
                 </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">📄</div>
-                    <h3 data-translate="contact.resume.title">Currículo</h3>
-                    <p data-translate="contact.resume.description">Acesse minha experiência e formação em PDF</p>
-                    <a href="cv.html" class="contact-link" data-translate="contact.resume.label">Ver currículo</a>
-                </div>
             </div>
         </div>
     </main>
@@ -214,6 +210,7 @@
                 'nav.projects': 'Projetos',
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contato',
+                'nav.cv': 'Currículo',
                 'contact.title': 'Contato',
                 'contact.intro': 'Estou sempre aberto a conversar sobre oportunidades, projetos interessantes ou apenas trocar ideias sobre tecnologia. Sinta-se à vontade para entrar em contato através dos canais abaixo.',
                 'contact.email.title': 'E-mail',
@@ -224,15 +221,13 @@
                 'contact.linkedin.handle': 'linkedin.com/in/ianobraczka',
                 'contact.github.title': 'GitHub',
                 'contact.github.description': 'Veja meus projetos e contribuições em código aberto',
-                'contact.github.handle': 'github.com/ianobraczka',
-                'contact.resume.title': 'Currículo',
-                'contact.resume.description': 'Acesse minha experiência e formação em PDF',
-                'contact.resume.label': 'Ver currículo'
+                'contact.github.handle': 'github.com/ianobraczka'
             },
             en: {
                 'nav.projects': 'Projects',
                 'nav.about': 'About',
                 'nav.contact': 'Contact',
+                'nav.cv': 'Resume',
                 'contact.title': 'Contact',
                 'contact.intro': 'I\'m always open to discussing opportunities, interesting projects, or just exchanging ideas about technology. Feel free to reach out through the channels below.',
                 'contact.email.title': 'E-mail',
@@ -243,15 +238,13 @@
                 'contact.linkedin.handle': 'linkedin.com/in/ianobraczka',
                 'contact.github.title': 'GitHub',
                 'contact.github.description': 'See my projects and open source contributions',
-                'contact.github.handle': 'github.com/ianobraczka',
-                'contact.resume.title': 'Résumé',
-                'contact.resume.description': 'View my experience and education in PDF',
-                'contact.resume.label': 'View CV'
+                'contact.github.handle': 'github.com/ianobraczka'
             },
             es: {
                 'nav.projects': 'Proyectos',
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contacto',
+                'nav.cv': 'Currículum',
                 'contact.title': 'Contacto',
                 'contact.intro': 'Siempre estoy abierto a conversar sobre oportunidades, proyectos interesantes o simplemente intercambiar ideas sobre tecnología. Siéntete libre de contactarme a través de los canales a continuación.',
                 'contact.email.title': 'E-mail',
@@ -262,10 +255,7 @@
                 'contact.linkedin.handle': 'linkedin.com/in/ianobraczka',
                 'contact.github.title': 'GitHub',
                 'contact.github.description': 'Ve mis proyectos y contribuciones de código abierto',
-                'contact.github.handle': 'github.com/ianobraczka',
-                'contact.resume.title': 'Currículo',
-                'contact.resume.description': 'Consulta mi experiencia y formación en PDF',
-                'contact.resume.label': 'Ver currículo'
+                'contact.github.handle': 'github.com/ianobraczka'
             }
         };
 
