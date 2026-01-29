@@ -637,8 +637,23 @@
             }
         };
 
-        // Get saved language or default to Portuguese
-        let currentLanguage = localStorage.getItem('language') || 'pt';
+        // Initial language: saved -> browser -> EN fallback
+        function getInitialLanguage() {
+            const saved = localStorage.getItem('language');
+            if (saved) return saved;
+
+            const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+            const l = String(navLang).toLowerCase();
+            let detected = 'en';
+            if (l.startsWith('pt')) detected = 'pt';
+            else if (l.startsWith('es')) detected = 'es';
+            else if (l.startsWith('en')) detected = 'en';
+
+            localStorage.setItem('language', detected);
+            return detected;
+        }
+
+        let currentLanguage = getInitialLanguage();
 
         // Function to change language
         function changeLanguage(lang) {

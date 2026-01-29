@@ -40,7 +40,7 @@
 
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-bottom: 40px;
             width: 100%;
@@ -197,6 +197,13 @@
                     <p data-translate="contact.github.description">Veja meus projetos e contribuições em código aberto</p>
                     <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer" class="contact-link" data-translate="contact.github.handle">github.com/ianobraczka</a>
                 </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📄</div>
+                    <h3 data-translate="contact.resume.title">Currículo</h3>
+                    <p data-translate="contact.resume.description">Acesse minha experiência e formação em PDF</p>
+                    <a href="cv.html" class="contact-link" data-translate="contact.resume.label">Ver currículo</a>
+                </div>
             </div>
         </div>
     </main>
@@ -217,7 +224,10 @@
                 'contact.linkedin.handle': 'linkedin.com/in/ianobraczka',
                 'contact.github.title': 'GitHub',
                 'contact.github.description': 'Veja meus projetos e contribuições em código aberto',
-                'contact.github.handle': 'github.com/ianobraczka'
+                'contact.github.handle': 'github.com/ianobraczka',
+                'contact.resume.title': 'Currículo',
+                'contact.resume.description': 'Acesse minha experiência e formação em PDF',
+                'contact.resume.label': 'Ver currículo'
             },
             en: {
                 'nav.projects': 'Projects',
@@ -233,7 +243,10 @@
                 'contact.linkedin.handle': 'linkedin.com/in/ianobraczka',
                 'contact.github.title': 'GitHub',
                 'contact.github.description': 'See my projects and open source contributions',
-                'contact.github.handle': 'github.com/ianobraczka'
+                'contact.github.handle': 'github.com/ianobraczka',
+                'contact.resume.title': 'Résumé',
+                'contact.resume.description': 'View my experience and education in PDF',
+                'contact.resume.label': 'View CV'
             },
             es: {
                 'nav.projects': 'Proyectos',
@@ -249,12 +262,30 @@
                 'contact.linkedin.handle': 'linkedin.com/in/ianobraczka',
                 'contact.github.title': 'GitHub',
                 'contact.github.description': 'Ve mis proyectos y contribuciones de código abierto',
-                'contact.github.handle': 'github.com/ianobraczka'
+                'contact.github.handle': 'github.com/ianobraczka',
+                'contact.resume.title': 'Currículo',
+                'contact.resume.description': 'Consulta mi experiencia y formación en PDF',
+                'contact.resume.label': 'Ver currículo'
             }
         };
 
-        // Get saved language or default to Portuguese
-        let currentLanguage = localStorage.getItem('language') || 'pt';
+        // Initial language: saved -> browser -> EN fallback
+        function getInitialLanguage() {
+            const saved = localStorage.getItem('language');
+            if (saved) return saved;
+
+            const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+            const l = String(navLang).toLowerCase();
+            let detected = 'en';
+            if (l.startsWith('pt')) detected = 'pt';
+            else if (l.startsWith('es')) detected = 'es';
+            else if (l.startsWith('en')) detected = 'en';
+
+            localStorage.setItem('language', detected);
+            return detected;
+        }
+
+        let currentLanguage = getInitialLanguage();
 
         // Function to change language
         function changeLanguage(lang) {
