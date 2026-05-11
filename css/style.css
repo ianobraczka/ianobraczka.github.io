@@ -168,6 +168,29 @@ p {
     padding-top: 24px;
 }
 
+/* Outros projetos: alinhado às outras secções (altura de viewport), conteúdo centrado */
+.project-section.project-section--other-projects > .project-layout {
+    justify-content: center;
+    align-items: center;
+}
+
+.project-section--other-projects .other-projects-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.project-section--other-projects .block-content a {
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.project-section--other-projects .block-content a:hover {
+    text-decoration: underline;
+}
+
 /* Container interno para limitar largura do conteúdo - reserva espaço para botões de scroll */
 .project-section .project-layout {
     max-width: 1300px;
@@ -178,7 +201,7 @@ p {
     min-height: 0;
 }
 
-/* Background colors alternados */
+/* Background colors alternados (Meetal: verde claro, Vandal: branco, ReUsa: azul claro) */
 .bg-green {
     background-color: #f0f7f0;
 }
@@ -199,6 +222,22 @@ p {
     z-index: -1;
 }
 
+.bg-blue-light {
+    background-color: #e3f2fd;
+    position: relative;
+}
+
+.bg-blue-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150px;
+    width: 150px;
+    height: 100%;
+    background-color: #e3f2fd;
+    z-index: -1;
+}
+
 /* Separador entre seções */
 .section-divider {
     width: 100%;
@@ -206,6 +245,12 @@ p {
     background-color: #e0e0e0;
     margin: 0;
     flex-shrink: 0;
+}
+
+/* Portfolio: secções mantidas no DOM só como registo (EasyPlay, Uniflix) */
+.project-section.project-section--record-only,
+.section-divider.section-divider--record-only {
+    display: none !important;
 }
 
 /* Botão de scroll para próxima seção */
@@ -419,7 +464,7 @@ p {
 
 .responsibilities-list li {
     color: #555;
-    padding: 6px 0;
+    padding: 12px 0;
     padding-left: 25px;
     position: relative;
     line-height: 1.7;
@@ -432,6 +477,112 @@ p {
     left: 0;
     color: #007bff;
     font-weight: bold;
+}
+
+/* Key contributions (Meetal): styled dot only — no ▸, no duplicate text bullet */
+.responsibilities-list.responsibilities-list-charbullets li::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: calc(0.62em + 6px);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 28% 28%, #63b3ed, #2c5282);
+    box-shadow: 0 0 0 2px rgba(44, 82, 130, 0.12);
+    font-weight: normal;
+}
+.responsibilities-list.responsibilities-list-charbullets li {
+    padding: 10px 0 10px 1.35em;
+    text-indent: 0;
+    line-height: 1.45;
+    font-size: 1em;
+}
+
+/* Meetal: tighter vertical rhythm to offset longer copy */
+.project-section.meetal-section-compact {
+    padding: 32px 0 68px;
+}
+.project-section.meetal-section-compact:first-of-type {
+    padding-top: 16px;
+}
+.project-section.meetal-section-compact .project-right .project-block {
+    margin-bottom: 24px;
+}
+.project-section.meetal-section-compact .project-right .project-block:last-child {
+    margin-bottom: 0;
+}
+.project-section.meetal-section-compact .block-title {
+    font-size: 1.35em;
+    margin-bottom: 6px;
+}
+.project-section.meetal-section-compact .project-right .project-block:nth-child(2) .block-title,
+.project-section.meetal-section-compact .project-right .project-block:nth-child(3) .block-title {
+    margin-bottom: 12px;
+}
+.project-section.meetal-section-compact .project-right .project-block:nth-child(2) .tech-badges {
+    margin-top: 6px;
+}
+.project-section.meetal-section-compact .block-content {
+    font-size: 1em;
+    line-height: 1.52;
+}
+.project-section.meetal-section-compact .challenges-list {
+    gap: 16px;
+}
+.project-section.meetal-section-compact .challenge-item {
+    padding: 10px 12px;
+}
+.project-section.meetal-section-compact .challenge-title {
+    font-size: 1.02em;
+    margin-bottom: 4px;
+}
+.project-section.meetal-section-compact .challenge-description {
+    font-size: 0.95em;
+    line-height: 1.48;
+}
+.project-section.meetal-section-compact .tech-badges {
+    gap: 6px;
+    margin-top: 4px;
+}
+.project-section.meetal-section-compact .tech-badge {
+    padding: 5px 11px;
+    font-size: 0.85em;
+}
+
+/* Meetal right column: slightly larger body copy (+2px), titles unchanged */
+.project-section.meetal-section-compact .project-right .responsibilities-list.responsibilities-list-charbullets li {
+    font-size: calc(1em + 2px);
+}
+.project-section.meetal-section-compact .project-right .challenge-description {
+    font-size: calc(0.95em + 2px);
+}
+.project-section.meetal-section-compact .project-right .tech-badge {
+    font-size: calc(0.85em + 2px);
+}
+
+/* Meetal: summary column — below hero, left-aligned body copy */
+.project-section.meetal-section-compact .project-left .project-block-summary-left {
+    align-self: stretch;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 12px;
+    margin-bottom: 0;
+    text-align: left;
+}
+.project-section.meetal-section-compact .project-left .project-block-summary-left .block-content {
+    text-align: left;
+    font-size: 1.07em;
+    line-height: 1.56;
+}
+
+/* Vandal: slightly lighter hero image footprint (align with Meetal rhythm) */
+.project-section.vandal-project-section .project-image-placeholder {
+    max-width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
 }
 
 /* Tech Badges */
@@ -458,7 +609,7 @@ p {
 .challenges-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
 }
 
 .challenge-item {
@@ -561,13 +712,18 @@ p {
         padding-top: 56px;
         min-height: calc(100vh - 56px);
     }
-    .bg-white::before { display: none; }
-    .bg-white { margin-left: 0; padding-left: 0; width: 100%; }
+    .bg-white::before,
+    .bg-blue-light::before { display: none; }
+    .bg-white,
+    .bg-blue-light { margin-left: 0; padding-left: 0; width: 100%; }
     .project-section {
         padding: 20px 0 72px;
         min-height: 100vh;
         height: auto;
         justify-content: flex-start;
+    }
+    .project-section.meetal-section-compact {
+        padding: 14px 0 60px;
     }
     .project-layout {
         flex-direction: column;
@@ -675,11 +831,13 @@ p {
         min-height: calc(100vh - 56px);
     }
 
-    .bg-white::before {
+    .bg-white::before,
+    .bg-blue-light::before {
         display: none;
     }
 
-    .bg-white {
+    .bg-white,
+    .bg-blue-light {
         margin-left: 0;
         padding-left: 0;
         width: 100%;
@@ -691,6 +849,9 @@ p {
         height: auto;
         justify-content: flex-start;
         box-sizing: border-box;
+    }
+    .project-section.meetal-section-compact {
+        padding: 14px 0 60px;
     }
 
     .project-layout {
@@ -800,6 +961,9 @@ p {
 
     .project-section {
         padding: 20px 0 64px;
+    }
+    .project-section.meetal-section-compact {
+        padding: 12px 0 56px;
     }
 
     .project-section .project-layout {

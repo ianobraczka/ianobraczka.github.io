@@ -18,7 +18,7 @@
             width: calc(100% - 150px);
             max-width: calc(100% - 150px);
             background: linear-gradient(160deg, #faf8f5 0%, #f0ebe3 50%, #ebe6df 100%);
-            padding: 48px 24px 64px 24px;
+            padding: 48px 14px 64px 14px;
             box-sizing: border-box;
             display: block;
         }
@@ -28,15 +28,15 @@
                 margin-left: 0;
                 width: 100%;
                 max-width: 100%;
-                padding: 80px 20px 48px 20px;
+                padding: 80px 14px 48px 14px;
             }
         }
         @media (max-width: 768px) {
-            main.cv-page { padding: 24px 16px 48px; }
+            main.cv-page { padding: 24px 12px 48px; }
         }
 
         .cv-container {
-            max-width: 960px;
+            max-width: 1080px;
             margin: 0 auto;
             width: 100%;
             min-width: 0;
@@ -168,6 +168,18 @@
             color: #666;
             margin-bottom: 8px;
         }
+        .cv-block > p.cv-job-desc {
+            margin: 0 0 10px 0;
+        }
+        .cv-block > p.cv-job-tech {
+            margin: 8px 0 0 0;
+            padding: 8px 0 0 0;
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.65;
+            color: #444;
+            border-top: 1px solid rgba(44, 82, 130, 0.12);
+        }
         .cv-job-desc {
             font-size: 0.95rem;
             color: #444;
@@ -223,11 +235,23 @@
             font-weight: 500;
             border-radius: 6px;
         }
+        .cv-skill-sep {
+            align-self: center;
+            color: rgba(44, 82, 130, 0.42);
+            font-size: 0.72rem;
+            font-weight: 600;
+            line-height: 1;
+            padding: 0 1px;
+            user-select: none;
+        }
 
         .cv-block ul {
             list-style: none;
             padding-left: 0;
-            margin: 0 0 16px 0;
+            margin: 0 0 10px 0;
+        }
+        .cv-block ul:last-child {
+            margin-bottom: 16px;
         }
         .cv-block li {
             position: relative;
@@ -248,6 +272,33 @@
             height: 5px;
             border-radius: 50%;
             background: #2c5282;
+        }
+
+        /* Hanging alignment on wrap: bullet via ::before + flex (not text-indent) */
+        .cv-block ul.cv-list-char-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.4em;
+            padding-left: 0;
+            text-indent: 0;
+            min-width: 0;
+        }
+        .cv-block ul.cv-list-char-bullets li::before {
+            content: '•';
+            position: static !important;
+            left: auto !important;
+            top: auto !important;
+            width: auto !important;
+            height: auto !important;
+            border-radius: 0 !important;
+            background: none !important;
+            background-color: transparent !important;
+            flex-shrink: 0;
+            margin: 0;
+            padding: 0;
+            color: #444;
+            line-height: inherit;
+            transform: none;
         }
 
         .cv-download {
@@ -288,13 +339,52 @@
             .cv-job-title { font-size: 0.9rem; }
             .cv-job-meta { font-size: 0.78rem; margin-bottom: 4px; }
             .cv-block ul { margin-bottom: 8px; }
+            .cv-block ul:last-child { margin-bottom: 8px; }
             .cv-block li { font-size: 0.76rem; margin-bottom: 5px; line-height: 1.42; }
+            .cv-block ul.cv-list-char-bullets li {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.35em;
+                padding-left: 0;
+                text-indent: 0;
+                min-width: 0;
+            }
+            .cv-block ul.cv-list-char-bullets li::before {
+                content: '•';
+                position: static !important;
+                left: auto !important;
+                top: auto !important;
+                width: auto !important;
+                height: auto !important;
+                border-radius: 0 !important;
+                background: none !important;
+                flex-shrink: 0;
+                margin: 0;
+                padding: 0;
+                color: #444;
+                line-height: inherit;
+            }
+            .cv-block > p.cv-job-desc { font-size: 0.76rem !important; line-height: 1.42; margin-bottom: 6px !important; }
+            .cv-block > p.cv-job-tech {
+                font-size: 0.76rem !important;
+                line-height: 1.42;
+                margin-top: 6px !important;
+                margin-bottom: 0 !important;
+                padding: 6px 0 0 0 !important;
+                font-weight: 400;
+                color: #444 !important;
+                border-top: 1px solid rgba(44, 82, 130, 0.12) !important;
+                background: none !important;
+                border-left: none !important;
+                border-radius: 0;
+            }
             .cv-edu-item, .cv-workshop-item { padding: 10px 0; page-break-inside: avoid; }
             .cv-edu-item strong, .cv-workshop-item strong { font-size: 0.88rem; }
             .cv-skills-block { margin-bottom: 18px; }
             .cv-skills-block:last-child { margin-bottom: 0; }
             .cv-skills-subtitle { font-size: 0.7rem; margin-bottom: 6px; }
             .cv-skills { justify-content: flex-start; flex-wrap: wrap; gap: 6px 8px; }
+            .cv-skill-sep { font-size: 0.58rem; }
             .cv-skill-tag { padding: 3px 6px; font-size: 0.65rem; flex-shrink: 0; }
         }
     </style>
@@ -321,7 +411,7 @@
         <div class="cv-container">
             <div class="cv-header">
                 <h1 class="cv-name">Ian Andrade Obraczka</h1>
-                <p class="cv-headline" data-translate="cv.headline">Backend Engineer | Production Systems | Leadership</p>
+                <p class="cv-headline" data-translate="cv.headline">Backend Engineer | Production Systems | Technical Leadership</p>
                 <p class="cv-meta">
                     <span class="cv-meta-line" data-translate="cv.meta.location">📍 Brazil — open to remote work</span>
                     <span class="cv-meta-line">📧 <a href="mailto:ianobraczka@gmail.com">ianobraczka@gmail.com</a></span>
@@ -333,8 +423,7 @@
             <section class="cv-section">
                 <h2 class="cv-section-title" data-translate="cv.section.summary">Summary</h2>
                 <p class="cv-summary" data-translate="cv.summary">
-                    Backend engineer and technical leader with over a decade of experience building and maintaining production systems. Strong track record in API design, database architecture and system reliability.
-                    <br><br>Combines hands-on development with leadership: technical decisions, team coordination and knowledge transfer. Experience in education and digital projects reinforces communication and mentoring skills. Based in Rio de Janeiro, Brazil.
+                    Backend Engineer with experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments.<br><br>Focused on APIs, system integrations, scalable architectures, and long-term maintainability, with a pragmatic approach to technical decision-making and product development. Strong background working close to business and operational contexts, translating real-world requirements into reliable software solutions.<br><br>Experience in technical leadership, mentoring, and education reinforces clear communication, collaboration, and problem-solving across multidisciplinary teams.
                 </p>
             </section>
 
@@ -363,63 +452,75 @@
                 <div class="cv-timeline">
                     <div class="cv-timeline-item">
                         <div class="cv-job-title" data-translate="cv.tech.1.title">Backend Engineer</div>
-                        <div class="cv-job-meta" data-translate="cv.tech.1.meta">Meetal · 2025 – present</div>
+                        <div class="cv-job-meta" data-translate="cv.tech.1.meta">Meetal · 2025 – Present</div>
                         <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.tech.1.1">Develop and maintain backend services for an ERP platform in production with active clients.</li>
-                                <li data-translate="cv.tech.1.3">Responsible for database schema maintenance, implementation of new features and integration with external APIs.</li>
-                                <li data-translate="cv.tech.1.4">Analyze system performance, identifying bottlenecks in high-usage flows and optimizing critical operations.</li>
-                                <li data-translate="cv.tech.1.5">Participate in architectural discussions and backend evolution to support increasing system complexity.</li>
-                                <li data-translate="cv.tech.1.2">Work with Python, FastAPI, Alembic, AWS Lambda, API Gateway and DynamoDB.</li>
+                            <p class="cv-job-desc" data-translate="cv.tech.1.intro">Worked on the core backend of a fast-evolving ERP platform for operational, financial, and inventory management in the recycling and industrial logistics sector.</p>
+                            <ul class="cv-list-char-bullets">
+                                <li data-translate="cv.tech.1.1">Designed and evolved backend services and APIs supporting operational and financial workflows</li>
+                                <li data-translate="cv.tech.1.2">Implemented integrations with external platforms, industrial hardware, and AI-powered services using OpenAI APIs</li>
+                                <li data-translate="cv.tech.1.3">Participated in architectural decisions during the migration from a serverless DynamoDB-based architecture to FastAPI and PostgreSQL</li>
+                                <li data-translate="cv.tech.1.4">Worked on debugging, refactoring, and performance improvements in production-critical flows</li>
+                                <li data-translate="cv.tech.1.5">Collaborated closely with product and business teams to deliver pragmatic solutions in a high-autonomy startup environment</li>
                             </ul>
+                            <p class="cv-job-desc cv-job-tech" data-translate="cv.tech.1.tech">Technologies: Python, FastAPI, AWS Lambda, API Gateway, PostgreSQL, DynamoDB, Docker, CI/CD, Alembic, OpenAI APIs</p>
                         </div>
                     </div>
                     <div class="cv-timeline-item">
                         <div class="cv-job-title" data-translate="cv.tech.2.title">ReUsa Project — UERJ Partnership — Technical Lead</div>
-                        <div class="cv-job-meta" data-translate="cv.tech.2.meta">Universidade do Estado do Rio de Janeiro · 2020 – 2023</div>
+                        <div class="cv-job-meta" data-translate="cv.tech.2.meta">Rio de Janeiro State University (UERJ) · 2020 – 2023</div>
                         <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.tech.2.1">Led the technical development of an MVP application for management and negotiation of reused water resources.</li>
-                                <li data-translate="cv.tech.2.2">Defined the initial architecture, technology stack and development approach, prioritizing speed and flexibility.</li>
-                                <li data-translate="cv.tech.2.3">Implemented backend services and data models while coordinating the technical team.</li>
-                                <li data-translate="cv.tech.2.4">Ensured documentation quality and executed a structured knowledge transfer during project handover.</li>
-                                <li data-translate="cv.tech.2.5">Work with Java, Kotlin and Google Firebase.</li>
+                            <p class="cv-job-desc" data-translate="cv.tech.2.intro">Led the technical development of a functional MVP platform for management, mapping, and commercialization of reused water resources in the state of Rio de Janeiro.</p>
+                            <ul class="cv-list-char-bullets">
+                                <li data-translate="cv.tech.2.1">Defined the system architecture and development approach, prioritizing flexibility, adaptability, and rapid iteration</li>
+                                <li data-translate="cv.tech.2.2">Implemented the MVP application used for presentations to government agencies, water utility companies, and project stakeholders</li>
+                                <li data-translate="cv.tech.2.3">Developed backend services, data models, authentication flows, and geospatial integrations using Google Maps APIs</li>
+                                <li data-translate="cv.tech.2.4">Worked with complex operational requirements, domain-specific calculations, and evolving business rules in an interdisciplinary research environment</li>
+                                <li data-translate="cv.tech.2.5">Produced technical documentation and coordinated deliveries while ensuring project quality and deadline compliance</li>
                             </ul>
+                            <p class="cv-job-desc cv-job-tech" data-translate="cv.tech.2.tech">Technologies: Java, Kotlin, Firebase, Google Maps APIs, Android XML</p>
                         </div>
                     </div>
                     <div class="cv-timeline-item">
-                        <div class="cv-job-title" data-translate="cv.tech.3.title">IT Manager / Full-stack Developer (Tech Lead)</div>
+                        <div class="cv-job-title" data-translate="cv.tech.3.title">Technical Lead | Backend Engineer</div>
                         <div class="cv-job-meta" data-translate="cv.tech.3.meta">Vandal · 2015 – 2021</div>
                         <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.tech.3.1">Took full ownership of backend systems and infrastructure for a platform in production with thousands of users over several years.</li>
-                                <li data-translate="cv.tech.3.2">Designed and implemented a custom logistics and production management module, choosing a bespoke solution to support complex business rules.</li>
-                                <li data-translate="cv.tech.3.3">Integrated external services such as payment gateways and shipping providers, handling unstable APIs and outdated documentation.</li>
-                                <li data-translate="cv.tech.3.4">Developed integrations with hardware devices (electronic scales via serial communication) to automate operational workflows.</li>
-                                <li data-translate="cv.tech.3.5">Managed infrastructure components including Nginx and Elasticsearch, handling production incidents and long-term system maintenance.</li>
-                                <li data-translate="cv.tech.3.6">Acted as the primary technical reference, making architectural decisions and continuously improving system reliability.</li>
-                                <li data-translate="cv.tech.3.7">Development with Ruby on Rails and MongoDB.</li>
+                            <p class="cv-job-desc" data-translate="cv.tech.3.intro">Worked on backend development for a fast-growing print-on-demand marketplace and production platform and gradually became the main technical reference for backend systems, infrastructure decisions, and operational scalability in a high-autonomy startup environment.</p>
+                            <ul class="cv-list-char-bullets">
+                                <li data-translate="cv.tech.3.1">Designed and implemented a custom back-office and production management module responsible for order processing, production workflow organization, shipping label generation, and customer notifications</li>
+                                <li data-translate="cv.tech.3.2">Built integrations with payment gateways, shipping providers, AWS S3 workflows, and hardware devices through serial communication</li>
+                                <li data-translate="cv.tech.3.3">Developed optimization strategies for high-volume order processing and operational flows during traffic spikes and promotional periods</li>
+                                <li data-translate="cv.tech.3.4">Worked on backend architecture, infrastructure reliability, debugging, and long-term maintenance of production systems</li>
+                                <li data-translate="cv.tech.3.5">Helped translate product and business requirements into scalable technical solutions used across operational and customer-facing workflows</li>
+                                <li data-translate="cv.tech.3.6">Supported the growth of a platform containing more than 70k product designs created by over 10k artists</li>
+                                <li data-translate="cv.tech.3.7">Became the primary backend and infrastructure reference during periods of rapid platform growth and increasing operational complexity</li>
                             </ul>
+                            <p class="cv-job-desc cv-job-tech" data-translate="cv.tech.3.tech">Technologies: Ruby on Rails, MongoDB, Sidekiq, Elasticsearch, nginx, Docker, AWS S3</p>
                         </div>
                     </div>
                     <div class="cv-timeline-item">
                         <div class="cv-job-title" data-translate="cv.tech.4.title">Backend Developer</div>
                         <div class="cv-job-meta" data-translate="cv.tech.4.meta">Ambiental Engenharia & Consultoria · 2012 – 2013</div>
                         <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.tech.4.1">Developed and maintained internal backend systems.</li>
-                                <li data-translate="cv.tech.4.2">Worked with data management, database maintenance and internal business rules.</li>
+                            <p class="cv-job-desc" data-translate="cv.tech.4.intro">Worked on the development and maintenance of internal backend systems supporting operational and business workflows.</p>
+                            <ul class="cv-list-char-bullets">
+                                <li data-translate="cv.tech.4.1">Implemented backend features and business rules for internal applications</li>
+                                <li data-translate="cv.tech.4.2">Worked with database maintenance, data management, and system evolution</li>
+                                <li data-translate="cv.tech.4.3">Supported long-term maintenance of internal operational systems</li>
                             </ul>
+                            <p class="cv-job-desc cv-job-tech" data-translate="cv.tech.4.tech">Technologies: Java, MySQL, Power BI</p>
                         </div>
                     </div>
                     <div class="cv-timeline-item">
-                        <div class="cv-job-title" data-translate="cv.tech.5.title">IT Intern / Junior Developer</div>
+                        <div class="cv-job-title" data-translate="cv.tech.5.title">Junior Developer</div>
                         <div class="cv-job-meta" data-translate="cv.tech.5.meta">Responde Aí · 2012</div>
                         <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.tech.5.1">Contributed to the development of the educational web application.</li>
-                                <li data-translate="cv.tech.5.2">Analyzed and helped refactor the database architecture.</li>
+                            <p class="cv-job-desc" data-translate="cv.tech.5.intro">Contributed to the maintenance of an educational web platform during the early stages of my professional experience.</p>
+                            <ul class="cv-list-char-bullets">
+                                <li data-translate="cv.tech.5.1">Supported backend and database-related development tasks</li>
+                                <li data-translate="cv.tech.5.2">Participated in database architecture analysis and refactoring discussions</li>
+                                <li data-translate="cv.tech.5.3">Worked collaboratively within a product-oriented development environment</li>
                             </ul>
+                            <p class="cv-job-desc cv-job-tech" data-translate="cv.tech.5.tech">Technologies: Ruby on Rails, PostgreSQL</p>
                         </div>
                     </div>
                 </div>
@@ -430,61 +531,36 @@
                 <div class="cv-timeline">
                     <div class="cv-timeline-item">
                         <div class="cv-job-title" data-translate="cv.edulead.1.title">Digital Education Teacher & Researcher</div>
-                        <div class="cv-job-meta" data-translate="cv.edulead.1.meta">Our Lady of Mercy School · 2022 – present</div>
+                        <div class="cv-job-meta" data-translate="cv.edulead.1.meta">Our Lady of Mercy School · 2022 – Present</div>
                         <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.edulead.1.1">Teach and research topics related to digital education, programming and applied technology.</li>
-                                <li data-translate="cv.edulead.1.2">Design workshops and curricular activities focused on computational thinking and real-world applications.</li>
-                                <li data-translate="cv.edulead.1.3">Conduct Advanced Placement (AP) Computer Science A classes as a College Board certified teacher.</li>
-                                <li data-translate="cv.edulead.1.4">Bilingual teaching: deliver classes in English.</li>
+                            <ul class="cv-list-char-bullets">
+                                <li data-translate="cv.edulead.1.1">Teach computer science, programming, and applied technology in English</li>
+                                <li data-translate="cv.edulead.1.2">Conduct Advanced Placement (AP) Computer Science A classes as a College Board certified teacher</li>
+                                <li data-translate="cv.edulead.1.3">Design workshops and curricular activities focused on computational thinking and real-world applications</li>
+                                <li data-translate="cv.edulead.1.4">Research and develop educational technology practices related to digital learning and applied computing</li>
                             </ul>
                         </div>
                     </div>
                     <div class="cv-timeline-item">
-                        <div class="cv-job-title" data-translate="cv.edulead.2.title">Programming Teacher</div>
+                        <div class="cv-job-title" data-translate="cv.edulead.2.title">Programming Teacher & Technical Integration Manager</div>
                         <div class="cv-job-meta" data-translate="cv.edulead.2.meta">ORT Tech Institute · 2019 – 2022</div>
                         <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.edulead.2.1">Main teacher for Programming Languages and Advanced Programming Techniques courses.</li>
-                                <li data-translate="cv.edulead.2.2">Mentored students in software development fundamentals, algorithms and problem-solving.</li>
+                            <ul class="cv-list-char-bullets">
+                                <li data-translate="cv.edulead.2.1">Taught Programming Languages and Advanced Programming Techniques courses</li>
+                                <li data-translate="cv.edulead.2.2">Mentored students in software development fundamentals, algorithms, and problem-solving</li>
+                                <li data-translate="cv.edulead.2.3">Managed and supported information systems used by the school</li>
+                                <li data-translate="cv.edulead.2.4">Worked on technical integration initiatives and communication with potential partners</li>
                             </ul>
                         </div>
                     </div>
                     <div class="cv-timeline-item">
-                        <div class="cv-job-title" data-translate="cv.edulead.3.title">Programming Teacher</div>
-                        <div class="cv-job-meta" data-translate="cv.edulead.3.meta">Andrew's School · 2022 – 2023</div>
+                        <div class="cv-job-title" data-translate="cv.edulead.3.title">Additional Education & Mentoring Experience</div>
+                        <div class="cv-job-meta" data-translate="cv.edulead.3.meta">2011 – 2023</div>
                         <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.edulead.3.1">Taught programming fundamentals to high school students, focusing on logic, structure and practical applications.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cv-timeline-item">
-                        <div class="cv-job-title" data-translate="cv.edulead.4.title">Technical Integration Manager</div>
-                        <div class="cv-job-meta" data-translate="cv.edulead.4.meta">ORT Tech Institute · 2020 – 2022</div>
-                        <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.edulead.4.1">Management of all information systems used by the school.</li>
-                                <li data-translate="cv.edulead.4.2">Contact with potential new partners.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cv-timeline-item">
-                        <div class="cv-job-title" data-translate="cv.edulead.5.title">Programming Instructor</div>
-                        <div class="cv-job-meta" data-translate="cv.edulead.5.meta">CodeComet · 2020 – 2022</div>
-                        <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.edulead.5.1">Teaching programming logic to children and teenagers.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cv-timeline-item">
-                        <div class="cv-job-title" data-translate="cv.edulead.6.title">Educator</div>
-                        <div class="cv-job-meta" data-translate="cv.edulead.6.meta">Chazit Hanoar Youth Movement · 2011 – 2016</div>
-                        <div class="cv-block">
-                            <ul>
-                                <li data-translate="cv.edulead.6.1">Planning and delivery of educational activities.</li>
-                                <li data-translate="cv.edulead.6.2">General secretary at Rio de Janeiro head office (2015).</li>
+                            <ul class="cv-list-char-bullets">
+                                <li data-translate="cv.edulead.3.1">Andrew's School: taught programming fundamentals to high school students, focusing on logic and practical applications</li>
+                                <li data-translate="cv.edulead.3.2">CodeComet: taught programming logic and computational thinking to children and teenagers</li>
+                                <li data-translate="cv.edulead.3.3">Chazit Hanoar Youth Movement: planned and delivered educational activities; served as general secretary at the Rio de Janeiro head office in 2015.</li>
                             </ul>
                         </div>
                     </div>
@@ -494,15 +570,15 @@
             <section class="cv-section">
                 <h2 class="cv-section-title" data-translate="cv.section.certifications">Certifications & Professional Development</h2>
                 <div class="cv-workshop-item">
-                    <strong data-translate="cv.cert.1.title">AI Empowerment for Communities</strong>
-                    <div class="cv-workshop-meta" data-translate="cv.cert.1.meta">VJAL Institute (2024)</div>
+                    <strong data-translate="cv.cert.1.title">AI for Data Analysis</strong>
+                    <div class="cv-workshop-meta" data-translate="cv.cert.1.meta">AMISA (2025)</div>
                 </div>
                 <div class="cv-workshop-item">
-                    <strong data-translate="cv.cert.2.title">AI for Data Analysis</strong>
-                    <div class="cv-workshop-meta" data-translate="cv.cert.2.meta">AMISA (2025)</div>
+                    <strong data-translate="cv.cert.2.title">AI Empowerment for Communities</strong>
+                    <div class="cv-workshop-meta" data-translate="cv.cert.2.meta">VJAL Institute (2024)</div>
                 </div>
                 <div class="cv-workshop-item">
-                    <strong data-translate="cv.cert.3.title">AP Computer Science A – Teacher Training Workshop</strong>
+                    <strong data-translate="cv.cert.3.title">AP Computer Science A</strong>
                     <div class="cv-workshop-meta" data-translate="cv.cert.3.meta">College Board (2023)</div>
                 </div>
                 <div class="cv-workshop-item">
@@ -510,16 +586,8 @@
                     <div class="cv-workshop-meta" data-translate="cv.cert.4.meta">World ORT – LEAD Program (2021)</div>
                 </div>
                 <div class="cv-workshop-item">
-                    <strong data-translate="cv.cert.5.title">Workshop Presenter Badge</strong>
+                    <strong data-translate="cv.cert.5.title">Technical Workshop Presenter</strong>
                     <div class="cv-workshop-meta" data-translate="cv.cert.5.meta">AMISA (2025)</div>
-                </div>
-                <div class="cv-workshop-item">
-                    <strong data-translate="cv.cert.6.title">LEGO Instructors Workshop</strong>
-                    <div class="cv-workshop-meta" data-translate="cv.cert.6.meta">Positivo (2022)</div>
-                </div>
-                <div class="cv-workshop-item">
-                    <strong data-translate="cv.cert.7.title">AI in Education Training Workshop</strong>
-                    <div class="cv-workshop-meta" data-translate="cv.cert.7.meta">Our Lady of Mercy School Rio (2024)</div>
                 </div>
             </section>
 
@@ -527,53 +595,19 @@
                 <h2 class="cv-section-title" data-translate="cv.section.skills">Skills</h2>
                 <div class="cv-skills-block">
                     <h3 class="cv-skills-subtitle" data-translate="cv.skills.backend.title">Backend & Architecture</h3>
-                    <div class="cv-skills">
-                        <span class="cv-skill-tag">Ruby</span>
-                        <span class="cv-skill-tag">Python</span>
-                        <span class="cv-skill-tag">FastAPI</span>
-                        <span class="cv-skill-tag">Node.js</span>
-                        <span class="cv-skill-tag">Java</span>
-                        <span class="cv-skill-tag">Kotlin</span>
-                        <span class="cv-skill-tag">API Gateway</span>
-                        <span class="cv-skill-tag">API design</span>
-                        <span class="cv-skill-tag">OpenAI</span>
-                        <span class="cv-skill-tag">Testing</span>
-                    </div>
+                    <div class="cv-skills" data-translate-skills-list="cv.skills.backend.list"></div>
                 </div>
                 <div class="cv-skills-block">
                     <h3 class="cv-skills-subtitle" data-translate="cv.skills.db.title">Databases & Infrastructure</h3>
-                    <div class="cv-skills">
-                        <span class="cv-skill-tag">PostgreSQL</span>
-                        <span class="cv-skill-tag">DynamoDB</span>
-                        <span class="cv-skill-tag">MongoDB</span>
-                        <span class="cv-skill-tag">Firebase</span>
-                        <span class="cv-skill-tag">AWS</span>
-                        <span class="cv-skill-tag">Docker</span>
-                        <span class="cv-skill-tag">Nginx</span>
-                        <span class="cv-skill-tag">Elasticsearch</span>
-                        <span class="cv-skill-tag">Alembic</span>
-                        <span class="cv-skill-tag">Linux / UNIX</span>
-                    </div>
+                    <div class="cv-skills" data-translate-skills-list="cv.skills.db.list"></div>
                 </div>
                 <div class="cv-skills-block">
                     <h3 class="cv-skills-subtitle" data-translate="cv.skills.leadership.title">Leadership & Collaboration</h3>
-                    <div class="cv-skills">
-                        <span class="cv-skill-tag">Tech Lead</span>
-                        <span class="cv-skill-tag" data-translate="cv.skills.leadership.tag1">Team coordination</span>
-                        <span class="cv-skill-tag" data-translate="cv.skills.leadership.tag2">Communication</span>
-                        <span class="cv-skill-tag" data-translate="cv.skills.leadership.tag3">Agile development</span>
-                        <span class="cv-skill-tag" data-translate="cv.skills.leadership.tag4">Teaching</span>
-                        <span class="cv-skill-tag" data-translate="cv.skills.leadership.tag5">Documentation</span>
-                    </div>
+                    <div class="cv-skills" data-translate-skills-list="cv.skills.leadership.list"></div>
                 </div>
                 <div class="cv-skills-block">
                     <h3 class="cv-skills-subtitle" data-translate="cv.skills.languages.title">Languages</h3>
-                    <div class="cv-skills">
-                        <span class="cv-skill-tag" data-translate="cv.skills.lang.pt">Portuguese (Native)</span>
-                        <span class="cv-skill-tag" data-translate="cv.skills.lang.en">English (Fluent)</span>
-                        <span class="cv-skill-tag" data-translate="cv.skills.lang.es">Spanish (Advanced)</span>
-                        <span class="cv-skill-tag" data-translate="cv.skills.lang.he">Hebrew (Intermediate)</span>
-                    </div>
+                    <div class="cv-skills" data-translate-skills-list="cv.skills.languages.list"></div>
                 </div>
             </section>
 
@@ -587,10 +621,10 @@
                 'nav.about': 'Sobre',
                 'nav.cv': 'Currículo',
                 'nav.contact': 'Contato',
-                'cv.headline': 'Engenheiro de Backend | Sistemas em Produção | Liderança',
+                'cv.headline': 'Engenheiro de Backend | Sistemas em Produção | Liderança técnica',
                 'cv.meta.location': '📍 Brasil — aberto a trabalho remoto',
                 'cv.section.summary': 'Resumo',
-                'cv.summary': 'Engenheiro de backend e líder técnico com mais de uma década de experiência construindo e mantendo sistemas em produção. Histórico sólido em design de APIs, arquitetura de dados e confiabilidade de sistemas.<br><br>Combina desenvolvimento prático com liderança: decisões técnicas, coordenação de equipe e transferência de conhecimento. Experiência em educação e projetos digitais reforça comunicação e mentoria. Baseado em Rio de Janeiro, Brasil.',
+                'cv.summary': 'Engenheiro de <i>back-end</i> com experiência na construção e manutenção de sistemas em produção, serviços de <i>back-end</i> e plataformas operacionais em ambientes de ritmo acelerado.<br><br>Foco em <i>APIs</i>, integrações entre sistemas, arquiteturas escaláveis e manutenibilidade a longo prazo, com abordagem pragmática à tomada de decisão técnica e ao desenvolvimento de produto. Forte atuação próxima a contextos de negócio e operação, traduzindo necessidades do mundo real em soluções de software confiáveis.<br><br>Experiência em liderança técnica, mentoria e educação reforça comunicação clara, colaboração e resolução de problemas em equipes multidisciplinares.',
                 'cv.section.education': 'Formação',
                 'cv.section.exp.tech': 'Experiência Profissional — Tecnologia',
                 'cv.section.exp.edu': 'Experiência Profissional — Educação e Liderança',
@@ -609,96 +643,92 @@
                 'cv.edu.6.meta': 'UniBF (2023)',
                 'cv.tech.1.title': 'Engenheiro de Backend',
                 'cv.tech.1.meta': 'Meetal · 2025 – presente',
-                'cv.tech.1.1': 'Desenvolvimento e manutenção de serviços backend para plataforma ERP em produção com clientes ativos.',
-                'cv.tech.1.2': 'Atuação usando Python, FastAPI, Alembic, AWS Lambda, API Gateway e DynamoDB.',
-                'cv.tech.1.3': 'Responsável por manutenção de esquema de banco de dados, implementação de novas funcionalidades e integração com APIs externas.',
-                'cv.tech.1.4': 'Análise de desempenho do sistema, identificação de gargalos em fluxos de alto uso e otimização de operações críticas.',
-                'cv.tech.1.5': 'Participação em discussões de arquitetura e evolução do backend para suportar maior complexidade do sistema.',
-                'cv.tech.2.title': 'ReUsa — Parceria UERJ — Líder Técnico',
-                'cv.tech.2.meta': 'Universidade do Estado do Rio de Janeiro · 2020 – 2023',
-                'cv.tech.2.1': 'Liderança técnica do desenvolvimento de um MVP para gestão e negociação de recursos hídricos reutilizados.',
-                'cv.tech.2.2': 'Definição da arquitetura inicial, stack tecnológico e abordagem de desenvolvimento, priorizando velocidade e flexibilidade.',
-                'cv.tech.2.3': 'Implementação de serviços backend e modelos de dados com coordenação da equipe técnica.',
-                'cv.tech.2.4': 'Garantia de qualidade da documentação e execução de transferência de conhecimento estruturada na entrega do projeto.',
-                'cv.tech.2.5': 'Atuação usando Java, Kotlin e Google Firebase.',
-                'cv.tech.3.title': 'Gerente de TI / Desenvolvedor Full-stack (Tech Lead)',
+                'cv.tech.1.intro': 'Atuei no núcleo do <i>back-end</i> de uma plataforma ERP em rápida evolução para gestão operacional, financeira e de estoques no setor de reciclagem e logística industrial.',
+                'cv.tech.1.1': 'Concepção e evolução de serviços de <i>back-end</i> e <i>APIs</i> que sustentam fluxos operacionais e financeiros',
+                'cv.tech.1.2': 'Implementação de integrações com plataformas externas, hardware industrial e serviços com IA usando <i>APIs</i> da OpenAI',
+                'cv.tech.1.3': 'Participação em decisões arquiteturais durante a migração de uma arquitetura <i>serverless</i> baseada em DynamoDB para FastAPI e PostgreSQL',
+                'cv.tech.1.4': 'Depuração, refatoração e melhorias de desempenho em fluxos críticos em produção',
+                'cv.tech.1.5': 'Colaboração próxima com equipes de produto e negócios para entregar soluções pragmáticas em ambiente de <i>startup</i> com alta autonomia',
+                'cv.tech.1.tech': 'Tecnologias: Python, FastAPI, AWS Lambda, API Gateway, PostgreSQL, DynamoDB, Docker, CI/CD, Alembic, APIs da OpenAI',
+                'cv.tech.2.title': 'ReUsa Project — UERJ Partnership — Technical Lead',
+                'cv.tech.2.meta': 'Universidade do Estado do Rio de Janeiro (UERJ) · 2020 – 2023',
+                'cv.tech.2.intro': 'Liderança técnica do desenvolvimento de uma plataforma MVP funcional para gestão, mapeamento e comercialização de recursos hídricos de reuso no estado do Rio de Janeiro.',
+                'cv.tech.2.1': 'Definição da arquitetura do sistema e da abordagem de desenvolvimento, priorizando flexibilidade, adaptabilidade e iteração rápida',
+                'cv.tech.2.2': 'Implementação do aplicativo MVP usado em apresentações para órgãos públicos, concessionárias de água e stakeholders do projeto',
+                'cv.tech.2.3': 'Desenvolvimento de serviços de <i>back-end</i>, modelos de dados, fluxos de autenticação e integrações geoespaciais com Google Maps APIs',
+                'cv.tech.2.4': 'Atuação com requisitos operacionais complexos, cálculos de domínio e regras de negócio em evolução em ambiente interdisciplinar de pesquisa',
+                'cv.tech.2.5': 'Produção de documentação técnica e coordenação de entregas, com foco em qualidade e cumprimento de prazos',
+                'cv.tech.2.tech': 'Tecnologias: Java, Kotlin, Firebase, Google Maps APIs, Android XML',
+                'cv.tech.3.title': 'Líder Técnico | Engenheiro de Backend',
                 'cv.tech.3.meta': 'Vandal · 2015 – 2021',
-                'cv.tech.3.1': 'Responsabilidade integral por sistemas backend e infraestrutura de uma plataforma em produção com milhares de usuários ao longo de vários anos.',
-                'cv.tech.3.2': 'Projeto e implementação de módulo customizado de logística e gestão de produção, com solução sob medida para regras de negócio complexas.',
-                'cv.tech.3.3': 'Integração de serviços externos (gateways de pagamento, transportadoras), lidando com APIs instáveis e documentação desatualizada.',
-                'cv.tech.3.4': 'Desenvolvimento de integrações com dispositivos de hardware (balanças eletrônicas via comunicação serial) para automação de fluxos operacionais.',
-                'cv.tech.3.5': 'Gestão de componentes de infraestrutura (Nginx, Elasticsearch), tratamento de incidentes em produção e manutenção de longo prazo.',
-                'cv.tech.3.6': 'Referência técnica principal: decisões de arquitetura e melhoria contínua da confiabilidade do sistema.',
-                'cv.tech.3.7': 'Desenvolvimento com Ruby on Rails e MongoDB.',
+                'cv.tech.3.intro': 'Atuei no desenvolvimento do <i>back-end</i> de um marketplace de print-on-demand e plataforma de produção em forte crescimento, tornando-me gradualmente o principal referencial técnico para sistemas de <i>back-end</i>, decisões de infraestrutura e escalabilidade operacional em ambiente de <i>startup</i> com alta autonomia.',
+                'cv.tech.3.1': 'Concepção e implementação de um módulo customizado de <i>back-office</i> e gestão da produção responsável pelo processamento de pedidos, organização do fluxo produtivo, geração de etiquetas de envio e notificações aos clientes',
+                'cv.tech.3.2': 'Construção de integrações com gateways de pagamento, transportadoras, fluxos em AWS S3 e dispositivos de hardware por comunicação serial',
+                'cv.tech.3.3': 'Desenvolvimento de estratégias de otimização para processamento de alto volume de pedidos e fluxos operacionais em picos de tráfego e períodos promocionais',
+                'cv.tech.3.4': 'Atuação em arquitetura de <i>back-end</i>, confiabilidade da infraestrutura, depuração e manutenção de longo prazo de sistemas em produção',
+                'cv.tech.3.5': 'Apoio à tradução de requisitos de produto e negócio em soluções técnicas escaláveis, usadas em fluxos operacionais e voltados ao cliente',
+                'cv.tech.3.6': 'Apoio ao crescimento de uma plataforma com mais de 70 mil designs de produtos criados por mais de 10 mil artistas',
+                'cv.tech.3.7': 'Referência principal de <i>back-end</i> e infraestrutura em períodos de crescimento acelerado da plataforma e crescente complexidade operacional',
+                'cv.tech.3.tech': 'Tecnologias: Ruby on Rails, MongoDB, Sidekiq, Elasticsearch, nginx, Docker, AWS S3',
                 'cv.tech.4.title': 'Desenvolvedor Backend',
                 'cv.tech.4.meta': 'Ambiental Engenharia & Consultoria · 2012 – 2013',
-                'cv.tech.4.1': 'Desenvolvimento e manutenção de sistemas backend internos.',
-                'cv.tech.4.2': 'Atuação em gestão de dados, manutenção de banco de dados e regras de negócio internas.',
-                'cv.tech.5.title': 'Estagiário de TI / Desenvolvedor Júnior',
+                'cv.tech.4.intro': 'Atuei no desenvolvimento e na manutenção de sistemas de <i>back-end</i> internos que sustentavam fluxos operacionais e de negócio.',
+                'cv.tech.4.1': 'Implementação de funcionalidades de <i>back-end</i> e regras de negócio em aplicações internas',
+                'cv.tech.4.2': 'Manutenção de bancos de dados, gestão de dados e evolução dos sistemas',
+                'cv.tech.4.3': 'Suporte à manutenção de longo prazo de sistemas operacionais internos',
+                'cv.tech.4.tech': 'Tecnologias: Java, MySQL, Power BI',
+                'cv.tech.5.title': 'Desenvolvedor Júnior',
                 'cv.tech.5.meta': 'Responde Aí · 2012',
-                'cv.tech.5.1': 'Contribuição no desenvolvimento da aplicação web educacional.',
-                'cv.tech.5.2': 'Análise e contribuição na refatoração da arquitetura do banco de dados.',
+                'cv.tech.5.intro': 'Contribuí para a manutenção de uma plataforma web educacional nos primeiros estágios da minha experiência profissional.',
+                'cv.tech.5.1': 'Apoio a tarefas de desenvolvimento de <i>back-end</i> e relacionadas a banco de dados',
+                'cv.tech.5.2': 'Participação em análises da arquitetura de banco de dados e discussões de refatoração',
+                'cv.tech.5.3': 'Trabalho colaborativo em ambiente de desenvolvimento orientado a produto',
+                'cv.tech.5.tech': 'Tecnologias: Ruby on Rails, PostgreSQL',
                 'cv.edulead.1.title': 'Professor e Pesquisador em Educação Digital',
                 'cv.edulead.1.meta': 'Our Lady of Mercy School · 2022 – presente',
-                'cv.edulead.1.1': 'Ensino e pesquisa em educação digital, programação e tecnologia aplicada.',
-                'cv.edulead.1.2': 'Desenho de workshops e atividades curriculares em pensamento computacional e aplicações reais.',
-                'cv.edulead.1.3': 'Ministro aulas de Advanced Placement (AP) Computer Science A como professor certificado pelo College Board.',
-                'cv.edulead.1.4': 'Ensino bilíngue: aulas em inglês.',
-                'cv.edulead.2.title': 'Professor de Programação',
+                'cv.edulead.1.1': 'Ensino de ciência da computação, programação e tecnologia aplicada em inglês',
+                'cv.edulead.1.2': 'Ministro aulas de Advanced Placement (AP) Computer Science A como professor certificado pelo College Board',
+                'cv.edulead.1.3': 'Concepção de workshops e atividades curriculares em pensamento computacional e aplicações no mundo real',
+                'cv.edulead.1.4': 'Pesquisa e desenvolvimento de práticas em tecnologia educacional ligadas à aprendizagem digital e à computação aplicada',
+                'cv.edulead.2.title': 'Professor de Programação e Gerente de Integração Técnica',
                 'cv.edulead.2.meta': 'Instituto ORT · 2019 – 2022',
-                'cv.edulead.2.1': 'Professor principal das disciplinas de Linguagens de Programação e Técnicas Avançadas de Programação.',
-                'cv.edulead.2.2': 'Mentoria de alunos em fundamentos de desenvolvimento de software, algoritmos e resolução de problemas.',
-                'cv.edulead.3.title': 'Professor de Programação',
-                'cv.edulead.3.meta': "Andrew's School · 2022 – 2023",
-                'cv.edulead.3.1': 'Ensino de fundamentos de programação para ensino médio, com foco em lógica, estrutura e aplicações práticas.',
-                'cv.edulead.4.title': 'Gerente de Integração Técnica',
-                'cv.edulead.4.meta': 'Instituto ORT · 2020 – 2022',
-                'cv.edulead.4.1': 'Gerência de todos os sistemas de informação utilizados pela escola.',
-                'cv.edulead.4.2': 'Contato com possíveis novos parceiros.',
-                'cv.edulead.5.title': 'Instrutor de Programação',
-                'cv.edulead.5.meta': 'CodeComet · 2020 – 2022',
-                'cv.edulead.5.1': 'Ensino de lógica de programação para crianças e adolescentes.',
-                'cv.edulead.6.title': 'Educador',
-                'cv.edulead.6.meta': 'Movimento Juvenil Chazit Hanoar · 2011 – 2016',
-                'cv.edulead.6.1': 'Planejamento e condução de atividades educativas.',
-                'cv.edulead.6.2': 'Secretário geral da sede Rio de Janeiro (2015).',
-                'cv.cert.1.title': 'AI Empowerment for Communities',
-                'cv.cert.1.meta': 'VJAL Institute (2024)',
-                'cv.cert.2.title': 'AI for Data Analysis',
-                'cv.cert.2.meta': 'AMISA (2025)',
-                'cv.cert.3.title': 'AP Computer Science A – Workshop de Formação de Professores',
+                'cv.edulead.2.1': 'Lecionei as disciplinas Linguagens de Programação e Técnicas Avançadas de Programação',
+                'cv.edulead.2.2': 'Mentoria de alunos em fundamentos de desenvolvimento de software, algoritmos e resolução de problemas',
+                'cv.edulead.2.3': 'Gestão e suporte aos sistemas de informação utilizados pela escola',
+                'cv.edulead.2.4': 'Iniciativas de integração técnica e relacionamento com potenciais parceiros',
+                'cv.edulead.3.title': 'Experiência adicional em educação e mentoria',
+                'cv.edulead.3.meta': '2011 – 2023',
+                'cv.edulead.3.1': "Andrew's School: ensino de fundamentos de programação para estudantes do ensino médio, com foco em lógica e aplicações práticas",
+                'cv.edulead.3.2': 'CodeComet: ensino de lógica de programação e pensamento computacional para crianças e adolescentes',
+                'cv.edulead.3.3': 'Movimento Juvenil Chazit Hanoar: planejamento e condução de atividades educativas; secretário-geral da sede do Rio de Janeiro em 2015.',
+                'cv.cert.1.title': 'AI for Data Analysis',
+                'cv.cert.1.meta': 'AMISA (2025)',
+                'cv.cert.2.title': 'AI Empowerment for Communities',
+                'cv.cert.2.meta': 'VJAL Institute (2024)',
+                'cv.cert.3.title': 'AP Computer Science A',
                 'cv.cert.3.meta': 'College Board (2023)',
                 'cv.cert.4.title': 'Liderança em Educação, Administração e Desenvolvimento',
                 'cv.cert.4.meta': 'World ORT – Programa LEAD (2021)',
-                'cv.cert.5.title': 'Workshop Presenter Badge',
+                'cv.cert.5.title': 'Apresentador técnico de workshops',
                 'cv.cert.5.meta': 'AMISA (2025)',
-                'cv.cert.6.title': 'LEGO Instructors Workshop',
-                'cv.cert.6.meta': 'Positivo (2022)',
-                'cv.cert.7.title': 'AI in Education Training Workshop',
-                'cv.cert.7.meta': 'Our Lady of Mercy School Rio (2024)',
                 'cv.skills.backend.title': 'Backend e Arquitetura',
+                'cv.skills.backend.list': 'Python • Ruby on Rails • FastAPI • Java • Kotlin • REST APIs • Design de sistemas • API Gateway • APIs OpenAI',
                 'cv.skills.db.title': 'Bancos de Dados e Infraestrutura',
+                'cv.skills.db.list': 'PostgreSQL • MongoDB • DynamoDB • Firebase • AWS • AWS Lambda • Docker • CI/CD • Elasticsearch',
                 'cv.skills.leadership.title': 'Liderança e Colaboração',
-                'cv.skills.leadership.tag1': 'Coordenação de equipe',
-                'cv.skills.leadership.tag2': 'Comunicação',
-                'cv.skills.leadership.tag3': 'Desenvolvimento ágil',
-                'cv.skills.leadership.tag4': 'Educação',
-                'cv.skills.leadership.tag5': 'Documentação',
+                'cv.skills.leadership.list': 'Liderança técnica • Comunicação • Mentoria • Desenvolvimento ágil • Documentação • Colaboração com produto',
                 'cv.skills.languages.title': 'Idiomas',
-                'cv.skills.lang.pt': 'Português (Nativo)',
-                'cv.skills.lang.en': 'Inglês (Fluente)',
-                'cv.skills.lang.es': 'Espanhol (Avançado)',
-                'cv.skills.lang.he': 'Hebraico (Intermediário)'
+                'cv.skills.languages.list': 'Português (nativo) • Inglês (fluente) • Espanhol (avançado) • Hebraico (intermediário)'
             },
             en: {
                 'nav.projects': 'Projects',
                 'nav.about': 'About',
                 'nav.cv': 'Resume',
                 'nav.contact': 'Contact',
-                'cv.headline': 'Backend Engineer | Production Systems | Leadership',
+                'cv.headline': 'Backend Engineer | Production Systems | Technical Leadership',
                 'cv.meta.location': '📍 Brazil — open to remote work',
                 'cv.section.summary': 'Summary',
-                'cv.summary': 'Backend engineer and technical leader with over a decade of experience building and maintaining production systems. Strong track record in API design, database architecture and system reliability.<br><br>Combines hands-on development with leadership: technical decisions, team coordination and knowledge transfer. Experience in education and digital projects reinforces communication and mentoring skills. Based in Rio de Janeiro, Brazil.',
+                'cv.summary': 'Backend Engineer with experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments.<br><br>Focused on APIs, system integrations, scalable architectures, and long-term maintainability, with a pragmatic approach to technical decision-making and product development. Strong background working close to business and operational contexts, translating real-world requirements into reliable software solutions.<br><br>Experience in technical leadership, mentoring, and education reinforces clear communication, collaboration, and problem-solving across multidisciplinary teams.',
                 'cv.section.education': 'Education',
                 'cv.section.exp.tech': 'Professional Experience — Technology',
                 'cv.section.exp.edu': 'Professional Experience — Education & Leadership',
@@ -716,97 +746,93 @@
                 'cv.edu.6.title': 'Postgraduate degree in Education and Psychopedagogy',
                 'cv.edu.6.meta': 'UniBF (2023)',
                 'cv.tech.1.title': 'Backend Engineer',
-                'cv.tech.1.meta': 'Meetal · 2025 – present',
-                'cv.tech.1.1': 'Develop and maintain backend services for an ERP platform in production with active clients.',
-                'cv.tech.1.2': 'Work with Python, FastAPI, Alembic, AWS Lambda, API Gateway and DynamoDB.',
-                'cv.tech.1.3': 'Responsible for database schema maintenance, implementation of new features and integration with external APIs.',
-                'cv.tech.1.4': 'Analyze system performance, identifying bottlenecks in high-usage flows and optimizing critical operations.',
-                'cv.tech.1.5': 'Participate in architectural discussions and backend evolution to support increasing system complexity.',
+                'cv.tech.1.meta': 'Meetal · 2025 – Present',
+                'cv.tech.1.intro': 'Worked on the core backend of a fast-evolving ERP platform for operational, financial, and inventory management in the recycling and industrial logistics sector.',
+                'cv.tech.1.1': 'Designed and evolved backend services and APIs supporting operational and financial workflows',
+                'cv.tech.1.2': 'Implemented integrations with external platforms, industrial hardware, and AI-powered services using OpenAI APIs',
+                'cv.tech.1.3': 'Participated in architectural decisions during the migration from a serverless DynamoDB-based architecture to FastAPI and PostgreSQL',
+                'cv.tech.1.4': 'Worked on debugging, refactoring, and performance improvements in production-critical flows',
+                'cv.tech.1.5': 'Collaborated closely with product and business teams to deliver pragmatic solutions in a high-autonomy startup environment',
+                'cv.tech.1.tech': 'Technologies: Python, FastAPI, AWS Lambda, API Gateway, PostgreSQL, DynamoDB, Docker, CI/CD, Alembic, OpenAI APIs',
                 'cv.tech.2.title': 'ReUsa Project — UERJ Partnership — Technical Lead',
                 'cv.tech.2.meta': 'Rio de Janeiro State University (UERJ) · 2020 – 2023',
-                'cv.tech.2.1': 'Led the technical development of an MVP application for management and negotiation of reused water resources.',
-                'cv.tech.2.2': 'Defined the initial architecture, technology stack and development approach, prioritizing speed and flexibility.',
-                'cv.tech.2.3': 'Implemented backend services and data models while coordinating the technical team.',
-                'cv.tech.2.4': 'Ensured documentation quality and executed a structured knowledge transfer during project handover.',
-                'cv.tech.2.5': 'Work with Java, Kotlin and Google Firebase.',
-                'cv.tech.3.title': 'IT Manager / Full-stack Developer (Tech Lead)',
+                'cv.tech.2.intro': 'Led the technical development of a functional MVP platform for management, mapping, and commercialization of reused water resources in the state of Rio de Janeiro.',
+                'cv.tech.2.1': 'Defined the system architecture and development approach, prioritizing flexibility, adaptability, and rapid iteration',
+                'cv.tech.2.2': 'Implemented the MVP application used for presentations to government agencies, water utility companies, and project stakeholders',
+                'cv.tech.2.3': 'Developed backend services, data models, authentication flows, and geospatial integrations using Google Maps APIs',
+                'cv.tech.2.4': 'Worked with complex operational requirements, domain-specific calculations, and evolving business rules in an interdisciplinary research environment',
+                'cv.tech.2.5': 'Produced technical documentation and coordinated deliveries while ensuring project quality and deadline compliance',
+                'cv.tech.2.tech': 'Technologies: Java, Kotlin, Firebase, Google Maps APIs, Android XML',
+                'cv.tech.3.title': 'Technical Lead | Backend Engineer',
                 'cv.tech.3.meta': 'Vandal · 2015 – 2021',
-                'cv.tech.3.1': 'Took full ownership of backend systems and infrastructure for a platform in production with thousands of users over several years.',
-                'cv.tech.3.2': 'Designed and implemented a custom logistics and production management module, choosing a bespoke solution to support complex business rules.',
-                'cv.tech.3.3': 'Integrated external services such as payment gateways and shipping providers, handling unstable APIs and outdated documentation.',
-                'cv.tech.3.4': 'Developed integrations with hardware devices (electronic scales via serial communication) to automate operational workflows.',
-                'cv.tech.3.5': 'Managed infrastructure components including Nginx and Elasticsearch, handling production incidents and long-term system maintenance.',
-                'cv.tech.3.6': 'Acted as the primary technical reference, making architectural decisions and continuously improving system reliability.',
-                'cv.tech.3.7': 'Development with Ruby on Rails and MongoDB.',
+                'cv.tech.3.intro': 'Worked on backend development for a fast-growing print-on-demand marketplace and production platform and gradually became the main technical reference for backend systems, infrastructure decisions, and operational scalability in a high-autonomy startup environment.',
+                'cv.tech.3.1': 'Designed and implemented a custom back-office and production management module responsible for order processing, production workflow organization, shipping label generation, and customer notifications',
+                'cv.tech.3.2': 'Built integrations with payment gateways, shipping providers, AWS S3 workflows, and hardware devices through serial communication',
+                'cv.tech.3.3': 'Developed optimization strategies for high-volume order processing and operational flows during traffic spikes and promotional periods',
+                'cv.tech.3.4': 'Worked on backend architecture, infrastructure reliability, debugging, and long-term maintenance of production systems',
+                'cv.tech.3.5': 'Helped translate product and business requirements into scalable technical solutions used across operational and customer-facing workflows',
+                'cv.tech.3.6': 'Supported the growth of a platform containing more than 70k product designs created by over 10k artists',
+                'cv.tech.3.7': 'Became the primary backend and infrastructure reference during periods of rapid platform growth and increasing operational complexity',
+                'cv.tech.3.tech': 'Technologies: Ruby on Rails, MongoDB, Sidekiq, Elasticsearch, nginx, Docker, AWS S3',
                 'cv.tech.4.title': 'Backend Developer',
                 'cv.tech.4.meta': 'Ambiental Engenharia & Consultoria · 2012 – 2013',
-                'cv.tech.4.1': 'Developed and maintained internal backend systems.',
-                'cv.tech.4.2': 'Worked with data management, database maintenance and internal business rules.',
-                'cv.tech.5.title': 'IT Intern / Junior Developer',
+                'cv.tech.4.intro': 'Worked on the development and maintenance of internal backend systems supporting operational and business workflows.',
+                'cv.tech.4.1': 'Implemented backend features and business rules for internal applications',
+                'cv.tech.4.2': 'Worked with database maintenance, data management, and system evolution',
+                'cv.tech.4.3': 'Supported long-term maintenance of internal operational systems',
+                'cv.tech.4.tech': 'Technologies: Java, MySQL, Power BI',
+                'cv.tech.5.title': 'Junior Developer',
                 'cv.tech.5.meta': 'Responde Aí · 2012',
-                'cv.tech.5.1': 'Contributed to the development of the educational web application.',
-                'cv.tech.5.2': 'Analyzed and helped refactor the database architecture.',
+                'cv.tech.5.intro': 'Contributed to the maintenance of an educational web platform during the early stages of my professional experience.',
+                'cv.tech.5.1': 'Supported backend and database-related development tasks',
+                'cv.tech.5.2': 'Participated in database architecture analysis and refactoring discussions',
+                'cv.tech.5.3': 'Worked collaboratively within a product-oriented development environment',
+                'cv.tech.5.tech': 'Technologies: Ruby on Rails, PostgreSQL',
                 'cv.edulead.1.title': 'Digital Education Teacher & Researcher',
-                'cv.edulead.1.meta': 'Our Lady of Mercy School · 2022 – present',
-                'cv.edulead.1.1': 'Teach and research topics related to digital education, programming and applied technology.',
-                'cv.edulead.1.2': 'Design workshops and curricular activities focused on computational thinking and real-world applications.',
-                'cv.edulead.1.3': 'Conduct Advanced Placement (AP) Computer Science A classes as a College Board certified teacher.',
-                'cv.edulead.1.4': 'Bilingual teaching: deliver classes in English.',
-                'cv.edulead.2.title': 'Programming Teacher',
+                'cv.edulead.1.meta': 'Our Lady of Mercy School · 2022 – Present',
+                'cv.edulead.1.1': 'Teach computer science, programming, and applied technology in English',
+                'cv.edulead.1.2': 'Conduct Advanced Placement (AP) Computer Science A classes as a College Board certified teacher',
+                'cv.edulead.1.3': 'Design workshops and curricular activities focused on computational thinking and real-world applications',
+                'cv.edulead.1.4': 'Research and develop educational technology practices related to digital learning and applied computing',
+                'cv.edulead.2.title': 'Programming Teacher & Technical Integration Manager',
                 'cv.edulead.2.meta': 'ORT Tech Institute · 2019 – 2022',
-                'cv.edulead.2.1': 'Main teacher for Programming Languages and Advanced Programming Techniques courses.',
-                'cv.edulead.2.2': 'Mentored students in software development fundamentals, algorithms and problem-solving.',
-                'cv.edulead.3.title': 'Programming Teacher',
-                'cv.edulead.3.meta': "Andrew's School · 2022 – 2023",
-                'cv.edulead.3.1': 'Taught programming fundamentals to high school students, focusing on logic, structure and practical applications.',
-                'cv.edulead.4.title': 'Technical Integration Manager',
-                'cv.edulead.4.meta': 'ORT Tech Institute · 2020 – 2022',
-                'cv.edulead.4.1': 'Management of all information systems used by the school.',
-                'cv.edulead.4.2': 'Contact with potential new partners.',
-                'cv.edulead.5.title': 'Programming Instructor',
-                'cv.edulead.5.meta': 'CodeComet · 2020 – 2022',
-                'cv.edulead.5.1': 'Teaching programming logic to children and teenagers.',
-                'cv.edulead.6.title': 'Educator',
-                'cv.edulead.6.meta': 'Chazit Hanoar Youth Movement · 2011 – 2016',
-                'cv.edulead.6.1': 'Planning and delivery of educational activities.',
-                'cv.edulead.6.2': 'General secretary at Rio de Janeiro head office (2015).',
-                'cv.cert.1.title': 'AI Empowerment for Communities',
-                'cv.cert.1.meta': 'VJAL Institute (2024)',
-                'cv.cert.2.title': 'AI for Data Analysis',
-                'cv.cert.2.meta': 'AMISA (2025)',
-                'cv.cert.3.title': 'AP Computer Science A – Teacher Training Workshop',
+                'cv.edulead.2.1': 'Taught Programming Languages and Advanced Programming Techniques courses',
+                'cv.edulead.2.2': 'Mentored students in software development fundamentals, algorithms, and problem-solving',
+                'cv.edulead.2.3': 'Managed and supported information systems used by the school',
+                'cv.edulead.2.4': 'Worked on technical integration initiatives and communication with potential partners',
+                'cv.edulead.3.title': 'Additional Education & Mentoring Experience',
+                'cv.edulead.3.meta': '2011 – 2023',
+                'cv.edulead.3.1': "Andrew's School: taught programming fundamentals to high school students, focusing on logic and practical applications",
+                'cv.edulead.3.2': 'CodeComet: taught programming logic and computational thinking to children and teenagers',
+                'cv.edulead.3.3': 'Chazit Hanoar Youth Movement: planned and delivered educational activities; served as general secretary at the Rio de Janeiro head office in 2015.',
+                'cv.cert.1.title': 'AI for Data Analysis',
+                'cv.cert.1.meta': 'AMISA (2025)',
+                'cv.cert.2.title': 'AI Empowerment for Communities',
+                'cv.cert.2.meta': 'VJAL Institute (2024)',
+                'cv.cert.3.title': 'AP Computer Science A',
                 'cv.cert.3.meta': 'College Board (2023)',
                 'cv.cert.4.title': 'Leadership in Education, Administration and Development',
                 'cv.cert.4.meta': 'World ORT – LEAD Program (2021)',
-                'cv.cert.5.title': 'Workshop Presenter Badge',
+                'cv.cert.5.title': 'Technical Workshop Presenter',
                 'cv.cert.5.meta': 'AMISA (2025)',
-                'cv.cert.6.title': 'LEGO Instructors Workshop',
-                'cv.cert.6.meta': 'Positivo (2022)',
-                'cv.cert.7.title': 'AI in Education Training Workshop',
-                'cv.cert.7.meta': 'Our Lady of Mercy School Rio (2024)',
                 'cv.skills.backend.title': 'Backend & Architecture',
+                'cv.skills.backend.list': 'Python • Ruby on Rails • FastAPI • Java • Kotlin • REST APIs • System Design • API Gateway • OpenAI APIs',
                 'cv.skills.db.title': 'Databases & Infrastructure',
+                'cv.skills.db.list': 'PostgreSQL • MongoDB • DynamoDB • Firebase • AWS • AWS Lambda • Docker • CI/CD • Elasticsearch',
                 'cv.skills.leadership.title': 'Leadership & Collaboration',
-                'cv.skills.leadership.tag1': 'Team coordination',
-                'cv.skills.leadership.tag2': 'Communication',
-                'cv.skills.leadership.tag3': 'Agile development',
-                'cv.skills.leadership.tag4': 'Teaching',
-                'cv.skills.leadership.tag5': 'Documentation',
+                'cv.skills.leadership.list': 'Technical Leadership • Communication • Mentoring • Agile Development • Documentation • Product Collaboration',
                 'cv.skills.languages.title': 'Languages',
-                'cv.skills.lang.pt': 'Portuguese (Native)',
-                'cv.skills.lang.en': 'English (Fluent)',
-                'cv.skills.lang.es': 'Spanish (Advanced)',
-                'cv.skills.lang.he': 'Hebrew (Intermediate)'
+                'cv.skills.languages.list': 'Portuguese (Native) • English (Fluent) • Spanish (Advanced) • Hebrew (Intermediate)'
             },
             es: {
                 'nav.projects': 'Proyectos',
                 'nav.about': 'Sobre',
                 'nav.cv': 'Currículum',
                 'nav.contact': 'Contacto',
-                'cv.headline': 'Ingeniero de Backend | Sistemas en Producción | Liderazgo',
+                'cv.headline': 'Ingeniero de Backend | Sistemas en Producción | Liderazgo técnico',
                 'cv.meta.location': '📍 Brasil — abierto a trabajo remoto',
                 'cv.section.summary': 'Resumen',
-                'cv.summary': 'Ingeniero de backend y líder técnico con más de una década de experiencia construyendo y manteniendo sistemas en producción. Sólido historial en diseño de APIs, arquitectura de datos y confiabilidad de sistemas.<br><br>Combina desarrollo práctico con liderazgo: decisiones técnicas, coordinación de equipos y transferencia de conocimiento. Experiencia en educación y proyectos digitales refuerza comunicación y mentoria. Con base en Río de Janeiro, Brasil.',
+                'cv.summary': 'Ingeniero de <i>back-end</i> con experiencia en la construcción y el mantenimiento de sistemas en producción, servicios de <i>back-end</i> y plataformas operativas en entornos de ritmo acelerado.<br><br>Enfoque en <i>APIs</i>, integraciones entre sistemas, arquitecturas escalables y mantenibilidad a largo plazo, con un enfoque pragmático de la toma de decisiones técnicas y del desarrollo de producto. Sólida experiencia trabajando cerca de los contextos de negocio y operación, traduciendo requisitos del mundo real en soluciones de software fiables.<br><br>La experiencia en liderazgo técnico, mentoría y educación refuerza la comunicación clara, la colaboración y la resolución de problemas en equipos multidisciplinarios.',
                 'cv.section.education': 'Formación',
                 'cv.section.exp.tech': 'Experiencia Profesional — Tecnología',
                 'cv.section.exp.edu': 'Experiencia Profesional — Educación y Liderazgo',
@@ -825,86 +851,82 @@
                 'cv.edu.6.meta': 'UniBF (2023)',
                 'cv.tech.1.title': 'Ingeniero de Backend',
                 'cv.tech.1.meta': 'Meetal · 2025 – presente',
-                'cv.tech.1.1': 'Desarrollo y mantenimiento de servicios backend para una plataforma ERP en producción con clientes activos.',
-                'cv.tech.1.2': 'Trabajo con Python, FastAPI, Alembic, AWS Lambda, API Gateway y DynamoDB.',
-                'cv.tech.1.3': 'Responsable del mantenimiento del esquema de base de datos, implementación de nuevas funcionalidades e integración con APIs externas.',
-                'cv.tech.1.4': 'Análisis de rendimiento del sistema, identificación de cuellos de botella en flujos de alto uso y optimización de operaciones críticas.',
-                'cv.tech.1.5': 'Participación en discusiones de arquitectura y evolución del backend para soportar mayor complejidad del sistema.',
-                'cv.tech.2.title': 'ReUsa — Asociación UERJ — Líder Técnico',
+                'cv.tech.1.intro': 'Trabajé en el núcleo del <i>back-end</i> de una plataforma ERP en rápida evolución para la gestión operativa, financiera y de inventarios en el sector del reciclaje y la logística industrial.',
+                'cv.tech.1.1': 'Diseño y evolución de servicios de <i>back-end</i> y <i>APIs</i> que soportan flujos operativos y financieros',
+                'cv.tech.1.2': 'Implementación de integraciones con plataformas externas, hardware industrial y servicios con IA mediante <i>APIs</i> de OpenAI',
+                'cv.tech.1.3': 'Participación en decisiones arquitectónicas durante la migración desde una arquitectura <i>serverless</i> basada en DynamoDB a FastAPI y PostgreSQL',
+                'cv.tech.1.4': 'Depuración, refactorización y mejoras de rendimiento en flujos críticos en producción',
+                'cv.tech.1.5': 'Colaboración cercana con equipos de producto y negocio para entregar soluciones pragmáticas en un entorno de <i>startup</i> con alta autonomía',
+                'cv.tech.1.tech': 'Tecnologías: Python, FastAPI, AWS Lambda, API Gateway, PostgreSQL, DynamoDB, Docker, CI/CD, Alembic, <i>APIs</i> de OpenAI',
+                'cv.tech.2.title': 'ReUsa Project — UERJ Partnership — Technical Lead',
                 'cv.tech.2.meta': 'Universidad del Estado de Río de Janeiro (UERJ) · 2020 – 2023',
-                'cv.tech.2.1': 'Lideré el desarrollo técnico de una aplicación MVP para gestión y negociación de recursos hídricos reutilizados.',
-                'cv.tech.2.2': 'Definí la arquitectura inicial, stack tecnológico y enfoque de desarrollo, priorizando velocidad y flexibilidad.',
-                'cv.tech.2.3': 'Implementé servicios backend y modelos de datos coordinando el equipo técnico.',
-                'cv.tech.2.4': 'Aseguré la calidad de la documentación y ejecuté una transferencia de conocimiento estructurada durante la entrega del proyecto.',
-                'cv.tech.2.5': 'Trabajo con Java, Kotlin y Google Firebase.',
-                'cv.tech.3.title': 'Gerente de TI / Desarrollador Full-stack (Tech Lead)',
+                'cv.tech.2.intro': 'Lideré el desarrollo técnico de una plataforma MVP funcional para la gestión, el mapeo y la comercialización de recursos hídricos de reutilización en el estado de Río de Janeiro.',
+                'cv.tech.2.1': 'Definición de la arquitectura del sistema y del enfoque de desarrollo, priorizando flexibilidad, adaptabilidad e iteración rápida',
+                'cv.tech.2.2': 'Implementación de la aplicación MVP utilizada en presentaciones ante organismos públicos, empresas de servicios de agua e interesados del proyecto',
+                'cv.tech.2.3': 'Desarrollo de servicios de <i>back-end</i>, modelos de datos, flujos de autenticación e integraciones geoespaciales con Google Maps APIs',
+                'cv.tech.2.4': 'Trabajo con requisitos operativos complejos, cálculos de dominio y reglas de negocio en evolución en un entorno interdisciplinario de investigación',
+                'cv.tech.2.5': 'Elaboración de documentación técnica y coordinación de entregas, asegurando calidad del proyecto y cumplimiento de plazos',
+                'cv.tech.2.tech': 'Tecnologías: Java, Kotlin, Firebase, Google Maps APIs, Android XML',
+                'cv.tech.3.title': 'Líder Técnico | Ingeniero de Backend',
                 'cv.tech.3.meta': 'Vandal · 2015 – 2021',
-                'cv.tech.3.1': 'Responsabilidad integral de sistemas backend e infraestructura de una plataforma en producción con miles de usuarios durante varios años.',
-                'cv.tech.3.2': 'Diseñé e implementé un módulo customizado de logística y gestión de producción, con solución a medida para reglas de negocio complejas.',
-                'cv.tech.3.3': 'Integré servicios externos (pasarelas de pago, proveedores de envío), manejando APIs inestables y documentación desactualizada.',
-                'cv.tech.3.4': 'Desarrollé integraciones con dispositivos de hardware (básculas electrónicas vía comunicación serial) para automatizar flujos operativos.',
-                'cv.tech.3.5': 'Gestioné componentes de infraestructura (Nginx, Elasticsearch), manejo de incidentes en producción y mantenimiento a largo plazo.',
-                'cv.tech.3.6': 'Actué como referencia técnica principal: decisiones de arquitectura y mejora continua de la confiabilidad del sistema.',
-                'cv.tech.3.7': 'Desarrollo con Ruby on Rails y MongoDB.',
+                'cv.tech.3.intro': 'Trabajé en el desarrollo del <i>back-end</i> de un marketplace de print-on-demand y una plataforma de producción en rápido crecimiento, y pasé a ser gradualmente el principal referente técnico para sistemas de <i>back-end</i>, decisiones de infraestructura y escalabilidad operativa en un entorno de <i>startup</i> con alta autonomía.',
+                'cv.tech.3.1': 'Diseño e implementación de un módulo a medida de <i>back-office</i> y gestión de la producción, responsable del procesamiento de pedidos, la organización del flujo productivo, la generación de etiquetas de envío y las notificaciones a clientes',
+                'cv.tech.3.2': 'Construcción de integraciones con pasarelas de pago, proveedores de envío, flujos en AWS S3 y dispositivos de hardware mediante comunicación serial',
+                'cv.tech.3.3': 'Desarrollo de estrategias de optimización para el procesamiento de alto volumen de pedidos y flujos operativos durante picos de tráfico y periodos promocionales',
+                'cv.tech.3.4': 'Trabajo en arquitectura de <i>back-end</i>, fiabilidad de la infraestructura, depuración y mantenimiento a largo plazo de sistemas en producción',
+                'cv.tech.3.5': 'Apoyo para traducir requisitos de producto y negocio en soluciones técnicas escalables, usadas en flujos operativos y orientados al cliente',
+                'cv.tech.3.6': 'Apoyo al crecimiento de una plataforma con más de 70 mil diseños de producto creados por más de 10 mil artistas',
+                'cv.tech.3.7': 'Referencia principal de <i>back-end</i> e infraestructura en periodos de crecimiento acelerado de la plataforma y creciente complejidad operativa',
+                'cv.tech.3.tech': 'Tecnologías: Ruby on Rails, MongoDB, Sidekiq, Elasticsearch, nginx, Docker, AWS S3',
                 'cv.tech.4.title': 'Desarrollador Backend',
                 'cv.tech.4.meta': 'Ambiental Engenharia & Consultoria · 2012 – 2013',
-                'cv.tech.4.1': 'Desarrollé y mantuve sistemas backend internos.',
-                'cv.tech.4.2': 'Trabajé en gestión de datos, mantenimiento de base de datos y reglas de negocio internas.',
-                'cv.tech.5.title': 'Pasante de TI / Desarrollador Junior',
+                'cv.tech.4.intro': 'Trabajé en el desarrollo y el mantenimiento de sistemas de <i>back-end</i> internos que soportaban flujos operativos y de negocio.',
+                'cv.tech.4.1': 'Implementación de funcionalidades de <i>back-end</i> y reglas de negocio para aplicaciones internas',
+                'cv.tech.4.2': 'Mantenimiento de bases de datos, gestión de datos y evolución de los sistemas',
+                'cv.tech.4.3': 'Soporte al mantenimiento a largo plazo de sistemas operativos internos',
+                'cv.tech.4.tech': 'Tecnologías: Java, MySQL, Power BI',
+                'cv.tech.5.title': 'Desarrollador Junior',
                 'cv.tech.5.meta': 'Responde Aí · 2012',
-                'cv.tech.5.1': 'Contribuí al desarrollo de la aplicación web educativa.',
-                'cv.tech.5.2': 'Analicé y contribuí a la refactorización de la arquitectura de la base de datos.',
+                'cv.tech.5.intro': 'Contribuí al mantenimiento de una plataforma web educativa durante las primeras etapas de mi experiencia profesional.',
+                'cv.tech.5.1': 'Apoyo a tareas de desarrollo de <i>back-end</i> y relacionadas con bases de datos',
+                'cv.tech.5.2': 'Participación en análisis de la arquitectura de bases de datos y discusiones de refactorización',
+                'cv.tech.5.3': 'Trabajo colaborativo en un entorno de desarrollo orientado al producto',
+                'cv.tech.5.tech': 'Tecnologías: Ruby on Rails, PostgreSQL',
                 'cv.edulead.1.title': 'Profesor e Investigador en Educación Digital',
                 'cv.edulead.1.meta': 'Our Lady of Mercy School · 2022 – presente',
-                'cv.edulead.1.1': 'Enseñanza e investigación en educación digital, programación y tecnología aplicada.',
-                'cv.edulead.1.2': 'Diseño de talleres y actividades curriculares en pensamiento computacional y aplicaciones reales.',
-                'cv.edulead.1.3': 'Imparto clases de Advanced Placement (AP) Computer Science A como profesor certificado por College Board.',
-                'cv.edulead.1.4': 'Enseñanza bilingüe: imparto clases en inglés.',
-                'cv.edulead.2.title': 'Profesor de Programación',
-                'cv.edulead.2.meta': 'Instituto ORT · 2019 – 2022',
-                'cv.edulead.2.1': 'Profesor principal de Lenguajes de Programación y Técnicas Avanzadas de Programación.',
-                'cv.edulead.2.2': 'Mentoría a estudiantes en fundamentos de desarrollo de software, algoritmos y resolución de problemas.',
-                'cv.edulead.3.title': 'Profesor de Programación',
-                'cv.edulead.3.meta': "Andrew's School · 2022 – 2023",
-                'cv.edulead.3.1': 'Enseñé fundamentos de programación a estudiantes de secundaria, con foco en lógica, estructura y aplicaciones prácticas.',
-                'cv.edulead.4.title': 'Gerente de Integración Técnica',
-                'cv.edulead.4.meta': 'Instituto ORT · 2020 – 2022',
-                'cv.edulead.4.1': 'Gestión de todos los sistemas de información utilizados por la escuela.',
-                'cv.edulead.4.2': 'Contacto con posibles nuevos socios.',
-                'cv.edulead.5.title': 'Instructor de Programación',
-                'cv.edulead.5.meta': 'CodeComet · 2020 – 2022',
-                'cv.edulead.5.1': 'Enseñanza de lógica de programación a niños y adolescentes.',
-                'cv.edulead.6.title': 'Educador',
-                'cv.edulead.6.meta': 'Movimiento Juvenil Chazit Hanoar · 2011 – 2016',
-                'cv.edulead.6.1': 'Planificación y realización de actividades educativas.',
-                'cv.edulead.6.2': 'Secretario general de la sede Rio de Janeiro (2015).',
-                'cv.cert.1.title': 'AI Empowerment for Communities',
-                'cv.cert.1.meta': 'VJAL Institute (2024)',
-                'cv.cert.2.title': 'AI for Data Analysis',
-                'cv.cert.2.meta': 'AMISA (2025)',
-                'cv.cert.3.title': 'AP Computer Science A – Taller de Formación de Profesores',
+                'cv.edulead.1.1': 'Enseño informática, programación y tecnología aplicada en inglés',
+                'cv.edulead.1.2': 'Imparto la asignatura Advanced Placement (AP) Computer Science A como profesor certificado por College Board',
+                'cv.edulead.1.3': 'Diseño de talleres y actividades curriculares en pensamiento computacional y aplicaciones en el mundo real',
+                'cv.edulead.1.4': 'Investigación y desarrollo de prácticas de tecnología educativa vinculadas al aprendizaje digital y la computación aplicada',
+                'cv.edulead.2.title': 'Profesor de Programación y Gerente de Integración Técnica',
+                'cv.edulead.2.meta': 'ORT Tech Institute · 2019 – 2022',
+                'cv.edulead.2.1': 'Impartí las asignaturas Lenguajes de Programación y Técnicas Avanzadas de Programación',
+                'cv.edulead.2.2': 'Mentoría a estudiantes en fundamentos de desarrollo de software, algoritmos y resolución de problemas',
+                'cv.edulead.2.3': 'Gestión y soporte de los sistemas de información utilizados por la escuela',
+                'cv.edulead.2.4': 'Iniciativas de integración técnica y comunicación con potenciales socios',
+                'cv.edulead.3.title': 'Experiencia adicional en educación y mentoría',
+                'cv.edulead.3.meta': '2011 – 2023',
+                'cv.edulead.3.1': "Andrew's School: enseñé fundamentos de programación a estudiantes de secundaria, con foco en lógica y aplicaciones prácticas",
+                'cv.edulead.3.2': 'CodeComet: enseñé lógica de programación y pensamiento computacional a niños y adolescentes',
+                'cv.edulead.3.3': 'Movimiento Juvenil Chazit Hanoar: planificación y realización de actividades educativas; secretario general de la sede de Río de Janeiro en 2015.',
+                'cv.cert.1.title': 'AI for Data Analysis',
+                'cv.cert.1.meta': 'AMISA (2025)',
+                'cv.cert.2.title': 'AI Empowerment for Communities',
+                'cv.cert.2.meta': 'VJAL Institute (2024)',
+                'cv.cert.3.title': 'AP Computer Science A',
                 'cv.cert.3.meta': 'College Board (2023)',
                 'cv.cert.4.title': 'Liderazgo en Educación, Administración y Desarrollo',
                 'cv.cert.4.meta': 'World ORT – Programa LEAD (2021)',
-                'cv.cert.5.title': 'Workshop Presenter Badge',
+                'cv.cert.5.title': 'Presentador técnico de talleres',
                 'cv.cert.5.meta': 'AMISA (2025)',
-                'cv.cert.6.title': 'LEGO Instructors Workshop',
-                'cv.cert.6.meta': 'Positivo (2022)',
-                'cv.cert.7.title': 'AI in Education Training Workshop',
-                'cv.cert.7.meta': 'Our Lady of Mercy School Rio (2024)',
                 'cv.skills.backend.title': 'Backend y Arquitectura',
+                'cv.skills.backend.list': 'Python • Ruby on Rails • FastAPI • Java • Kotlin • REST APIs • Diseño de sistemas • API Gateway • APIs de OpenAI',
                 'cv.skills.db.title': 'Bases de Datos e Infraestructura',
+                'cv.skills.db.list': 'PostgreSQL • MongoDB • DynamoDB • Firebase • AWS • AWS Lambda • Docker • CI/CD • Elasticsearch',
                 'cv.skills.leadership.title': 'Liderazgo y Colaboración',
-                'cv.skills.leadership.tag1': 'Coordinación de equipos',
-                'cv.skills.leadership.tag2': 'Comunicación',
-                'cv.skills.leadership.tag3': 'Desarrollo ágil',
-                'cv.skills.leadership.tag4': 'Educación',
-                'cv.skills.leadership.tag5': 'Documentación',
+                'cv.skills.leadership.list': 'Liderazgo técnico • Comunicación • Mentoría • Desarrollo ágil • Documentación • Colaboración con producto',
                 'cv.skills.languages.title': 'Idiomas',
-                'cv.skills.lang.pt': 'Portugués (Nativo)',
-                'cv.skills.lang.en': 'Inglés (Fluido)',
-                'cv.skills.lang.es': 'Español (Avanzado)',
-                'cv.skills.lang.he': 'Hebreo (Intermedio)'
+                'cv.skills.languages.list': 'Portugués (nativo) • Inglés (fluido) • Español (avanzado) • Hebreo (intermedio)'
             }
         };
 
@@ -932,6 +954,42 @@
             applyTranslations();
         }
 
+        function escapeHtml(text) {
+            if (text == null) return '';
+            const s = String(text);
+            return s
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function renderSkillsLists(lang) {
+            const dict = translations[lang];
+            if (!dict) return;
+            document.querySelectorAll('[data-translate-skills-list]').forEach(function (el) {
+                const key = el.getAttribute('data-translate-skills-list');
+                const raw = dict[key];
+                if (!raw) return;
+                const parts = String(raw)
+                    .split(/\s*•\s*/)
+                    .map(function (t) { return t.trim(); })
+                    .filter(Boolean);
+                const html = parts
+                    .map(function (p, i) {
+                        const tag = '<span class="cv-skill-tag">' + escapeHtml(p) + '</span>';
+                        const sep =
+                            i < parts.length - 1
+                                ? '<span class="cv-skill-sep" aria-hidden="true">•</span>'
+                                : '';
+                        return tag + sep;
+                    })
+                    .join('');
+                el.innerHTML = html;
+            });
+        }
+
         function applyTranslations() {
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
@@ -943,6 +1001,7 @@
                     }
                 }
             });
+            renderSkillsLists(currentLanguage);
             const sel = document.getElementById('languageSelect');
             if (sel) sel.value = currentLanguage;
         }

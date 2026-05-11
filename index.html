@@ -30,7 +30,7 @@
     </header>
     <main>
         <!-- Seção: Projeto Meetal -->
-        <section class="project-section bg-green">
+        <section class="project-section bg-green meetal-section-compact">
             <div class="project-layout layout-left">
                 <!-- Coluna A: Foto, Título e Subtítulo -->
                 <div class="project-left">
@@ -39,28 +39,24 @@
                     </div>
                     <div class="project-header">
                         <h1 class="project-title">Meetal</h1>
-                        <p class="project-subtitle" data-translate="meetal.subtitle">Plataforma de ERP em produção</p>
+                    </div>
+                    <div class="project-block project-block-summary-left">
+                        <p class="block-content" data-translate="meetal.summary.content">
+                            Meetal é uma plataforma ERP em rápida evolução voltada à gestão operacional, financeira e de estoques no setor de reciclagem e logística industrial.<br><br>A plataforma opera em ambientes de produção com clientes ativos e iteração contínua de produto, combinando serviços de <i>back-end</i>, fluxos operacionais, recursos com IA e integrações externas.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Coluna B: Conteúdo -->
                 <div class="project-right">
-                    <!-- Resumo do projeto -->
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="meetal.summary.title">Resumo</h2>
-                        <p class="block-content" data-translate="meetal.summary.content">
-                            Meetal é uma plataforma de ERP para o ramo da reciclagem e sucata. Atualmente em produção com clientes iniciais ativos, sistema implementa modelos de AI e foi projetado 
-                            para oferecer escalabilidade, eficiência e monitoramento de alto nível.
-                        </p>
-                    </div>
-
                     <!-- Responsabilidades -->
                     <div class="project-block">
-                        <h2 class="block-title" data-translate="meetal.responsibilities.title">Minhas responsabilidades</h2>
-                        <ul class="responsibilities-list">
-                            <li data-translate="meetal.responsibilities.item1">Manutenção de <i>schemas</i> e banco de dados</li>
-                            <li data-translate="meetal.responsibilities.item2">Implementação de novas funcionalidades</li>
-                            <li data-translate="meetal.responsibilities.item3">Integração com <i>APIs</i> externas e agentes de AI</li>
+                        <h2 class="block-title" data-translate="meetal.responsibilities.title">Contribuições principais</h2>
+                        <ul class="responsibilities-list responsibilities-list-charbullets">
+                            <li data-translate="meetal.responsibilities.item1">Desenvolvimento de serviços de <i>back-end</i> e <i>APIs</i> para fluxos operacionais e financeiros</li>
+                            <li data-translate="meetal.responsibilities.item2">Integrações com plataformas externas, hardware industrial e serviços com IA</li>
+                            <li data-translate="meetal.responsibilities.item3">Participação em decisões arquiteturais envolvendo escalabilidade e manutenibilidade a longo prazo</li>
+                            <li data-translate="meetal.responsibilities.item4">Depuração, refatoração e otimização de desempenho em fluxos críticos em produção</li>
                         </ul>
                     </div>
 
@@ -70,9 +66,10 @@
                         <div class="tech-badges">
                             <span class="tech-badge">Python</span>
                             <span class="tech-badge">FastAPI</span>
-                            <span class="tech-badge">Alembic</span>
+                            <span class="tech-badge">PostgreSQL</span>
                             <span class="tech-badge">DynamoDB</span>
-                            <span class="tech-badge">AWS tools</span>
+                            <span class="tech-badge">API Gateway</span>
+                            <span class="tech-badge">Docker</span>
                             <span class="tech-badge">OpenAI</span>
                         </div>
                     </div>
@@ -84,13 +81,91 @@
                             <div class="challenge-item">
                                 <h3 class="challenge-title" data-translate="meetal.challenges.performance.title">Performance</h3>
                                 <p class="challenge-description" data-translate="meetal.challenges.performance.description">
-                                    Otimização de consultas e demais operações.
+                                    Otimização de fluxos críticos em produção e gargalos de desempenho em sistemas operacionais em rápido crescimento.
                                 </p>
                             </div>
                             <div class="challenge-item">
                                 <h3 class="challenge-title" data-translate="meetal.challenges.integrations.title">Integrações com Serviços Externos</h3>
                                 <p class="challenge-description" data-translate="meetal.challenges.integrations.description">
-                                    Desenvolvimento de integrações robustas com <i>APIs</i> externas.
+                                    Desenvolvimento de integrações envolvendo <i>APIs</i> externas, serviços com IA e hardware industrial por comunicação serial.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Botão de scroll para seção anterior -->
+            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <!-- Botão de scroll para próxima seção -->
+            <button class="scroll-down-btn" onclick="scrollToNextSection(this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </section>
+
+        <!-- Separador -->
+        <div class="section-divider"></div>
+
+        <!-- Seção: Projeto Vandal -->
+        <section class="project-section bg-white meetal-section-compact vandal-project-section">
+            <div class="project-layout layout-right">
+                <div class="project-left">
+                    <div class="project-image-placeholder">
+                        <img src="images/vandal.jpg" alt="Vandal Project" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="project-header">
+                        <h1 class="project-title">Vandal</h1>
+                    </div>
+                    <div class="project-block project-block-summary-left">
+                        <p class="block-content" data-translate="vandal.summary.content">
+                            Marketplace de print-on-demand e plataforma de produção em rápido crescimento voltados a vestuário personalizado e designs criados por usuários.<br><br>À época, a plataforma suportava mais de 70 mil designs de produtos criados por mais de 10 mil artistas, combinando <i>e-commerce</i>, fluxos operacionais, logística de produção e sistemas de <i>back-end</i> em ambiente de <i>startup</i> com alta autonomia.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-right">
+                    <div class="project-block">
+                        <h2 class="block-title" data-translate="vandal.responsibilities.title">Contribuições principais</h2>
+                        <ul class="responsibilities-list responsibilities-list-charbullets">
+                            <li data-translate="vandal.responsibilities.item1">Desenvolvimento de sistemas de <i>back-end</i> que sustentavam operações do marketplace, fluxos de produção e logística</li>
+                            <li data-translate="vandal.responsibilities.item2">Concepção e implementação de um módulo customizado de <i>back-office</i> e gestão da produção</li>
+                            <li data-translate="vandal.responsibilities.item3">Integrações com gateways de pagamento, transportadoras, fluxos em AWS S3 e dispositivos de hardware por comunicação serial</li>
+                            <li data-translate="vandal.responsibilities.item4">Participação em decisões de infraestrutura, arquitetura de <i>back-end</i>, depuração e manutenção de longo prazo de sistemas em produção</li>
+                            <li data-translate="vandal.responsibilities.item5">Tradução de requisitos de negócio e operação em soluções técnicas escaláveis</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-block">
+                        <h2 class="block-title" data-translate="vandal.stack.title"><i>Stack</i> & Arquitetura</h2>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Ruby on Rails</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Sidekiq</span>
+                            <span class="tech-badge">Elasticsearch</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">AWS S3</span>
+                            <span class="tech-badge">nginx</span>
+                        </div>
+                    </div>
+
+                    <div class="project-block">
+                        <h2 class="block-title" data-translate="vandal.challenges.title">Desafios Técnicos</h2>
+                        <div class="challenges-list">
+                            <div class="challenge-item">
+                                <h3 class="challenge-title" data-translate="vandal.challenges.scalability.title">Escalabilidade operacional</h3>
+                                <p class="challenge-description" data-translate="vandal.challenges.scalability.description">
+                                    Otimização do processamento de alto volume de pedidos e fluxos de produção em picos de tráfego e períodos promocionais.
+                                </p>
+                            </div>
+                            <div class="challenge-item">
+                                <h3 class="challenge-title" data-translate="vandal.challenges.external.title">Integrações externas</h3>
+                                <p class="challenge-description" data-translate="vandal.challenges.external.description">
+                                    Desenvolvimento de integrações envolvendo gateways de pagamento, transportadoras, fluxos em AWS S3 e dispositivos de hardware por comunicação serial.
                                 </p>
                             </div>
                         </div>
@@ -115,65 +190,57 @@
         <div class="section-divider"></div>
 
         <!-- Seção: Projeto ReUsa -->
-        <section class="project-section bg-white">
-            <div class="project-layout layout-right">
-                <!-- Coluna B: Foto, Título e Subtítulo -->
+        <section class="project-section bg-blue-light meetal-section-compact">
+            <div class="project-layout layout-left">
                 <div class="project-left">
                     <div class="project-image-placeholder">
                         <img src="images/reusa.png" alt="ReUsa Project" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px;">
                     </div>
                     <div class="project-header">
                         <h1 class="project-title">ReUsa</h1>
-                        <p class="project-subtitle" data-translate="reusa.subtitle">Aplicativo de gerenciamento e negociação de águas de reuso</p>
+                    </div>
+                    <div class="project-block project-block-summary-left">
+                        <p class="block-content" data-translate="reusa.summary.content">
+                            ReUsa é uma plataforma de gestão, mapeamento e comercialização de recursos hídricos de reuso no estado do Rio de Janeiro.<br><br>O projeto foi desenvolvido no âmbito de uma iniciativa de pesquisa e inovação envolvendo órgãos públicos, concessionárias de água e esgoto e equipes interdisciplinares, com o objetivo de apoiar operações industriais de água de reuso por meio de dados geoespaciais e operacionais.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Coluna A: Conteúdo -->
                 <div class="project-right">
-                    <!-- Resumo do projeto -->
                     <div class="project-block">
-                        <h2 class="block-title" data-translate="reusa.summary.title">Resumo</h2>
-                        <p class="block-content" data-translate="reusa.summary.content">
-                            ReUsa é um aplicativo desenvolvido em parceria com a Universidade do Estado do Rio de Janeiro (UERJ) voltado para o gerenciamento e a negociação de águas de reuso.
-                        </p>
-                    </div>
-
-                    <!-- Responsabilidades -->
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="reusa.responsibilities.title">Minhas responsabilidades</h2>
-                        <ul class="responsibilities-list">
-                            <li data-translate="reusa.responsibilities.item1">Desenvolvimento do protótipo</li>
-                            <li data-translate="reusa.responsibilities.item2">Levantamento de requisitos</li>
-                            <li data-translate="reusa.responsibilities.item3">Estruturação de banco de dados e da camada de serviço</li>
-                            <li data-translate="reusa.responsibilities.item4">Gerenciamento da equipe de tecnologia</li>
+                        <h2 class="block-title" data-translate="reusa.responsibilities.title">Contribuições principais</h2>
+                        <ul class="responsibilities-list responsibilities-list-charbullets">
+                            <li data-translate="reusa.responsibilities.item1">Liderança técnica e definição de arquitetura para um MVP funcional apresentado a órgãos públicos e stakeholders da indústria</li>
+                            <li data-translate="reusa.responsibilities.item2">Desenvolvimento de <i>back-end</i>, modelagem de sistemas e implementação de integrações geoespaciais com Google Maps APIs</li>
+                            <li data-translate="reusa.responsibilities.item3">Definição de uma arquitetura flexível e adaptável, voltada a iteração rápida e requisitos em evolução</li>
+                            <li data-translate="reusa.responsibilities.item4">Documentação técnica, coordenação de entregas e comunicação orientada a stakeholders ao longo do projeto</li>
                         </ul>
                     </div>
 
-                    <!-- Stack & Arquitetura -->
                     <div class="project-block">
                         <h2 class="block-title" data-translate="reusa.stack.title"><i>Stack</i> & Arquitetura</h2>
                         <div class="tech-badges">
                             <span class="tech-badge">Java</span>
                             <span class="tech-badge">Kotlin</span>
-                            <span class="tech-badge">Google Firebase</span>
-                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">Firebase</span>
+                            <span class="tech-badge">Google Maps APIs</span>
+                            <span class="tech-badge">Android XML</span>
                         </div>
                     </div>
 
-                    <!-- Desafios Técnicos -->
                     <div class="project-block">
                         <h2 class="block-title" data-translate="reusa.challenges.title">Desafios Técnicos</h2>
                         <div class="challenges-list">
                             <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="reusa.challenges.velocity.title">Velocidade/Flexibilidade</h3>
-                                <p class="challenge-description" data-translate="reusa.challenges.velocity.description">
-                                    Velocidade e flexibilidade na implementação de novas funcionalidades.
+                                <h3 class="challenge-title" data-translate="reusa.challenges.geospatial.title">Integrações geoespaciais</h3>
+                                <p class="challenge-description" data-translate="reusa.challenges.geospatial.description">
+                                    Implementação de recursos de geolocalização e mapas com Google Maps APIs para visualização de recursos industriais e fluxos operacionais.
                                 </p>
                             </div>
                             <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="reusa.challenges.business.title">Regras de negócio</h3>
-                                <p class="challenge-description" data-translate="reusa.challenges.business.description">
-                                    Implementação de regras de negócios e fórmulas complexas.
+                                <h3 class="challenge-title" data-translate="reusa.challenges.modeling.title">Modelagem complexa</h3>
+                                <p class="challenge-description" data-translate="reusa.challenges.modeling.description">
+                                    Tradução de cálculos de domínio, regras operacionais e requisitos interdisciplinares em lógica de aplicação sustentável.
                                 </p>
                             </div>
                         </div>
@@ -194,97 +261,11 @@
             </button>
         </section>
 
-        <!-- Separador -->
-        <div class="section-divider"></div>
+        <!-- Separador (oculto com secções só arquivo: EasyPlay / Uniflix) -->
+        <div class="section-divider section-divider--record-only"></div>
 
-        <!-- Seção: Projeto Terceiro -->
-        <section class="project-section bg-green">
-            <div class="project-layout layout-left">
-                <!-- Coluna A: Foto, Título e Subtítulo -->
-                <div class="project-left">
-                    <div class="project-image-placeholder">
-                        <img src="images/vandal.jpg" alt="Vandal Project" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px;">
-                    </div>
-                    <div class="project-header">
-                        <h1 class="project-title">Vandal</h1>
-                        <p class="project-subtitle" data-translate="vandal.subtitle"><i>Marketplace</i> e estamparia</p>
-                    </div>
-                </div>
-
-                <!-- Coluna B: Conteúdo -->
-                <div class="project-right">
-                    <!-- Resumo do projeto -->
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="vandal.summary.title">Resumo</h2>
-                        <p class="block-content" data-translate="vandal.summary.content">
-                            Vandal é um <i>e-commerce</i>/<i>marketplace</i> de estampas de camisetas, onde os usuários ganham uma comissão pela venda de suas estampas. <br>A parte administrativa
-                            do sistema gerencia a logística e produção das estampas.
-                        </p>
-                    </div>
-
-                    <!-- Responsabilidades -->
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="vandal.responsibilities.title">Minhas responsabilidades</h2>
-                        <ul class="responsibilities-list">
-                            <li data-translate="vandal.responsibilities.item1">Manutenção <i>full-stack</i> do site</li>
-                            <li data-translate="vandal.responsibilities.item2">Desenvolvimento do módulo de logística e produção</li>
-                            <li data-translate="vandal.responsibilities.item3"><i>Tech Lead</i></li>
-                            <li data-translate="vandal.responsibilities.item4">Integração com <i>APIs</i></li>
-                        </ul>
-                    </div>
-
-                    <!-- Stack & Arquitetura -->
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="vandal.stack.title"><i>Stack</i> & Arquitetura</h2>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Ruby on Rails</span>
-                            <span class="tech-badge">MongoDB</span>
-                            <span class="tech-badge">Elasticsearch</span>
-                            <span class="tech-badge">Docker</span>
-                            <span class="tech-badge">Pagar.me</span>
-                        </div>
-                    </div>
-
-                    <!-- Desafios Técnicos -->
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="vandal.challenges.title">Desafios Técnicos</h2>
-                        <div class="challenges-list">
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="vandal.challenges.management.title">Módulo de gestão</h3>
-                                <p class="challenge-description" data-translate="vandal.challenges.management.description">
-                                    Gestão inteligente de pedidos de modo a facilitar a produção/logística.
-                                </p>
-                            </div>
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="vandal.challenges.apis.title">Integração com <i>APIs</i> externas</h3>
-                                <p class="challenge-description" data-translate="vandal.challenges.apis.description">
-                                    Conexão com Correios, gateway de pagamento (Pagar.me), etc.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!-- Botão de scroll para seção anterior -->
-            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <!-- Botão de scroll para próxima seção -->
-            <button class="scroll-down-btn" onclick="scrollToNextSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </section>
-
-        <!-- Separador -->
-        <div class="section-divider"></div>
-
-        <!-- Seção: EasyPlay -->
-        <section class="project-section bg-white">
+        <!-- Seção: EasyPlay (mantida no HTML; oculta na UI) -->
+        <section class="project-section bg-white project-section--record-only">
             <div class="project-layout layout-right">
                 <div class="project-left">
                     <div class="project-image-placeholder">
@@ -351,10 +332,10 @@
         </section>
 
         <!-- Separador -->
-        <div class="section-divider"></div>
+        <div class="section-divider section-divider--record-only"></div>
 
-        <!-- Seção: uniflix -->
-        <section class="project-section bg-green section-uniflix">
+        <!-- Seção: uniflix (mantida no HTML; oculta na UI) -->
+        <section class="project-section bg-green section-uniflix project-section--record-only">
             <div class="project-layout layout-left">
                 <div class="project-left">
                     <div class="project-image-placeholder">
@@ -413,7 +394,27 @@
                     <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
-            <!-- Última seção: sem botão scroll-down -->
+            <!-- Botão scroll-up (próxima seção visível: Outros projetos) -->
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="project-section bg-white project-section--other-projects">
+            <div class="project-layout">
+                <div class="other-projects-body">
+                    <div class="project-header">
+                        <h1 class="project-title" data-translate="otherProjects.title">Outros projetos</h1>
+                    </div>
+                    <p class="block-content" data-translate="otherProjects.content">
+                        Se quiser ver mais projetos em que participei ou que criei, fale comigo no <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> ou no <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>!
+                    </p>
+                </div>
+            </div>
+            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </section>
     </main>
     <script>
@@ -424,47 +425,43 @@
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contato',
                 'nav.cv': 'Currículo',
-                'meetal.subtitle': 'Plataforma de ERP em produção',
-                'meetal.summary.title': 'Resumo',
-                'meetal.summary.content': 'Meetal é uma plataforma de ERP para o ramo da reciclagem e sucata. Atualmente em produção com clientes iniciais ativos, sistema implementa modelos de AI e foi projetado para oferecer escalabilidade, eficiência e monitoramento de alto nível.',
-                'meetal.responsibilities.title': 'Minhas responsabilidades',
-                'meetal.responsibilities.item1': 'Manutenção de <i>schemas</i> e banco de dados',
-                'meetal.responsibilities.item2': 'Implementação de novas funcionalidades',
-                'meetal.responsibilities.item3': 'Integração com <i>APIs</i> externas e agentes de AI',
+                'meetal.summary.content': 'Meetal é uma plataforma ERP em rápida evolução voltada à gestão operacional, financeira e de estoques no setor de reciclagem e logística industrial.<br><br>A plataforma opera em ambientes de produção com clientes ativos e iteração contínua de produto, combinando serviços de <i>back-end</i>, fluxos operacionais, recursos com IA e integrações externas.',
+                'meetal.responsibilities.title': 'Contribuições principais',
+                'meetal.responsibilities.item1': 'Desenvolvimento de serviços de <i>back-end</i> e <i>APIs</i> para fluxos operacionais e financeiros',
+                'meetal.responsibilities.item2': 'Integrações com plataformas externas, hardware industrial e serviços com IA',
+                'meetal.responsibilities.item3': 'Participação em decisões arquiteturais envolvendo escalabilidade e manutenibilidade a longo prazo',
+                'meetal.responsibilities.item4': 'Depuração, refatoração e otimização de desempenho em fluxos críticos em produção',
                 'meetal.stack.title': '<i>Stack</i> & Arquitetura',
                 'meetal.challenges.title': 'Desafios Técnicos',
                 'meetal.challenges.performance.title': 'Performance',
-                'meetal.challenges.performance.description': 'Otimização de consultas e demais operações.',
+                'meetal.challenges.performance.description': 'Otimização de fluxos críticos em produção e gargalos de desempenho em sistemas operacionais em rápido crescimento.',
                 'meetal.challenges.integrations.title': 'Integrações com Serviços Externos',
-                'meetal.challenges.integrations.description': 'Desenvolvimento de integrações robustas com <i>APIs</i> externas.',
-                'reusa.subtitle': 'Aplicativo de gerenciamento e negociação de águas de reuso',
-                'reusa.summary.title': 'Resumo',
-                'reusa.summary.content': 'ReUsa é um aplicativo desenvolvido em parceria com a Universidade do Estado do Rio de Janeiro (UERJ) voltado para o gerenciamento e negociação de águas de reuso.',
-                'reusa.responsibilities.title': 'Minhas responsabilidades',
-                'reusa.responsibilities.item1': 'Desenvolvimento do protótipo',
-                'reusa.responsibilities.item2': 'Levantamento de requisitos',
-                'reusa.responsibilities.item3': 'Estruturação de banco de dados e da camada de serviço',
-                'reusa.responsibilities.item4': 'Gerenciamento da equipe de tecnologia',
+                'meetal.challenges.integrations.description': 'Desenvolvimento de integrações envolvendo <i>APIs</i> externas, serviços com IA e hardware industrial por comunicação serial.',
+                'reusa.summary.content': 'ReUsa é uma plataforma de gestão, mapeamento e comercialização de recursos hídricos de reuso no estado do Rio de Janeiro.<br><br>O projeto foi desenvolvido no âmbito de uma iniciativa de pesquisa e inovação envolvendo órgãos públicos, concessionárias de água e esgoto e equipes interdisciplinares, com o objetivo de apoiar operações industriais de água de reuso por meio de dados geoespaciais e operacionais.',
+                'reusa.responsibilities.title': 'Contribuições principais',
+                'reusa.responsibilities.item1': 'Liderança técnica e definição de arquitetura para um MVP funcional apresentado a órgãos públicos e stakeholders da indústria',
+                'reusa.responsibilities.item2': 'Desenvolvimento de <i>back-end</i>, modelagem de sistemas e implementação de integrações geoespaciais com Google Maps APIs',
+                'reusa.responsibilities.item3': 'Definição de uma arquitetura flexível e adaptável, voltada a iteração rápida e requisitos em evolução',
+                'reusa.responsibilities.item4': 'Documentação técnica, coordenação de entregas e comunicação orientada a stakeholders ao longo do projeto',
                 'reusa.stack.title': '<i>Stack</i> & Arquitetura',
                 'reusa.challenges.title': 'Desafios Técnicos',
-                'reusa.challenges.velocity.title': 'Velocidade/Flexibilidade',
-                'reusa.challenges.velocity.description': 'Velocidade e flexibilidade na implementação de novas funcionalidades.',
-                'reusa.challenges.business.title': 'Regras de negócio',
-                'reusa.challenges.business.description': 'Implementação de regras de negócios e fórmulas complexas.',
-                'vandal.subtitle': '<i>Marketplace</i> e estamparia',
-                'vandal.summary.title': 'Resumo',
-                'vandal.summary.content': 'Vandal é um <i>e-commerce</i>/<i>marketplace</i> de estampas de camisetas, onde os usuários ganham uma comissão pela venda de suas estampas. <br>A parte administrativa do sistema gerencia a logística e produção das estampas.',
-                'vandal.responsibilities.title': 'Minhas responsabilidades',
-                'vandal.responsibilities.item1': 'Manutenção <i>full-stack</i> do site',
-                'vandal.responsibilities.item2': 'Desenvolvimento do módulo de logística e produção',
-                'vandal.responsibilities.item3': '<i>Tech Lead</i>',
-                'vandal.responsibilities.item4': 'Integração com <i>APIs</i>',
+                'reusa.challenges.geospatial.title': 'Integrações geoespaciais',
+                'reusa.challenges.geospatial.description': 'Implementação de recursos de geolocalização e mapas com Google Maps APIs para visualização de recursos industriais e fluxos operacionais.',
+                'reusa.challenges.modeling.title': 'Modelagem complexa',
+                'reusa.challenges.modeling.description': 'Tradução de cálculos de domínio, regras operacionais e requisitos interdisciplinares em lógica de aplicação sustentável.',
+                'vandal.summary.content': 'Marketplace de print-on-demand e plataforma de produção em rápido crescimento voltados a vestuário personalizado e designs criados por usuários.<br><br>À época, a plataforma suportava mais de 70 mil designs de produtos criados por mais de 10 mil artistas, combinando <i>e-commerce</i>, fluxos operacionais, logística de produção e sistemas de <i>back-end</i> em ambiente de <i>startup</i> com alta autonomia.',
+                'vandal.responsibilities.title': 'Contribuições principais',
+                'vandal.responsibilities.item1': 'Desenvolvimento de sistemas de <i>back-end</i> que sustentavam operações do marketplace, fluxos de produção e logística',
+                'vandal.responsibilities.item2': 'Concepção e implementação de um módulo customizado de <i>back-office</i> e gestão da produção',
+                'vandal.responsibilities.item3': 'Integrações com gateways de pagamento, transportadoras, fluxos em AWS S3 e dispositivos de hardware por comunicação serial',
+                'vandal.responsibilities.item4': 'Participação em decisões de infraestrutura, arquitetura de <i>back-end</i>, depuração e manutenção de longo prazo de sistemas em produção',
+                'vandal.responsibilities.item5': 'Tradução de requisitos de negócio e operação em soluções técnicas escaláveis',
                 'vandal.stack.title': '<i>Stack</i> & Arquitetura',
                 'vandal.challenges.title': 'Desafios Técnicos',
-                'vandal.challenges.management.title': 'Módulo de gestão',
-                'vandal.challenges.management.description': 'Gestão inteligente de pedidos de modo a facilitar a produção/logística.',
-                'vandal.challenges.apis.title': 'Integração com <i>APIs</i> externas',
-                'vandal.challenges.apis.description': 'Conexão com Correios, gateway de pagamento (Pagar.me), etc.',
+                'vandal.challenges.scalability.title': 'Escalabilidade operacional',
+                'vandal.challenges.scalability.description': 'Otimização do processamento de alto volume de pedidos e fluxos de produção em picos de tráfego e períodos promocionais.',
+                'vandal.challenges.external.title': 'Integrações externas',
+                'vandal.challenges.external.description': 'Desenvolvimento de integrações envolvendo gateways de pagamento, transportadoras, fluxos em AWS S3 e dispositivos de hardware por comunicação serial.',
                 'easyplay.subtitle': 'Player integrado ao Twitter<br>(projeto acadêmico)',
                 'easyplay.summary.title': 'Resumo',
                 'easyplay.summary.content': 'EasyPlay, um software de reprodução de música integrado ao Twitter, é um projeto acadêmico desenvolvido durante minha formação técnica, em 2010. Focado em modelagem orientada a objetos e documentação arquitetural, o sistema foi projetado para exercitar conceitos de design de software, diagramas UML e versionamento.',
@@ -490,54 +487,52 @@
                 'uniflix.challenges.item1.title': 'Lógica de Recomendação',
                 'uniflix.challenges.item1.description': 'Implementação e comparação de múltiplas estratégias de recomendação, avaliando vantagens e limitações de cada abordagem.',
                 'uniflix.challenges.item2.title': 'Análise de Dados',
-                'uniflix.challenges.item2.description': 'Estruturação e tratamento eficiente dos dados para gerar recomendações relevantes de forma consistente.'
+                'uniflix.challenges.item2.description': 'Estruturação e tratamento eficiente dos dados para gerar recomendações relevantes de forma consistente.',
+                'otherProjects.title': 'Outros projetos',
+                'otherProjects.content': 'Se quiser ver mais projetos em que participei ou que criei, fale comigo no <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> ou no <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>!'
             },
             en: {
                 'nav.projects': 'Projects',
                 'nav.about': 'About',
                 'nav.contact': 'Contact',
                 'nav.cv': 'Resume',
-                'meetal.subtitle': 'ERP Platform in production',
-                'meetal.summary.title': 'Summary',
-                'meetal.summary.content': 'Meetal is an ERP platform for the recycling and scrap industry. Currently in production with initial active clients, the system implements AI models and was designed to offer scalability, efficiency, and high-level monitoring.',
-                'meetal.responsibilities.title': 'My Responsibilities',
-                'meetal.responsibilities.item1': 'Maintenance of schemas and database',
-                'meetal.responsibilities.item2': 'Implementation of new features',
-                'meetal.responsibilities.item3': 'Integration with external APIs and AI agents',
+                'meetal.summary.content': 'Meetal is a fast-evolving ERP platform focused on operational, financial, and inventory management for the recycling and industrial logistics sector.<br><br>The platform operates in production environments with active clients and ongoing product iteration, combining backend services, operational workflows, AI-powered features, and external integrations.',
+                'meetal.responsibilities.title': 'Key Contributions',
+                'meetal.responsibilities.item1': 'Backend services and API development for operational and financial workflows',
+                'meetal.responsibilities.item2': 'Integrations with external platforms, industrial hardware, and AI-powered services',
+                'meetal.responsibilities.item3': 'Participation in architectural decisions involving scalability and long-term maintainability',
+                'meetal.responsibilities.item4': 'Debugging, refactoring, and performance optimization in production-critical flows',
                 'meetal.stack.title': 'Stack & Architecture',
                 'meetal.challenges.title': 'Technical Challenges',
                 'meetal.challenges.performance.title': 'Performance',
-                'meetal.challenges.performance.description': 'Optimization of queries and other operations.',
+                'meetal.challenges.performance.description': 'Optimization of production-critical workflows and performance bottlenecks in fast-growing operational systems.',
                 'meetal.challenges.integrations.title': 'External Service Integrations',
-                'meetal.challenges.integrations.description': 'Development of robust integrations with external APIs.',
-                'reusa.subtitle': 'Water reuse management and negotiation application',
-                'reusa.summary.title': 'Summary',
-                'reusa.summary.content': 'ReUsa is an application developed in partnership with the State University of Rio de Janeiro (UERJ) focused on the management and negotiation of reuse water.',
-                'reusa.responsibilities.title': 'My Responsibilities',
-                'reusa.responsibilities.item1': 'Prototype development',
-                'reusa.responsibilities.item2': 'Requirements gathering',
-                'reusa.responsibilities.item3': 'Database and service layer structuring',
-                'reusa.responsibilities.item4': 'Technology team management',
+                'meetal.challenges.integrations.description': 'Development of integrations involving external APIs, AI-powered services, and industrial hardware through serial communication.',
+                'reusa.summary.content': 'ReUsa is a platform for management, mapping, and commercialization of reused water resources in the state of Rio de Janeiro.<br><br>The project was developed as part of a research and innovation initiative involving government agencies, water utility companies, and interdisciplinary teams, with the goal of supporting industrial reuse water operations through geospatial and operational data.',
+                'reusa.responsibilities.title': 'Key Contributions',
+                'reusa.responsibilities.item1': 'Technical leadership and architecture definition for a functional MVP presented to government and industry stakeholders',
+                'reusa.responsibilities.item2': 'Backend development, system modeling, and implementation of geospatial integrations using Google Maps APIs',
+                'reusa.responsibilities.item3': 'Definition of a flexible and adaptable architecture focused on rapid iteration and evolving requirements',
+                'reusa.responsibilities.item4': 'Technical documentation, delivery coordination, and stakeholder-oriented communication throughout the project',
                 'reusa.stack.title': 'Stack & Architecture',
                 'reusa.challenges.title': 'Technical Challenges',
-                'reusa.challenges.velocity.title': 'Velocity/Flexibility',
-                'reusa.challenges.velocity.description': 'Speed and flexibility in implementing new features.',
-                'reusa.challenges.business.title': 'Business rules',
-                'reusa.challenges.business.description': 'Implementation of business rules and complex formulas.',
-                'vandal.subtitle': 'Marketplace and printing',
-                'vandal.summary.title': 'Summary',
-                'vandal.summary.content': 'Vandal is an e-commerce/marketplace for t-shirt designs, where users earn a commission from the sale of their designs. <br>The administrative part of the system manages the logistics and production of the shirts.',
-                'vandal.responsibilities.title': 'My Responsibilities',
-                'vandal.responsibilities.item1': 'Full-stack site maintenance',
-                'vandal.responsibilities.item2': 'Development of logistics and production module',
-                'vandal.responsibilities.item3': 'Tech Lead',
-                'vandal.responsibilities.item4': 'API integration',
+                'reusa.challenges.geospatial.title': 'Geospatial Integrations',
+                'reusa.challenges.geospatial.description': 'Implementation of geolocation and mapping features using Google Maps APIs for industrial resource visualization and operational workflows.',
+                'reusa.challenges.modeling.title': 'Complex Modeling',
+                'reusa.challenges.modeling.description': 'Translation of domain-specific calculations, operational rules, and interdisciplinary requirements into maintainable application logic.',
+                'vandal.summary.content': 'Fast-growing print-on-demand marketplace and production platform focused on custom apparel and user-generated designs.<br><br>By then, the platform supported more than 70k product designs created by over 10k artists, combining e-commerce, operational workflows, production logistics, and backend systems in a high-autonomy startup environment.',
+                'vandal.responsibilities.title': 'Key Contributions',
+                'vandal.responsibilities.item1': 'Development of backend systems supporting marketplace operations, production workflows, and logistics',
+                'vandal.responsibilities.item2': 'Design and implementation of a custom back-office and production management module',
+                'vandal.responsibilities.item3': 'Integrations with payment gateways, shipping providers, AWS S3 workflows, and hardware devices through serial communication',
+                'vandal.responsibilities.item4': 'Participation in infrastructure decisions, backend architecture, debugging, and long-term maintenance of production systems',
+                'vandal.responsibilities.item5': 'Translation of business and operational requirements into scalable technical solutions',
                 'vandal.stack.title': 'Stack & Architecture',
                 'vandal.challenges.title': 'Technical Challenges',
-                'vandal.challenges.management.title': 'Management module',
-                'vandal.challenges.management.description': 'Smart order management to streamline production and logistics.',
-                'vandal.challenges.apis.title': 'Integration with external APIs',
-                'vandal.challenges.apis.description': 'Connection with Correios (mail), payment gateway (Pagar.me), etc.',
+                'vandal.challenges.scalability.title': 'Operational Scalability',
+                'vandal.challenges.scalability.description': 'Optimization of high-volume order processing and production workflows during traffic spikes and promotional periods.',
+                'vandal.challenges.external.title': 'External Integrations',
+                'vandal.challenges.external.description': 'Development of integrations involving payment gateways, shipping providers, AWS S3 workflows, and hardware devices through serial communication.',
                 'easyplay.subtitle': 'Player integrated with Twitter<br>(academic project)',
                 'easyplay.summary.title': 'Summary',
                 'easyplay.summary.content': 'EasyPlay, a music player integrated with Twitter, is an academic project developed during my technical training in 2010. Focused on object-oriented modeling and architectural documentation, the system was designed to practice software design concepts, UML diagrams, and version control.',
@@ -564,54 +559,52 @@
                 'uniflix.challenges.item1.title': 'Recommendation Logic',
                 'uniflix.challenges.item1.description': 'Implementation and comparison of multiple recommendation strategies, evaluating advantages and limitations of each approach.',
                 'uniflix.challenges.item2.title': 'Data Analysis',
-                'uniflix.challenges.item2.description': 'Efficient structuring and processing of data to generate relevant recommendations consistently.'
+                'uniflix.challenges.item2.description': 'Efficient structuring and processing of data to generate relevant recommendations consistently.',
+                'otherProjects.title': 'Other projects',
+                'otherProjects.content': 'If you want to see more projects I contributed to or built, feel free to get in touch on <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> or <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>!'
             },
             es: {
                 'nav.projects': 'Proyectos',
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contacto',
                 'nav.cv': 'Currículum',
-                'meetal.subtitle': 'Plataforma ERP en producción',
-                'meetal.summary.title': 'Resumen',
-                'meetal.summary.content': 'Meetal es una plataforma ERP para la industria del reciclaje y chatarra. Actualmente en producción con clientes iniciales activos, el sistema implementa modelos de IA y fue diseñado para ofrecer escalabilidad, eficiencia y monitoreo de alto nivel.',
-                'meetal.responsibilities.title': 'Mis responsabilidades',
-                'meetal.responsibilities.item1': 'Mantenimiento de <i>schemas</i> y base de datos',
-                'meetal.responsibilities.item2': 'Implementación de nuevas funcionalidades',
-                'meetal.responsibilities.item3': 'Integración con <i>APIs</i> externas y agentes de IA',
+                'meetal.summary.content': 'Meetal es una plataforma ERP en rápida evolución orientada a la gestión operativa, financiera y de inventarios en el sector del reciclaje y la logística industrial.<br><br>La plataforma opera en entornos de producción con clientes activos e iteración continua del producto, combinando servicios de <i>back-end</i>, flujos operativos, funcionalidades con IA y integraciones externas.',
+                'meetal.responsibilities.title': 'Contribuciones clave',
+                'meetal.responsibilities.item1': 'Desarrollo de servicios de <i>back-end</i> y <i>APIs</i> para flujos operativos y financieros',
+                'meetal.responsibilities.item2': 'Integraciones con plataformas externas, hardware industrial y servicios con IA',
+                'meetal.responsibilities.item3': 'Participación en decisiones arquitectónicas relacionadas con escalabilidad y mantenibilidad a largo plazo',
+                'meetal.responsibilities.item4': 'Depuración, refactorización y optimización del rendimiento en flujos críticos en producción',
                 'meetal.stack.title': '<i>Stack</i> y Arquitectura',
                 'meetal.challenges.title': 'Desafíos Técnicos',
                 'meetal.challenges.performance.title': 'Rendimiento',
-                'meetal.challenges.performance.description': 'Optimización de consultas y demás operaciones.',
+                'meetal.challenges.performance.description': 'Optimización de flujos críticos en producción y cuellos de botella de rendimiento en sistemas operativos de rápido crecimiento.',
                 'meetal.challenges.integrations.title': 'Integraciones con Servicios Externos',
-                'meetal.challenges.integrations.description': 'Desarrollo de integraciones robustas con <i>APIs</i> externas.',
-                'reusa.subtitle': 'Aplicación de gestión y negociación de aguas de reutilización',
-                'reusa.summary.title': 'Resumen',
-                'reusa.summary.content': 'ReUsa es una aplicación desarrollada en asociación con la Universidad del Estado de Río de Janeiro (UERJ) enfocada en la gestión y negociación de aguas de reutilización.',
-                'reusa.responsibilities.title': 'Mis responsabilidades',
-                'reusa.responsibilities.item1': 'Desarrollo del prototipo',
-                'reusa.responsibilities.item2': 'Recopilación de requisitos',
-                'reusa.responsibilities.item3': 'Estructuración de base de datos y capa de servicio',
-                'reusa.responsibilities.item4': 'Gestión del equipo de tecnología',
+                'meetal.challenges.integrations.description': 'Desarrollo de integraciones que involucran <i>APIs</i> externas, servicios con IA y hardware industrial mediante comunicación serial.',
+                'reusa.summary.content': 'ReUsa es una plataforma para la gestión, el mapeo y la comercialización de recursos hídricos de reutilización en el estado de Río de Janeiro.<br><br>El proyecto se desarrolló en el marco de una iniciativa de investigación e innovación con agencias gubernamentales, empresas de servicios de agua y equipos interdisciplinarios, con el objetivo de apoyar operaciones industriales de agua de reutilización mediante datos geoespaciales y operacionales.',
+                'reusa.responsibilities.title': 'Contribuciones clave',
+                'reusa.responsibilities.item1': 'Liderazgo técnico y definición de arquitectura para un MVP funcional presentado a organismos públicos y stakeholders de la industria',
+                'reusa.responsibilities.item2': 'Desarrollo de <i>back-end</i>, modelado de sistemas e implementación de integraciones geoespaciales con Google Maps APIs',
+                'reusa.responsibilities.item3': 'Definición de una arquitectura flexible y adaptable, orientada a iteración rápida y requisitos en evolución',
+                'reusa.responsibilities.item4': 'Documentación técnica, coordinación de entregas y comunicación orientada a stakeholders a lo largo del proyecto',
                 'reusa.stack.title': '<i>Stack</i> y Arquitectura',
                 'reusa.challenges.title': 'Desafíos Técnicos',
-                'reusa.challenges.velocity.title': 'Velocidad/Flexibilidad',
-                'reusa.challenges.velocity.description': 'Velocidad y flexibilidad en la implementación de nuevas funcionalidades.',
-                'reusa.challenges.business.title': 'Reglas de negocio',
-                'reusa.challenges.business.description': 'Implementación de reglas de negocio y fórmulas complejas.',
-                'vandal.subtitle': '<i>Marketplace</i> e impresión',
-                'vandal.summary.title': 'Resumen',
-                'vandal.summary.content': 'Vandal es un <i>e-commerce</i>/<i>marketplace</i> de diseños de camisetas, donde los usuarios ganan una comisión por la venta de sus diseños. <br>La parte administrativa del sistema gestiona la logística y producción de las camisetas.',
-                'vandal.responsibilities.title': 'Mis responsabilidades',
-                'vandal.responsibilities.item1': 'Mantenimiento <i>full-stack</i> del sitio',
-                'vandal.responsibilities.item2': 'Desarrollo del módulo de logística y producción',
-                'vandal.responsibilities.item3': '<i>Tech Lead</i>',
-                'vandal.responsibilities.item4': 'Integración con <i>APIs</i>',
+                'reusa.challenges.geospatial.title': 'Integraciones geoespaciales',
+                'reusa.challenges.geospatial.description': 'Implementación de geolocalización y mapas con Google Maps APIs para visualización de recursos industriales y flujos operativos.',
+                'reusa.challenges.modeling.title': 'Modelado complejo',
+                'reusa.challenges.modeling.description': 'Traducción de cálculos de dominio, reglas operativas y requisitos interdisciplinarios en lógica de aplicación mantenible.',
+                'vandal.summary.content': 'Marketplace de print-on-demand y plataforma de producción en rápido crecimiento centrados en prendas personalizadas y diseños generados por usuarios.<br><br>Para entonces, la plataforma soportaba más de 70 mil diseños de producto creados por más de 10 mil artistas, combinando <i>e-commerce</i>, flujos operativos, logística de producción y sistemas de <i>back-end</i> en un entorno de <i>startup</i> con alta autonomía.',
+                'vandal.responsibilities.title': 'Contribuciones clave',
+                'vandal.responsibilities.item1': 'Desarrollo de sistemas de <i>back-end</i> que soportaban operaciones del marketplace, flujos de producción y logística',
+                'vandal.responsibilities.item2': 'Diseño e implementación de un módulo a medida de <i>back-office</i> y gestión de la producción',
+                'vandal.responsibilities.item3': 'Integraciones con pasarelas de pago, proveedores de envío, flujos en AWS S3 y dispositivos de hardware mediante comunicación serial',
+                'vandal.responsibilities.item4': 'Participación en decisiones de infraestructura, arquitectura de <i>back-end</i>, depuración y mantenimiento a largo plazo de sistemas en producción',
+                'vandal.responsibilities.item5': 'Traducción de requisitos de negocio y operación en soluciones técnicas escalables',
                 'vandal.stack.title': '<i>Stack</i> y Arquitectura',
                 'vandal.challenges.title': 'Desafíos Técnicos',
-                'vandal.challenges.management.title': 'Módulo de gestión',
-                'vandal.challenges.management.description': 'Gestión inteligente de pedidos para facilitar la producción y logística.',
-                'vandal.challenges.apis.title': 'Integración con <i>APIs</i> externas',
-                'vandal.challenges.apis.description': 'Conexión con Correios, gateway de pago (Pagar.me), etc.',
+                'vandal.challenges.scalability.title': 'Escalabilidad operativa',
+                'vandal.challenges.scalability.description': 'Optimización del procesamiento de alto volumen de pedidos y flujos de producción durante picos de tráfico y periodos promocionales.',
+                'vandal.challenges.external.title': 'Integraciones externas',
+                'vandal.challenges.external.description': 'Desarrollo de integraciones que involucran pasarelas de pago, proveedores de envío, flujos en AWS S3 y dispositivos de hardware mediante comunicación serial.',
                 'easyplay.subtitle': 'Reproductor integrado con Twitter<br>(proyecto académico)',
                 'easyplay.summary.title': 'Resumen',
                 'easyplay.summary.content': 'EasyPlay, un software de reproducción de música integrado con Twitter, es un proyecto académico desarrollado durante mi formación técnica en 2010. Enfocado en modelado orientado a objetos y documentación arquitectural, el sistema fue diseñado para ejercitar conceptos de diseño de software, diagramas UML y control de versiones.',
@@ -637,7 +630,9 @@
                 'uniflix.challenges.item1.title': 'Lógica de Recomendación',
                 'uniflix.challenges.item1.description': 'Implementación y comparación de múltiples estrategias de recomendación, evaluando ventajas y limitaciones de cada enfoque.',
                 'uniflix.challenges.item2.title': 'Análisis de Datos',
-                'uniflix.challenges.item2.description': 'Estructuración y tratamiento eficiente de los datos para generar recomendaciones relevantes de forma consistente.'
+                'uniflix.challenges.item2.description': 'Estructuración y tratamiento eficiente de los datos para generar recomendaciones relevantes de forma consistente.',
+                'otherProjects.title': 'Otros proyectos',
+                'otherProjects.content': 'Si quieres ver más proyectos en los que participé o que desarrollé, contáctame en <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> o en <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>!'
             }
         };
 
@@ -703,17 +698,24 @@
         function scrollToNextSection(button) {
             const currentSection = button.closest('.project-section');
             let nextElement = currentSection.nextElementSibling;
-            
-            // Pular o separador se existir
-            if (nextElement && nextElement.classList.contains('section-divider')) {
+
+            while (nextElement) {
+                if (nextElement.classList.contains('section-divider')) {
+                    nextElement = nextElement.nextElementSibling;
+                    continue;
+                }
+                if (nextElement.classList.contains('project-section')) {
+                    if (nextElement.classList.contains('project-section--record-only')) {
+                        nextElement = nextElement.nextElementSibling;
+                        continue;
+                    }
+                    nextElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    return;
+                }
                 nextElement = nextElement.nextElementSibling;
-            }
-            
-            if (nextElement && nextElement.classList.contains('project-section')) {
-                nextElement.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
             }
         }
 
@@ -721,17 +723,24 @@
         function scrollToPreviousSection(button) {
             const currentSection = button.closest('.project-section');
             let previousElement = currentSection.previousElementSibling;
-            
-            // Pular o separador se existir
-            if (previousElement && previousElement.classList.contains('section-divider')) {
+
+            while (previousElement) {
+                if (previousElement.classList.contains('section-divider')) {
+                    previousElement = previousElement.previousElementSibling;
+                    continue;
+                }
+                if (previousElement.classList.contains('project-section')) {
+                    if (previousElement.classList.contains('project-section--record-only')) {
+                        previousElement = previousElement.previousElementSibling;
+                        continue;
+                    }
+                    previousElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    return;
+                }
                 previousElement = previousElement.previousElementSibling;
-            }
-            
-            if (previousElement && previousElement.classList.contains('project-section')) {
-                previousElement.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
             }
         }
     </script>

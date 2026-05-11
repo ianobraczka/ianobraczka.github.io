@@ -1,4 +1,4 @@
-p<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -15,49 +15,72 @@ p<!DOCTYPE html>
         }
 
         .about-container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 25px 30px;
+            padding: 48px 28px 48px;
         }
 
-        .about-layout {
-            display: flex;
-            gap: 60px;
-            align-items: flex-start;
+        .about-single {
+            width: 100%;
         }
 
-        .about-left {
-            flex: 0 0 450px;
-            min-width: 0;
+        .about-single__inner {
+            width: 100%;
             max-width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            align-items: stretch;
+            text-align: left;
         }
 
-        .about-right {
-            flex: 1;
+        /* Photo (left) + summary (right), same horizontal band */
+        .about-head {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: clamp(24px, 4vw, 56px);
+            margin-bottom: 72px;
+            width: 100%;
+        }
+
+        .about-head__photo {
+            flex: 0 0 auto;
+        }
+
+        .about-head__intro {
+            flex: 1 1 0;
             min-width: 0;
-            margin-left: 40px;
+            text-align: left;
         }
 
         .about-photo {
-            width: 300px;
-            height: 300px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
+            overflow: hidden;
+            flex-shrink: 0;
             background-color: #f5f5f5;
             border: 2px solid #e0e0e0;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
         }
 
         .about-section {
-            margin-bottom: 30px;
+            width: 100%;
+            margin-bottom: 40px;
             min-height: 0;
+            text-align: left;
         }
 
         .about-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-section--stack {
+            margin-bottom: 36px;
+        }
+
+        .about-section--stack .stack-category:last-child {
             margin-bottom: 0;
         }
 
@@ -66,20 +89,21 @@ p<!DOCTYPE html>
         .focus-text {
             overflow-wrap: break-word;
             word-wrap: break-word;
+            font-size: 1.05em;
+            line-height: 1.75;
+            color: #444;
+            margin-bottom: 0;
+            text-align: left;
+            width: 100%;
         }
 
         .section-title {
-            font-size: 2em;
-            color: #333;
-            margin-bottom: 20px;
+            font-size: 1.75em;
+            color: #2c2c2c;
+            margin-bottom: 12px;
             font-weight: 600;
-        }
-
-        .intro-text {
-            font-size: 1.15em;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 0;
+            letter-spacing: -0.02em;
+            width: 100%;
             text-align: left;
         }
 
@@ -87,15 +111,17 @@ p<!DOCTYPE html>
             list-style: none;
             padding: 0;
             margin: 0;
+            width: 100%;
         }
 
         .work-principles li {
-            color: #555;
-            padding: 10px 0;
-            padding-left: 24px;
+            color: #444;
+            padding: 8px 0;
+            padding-left: 22px;
+            padding-right: 0;
             position: relative;
-            line-height: 1.7;
-            font-size: 1.05em;
+            line-height: 1.55;
+            font-size: 1em;
             text-align: left;
         }
 
@@ -103,12 +129,18 @@ p<!DOCTYPE html>
             content: "▸";
             position: absolute;
             left: 0;
+            top: 8px;
             color: #007bff;
             font-weight: bold;
+            font-size: 0.95em;
         }
 
         .stack-category {
-            margin-bottom: 24px;
+            margin-bottom: 22px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .stack-category:last-child {
@@ -116,118 +148,69 @@ p<!DOCTYPE html>
         }
 
         .category-title {
-            font-size: 1.3em;
-            color: #333;
+            font-size: 1.2em;
+            color: #2c2c2c;
             margin-bottom: 10px;
             font-weight: 600;
+            width: 100%;
+            text-align: left;
         }
 
         .tech-list {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
+            justify-content: flex-start;
         }
 
         .tech-item {
             display: inline-block;
-            padding: 8px 16px;
-            background-color: #f5f5f5;
+            padding: 8px 14px;
+            background-color: rgba(255, 255, 255, 0.75);
             color: #333;
-            border-radius: 4px;
-            font-size: 0.95em;
+            border-radius: 6px;
+            font-size: 0.92em;
             font-weight: 500;
-            border: 1px solid #e0e0e0;
-        }
-
-        .experience-text {
-            color: #555;
-            line-height: 1.8;
-            font-size: 1.05em;
-            margin-bottom: 0;
-        }
-
-        .focus-text {
-            color: #555;
-            line-height: 1.8;
-            font-size: 1.05em;
-            margin-bottom: 0;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         }
 
         @media (max-width: 900px) {
             .about-container {
-                padding: 24px 16px 30px;
-                max-width: 100%;
+                padding: 32px 20px 36px;
             }
-            .about-layout {
-                flex-direction: column;
-                gap: 32px;
-                width: 100%;
-                min-width: 0;
-            }
-            .about-left {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 100%;
-            }
-            .about-right {
-                margin-left: 0;
-                width: 100%;
-            }
+
             .about-photo {
                 width: 220px;
                 height: 220px;
-                max-width: 100%;
             }
         }
 
         @media (max-width: 768px) {
             .about-container {
-                padding: 24px 16px 30px;
-                max-width: 100%;
+                padding: 28px 18px 32px;
             }
 
-            .about-layout {
+            .about-head {
                 flex-direction: column;
-                gap: 32px;
-                width: 100%;
-                min-width: 0;
+                align-items: flex-start;
+                gap: 24px;
+                margin-bottom: 52px;
             }
 
-            .about-left {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .about-right {
-                margin-left: 0;
-                width: 100%;
-            }
-
-            .about-photo {
-                width: 220px;
-                height: 220px;
-                max-width: 100%;
+            .about-section {
+                margin-bottom: 36px;
             }
 
             .section-title {
-                font-size: 1.7em;
-                margin-bottom: 20px;
-            }
-
-            .intro-text {
-                font-size: 1.05em;
-            }
-
-            .work-principles li {
-                font-size: 1em;
-                padding-left: 20px;
+                font-size: 1.55em;
             }
 
             .category-title {
-                font-size: 1.2em;
+                font-size: 1.12em;
             }
 
+            .intro-text,
             .experience-text,
             .focus-text {
                 font-size: 1em;
@@ -236,11 +219,11 @@ p<!DOCTYPE html>
 
         @media (max-width: 480px) {
             .about-container {
-                padding: 20px 12px 24px;
+                padding: 24px 14px 28px;
             }
 
-            .about-layout {
-                gap: 28px;
+            .about-head {
+                margin-bottom: 48px;
             }
 
             .about-photo {
@@ -249,35 +232,28 @@ p<!DOCTYPE html>
             }
 
             .section-title {
-                font-size: 1.5em;
-                margin-bottom: 16px;
+                font-size: 1.4em;
+                margin-bottom: 10px;
             }
 
             .about-section {
-                margin-bottom: 24px;
+                margin-bottom: 32px;
             }
 
-            .intro-text {
-                font-size: 1em;
+            .intro-text,
+            .experience-text,
+            .focus-text {
+                font-size: 0.95em;
             }
 
             .work-principles li {
                 font-size: 0.95em;
-                padding-left: 18px;
-            }
-
-            .category-title {
-                font-size: 1.1em;
+                padding-left: 20px;
             }
 
             .tech-item {
                 font-size: 0.85em;
                 padding: 6px 12px;
-            }
-
-            .experience-text,
-            .focus-text {
-                font-size: 0.95em;
             }
         }
     </style>
@@ -302,38 +278,38 @@ p<!DOCTYPE html>
     </header>
     <main>
         <div class="about-container">
-            <div class="about-layout">
-                <!-- Seção 1: Foto + Introdução + Visão -->
-                <div class="about-left">
-                    <div class="about-photo" style="display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.9em;">
-                        <img src="images/Ian Andrade (1).jpg" alt="Profile Photo" style="width: 100%; height: 100%; object-fit: cover; object-position: center 21%; border-radius: 50%;" onerror="this.style.display='none'; this.parentElement.textContent='Foto';">
+            <div class="about-single">
+                <div class="about-single__inner">
+                    <div class="about-head">
+                        <div class="about-head__photo">
+                            <div class="about-photo" style="display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.9em;">
+                                <img src="images/Ian Andrade (1).jpg" alt="Profile Photo" style="width: 100%; height: 100%; object-fit: cover; object-position: center 21%; border-radius: 50%;" onerror="this.style.display='none'; this.parentElement.textContent='Foto';">
+                            </div>
+                        </div>
+                        <div class="about-head__intro">
+                            <p class="intro-text" data-translate="about.intro.content">
+                                Olá, sou o Ian, e sou engenheiro de <i>back-end</i> com foco em sistemas em produção, <i>APIs</i>, integrações e manutenibilidade a longo prazo.<br><br>Ao longo dos anos, atuei em produtos em rápida evolução, plataformas operacionais e ambientes de <i>startups</i> com alta autonomia, ajudando a traduzir necessidades reais de negócio em soluções de software confiáveis.<br><br>Meu trabalho combina engenharia de <i>back-end</i>, tomada de decisão técnica e resolução pragmática de problemas — sobretudo em sistemas que exigem escalabilidade, confiabilidade operacional e evolução contínua.
+                            </p>
+                        </div>
                     </div>
-                    
-                    <!-- Introdução -->
+
                     <section class="about-section">
-                        <p class="intro-text" data-translate="about.intro.content">
-                            Me chamo Ian e sou desenvolvedor <i>back-end</i> pleno com foco em sistemas em produção. Tenho experiência em projetos de diversos tamanhos e <i>stacks</i>, atuando em diferentes mercados e contextos.
+                        <h2 class="section-title" data-translate="about.experience.title">Experiência profissional</h2>
+                        <p class="experience-text" data-translate="about.experience.content">
+                            Experiência na construção e manutenção de sistemas em produção, serviços de <i>back-end</i> e plataformas operacionais em ambientes de ritmo acelerado. Foco em arquiteturas escaláveis, integrações de <i>APIs</i>, manutenibilidade a longo prazo e práticas de engenharia pragmáticas.
                         </p>
                     </section>
 
-                    <!-- Outras habilidades -->
                     <section class="about-section">
-                        <h2 class="section-title" data-translate="about.work.title">Outras habilidades</h2>
-                        <ul class="work-principles">
-                            <li data-translate="about.work.principle1">Inglês fluente</li>
-                            <li data-translate="about.work.principle2">Práticas de desenvolvimento ágil</li>
-                            <li data-translate="about.work.principle3">Gestão de equipes | Liderança</li>
-                            <li data-translate="about.work.principle4">Vasta experiência com educação</li>
-                        </ul>
+                        <h2 class="section-title" data-translate="about.focus.title">Foco profissional</h2>
+                        <p class="focus-text" data-translate="about.focus.content">
+                            Tenho melhor desempenho em ambientes que valorizam senso de dono, responsabilidade técnica e colaboração próxima entre engenharia, produto e negócios. Interesse especial em sistemas de <i>back-end</i> que envolvam complexidade operacional, integrações, desafios de escalabilidade e evolução de produto a longo prazo.
+                        </p>
                     </section>
-                </div>
 
-                <!-- Seção 2: Stack + Experiência + Foco -->
-                <div class="about-right">
-                    <!-- Stack principal -->
-                    <section class="about-section">
+                    <section class="about-section about-section--stack">
                         <h2 class="section-title" data-translate="about.stack.title">Stack principal</h2>
-                        
+
                         <div class="stack-category">
                             <h3 class="category-title" data-translate="about.stack.languages">Linguagens</h3>
                             <div class="tech-list">
@@ -341,13 +317,11 @@ p<!DOCTYPE html>
                                 <span class="tech-item">Java</span>
                                 <span class="tech-item">Kotlin</span>
                                 <span class="tech-item">Ruby</span>
-                                <span class="tech-item">C#</span>
-                                <span class="tech-item">Node.js</span>
                             </div>
                         </div>
 
                         <div class="stack-category">
-                            <h3 class="category-title" data-translate="about.stack.databases">Bancos de dados</h3>
+                            <h3 class="category-title" data-translate="about.stack.databases">Dados e armazenamento</h3>
                             <div class="tech-list">
                                 <span class="tech-item">PostgreSQL</span>
                                 <span class="tech-item">MongoDB</span>
@@ -359,29 +333,25 @@ p<!DOCTYPE html>
                         <div class="stack-category">
                             <h3 class="category-title" data-translate="about.stack.cloud">Cloud / Infra</h3>
                             <div class="tech-list">
+                                <span class="tech-item">AWS</span>
+                                <span class="tech-item">Docker</span>
                                 <span class="tech-item">FastAPI</span>
                                 <span class="tech-item">AWS Lambda</span>
                                 <span class="tech-item">API Gateway</span>
-                                <span class="tech-item">Google Firebase</span>
-                                <span class="tech-item">Docker</span>
+                                <span class="tech-item">CI/CD</span>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Experiência profissional -->
                     <section class="about-section">
-                        <h2 class="section-title" data-translate="about.experience.title">Experiência profissional</h2>
-                        <p class="experience-text" data-translate="about.experience.content">
-                            Experiência com sistemas em produção, <i>APIs</i> e ambientes reais. Trabalho focado em entregar soluções robustas e escaláveis, sempre priorizando qualidade de código e manutenibilidade a longo prazo.
-                        </p>
-                    </section>
-
-                    <!-- Foco profissional -->
-                    <section class="about-section">
-                        <h2 class="section-title" data-translate="about.focus.title">Foco profissional</h2>
-                        <p class="focus-text" data-translate="about.focus.content">
-                            Busco resolver desafios técnicos complexos em sistemas de produção, com ênfase em arquitetura, performance e integrações. Me encaixo melhor em times que valorizam código limpo, boas práticas de engenharia e responsabilidade técnica sobre o produto.
-                        </p>
+                        <h2 class="section-title" data-translate="about.work.title">Outras habilidades</h2>
+                        <ul class="work-principles">
+                            <li data-translate="about.work.principle1">Inglês fluente</li>
+                            <li data-translate="about.work.principle2">Liderança técnica e mentoria</li>
+                            <li data-translate="about.work.principle3">Práticas de desenvolvimento ágil</li>
+                            <li data-translate="about.work.principle4">Mentalidade de engenharia orientada a produto</li>
+                            <li data-translate="about.work.principle5">Comunicação clara entre contextos técnicos e de negócio</li>
+                        </ul>
                     </section>
                 </div>
             </div>
@@ -395,60 +365,63 @@ p<!DOCTYPE html>
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contato',
                 'nav.cv': 'Currículo',
-                'about.intro.content': 'Me chamo Ian e sou desenvolvedor <i>back-end</i> pleno com foco em sistemas em produção. Tenho experiência em projetos de diversos tamanhos e <i>stacks</i>, atuando em diferentes mercados e contextos.',
+                'about.intro.content': 'Olá, sou o Ian, e sou engenheiro de <i>back-end</i> com foco em sistemas em produção, <i>APIs</i>, integrações e manutenibilidade a longo prazo.<br><br>Ao longo dos anos, atuei em produtos em rápida evolução, plataformas operacionais e ambientes de <i>startups</i> com alta autonomia, ajudando a traduzir necessidades reais de negócio em soluções de software confiáveis.<br><br>Meu trabalho combina engenharia de <i>back-end</i>, tomada de decisão técnica e resolução pragmática de problemas — sobretudo em sistemas que exigem escalabilidade, confiabilidade operacional e evolução contínua.',
                 'about.work.title': 'Outras habilidades',
                 'about.work.principle1': 'Inglês fluente',
-                'about.work.principle2': 'Práticas de desenvolvimento ágil',
-                'about.work.principle3': 'Gestão de equipes | Liderança',
-                'about.work.principle4': 'Vasta experiência com educação',
+                'about.work.principle2': 'Liderança técnica e mentoria',
+                'about.work.principle3': 'Práticas de desenvolvimento ágil',
+                'about.work.principle4': 'Mentalidade de engenharia orientada a produto',
+                'about.work.principle5': 'Comunicação clara entre contextos técnicos e de negócio',
                 'about.stack.title': 'Stack principal',
                 'about.stack.languages': 'Linguagens',
-                'about.stack.databases': 'Bancos de dados',
+                'about.stack.databases': 'Dados e armazenamento',
                 'about.stack.cloud': 'Cloud / Infra',
                 'about.experience.title': 'Experiência profissional',
-                'about.experience.content': 'Experiência com sistemas em produção, <i>APIs</i> e ambientes reais. Trabalho focado em entregar soluções robustas e escaláveis, sempre priorizando qualidade de código e manutenibilidade a longo prazo.',
+                'about.experience.content': 'Experiência na construção e manutenção de sistemas em produção, serviços de <i>back-end</i> e plataformas operacionais em ambientes de ritmo acelerado. Foco em arquiteturas escaláveis, integrações de <i>APIs</i>, manutenibilidade a longo prazo e práticas de engenharia pragmáticas.',
                 'about.focus.title': 'Foco profissional',
-                'about.focus.content': 'Busco resolver desafios técnicos complexos em sistemas de produção, com ênfase em arquitetura, performance e integrações. Me encaixo melhor em times que valorizam código limpo, boas práticas de engenharia e responsabilidade técnica sobre o produto.'
+                'about.focus.content': 'Tenho melhor desempenho em ambientes que valorizam senso de dono, responsabilidade técnica e colaboração próxima entre engenharia, produto e negócios. Interesse especial em sistemas de <i>back-end</i> que envolvam complexidade operacional, integrações, desafios de escalabilidade e evolução de produto a longo prazo.'
             },
             en: {
                 'nav.projects': 'Projects',
                 'nav.about': 'About',
                 'nav.contact': 'Contact',
                 'nav.cv': 'Resume',
-                'about.intro.content': 'My name is Ian and I am a mid-level back-end developer focused on production systems. I have experience in projects of various sizes and stacks, working in different markets and contexts.',
+                'about.intro.content': 'Hello, I\'m Ian, and I\'m a backend engineer focused on production systems, APIs, integrations, and long-term maintainability.<br><br>Over the years, I\'ve worked on fast-evolving products, operational platforms, and high-autonomy startup environments, helping translate real business needs into reliable software solutions.<br><br>My work combines backend engineering, technical decision-making, and pragmatic problem solving — especially in systems that require scalability, operational reliability, and continuous evolution.',
                 'about.work.title': 'Other skills',
                 'about.work.principle1': 'Fluent English',
-                'about.work.principle2': 'Agile development practices',
-                'about.work.principle3': 'Team management | Leadership',
-                'about.work.principle4': 'Extensive experience in education',
+                'about.work.principle2': 'Technical leadership & mentoring',
+                'about.work.principle3': 'Agile development practices',
+                'about.work.principle4': 'Product-oriented engineering mindset',
+                'about.work.principle5': 'Clear communication across technical and business contexts',
                 'about.stack.title': 'Main stack',
                 'about.stack.languages': 'Languages',
-                'about.stack.databases': 'Databases',
+                'about.stack.databases': 'Data & storage',
                 'about.stack.cloud': 'Cloud / Infra',
                 'about.experience.title': 'Professional experience',
-                'about.experience.content': 'Experience with production systems, APIs, and real-world environments. Work focused on delivering robust and scalable solutions, always prioritizing code quality and long-term maintainability.',
+                'about.experience.content': 'Experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments. Focused on scalable architectures, API integrations, long-term maintainability, and pragmatic engineering practices.',
                 'about.focus.title': 'Professional focus',
-                'about.focus.content': 'I seek to solve complex technical challenges in production systems, with emphasis on architecture, performance, and integrations. I fit best in teams that value clean code, good engineering practices, and technical responsibility over the product.'
+                'about.focus.content': 'I work best in environments that value ownership, technical responsibility, and close collaboration between engineering, product, and business teams. Particularly interested in backend systems that involve operational complexity, integrations, scalability challenges, and long-term product evolution.'
             },
             es: {
                 'nav.projects': 'Proyectos',
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contacto',
                 'nav.cv': 'Currículum',
-                'about.intro.content': 'Me llamo Ian y soy desarrollador <i>back-end</i> de nivel medio enfocado en sistemas en producción. Tengo experiencia en proyectos de diversos tamaños y <i>stacks</i>, trabajando en diferentes mercados y contextos.',
+                'about.intro.content': 'Hola, soy Ian, y soy ingeniero de <i>back-end</i> centrado en sistemas en producción, <i>APIs</i>, integraciones y mantenibilidad a largo plazo.<br><br>A lo largo de los años he trabajado en productos de rápida evolución, plataformas operativas y entornos de <i>startups</i> con alta autonomía, ayudando a traducir necesidades reales de negocio en soluciones de software fiables.<br><br>Mi trabajo combina ingeniería de <i>back-end</i>, toma de decisiones técnicas y resolución pragmática de problemas — sobre todo en sistemas que requieren escalabilidad, fiabilidad operativa y evolución continua.',
                 'about.work.title': 'Otras habilidades',
                 'about.work.principle1': 'Inglés fluido',
-                'about.work.principle2': 'Prácticas de desarrollo ágil',
-                'about.work.principle3': 'Gestión de equipos | Liderazgo',
-                'about.work.principle4': 'Amplia experiencia en educación',
+                'about.work.principle2': 'Liderazgo técnico y mentoría',
+                'about.work.principle3': 'Prácticas de desarrollo ágil',
+                'about.work.principle4': 'Mentalidad de ingeniería orientada al producto',
+                'about.work.principle5': 'Comunicación clara entre contextos técnicos y de negocio',
                 'about.stack.title': 'Stack principal',
                 'about.stack.languages': 'Lenguajes',
-                'about.stack.databases': 'Bases de datos',
+                'about.stack.databases': 'Datos y almacenamiento',
                 'about.stack.cloud': 'Cloud / Infra',
                 'about.experience.title': 'Experiencia profesional',
-                'about.experience.content': 'Experiencia con sistemas en producción, <i>APIs</i> y entornos reales. Trabajo enfocado en entregar soluciones robustas y escalables, siempre priorizando la calidad del código y la mantenibilidad a largo plazo.',
+                'about.experience.content': 'Experiencia construyendo y manteniendo sistemas en producción, servicios de <i>back-end</i> y plataformas operativas en entornos de ritmo acelerado. Enfoque en arquitecturas escalables, integraciones de <i>APIs</i>, mantenibilidad a largo plazo y prácticas de ingeniería pragmáticas.',
                 'about.focus.title': 'Enfoque profesional',
-                'about.focus.content': 'Busco resolver desafíos técnicos complejos en sistemas de producción, con énfasis en arquitectura, rendimiento e integraciones. Me adapto mejor a equipos que valoran código limpio, buenas prácticas de ingeniería y responsabilidad técnica sobre el producto.'
+                'about.focus.content': 'Trabajo mejor en entornos que valoran el <i>ownership</i>, la responsabilidad técnica y la colaboración cercana entre ingeniería, producto y negocio. Interés particular en sistemas de <i>back-end</i> que impliquen complejidad operacional, integraciones, retos de escalabilidad y evolución del producto a largo plazo.'
             }
         };
 
