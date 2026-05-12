@@ -40,7 +40,7 @@
             align-items: center;
             justify-content: flex-start;
             gap: clamp(24px, 4vw, 56px);
-            margin-bottom: 72px;
+            margin-bottom: 30px;
             width: 100%;
         }
 
@@ -55,8 +55,8 @@
         }
 
         .about-photo {
-            width: 260px;
-            height: 260px;
+            width: 230px;
+            height: 230px;
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
@@ -84,7 +84,44 @@
             margin-bottom: 0;
         }
 
-        .intro-text,
+        /* Main stack (left) + Other skills (right), full width below like CV education/cert row */
+        .about-stack-skills-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 40px;
+            align-items: start;
+            margin-bottom: 0;
+            min-width: 0;
+        }
+        .about-stack-skills-row .about-stack-skills-row__col {
+            margin-bottom: 0;
+            min-width: 0;
+        }
+        .about-stack-skills-row .about-section--stack {
+            margin-bottom: 0;
+        }
+        .about-stack-skills-row > .about-stack-skills-row__col:last-child {
+            padding-top: 5px;
+        }
+
+        .about-single__inner > section:nth-child(2) {
+            margin-bottom: 22px;
+        }
+        .about-single__inner > section:nth-child(3) {
+            margin-bottom: 44px;
+        }
+
+        .intro-text {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            font-size: 1.05em;
+            line-height: 1.48;
+            color: #444;
+            margin-bottom: 0;
+            text-align: left;
+            width: 100%;
+        }
+
         .experience-text,
         .focus-text {
             overflow-wrap: break-word;
@@ -195,11 +232,19 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 24px;
-                margin-bottom: 52px;
+                margin-bottom: 30px;
             }
 
             .about-section {
                 margin-bottom: 36px;
+            }
+
+            .about-stack-skills-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .about-stack-skills-row .about-stack-skills-row__col:first-child {
+                margin-bottom: 28px;
             }
 
             .section-title {
@@ -215,6 +260,9 @@
             .focus-text {
                 font-size: 1em;
             }
+            .intro-text {
+                line-height: 1.45;
+            }
         }
 
         @media (max-width: 480px) {
@@ -223,7 +271,7 @@
             }
 
             .about-head {
-                margin-bottom: 48px;
+                margin-bottom: 30px;
             }
 
             .about-photo {
@@ -240,10 +288,20 @@
                 margin-bottom: 32px;
             }
 
+            .about-stack-skills-row .about-stack-skills-row__col {
+                margin-bottom: 0;
+            }
+            .about-stack-skills-row .about-stack-skills-row__col:first-child {
+                margin-bottom: 24px;
+            }
+
             .intro-text,
             .experience-text,
             .focus-text {
                 font-size: 0.95em;
+            }
+            .intro-text {
+                line-height: 1.42;
             }
 
             .work-principles li {
@@ -288,7 +346,7 @@
                         </div>
                         <div class="about-head__intro">
                             <p class="intro-text" data-translate="about.intro.content">
-                                Olá, sou o Ian, e sou engenheiro de <i>back-end</i> com foco em sistemas em produção, <i>APIs</i>, integrações e manutenibilidade a longo prazo.<br><br>Ao longo dos anos, atuei em produtos em rápida evolução, plataformas operacionais e ambientes de <i>startups</i> com alta autonomia, ajudando a traduzir necessidades reais de negócio em soluções de software confiáveis.<br><br>Meu trabalho combina engenharia de <i>back-end</i>, tomada de decisão técnica e resolução pragmática de problemas — sobretudo em sistemas que exigem escalabilidade, confiabilidade operacional e evolução contínua.
+                                Hello, I'm Ian, and I'm a backend engineer focused on production systems, APIs, integrations, and long-term maintainability. Over the years, I've worked on fast-evolving products, operational platforms, and high-autonomy startup environments, helping translate real business needs into reliable software solutions.<br><br>My work combines backend engineering, technical decision-making, and pragmatic problem solving — especially in systems that require scalability, operational reliability, and continuous evolution.
                             </p>
                         </div>
                     </div>
@@ -303,13 +361,12 @@
                     <section class="about-section">
                         <h2 class="section-title" data-translate="about.focus.title">Foco profissional</h2>
                         <p class="focus-text" data-translate="about.focus.content">
-                            Tenho melhor desempenho em ambientes que valorizam senso de dono, responsabilidade técnica e colaboração próxima entre engenharia, produto e negócios. Interesse especial em sistemas de <i>back-end</i> que envolvam complexidade operacional, integrações, desafios de escalabilidade e evolução de produto a longo prazo.
+                            I work best in environments that value ownership, technical responsibility and close collaboration between engineering, product, and business. Particularly interested in systems that involve operational complexity, integrations, scalability challenges, and long-term product evolution.
                         </p>
                     </section>
 
-                    <section class="about-section about-section--stack">
-                        <h2 class="section-title" data-translate="about.stack.title">Stack principal</h2>
-
+                    <div class="about-stack-skills-row">
+                    <section class="about-section about-section--stack about-stack-skills-row__col">
                         <div class="stack-category">
                             <h3 class="category-title" data-translate="about.stack.languages">Linguagens</h3>
                             <div class="tech-list">
@@ -336,14 +393,13 @@
                                 <span class="tech-item">AWS</span>
                                 <span class="tech-item">Docker</span>
                                 <span class="tech-item">FastAPI</span>
-                                <span class="tech-item">AWS Lambda</span>
                                 <span class="tech-item">API Gateway</span>
                                 <span class="tech-item">CI/CD</span>
                             </div>
                         </div>
                     </section>
 
-                    <section class="about-section">
+                    <section class="about-section about-stack-skills-row__col">
                         <h2 class="section-title" data-translate="about.work.title">Outras habilidades</h2>
                         <ul class="work-principles">
                             <li data-translate="about.work.principle1">Inglês fluente</li>
@@ -353,6 +409,7 @@
                             <li data-translate="about.work.principle5">Comunicação clara entre contextos técnicos e de negócio</li>
                         </ul>
                     </section>
+                    </div>
                 </div>
             </div>
         </div>
@@ -365,63 +422,60 @@
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contato',
                 'nav.cv': 'Currículo',
-                'about.intro.content': 'Olá, sou o Ian, e sou engenheiro de <i>back-end</i> com foco em sistemas em produção, <i>APIs</i>, integrações e manutenibilidade a longo prazo.<br><br>Ao longo dos anos, atuei em produtos em rápida evolução, plataformas operacionais e ambientes de <i>startups</i> com alta autonomia, ajudando a traduzir necessidades reais de negócio em soluções de software confiáveis.<br><br>Meu trabalho combina engenharia de <i>back-end</i>, tomada de decisão técnica e resolução pragmática de problemas — sobretudo em sistemas que exigem escalabilidade, confiabilidade operacional e evolução contínua.',
+                'about.intro.content': 'Olá, sou o Ian, e sou engenheiro de <i>back-end</i> focado em sistemas em produção, <i>APIs</i>, integrações e manutenibilidade a longo prazo. Ao longo dos anos, trabalhei em produtos em rápida evolução, plataformas operacionais e ambientes de <i>startups</i> com alta autonomia, ajudando a traduzir necessidades reais de negócio em soluções de software confiáveis.<br><br>Meu trabalho combina engenharia de <i>back-end</i>, tomada de decisão técnica e resolução pragmática de problemas — sobretudo em sistemas que exigem escalabilidade, confiabilidade operacional e evolução contínua.',
                 'about.work.title': 'Outras habilidades',
                 'about.work.principle1': 'Inglês fluente',
                 'about.work.principle2': 'Liderança técnica e mentoria',
                 'about.work.principle3': 'Práticas de desenvolvimento ágil',
                 'about.work.principle4': 'Mentalidade de engenharia orientada a produto',
                 'about.work.principle5': 'Comunicação clara entre contextos técnicos e de negócio',
-                'about.stack.title': 'Stack principal',
                 'about.stack.languages': 'Linguagens',
                 'about.stack.databases': 'Dados e armazenamento',
                 'about.stack.cloud': 'Cloud / Infra',
                 'about.experience.title': 'Experiência profissional',
                 'about.experience.content': 'Experiência na construção e manutenção de sistemas em produção, serviços de <i>back-end</i> e plataformas operacionais em ambientes de ritmo acelerado. Foco em arquiteturas escaláveis, integrações de <i>APIs</i>, manutenibilidade a longo prazo e práticas de engenharia pragmáticas.',
                 'about.focus.title': 'Foco profissional',
-                'about.focus.content': 'Tenho melhor desempenho em ambientes que valorizam senso de dono, responsabilidade técnica e colaboração próxima entre engenharia, produto e negócios. Interesse especial em sistemas de <i>back-end</i> que envolvam complexidade operacional, integrações, desafios de escalabilidade e evolução de produto a longo prazo.'
+                'about.focus.content': 'Tenho melhor desempenho em ambientes que valorizam senso de dono, responsabilidade técnica e colaboração próxima entre engenharia, produto e negócios. Interesse especial em sistemas que envolvam complexidade operacional, integrações, desafios de escalabilidade e evolução de produto a longo prazo.'
             },
             en: {
                 'nav.projects': 'Projects',
                 'nav.about': 'About',
                 'nav.contact': 'Contact',
                 'nav.cv': 'Resume',
-                'about.intro.content': 'Hello, I\'m Ian, and I\'m a backend engineer focused on production systems, APIs, integrations, and long-term maintainability.<br><br>Over the years, I\'ve worked on fast-evolving products, operational platforms, and high-autonomy startup environments, helping translate real business needs into reliable software solutions.<br><br>My work combines backend engineering, technical decision-making, and pragmatic problem solving — especially in systems that require scalability, operational reliability, and continuous evolution.',
+                'about.intro.content': 'Hello, I\'m Ian, and I\'m a backend engineer focused on production systems, APIs, integrations, and long-term maintainability. Over the years, I\'ve worked on fast-evolving products, operational platforms, and high-autonomy startup environments, helping translate real business needs into reliable software solutions.<br><br>My work combines backend engineering, technical decision-making, and pragmatic problem solving — especially in systems that require scalability, operational reliability, and continuous evolution.',
                 'about.work.title': 'Other skills',
                 'about.work.principle1': 'Fluent English',
                 'about.work.principle2': 'Technical leadership & mentoring',
                 'about.work.principle3': 'Agile development practices',
                 'about.work.principle4': 'Product-oriented engineering mindset',
                 'about.work.principle5': 'Clear communication across technical and business contexts',
-                'about.stack.title': 'Main stack',
                 'about.stack.languages': 'Languages',
                 'about.stack.databases': 'Data & storage',
                 'about.stack.cloud': 'Cloud / Infra',
                 'about.experience.title': 'Professional experience',
                 'about.experience.content': 'Experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments. Focused on scalable architectures, API integrations, long-term maintainability, and pragmatic engineering practices.',
                 'about.focus.title': 'Professional focus',
-                'about.focus.content': 'I work best in environments that value ownership, technical responsibility, and close collaboration between engineering, product, and business teams. Particularly interested in backend systems that involve operational complexity, integrations, scalability challenges, and long-term product evolution.'
+                'about.focus.content': 'I work best in environments that value ownership, technical responsibility and close collaboration between engineering, product, and business. Particularly interested in systems that involve operational complexity, integrations, scalability challenges, and long-term product evolution.'
             },
             es: {
                 'nav.projects': 'Proyectos',
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contacto',
                 'nav.cv': 'Currículum',
-                'about.intro.content': 'Hola, soy Ian, y soy ingeniero de <i>back-end</i> centrado en sistemas en producción, <i>APIs</i>, integraciones y mantenibilidad a largo plazo.<br><br>A lo largo de los años he trabajado en productos de rápida evolución, plataformas operativas y entornos de <i>startups</i> con alta autonomía, ayudando a traducir necesidades reales de negocio en soluciones de software fiables.<br><br>Mi trabajo combina ingeniería de <i>back-end</i>, toma de decisiones técnicas y resolución pragmática de problemas — sobre todo en sistemas que requieren escalabilidad, fiabilidad operativa y evolución continua.',
+                'about.intro.content': 'Hola, soy Ian, y soy ingeniero de <i>back-end</i> centrado en sistemas en producción, <i>APIs</i>, integraciones y mantenibilidad a largo plazo. A lo largo de los años he trabajado en productos de rápida evolución, plataformas operativas y entornos de <i>startups</i> con alta autonomía, ayudando a traducir necesidades reales de negocio en soluciones de software fiables.<br><br>Mi trabajo combina ingeniería de <i>back-end</i>, toma de decisiones técnicas y resolución pragmática de problemas — sobre todo en sistemas que requieren escalabilidad, fiabilidad operativa y evolución continua.',
                 'about.work.title': 'Otras habilidades',
                 'about.work.principle1': 'Inglés fluido',
                 'about.work.principle2': 'Liderazgo técnico y mentoría',
                 'about.work.principle3': 'Prácticas de desarrollo ágil',
                 'about.work.principle4': 'Mentalidad de ingeniería orientada al producto',
                 'about.work.principle5': 'Comunicación clara entre contextos técnicos y de negocio',
-                'about.stack.title': 'Stack principal',
                 'about.stack.languages': 'Lenguajes',
                 'about.stack.databases': 'Datos y almacenamiento',
                 'about.stack.cloud': 'Cloud / Infra',
                 'about.experience.title': 'Experiencia profesional',
                 'about.experience.content': 'Experiencia construyendo y manteniendo sistemas en producción, servicios de <i>back-end</i> y plataformas operativas en entornos de ritmo acelerado. Enfoque en arquitecturas escalables, integraciones de <i>APIs</i>, mantenibilidad a largo plazo y prácticas de ingeniería pragmáticas.',
                 'about.focus.title': 'Enfoque profesional',
-                'about.focus.content': 'Trabajo mejor en entornos que valoran el <i>ownership</i>, la responsabilidad técnica y la colaboración cercana entre ingeniería, producto y negocio. Interés particular en sistemas de <i>back-end</i> que impliquen complejidad operacional, integraciones, retos de escalabilidad y evolución del producto a largo plazo.'
+                'about.focus.content': 'Trabajo mejor en entornos que valoran el <i>ownership</i>, la responsabilidad técnica y la colaboración cercana entre ingeniería, producto y negocio. Interés particular en sistemas que impliquen complejidad operacional, integraciones, retos de escalabilidad y evolución del producto a largo plazo.'
             }
         };
 
