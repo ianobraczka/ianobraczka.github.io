@@ -8,8 +8,8 @@ Personal portfolio site — a single place for **projects**, **background**, **c
 
 ## What’s here
 
-- **Projects** (`index.html`) — featured write-ups for **Meetal**, **Vandal**, and **ReUsa**. **EasyPlay** and **uniflix** stay in the markup as archive-style sections (hidden in the normal scroll experience).
-- **About** (`about.html`), **Contact** (`contact.html`), and **Résumé** (`cv.html`) — the usual portfolio pages; PDFs ship in the repo where the CV links to them.
+- **Projects** (`index.html`) — featured write-ups for **Meetal**, **Vandal**, and **ReUsa**. **EasyPlay** and **uniflix** stay in the markup as archive-style sections (hidden in the normal scroll experience). Images load from **`assets/images/`**.
+- **About** (`about.html`), **Contact** (`contact.html`), and **Résumé** (`cv.html`) — the usual portfolio pages; résumé PDFs and exports live under **`assets/documents/`** (the CV page uses print-to-PDF from the HTML).
 
 ## Hosting
 

@@ -4,10 +4,10 @@ from pathlib import Path
 
 from PIL import Image
 
-ROOT = Path(__file__).resolve().parent
-DIAGRAM = ROOT / "Activities diagram.png"
-LOGO = ROOT / "Screenshot from 2026-01-28 13-58-18.png"
-OUTPUT = ROOT / "images" / "easyplay.jpg"
+ROOT = Path(__file__).resolve().parent.parent
+DIAGRAM = ROOT / "assets/diagrams/Activities diagram.png"
+LOGO = ROOT / "assets/screenshots/Screenshot from 2026-01-28 13-58-18.png"
+OUTPUT = ROOT / "assets/images/easyplay.jpg"
 
 TARGET_WIDTH = 800
 TARGET_HEIGHT = 600  # 4/3
