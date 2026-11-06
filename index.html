@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090a0f">
     <title>ianobraczka | portfolio</title>
     <link rel="icon" type="image/png" href="assets/icons/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projects.css">
 </head>
-<body>
+<body class="projects-page">
+    <div class="projects-grid" aria-hidden="true"></div>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html" data-translate="nav.projects">Projects</a></li>
-                <li><a href="about.html" data-translate="nav.about">About</a></li>
-                <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
-                <li><a href="cv.html" data-translate="nav.cv">Resume</a></li>
+                <li><a href="index.html" data-translate="nav.projects">Projetos</a></li>
+                <li><a href="about.html" data-translate="nav.about">Sobre</a></li>
+                <li><a href="contact.html" data-translate="nav.contact">Contato</a></li>
+                <li><a href="cv.html" data-translate="nav.cv">Currículo</a></li>
             </ul>
             <div class="language-selector">
                 <select id="languageSelect" onchange="changeLanguage(this.value)">
@@ -29,614 +32,495 @@
         </nav>
     </header>
     <main>
-        <!-- Seção: Projeto Meetal -->
-        <section class="project-section bg-green meetal-section-compact">
-            <div class="project-layout layout-left">
-                <!-- Coluna A: Foto, Título e Subtítulo -->
-                <div class="project-left">
-                    <div class="project-image-placeholder">
-                        <img src="assets/images/meetal.jpg" alt="Meetal Project" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px;">
-                    </div>
-                    <div class="project-header">
-                        <h1 class="project-title">Meetal</h1>
-                    </div>
-                    <div class="project-block project-block-summary-left">
-                        <p class="block-content" data-translate="meetal.summary.content">
-                            Meetal é uma plataforma ERP em rápida evolução voltada à gestão operacional, financeira e de estoques no setor de reciclagem e logística industrial.<br><br>A plataforma opera em ambientes de produção com clientes ativos e iteração contínua de produto, combinando serviços de <i>back-end</i>, fluxos operacionais, recursos com IA e integrações externas.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Coluna B: Conteúdo -->
-                <div class="project-right">
-                    <!-- Responsabilidades -->
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="meetal.responsibilities.title">Contribuições principais</h2>
-                        <ul class="responsibilities-list responsibilities-list-charbullets">
-                            <li data-translate="meetal.responsibilities.item1">Desenvolvimento de serviços de <i>back-end</i> e <i>APIs</i> para fluxos operacionais e financeiros</li>
-                            <li data-translate="meetal.responsibilities.item2">Integrações com plataformas externas, hardware industrial e serviços com IA</li>
-                            <li data-translate="meetal.responsibilities.item3">Participação em decisões arquiteturais envolvendo escalabilidade e manutenibilidade a longo prazo</li>
-                            <li data-translate="meetal.responsibilities.item4">Depuração, refatoração e otimização de desempenho em fluxos críticos em produção</li>
-                        </ul>
-                    </div>
-
-                    <!-- Stack & Arquitetura -->
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="meetal.stack.title"><i>Stack</i> & Arquitetura</h2>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">FastAPI</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">DynamoDB</span>
-                            <span class="tech-badge">API Gateway</span>
-                            <span class="tech-badge">Docker</span>
-                            <span class="tech-badge">OpenAI</span>
-                        </div>
-                    </div>
-
-                    <!-- Desafios Técnicos -->
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="meetal.challenges.title">Desafios Técnicos</h2>
-                        <div class="challenges-list">
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="meetal.challenges.performance.title">Performance</h3>
-                                <p class="challenge-description" data-translate="meetal.challenges.performance.description">
-                                    Otimização de fluxos críticos em produção e gargalos de desempenho em sistemas operacionais em rápido crescimento.
-                                </p>
-                            </div>
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="meetal.challenges.integrations.title">Integrações com Serviços Externos</h3>
-                                <p class="challenge-description" data-translate="meetal.challenges.integrations.description">
-                                    Desenvolvimento de integrações envolvendo <i>APIs</i> externas, serviços com IA e hardware industrial por comunicação serial.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Botão de scroll para seção anterior -->
-            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <!-- Botão de scroll para próxima seção -->
-            <button class="scroll-down-btn" onclick="scrollToNextSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </section>
-
-        <!-- Separador -->
-        <div class="section-divider"></div>
-
-        <!-- Seção: Projeto Vandal -->
-        <section class="project-section bg-white meetal-section-compact vandal-project-section">
-            <div class="project-layout layout-right">
-                <div class="project-left">
-                    <div class="project-image-placeholder">
-                        <img src="assets/images/vandal.jpg" alt="Vandal Project" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px;">
-                    </div>
-                    <div class="project-header">
-                        <h1 class="project-title">Vandal</h1>
-                    </div>
-                    <div class="project-block project-block-summary-left">
-                        <p class="block-content" data-translate="vandal.summary.content">
-                            Marketplace de print-on-demand e plataforma de produção em rápido crescimento voltados a vestuário personalizado e designs criados por usuários.<br><br>À época, a plataforma suportava mais de 70 mil designs de produtos criados por mais de 10 mil artistas, combinando <i>e-commerce</i>, fluxos operacionais, logística de produção e sistemas de <i>back-end</i> em ambiente de <i>startup</i> com alta autonomia.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-right">
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="vandal.responsibilities.title">Contribuições principais</h2>
-                        <ul class="responsibilities-list responsibilities-list-charbullets">
-                            <li data-translate="vandal.responsibilities.item1">Desenvolvimento de sistemas de <i>back-end</i> que sustentavam operações do marketplace, fluxos de produção e logística</li>
-                            <li data-translate="vandal.responsibilities.item2">Concepção e implementação de um módulo customizado de <i>back-office</i> e gestão da produção</li>
-                            <li data-translate="vandal.responsibilities.item3">Integrações com gateways de pagamento, transportadoras, fluxos em AWS S3 e dispositivos de hardware por comunicação serial</li>
-                            <li data-translate="vandal.responsibilities.item4">Participação em decisões de infraestrutura, arquitetura de <i>back-end</i>, depuração e manutenção de longo prazo de sistemas em produção</li>
-                            <li data-translate="vandal.responsibilities.item5">Tradução de requisitos de negócio e operação em soluções técnicas escaláveis</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="vandal.stack.title"><i>Stack</i> & Arquitetura</h2>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Ruby on Rails</span>
-                            <span class="tech-badge">MongoDB</span>
-                            <span class="tech-badge">Sidekiq</span>
-                            <span class="tech-badge">Elasticsearch</span>
-                            <span class="tech-badge">Docker</span>
-                            <span class="tech-badge">AWS S3</span>
-                            <span class="tech-badge">nginx</span>
-                        </div>
-                    </div>
-
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="vandal.challenges.title">Desafios Técnicos</h2>
-                        <div class="challenges-list">
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="vandal.challenges.scalability.title">Escalabilidade operacional</h3>
-                                <p class="challenge-description" data-translate="vandal.challenges.scalability.description">
-                                    Otimização do processamento de alto volume de pedidos e fluxos de produção em picos de tráfego e períodos promocionais.
-                                </p>
-                            </div>
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="vandal.challenges.external.title">Integrações externas</h3>
-                                <p class="challenge-description" data-translate="vandal.challenges.external.description">
-                                    Desenvolvimento de integrações envolvendo gateways de pagamento, transportadoras, fluxos em AWS S3 e dispositivos de hardware por comunicação serial.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Botão de scroll para seção anterior -->
-            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <!-- Botão de scroll para próxima seção -->
-            <button class="scroll-down-btn" onclick="scrollToNextSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </section>
-
-        <!-- Separador -->
-        <div class="section-divider"></div>
-
-        <!-- Seção: Projeto ReUsa -->
-        <section class="project-section bg-blue-light meetal-section-compact">
-            <div class="project-layout layout-left">
-                <div class="project-left">
-                    <div class="project-image-placeholder">
-                        <img src="assets/images/reusa.png" alt="ReUsa Project" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px;">
-                    </div>
-                    <div class="project-header">
-                        <h1 class="project-title">ReUsa</h1>
-                    </div>
-                    <div class="project-block project-block-summary-left">
-                        <p class="block-content" data-translate="reusa.summary.content">
-                            ReUsa é uma plataforma de gestão, mapeamento e comercialização de recursos hídricos de reuso no estado do Rio de Janeiro.<br><br>O projeto foi desenvolvido no âmbito de uma iniciativa de pesquisa e inovação envolvendo órgãos públicos, concessionárias de água e esgoto e equipes interdisciplinares, com o objetivo de apoiar operações industriais de água de reuso por meio de dados geoespaciais e operacionais.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-right">
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="reusa.responsibilities.title">Contribuições principais</h2>
-                        <ul class="responsibilities-list responsibilities-list-charbullets">
-                            <li data-translate="reusa.responsibilities.item1">Liderança técnica e definição de arquitetura para um MVP funcional apresentado a órgãos públicos e stakeholders da indústria</li>
-                            <li data-translate="reusa.responsibilities.item2">Desenvolvimento de <i>back-end</i>, modelagem de sistemas e implementação de integrações geoespaciais com Google Maps APIs</li>
-                            <li data-translate="reusa.responsibilities.item3">Definição de uma arquitetura flexível e adaptável, voltada a iteração rápida e requisitos em evolução</li>
-                            <li data-translate="reusa.responsibilities.item4">Documentação técnica, coordenação de entregas e comunicação orientada a stakeholders ao longo do projeto</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="reusa.stack.title"><i>Stack</i> & Arquitetura</h2>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Java</span>
-                            <span class="tech-badge">Kotlin</span>
-                            <span class="tech-badge">Firebase</span>
-                            <span class="tech-badge">Google Maps APIs</span>
-                            <span class="tech-badge">Android XML</span>
-                        </div>
-                    </div>
-
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="reusa.challenges.title">Desafios Técnicos</h2>
-                        <div class="challenges-list">
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="reusa.challenges.geospatial.title">Integrações geoespaciais</h3>
-                                <p class="challenge-description" data-translate="reusa.challenges.geospatial.description">
-                                    Implementação de recursos de geolocalização e mapas com Google Maps APIs para visualização de recursos industriais e fluxos operacionais.
-                                </p>
-                            </div>
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="reusa.challenges.modeling.title">Modelagem complexa</h3>
-                                <p class="challenge-description" data-translate="reusa.challenges.modeling.description">
-                                    Tradução de cálculos de domínio, regras operacionais e requisitos interdisciplinares em lógica de aplicação sustentável.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Botão de scroll para seção anterior -->
-            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <!-- Botão de scroll para próxima seção -->
-            <button class="scroll-down-btn" onclick="scrollToNextSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </section>
-
-        <!-- Separador (oculto com secções só arquivo: EasyPlay / Uniflix) -->
-        <div class="section-divider section-divider--record-only"></div>
-
-        <!-- Seção: EasyPlay (mantida no HTML; oculta na UI) -->
-        <section class="project-section bg-white project-section--record-only">
-            <div class="project-layout layout-right">
-                <div class="project-left">
-                    <div class="project-image-placeholder">
-                        <img src="assets/images/easyplay.jpg" alt="EasyPlay - diagramas UML" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px;">
-                    </div>
-                    <div class="project-header">
-                        <h1 class="project-title">EasyPlay</h1>
-                        <p class="project-subtitle" data-translate="easyplay.subtitle">Player integrado ao Twitter<br>(projeto acadêmico)</p>
-                    </div>
-                </div>
-                <div class="project-right">
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="easyplay.summary.title">Resumo</h2>
-                        <p class="block-content" data-translate="easyplay.summary.content">
-                            EasyPlay, um software de reprodução de música integrado ao Twitter, é um projeto acadêmico desenvolvido durante minha formação técnica, em 2010. Focado em modelagem orientada a objetos e documentação arquitetural, o sistema foi projetado para exercitar conceitos de design de software, diagramas UML e versionamento.
-                        </p>
-                    </div>
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="easyplay.responsibilities.title">Minhas responsabilidades</h2>
-                        <ul class="responsibilities-list">
-                            <li data-translate="easyplay.responsibilities.item1">Modelagem e arquitetura do sistema</li>
-                            <li data-translate="easyplay.responsibilities.item2">Gerenciamento de tarefas</li>
-                            <li data-translate="easyplay.responsibilities.item3">Desenvolvimento <i>back-end</i> e integrações</li>
-                        </ul>
-                    </div>
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="easyplay.stack.title"><i>Stack</i> & Arquitetura</h2>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Java</span>
-                            <span class="tech-badge">JUnit</span>
-                            <span class="tech-badge">GitHub</span>
-                            <span class="tech-badge">Swing</span>
-                        </div>
-                    </div>
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="easyplay.challenges.title">Desafios Técnicos</h2>
-                        <div class="challenges-list">
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="easyplay.challenges.item1.title">Modelagem do banco de dados</h3>
-                                <p class="challenge-description" data-translate="easyplay.challenges.item1.description">
-                                    Estruturação de entidades e relações.
-                                </p>
-                            </div>
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="easyplay.challenges.item2.title">Documentação Arquitetural</h3>
-                                <p class="challenge-description" data-translate="easyplay.challenges.item2.description">
-                                    Representação clara do sistema através de diagramas, facilitando entendimento e comunicação técnica.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <button class="scroll-down-btn" onclick="scrollToNextSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </section>
-
-        <!-- Separador -->
-        <div class="section-divider section-divider--record-only"></div>
-
-        <!-- Seção: uniflix (mantida no HTML; oculta na UI) -->
-        <section class="project-section bg-green section-uniflix project-section--record-only">
-            <div class="project-layout layout-left">
-                <div class="project-left">
-                    <div class="project-image-placeholder">
-                        <img src="assets/images/uniflix.png" alt="uniflix - sistema de recomendação" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px;">
-                    </div>
-                    <div class="project-header">
-                        <h1 class="project-title">uniflix</h1>
-                        <p class="project-subtitle" data-translate="uniflix.subtitle">Sistema de recomendação de filmes<br>(projeto acadêmico)</p>
-                    </div>
-                </div>
-                <div class="project-right">
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="uniflix.summary.title">Resumo</h2>
-                        <p class="block-content" data-translate="uniflix.summary.content">
-                            Uniflix é um estudo focado no desenvolvimento de um sistema de recomendação, explorando diferentes abordagens para sugerir conteúdos com base nos dados cadastrados. O objetivo principal foi analisar estratégias distintas de recomendação e compreender seus impactos em precisão, escalabilidade e complexidade de implementação.
-                        </p>
-                    </div>
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="uniflix.responsibilities.title">Minhas responsabilidades</h2>
-                        <ul class="responsibilities-list">
-                            <li data-translate="uniflix.responsibilities.item1">Implementação das lógicas de recomendação</li>
-                            <li data-translate="uniflix.responsibilities.item2">Análise e comparação de diferentes abordagens</li>
-                            <li data-translate="uniflix.responsibilities.item3">Organização da aplicação e regras de negócio</li>
-                        </ul>
-                    </div>
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="uniflix.stack.title"><i>Stack</i> & Arquitetura</h2>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Ruby</span>
-                            <span class="tech-badge">Ruby on Rails</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">Arquitetura MVC</span>
-                        </div>
-                    </div>
-                    <div class="project-block">
-                        <h2 class="block-title" data-translate="uniflix.challenges.title">Desafios Técnicos</h2>
-                        <div class="challenges-list">
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="uniflix.challenges.item1.title">Lógica de Recomendação</h3>
-                                <p class="challenge-description" data-translate="uniflix.challenges.item1.description">
-                                    Implementação e comparação de múltiplas estratégias de recomendação, avaliando vantagens e limitações de cada abordagem.
-                                </p>
-                            </div>
-                            <div class="challenge-item">
-                                <h3 class="challenge-title" data-translate="uniflix.challenges.item2.title">Análise de Dados</h3>
-                                <p class="challenge-description" data-translate="uniflix.challenges.item2.description">
-                                    Estruturação e tratamento eficiente dos dados para gerar recomendações relevantes de forma consistente.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <!-- Botão scroll-up (próxima seção visível: Outros projetos) -->
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section class="project-section bg-white project-section--other-projects">
-            <div class="project-layout">
-                <div class="other-projects-body">
-                    <div class="project-header">
-                        <h1 class="project-title" data-translate="otherProjects.title">Outros projetos</h1>
-                    </div>
-                    <p class="block-content" data-translate="otherProjects.content">
-                        Se quiser ver mais projetos em que participei ou que criei, fale comigo no <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> ou no <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>!
+        <div class="projects-wrap">
+            <header class="hero">
+                <div class="hero-glow" aria-hidden="true"></div>
+                <p class="hero-status">
+                    <span class="hero-dot" aria-hidden="true"></span>
+                    <span data-translate="hero.status">Disponível para contratos remotos e consultoria</span>
+                </p>
+                <div class="hero-copy">
+                    <h1>Ian Obraczka</h1>
+                    <p class="hero-pitch">
+                        <span class="hero-role" data-translate="hero.role">Engenheiro de backend sênior</span><span data-translate="hero.pitch"> especializado em arquiteturas de produção, APIs de alto volume e integrações pragmáticas de IA.</span>
                     </p>
+                    <p class="hero-context" data-translate="hero.context">Engenharia de sistemas robustos em Python/FastAPI, AWS e fluxos de dados modernos.<br>Rio de Janeiro, Brasil · Trabalho remoto no mundo todo.</p>
                 </div>
+                <div class="hero-actions">
+                    <a class="hero-link" href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                    <a class="hero-link" href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                    <a class="hero-link" href="mailto:ianobraczka@gmail.com">ianobraczka@gmail.com <span aria-hidden="true">✉</span></a>
+                    <a class="hero-link" href="cv.html"><span data-translate="hero.resume">Currículo</span></a>
+                </div>
+            </header>
+
+            <div class="page-head">
+                <p class="page-kicker"><span class="prompt">~/</span><span data-translate="page.kicker">estudos de caso</span></p>
+                <h2 data-translate="page.title">Estudos de caso de engenharia de software</h2>
+                <p class="page-lede" data-translate="page.lede">Sistemas em produção, IA aplicada e um arquivo curto de trabalhos anteriores.</p>
             </div>
-            <button class="scroll-up-btn" onclick="scrollToPreviousSection(this)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </section>
+
+            <section class="tier" aria-labelledby="production-heading">
+                <div class="tier-label">
+                    <span class="tier-index">01</span>
+                    <h2 id="production-heading" data-translate="section.production">Sistemas em produção</h2>
+                </div>
+                <div class="case-list case-list--timeline">
+                    <article class="case-card">
+                        <div class="case-head">
+                            <h3>Meetal ERP Platform</h3>
+                            <div class="case-badges">
+                                <span class="badge" data-translate="meetal.domain">ERP industrial e logística</span>
+                                <span class="badge badge-status live" data-translate="meetal.status">Em produção · 2025–presente</span>
+                            </div>
+                        </div>
+                        <p class="case-summary" data-translate="meetal.summary">Operações de reciclagem e logística industrial tinham superado um backend em DynamoDB, incapaz de sustentar fluxos financeiros e hardware de chão de fábrica. A Meetal passou a rodar em FastAPI e PostgreSQL após uma migração sem downtime, com balanças RS-232 e fluxos estruturados da OpenAI no mesmo núcleo operacional.</p>
+                        <ul class="metrics">
+                            <li>
+                                <span class="metric-label" data-translate="meetal.m1.label">Migração</span>
+                                <span class="metric-value" data-translate="meetal.m1.value">DynamoDB → FastAPI e PostgreSQL, sem downtime</span>
+                            </li>
+                            <li>
+                                <span class="metric-label" data-translate="meetal.m2.label">Hardware</span>
+                                <span class="metric-value" data-translate="meetal.m2.value">Comunicação serial RS-232 com balança industrial</span>
+                            </li>
+                            <li>
+                                <span class="metric-label" data-translate="meetal.m3.label">IA</span>
+                                <span class="metric-value" data-translate="meetal.m3.value">Fluxos estruturados da API OpenAI</span>
+                            </li>
+                        </ul>
+                        <div class="arch">
+                            <p class="arch-label" data-translate="arch.label">Camada de integração</p>
+                            <p class="arch-flow">
+                                <span class="arch-node" data-translate="meetal.arch.a">Balança RS-232</span>
+                                <span class="arch-arrow" aria-hidden="true">→</span>
+                                <span class="arch-node arch-node--core">FastAPI</span>
+                                <span class="arch-arrow" aria-hidden="true">→</span>
+                                <span class="arch-node">PostgreSQL</span>
+                                <span class="arch-sub"><span class="arch-hash" aria-hidden="true">#</span> <span data-translate="meetal.arch.sub">API estruturada da OpenAI · AWS Lambda · corte do DynamoDB, sem downtime</span></span>
+                            </p>
+                        </div>
+                        <div class="case-foot">
+                            <ul class="pills">
+                                <li>Python</li>
+                                <li>FastAPI</li>
+                                <li>PostgreSQL</li>
+                                <li>AWS Lambda</li>
+                                <li>Docker</li>
+                                <li>OpenAI API</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="case-card">
+                        <div class="case-head">
+                            <h3>Vandal Production Platform</h3>
+                            <div class="case-badges">
+                                <span class="badge" data-translate="vandal.domain">E-commerce de alta concorrência</span>
+                                <span class="badge badge-status" data-translate="vandal.status">Produção · 2015–2021</span>
+                            </div>
+                        </div>
+                        <p class="case-summary" data-translate="vandal.summary">Um marketplace de print-on-demand precisava transformar designs de mais de 10 mil artistas em pedidos produzidos, inclusive em picos de tráfego. A plataforma em Rails sustentou mais de 70 mil produtos com Sidekiq e Redis, gateways de pagamento, cálculo de frete e pipelines de produção na AWS S3.</p>
+                        <ul class="metrics">
+                            <li>
+                                <span class="metric-label" data-translate="vandal.m1.label">Escala</span>
+                                <span class="metric-value" data-translate="vandal.m1.value">70 mil+ produtos, 10 mil+ artistas</span>
+                            </li>
+                            <li>
+                                <span class="metric-label" data-translate="vandal.m2.label">Assíncrono</span>
+                                <span class="metric-value" data-translate="vandal.m2.value">Filas pesadas com Sidekiq + Redis</span>
+                            </li>
+                            <li>
+                                <span class="metric-label" data-translate="vandal.m3.label">Integrações</span>
+                                <span class="metric-value" data-translate="vandal.m3.value">Pagamentos, cálculo de frete e pipelines na AWS S3</span>
+                            </li>
+                        </ul>
+                        <div class="arch">
+                            <p class="arch-label" data-translate="arch.label">Camada de integração</p>
+                            <p class="arch-flow">
+                                <span class="arch-node" data-translate="vandal.arch.a">Vitrine</span>
+                                <span class="arch-arrow" aria-hidden="true">→</span>
+                                <span class="arch-node arch-node--core">Rails</span>
+                                <span class="arch-arrow" aria-hidden="true">→</span>
+                                <span class="arch-node">MongoDB</span>
+                                <span class="arch-sub"><span class="arch-hash" aria-hidden="true">#</span> <span data-translate="vandal.arch.sub">Sidekiq + Redis → pagamentos, frete, S3, Elasticsearch</span></span>
+                            </p>
+                        </div>
+                        <div class="case-foot">
+                            <ul class="pills">
+                                <li>Ruby on Rails</li>
+                                <li>Sidekiq</li>
+                                <li>Elasticsearch</li>
+                                <li>MongoDB</li>
+                                <li>Docker</li>
+                                <li>AWS S3</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="tier" aria-labelledby="ai-heading">
+                <div class="tier-label">
+                    <span class="tier-index">02</span>
+                    <h2 id="ai-heading" data-translate="section.ai">IA aplicada</h2>
+                </div>
+                <div class="case-list">
+                    <article class="case-card">
+                        <div class="case-head">
+                            <h3>Teaching Assistant (AI)</h3>
+                            <div class="case-badges">
+                                <span class="badge" data-translate="ta.domain">IA aplicada e EdTech</span>
+                                <span class="badge badge-status live" data-translate="ta.status">No ar</span>
+                            </div>
+                        </div>
+                        <p class="case-summary" data-translate="ta.summary">Professores precisavam de apoio a aulas ancorado em currículo real, e não em saída genérica de modelo. O assistente orquestra o contexto da BNCC e dos frameworks de Massachusetts, conecta-se direto à API REST do Schoology e não persiste dados de estudantes no armazenamento da aplicação.</p>
+                        <ul class="metrics">
+                            <li>
+                                <span class="metric-label" data-translate="ta.m1.label">Ancoragem</span>
+                                <span class="metric-value" data-translate="ta.m1.value">Orquestração de contexto sem alucinação (BNCC e Massachusetts)</span>
+                            </li>
+                            <li>
+                                <span class="metric-label" data-translate="ta.m2.label">LMS</span>
+                                <span class="metric-value" data-translate="ta.m2.value">Conexão direta com a API REST do Schoology</span>
+                            </li>
+                            <li>
+                                <span class="metric-label" data-translate="ta.m3.label">Privacidade</span>
+                                <span class="metric-value" data-translate="ta.m3.value">Nenhum dado de estudante persistido no armazenamento da aplicação</span>
+                            </li>
+                        </ul>
+                        <div class="arch">
+                            <p class="arch-label" data-translate="arch.label">Camada de integração</p>
+                            <p class="arch-flow">
+                                <span class="arch-node" data-translate="ta.arch.a">Prompt do professor</span>
+                                <span class="arch-arrow" aria-hidden="true">→</span>
+                                <span class="arch-node arch-node--core">Next.js</span>
+                                <span class="arch-arrow" aria-hidden="true">→</span>
+                                <span class="arch-node">Gemini</span>
+                                <span class="arch-sub"><span class="arch-hash" aria-hidden="true">#</span> <span data-translate="ta.arch.sub">contexto BNCC + Massachusetts → Schoology REST · nenhum dado de estudante armazenado</span></span>
+                            </p>
+                        </div>
+                        <div class="case-foot">
+                            <ul class="pills">
+                                <li>TypeScript</li>
+                                <li>Next.js</li>
+                                <li>Google Gemini API</li>
+                                <li>TailwindCSS</li>
+                            </ul>
+                            <div class="case-actions">
+                                <a class="btn btn-primary" href="https://teaching-assistant-2027.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                    <span data-translate="ta.demo">Demo ao vivo</span>
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+                                <a class="btn" href="https://github.com/ianobraczka/teaching-assistant" target="_blank" rel="noopener noreferrer">
+                                    <span>GitHub</span>
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="tier" aria-labelledby="archive-heading">
+                <div class="tier-label">
+                    <span class="tier-index">03</span>
+                    <h2 id="archive-heading" data-translate="section.archive">Selecionados e acadêmicos</h2>
+                </div>
+                <table class="archive">
+                    <caption class="sr-only" data-translate="archive.caption">Projetos selecionados e acadêmicos</caption>
+                    <tbody>
+                        <tr>
+                            <td class="archive-main">
+                                <span class="archive-name">ReUsa</span>
+                                <span class="archive-desc" data-translate="archive.reusa.desc">— MVP geoespacial de recursos hídricos de reúso industrial no Rio de Janeiro.</span>
+                            </td>
+                            <td>
+                                <div class="archive-side">
+                                    <ul class="pills">
+                                        <li>Kotlin</li>
+                                        <li>Java</li>
+                                        <li>Google Maps APIs</li>
+                                        <li>UERJ</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="archive-main">
+                                <span class="archive-name">classroom-ops</span>
+                                <span class="archive-desc" data-translate="archive.classroom.desc">— Backend modular para operação de sala de aula e fluxos de API.</span>
+                            </td>
+                            <td>
+                                <div class="archive-side">
+                                    <ul class="pills">
+                                        <li>FastAPI</li>
+                                        <li>PostgreSQL</li>
+                                        <li>Modular Backend</li>
+                                    </ul>
+                                <a class="icon-link" href="https://github.com/ianobraczka/classroom-ops" target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                    <span class="sr-only" data-translate="archive.classroom.gh">classroom-ops no GitHub</span>
+                                </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="archive-main">
+                                <span class="archive-name">data_generator</span>
+                                <span class="archive-desc" data-translate="archive.data.desc">— CLI para datasets pandas baseados em schema e schemas assistidos por IA.</span>
+                            </td>
+                            <td>
+                                <div class="archive-side">
+                                    <ul class="pills">
+                                        <li>Pandas</li>
+                                        <li>CLI Tooling</li>
+                                        <li>AI Schemas</li>
+                                    </ul>
+                                <a class="icon-link" href="https://github.com/ianobraczka/data_generator" target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                    <span class="sr-only" data-translate="archive.data.gh">data_generator no GitHub</span>
+                                </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="archive-main">
+                                <span class="archive-name">uniflix</span>
+                                <span class="archive-desc" data-translate="archive.uniflix.desc">— Estudo acadêmico de estratégias de recomendação de filmes.</span>
+                            </td>
+                            <td>
+                                <div class="archive-side">
+                                    <ul class="pills">
+                                        <li>Recommendation Systems</li>
+                                        <li>Ruby on Rails</li>
+                                    </ul>
+                                <a class="icon-link" href="https://github.com/ianobraczka/uniflix" target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                    <span class="sr-only" data-translate="archive.uniflix.gh">uniflix no GitHub</span>
+                                </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="archive-main">
+                                <span class="archive-name">EasyPlay</span>
+                                <span class="archive-desc" data-translate="archive.easyplay.desc">— Player de música arquivado de 2010, integrado ao Twitter.</span>
+                            </td>
+                            <td>
+                                <div class="archive-side">
+                                    <ul class="pills">
+                                        <li>Archive 2010</li>
+                                        <li>Java Swing</li>
+                                    </ul>
+                                <a class="icon-link" href="https://github.com/ianobraczka/EasyPlay" target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                    <span class="sr-only" data-translate="archive.easyplay.gh">EasyPlay no GitHub</span>
+                                </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="projects-more" data-translate="projects.more">Mais no <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> e no <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+            </section>
+        </div>
     </main>
     <script>
-        // Translations object
         const translations = {
             pt: {
                 'nav.projects': 'Projetos',
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contato',
                 'nav.cv': 'Currículo',
-                'meetal.summary.content': 'Meetal é uma plataforma ERP em rápida evolução voltada à gestão operacional, financeira e de estoques no setor de reciclagem e logística industrial.<br><br>A plataforma opera em ambientes de produção com clientes ativos e iteração contínua de produto, combinando serviços de <i>back-end</i>, fluxos operacionais, recursos com IA e integrações externas.',
-                'meetal.responsibilities.title': 'Contribuições principais',
-                'meetal.responsibilities.item1': 'Desenvolvimento de serviços de <i>back-end</i> e <i>APIs</i> para fluxos operacionais e financeiros',
-                'meetal.responsibilities.item2': 'Integrações com plataformas externas, hardware industrial e serviços com IA',
-                'meetal.responsibilities.item3': 'Participação em decisões arquiteturais envolvendo escalabilidade e manutenibilidade a longo prazo',
-                'meetal.responsibilities.item4': 'Depuração, refatoração e otimização de desempenho em fluxos críticos em produção',
-                'meetal.stack.title': '<i>Stack</i> & Arquitetura',
-                'meetal.challenges.title': 'Desafios Técnicos',
-                'meetal.challenges.performance.title': 'Performance',
-                'meetal.challenges.performance.description': 'Otimização de fluxos críticos em produção e gargalos de desempenho em sistemas operacionais em rápido crescimento.',
-                'meetal.challenges.integrations.title': 'Integrações com Serviços Externos',
-                'meetal.challenges.integrations.description': 'Desenvolvimento de integrações envolvendo <i>APIs</i> externas, serviços com IA e hardware industrial por comunicação serial.',
-                'reusa.summary.content': 'ReUsa é uma plataforma de gestão, mapeamento e comercialização de recursos hídricos de reuso no estado do Rio de Janeiro.<br><br>O projeto foi desenvolvido no âmbito de uma iniciativa de pesquisa e inovação envolvendo órgãos públicos, concessionárias de água e esgoto e equipes interdisciplinares, com o objetivo de apoiar operações industriais de água de reuso por meio de dados geoespaciais e operacionais.',
-                'reusa.responsibilities.title': 'Contribuições principais',
-                'reusa.responsibilities.item1': 'Liderança técnica e definição de arquitetura para um MVP funcional apresentado a órgãos públicos e stakeholders da indústria',
-                'reusa.responsibilities.item2': 'Desenvolvimento de <i>back-end</i>, modelagem de sistemas e implementação de integrações geoespaciais com Google Maps APIs',
-                'reusa.responsibilities.item3': 'Definição de uma arquitetura flexível e adaptável, voltada a iteração rápida e requisitos em evolução',
-                'reusa.responsibilities.item4': 'Documentação técnica, coordenação de entregas e comunicação orientada a stakeholders ao longo do projeto',
-                'reusa.stack.title': '<i>Stack</i> & Arquitetura',
-                'reusa.challenges.title': 'Desafios Técnicos',
-                'reusa.challenges.geospatial.title': 'Integrações geoespaciais',
-                'reusa.challenges.geospatial.description': 'Implementação de recursos de geolocalização e mapas com Google Maps APIs para visualização de recursos industriais e fluxos operacionais.',
-                'reusa.challenges.modeling.title': 'Modelagem complexa',
-                'reusa.challenges.modeling.description': 'Tradução de cálculos de domínio, regras operacionais e requisitos interdisciplinares em lógica de aplicação sustentável.',
-                'vandal.summary.content': 'Marketplace de print-on-demand e plataforma de produção em rápido crescimento voltados a vestuário personalizado e designs criados por usuários.<br><br>À época, a plataforma suportava mais de 70 mil designs de produtos criados por mais de 10 mil artistas, combinando <i>e-commerce</i>, fluxos operacionais, logística de produção e sistemas de <i>back-end</i> em ambiente de <i>startup</i> com alta autonomia.',
-                'vandal.responsibilities.title': 'Contribuições principais',
-                'vandal.responsibilities.item1': 'Desenvolvimento de sistemas de <i>back-end</i> que sustentavam operações do marketplace, fluxos de produção e logística',
-                'vandal.responsibilities.item2': 'Concepção e implementação de um módulo customizado de <i>back-office</i> e gestão da produção',
-                'vandal.responsibilities.item3': 'Integrações com gateways de pagamento, transportadoras, fluxos em AWS S3 e dispositivos de hardware por comunicação serial',
-                'vandal.responsibilities.item4': 'Participação em decisões de infraestrutura, arquitetura de <i>back-end</i>, depuração e manutenção de longo prazo de sistemas em produção',
-                'vandal.responsibilities.item5': 'Tradução de requisitos de negócio e operação em soluções técnicas escaláveis',
-                'vandal.stack.title': '<i>Stack</i> & Arquitetura',
-                'vandal.challenges.title': 'Desafios Técnicos',
-                'vandal.challenges.scalability.title': 'Escalabilidade operacional',
-                'vandal.challenges.scalability.description': 'Otimização do processamento de alto volume de pedidos e fluxos de produção em picos de tráfego e períodos promocionais.',
-                'vandal.challenges.external.title': 'Integrações externas',
-                'vandal.challenges.external.description': 'Desenvolvimento de integrações envolvendo gateways de pagamento, transportadoras, fluxos em AWS S3 e dispositivos de hardware por comunicação serial.',
-                'easyplay.subtitle': 'Player integrado ao Twitter<br>(projeto acadêmico)',
-                'easyplay.summary.title': 'Resumo',
-                'easyplay.summary.content': 'EasyPlay, um software de reprodução de música integrado ao Twitter, é um projeto acadêmico desenvolvido durante minha formação técnica, em 2010. Focado em modelagem orientada a objetos e documentação arquitetural, o sistema foi projetado para exercitar conceitos de design de software, diagramas UML e versionamento.',
-                'easyplay.responsibilities.title': 'Minhas responsabilidades',
-                'easyplay.responsibilities.item1': 'Modelagem e arquitetura do sistema',
-                'easyplay.responsibilities.item2': 'Gerenciamento de tarefas',
-                'easyplay.responsibilities.item3': 'Desenvolvimento <i>back-end</i> e integrações',
-                'easyplay.stack.title': '<i>Stack</i> & Arquitetura',
-                'easyplay.challenges.title': 'Desafios Técnicos',
-                'easyplay.challenges.item1.title': 'Modelagem do banco de dados',
-                'easyplay.challenges.item1.description': 'Estruturação de entidades e relações.',
-                'easyplay.challenges.item2.title': 'Documentação Arquitetural',
-                'easyplay.challenges.item2.description': 'Representação clara do sistema através de diagramas, facilitando entendimento e comunicação técnica.',
-                'uniflix.subtitle': 'Sistema de recomendação de filmes<br>(projeto acadêmico)',
-                'uniflix.summary.title': 'Resumo',
-                'uniflix.summary.content': 'Uniflix é um estudo focado no desenvolvimento de um sistema de recomendação, explorando diferentes abordagens para sugerir conteúdos com base nos dados cadastrados. O objetivo principal foi analisar estratégias distintas de recomendação e compreender seus impactos em precisão, escalabilidade e complexidade de implementação.',
-                'uniflix.responsibilities.title': 'Minhas responsabilidades',
-                'uniflix.responsibilities.item1': 'Implementação das lógicas de recomendação',
-                'uniflix.responsibilities.item2': 'Análise e comparação de diferentes abordagens',
-                'uniflix.responsibilities.item3': 'Organização da aplicação e regras de negócio',
-                'uniflix.stack.title': '<i>Stack</i> & Arquitetura',
-                'uniflix.challenges.title': 'Desafios Técnicos',
-                'uniflix.challenges.item1.title': 'Lógica de Recomendação',
-                'uniflix.challenges.item1.description': 'Implementação e comparação de múltiplas estratégias de recomendação, avaliando vantagens e limitações de cada abordagem.',
-                'uniflix.challenges.item2.title': 'Análise de Dados',
-                'uniflix.challenges.item2.description': 'Estruturação e tratamento eficiente dos dados para gerar recomendações relevantes de forma consistente.',
-                'otherProjects.title': 'Outros projetos',
-                'otherProjects.content': 'Se quiser ver mais projetos em que participei ou que criei, fale comigo no <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> ou no <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>!'
+                'page.kicker': 'estudos de caso',
+                'page.title': 'Estudos de caso de engenharia de software',
+                'page.lede': 'Sistemas em produção, IA aplicada e um arquivo curto de trabalhos anteriores.',
+                'hero.status': 'Disponível para contratos remotos e consultoria',
+                'hero.role': 'Engenheiro de backend sênior',
+                'hero.pitch': ' especializado em arquiteturas de produção, APIs de alto volume e integrações pragmáticas de IA.',
+                'hero.context': 'Engenharia de sistemas robustos em Python/FastAPI, AWS e fluxos de dados modernos.<br>Rio de Janeiro, Brasil · Trabalho remoto no mundo todo.',
+                'hero.resume': 'Currículo',
+                'section.production': 'Sistemas em produção',
+                'section.ai': 'IA aplicada',
+                'section.archive': 'Selecionados e acadêmicos',
+                'arch.label': 'Camada de integração',
+                'meetal.domain': 'ERP industrial e logística',
+                'meetal.status': 'Em produção · 2025–presente',
+                'meetal.summary': 'Operações de reciclagem e logística industrial tinham superado um backend em DynamoDB, incapaz de sustentar fluxos financeiros e hardware de chão de fábrica. A Meetal passou a rodar em FastAPI e PostgreSQL após uma migração sem downtime, com balanças RS-232 e fluxos estruturados da OpenAI no mesmo núcleo operacional.',
+                'meetal.m1.label': 'Migração',
+                'meetal.m1.value': 'DynamoDB → FastAPI e PostgreSQL, sem downtime',
+                'meetal.m2.label': 'Hardware',
+                'meetal.m2.value': 'Comunicação serial RS-232 com balança industrial',
+                'meetal.m3.label': 'IA',
+                'meetal.m3.value': 'Fluxos estruturados da API OpenAI',
+                'meetal.arch.a': 'Balança RS-232',
+                'meetal.arch.sub': 'API estruturada da OpenAI · AWS Lambda · corte do DynamoDB, sem downtime',
+                'vandal.domain': 'E-commerce de alta concorrência',
+                'vandal.status': 'Produção · 2015–2021',
+                'vandal.summary': 'Um marketplace de print-on-demand precisava transformar designs de mais de 10 mil artistas em pedidos produzidos, inclusive em picos de tráfego. A plataforma em Rails sustentou mais de 70 mil produtos com Sidekiq e Redis, gateways de pagamento, cálculo de frete e pipelines de produção na AWS S3.',
+                'vandal.m1.label': 'Escala',
+                'vandal.m1.value': '70 mil+ produtos, 10 mil+ artistas',
+                'vandal.m2.label': 'Assíncrono',
+                'vandal.m2.value': 'Filas pesadas com Sidekiq + Redis',
+                'vandal.m3.label': 'Integrações',
+                'vandal.m3.value': 'Pagamentos, cálculo de frete e pipelines na AWS S3',
+                'vandal.arch.a': 'Vitrine',
+                'vandal.arch.sub': 'Sidekiq + Redis → pagamentos, frete, S3, Elasticsearch',
+                'ta.domain': 'IA aplicada e EdTech',
+                'ta.status': 'No ar',
+                'ta.summary': 'Professores precisavam de apoio a aulas ancorado em currículo real, e não em saída genérica de modelo. O assistente orquestra o contexto da BNCC e dos frameworks de Massachusetts, conecta-se direto à API REST do Schoology e não persiste dados de estudantes no armazenamento da aplicação.',
+                'ta.m1.label': 'Ancoragem',
+                'ta.m1.value': 'Orquestração de contexto sem alucinação (BNCC e Massachusetts)',
+                'ta.m2.label': 'LMS',
+                'ta.m2.value': 'Conexão direta com a API REST do Schoology',
+                'ta.m3.label': 'Privacidade',
+                'ta.m3.value': 'Nenhum dado de estudante persistido no armazenamento da aplicação',
+                'ta.arch.a': 'Prompt do professor',
+                'ta.arch.sub': 'contexto BNCC + Massachusetts → Schoology REST · nenhum dado de estudante armazenado',
+                'ta.demo': 'Demo ao vivo',
+                'archive.caption': 'Projetos selecionados e acadêmicos',
+                'archive.reusa.desc': '— MVP geoespacial de recursos hídricos de reúso industrial no Rio de Janeiro.',
+                'archive.classroom.desc': '— Backend modular para operação de sala de aula e fluxos de API.',
+                'archive.classroom.gh': 'classroom-ops no GitHub',
+                'archive.data.desc': '— CLI para datasets pandas baseados em schema e schemas assistidos por IA.',
+                'archive.data.gh': 'data_generator no GitHub',
+                'archive.uniflix.desc': '— Estudo acadêmico de estratégias de recomendação de filmes.',
+                'archive.uniflix.gh': 'uniflix no GitHub',
+                'archive.easyplay.desc': '— Player de música arquivado de 2010, integrado ao Twitter.',
+                'archive.easyplay.gh': 'EasyPlay no GitHub',
+                'projects.more': 'Mais no <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> e no <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>.'
             },
             en: {
                 'nav.projects': 'Projects',
                 'nav.about': 'About',
                 'nav.contact': 'Contact',
                 'nav.cv': 'Resume',
-                'meetal.summary.content': 'Meetal is a fast-evolving ERP platform focused on operational, financial, and inventory management for the recycling and industrial logistics sector.<br><br>The platform operates in production environments with active clients and ongoing product iteration, combining backend services, operational workflows, AI-powered features, and external integrations.',
-                'meetal.responsibilities.title': 'Key Contributions',
-                'meetal.responsibilities.item1': 'Backend services and API development for operational and financial workflows',
-                'meetal.responsibilities.item2': 'Integrations with external platforms, industrial hardware, and AI-powered services',
-                'meetal.responsibilities.item3': 'Participation in architectural decisions involving scalability and long-term maintainability',
-                'meetal.responsibilities.item4': 'Debugging, refactoring, and performance optimization in production-critical flows',
-                'meetal.stack.title': 'Stack & Architecture',
-                'meetal.challenges.title': 'Technical Challenges',
-                'meetal.challenges.performance.title': 'Performance',
-                'meetal.challenges.performance.description': 'Optimization of production-critical workflows and performance bottlenecks in fast-growing operational systems.',
-                'meetal.challenges.integrations.title': 'External Service Integrations',
-                'meetal.challenges.integrations.description': 'Development of integrations involving external APIs, AI-powered services, and industrial hardware through serial communication.',
-                'reusa.summary.content': 'ReUsa is a platform for management, mapping, and commercialization of reused water resources in the state of Rio de Janeiro.<br><br>The project was developed as part of a research and innovation initiative involving government agencies, water utility companies, and interdisciplinary teams, with the goal of supporting industrial reuse water operations through geospatial and operational data.',
-                'reusa.responsibilities.title': 'Key Contributions',
-                'reusa.responsibilities.item1': 'Technical leadership and architecture definition for a functional MVP presented to government and industry stakeholders',
-                'reusa.responsibilities.item2': 'Backend development, system modeling, and implementation of geospatial integrations using Google Maps APIs',
-                'reusa.responsibilities.item3': 'Definition of a flexible and adaptable architecture focused on rapid iteration and evolving requirements',
-                'reusa.responsibilities.item4': 'Technical documentation, delivery coordination, and stakeholder-oriented communication throughout the project',
-                'reusa.stack.title': 'Stack & Architecture',
-                'reusa.challenges.title': 'Technical Challenges',
-                'reusa.challenges.geospatial.title': 'Geospatial Integrations',
-                'reusa.challenges.geospatial.description': 'Implementation of geolocation and mapping features using Google Maps APIs for industrial resource visualization and operational workflows.',
-                'reusa.challenges.modeling.title': 'Complex Modeling',
-                'reusa.challenges.modeling.description': 'Translation of domain-specific calculations, operational rules, and interdisciplinary requirements into maintainable application logic.',
-                'vandal.summary.content': 'Fast-growing print-on-demand marketplace and production platform focused on custom apparel and user-generated designs.<br><br>By then, the platform supported more than 70k product designs created by over 10k artists, combining e-commerce, operational workflows, production logistics, and backend systems in a high-autonomy startup environment.',
-                'vandal.responsibilities.title': 'Key Contributions',
-                'vandal.responsibilities.item1': 'Development of backend systems supporting marketplace operations, production workflows, and logistics',
-                'vandal.responsibilities.item2': 'Design and implementation of a custom back-office and production management module',
-                'vandal.responsibilities.item3': 'Integrations with payment gateways, shipping providers, AWS S3 workflows, and hardware devices through serial communication',
-                'vandal.responsibilities.item4': 'Participation in infrastructure decisions, backend architecture, debugging, and long-term maintenance of production systems',
-                'vandal.responsibilities.item5': 'Translation of business and operational requirements into scalable technical solutions',
-                'vandal.stack.title': 'Stack & Architecture',
-                'vandal.challenges.title': 'Technical Challenges',
-                'vandal.challenges.scalability.title': 'Operational Scalability',
-                'vandal.challenges.scalability.description': 'Optimization of high-volume order processing and production workflows during traffic spikes and promotional periods.',
-                'vandal.challenges.external.title': 'External Integrations',
-                'vandal.challenges.external.description': 'Development of integrations involving payment gateways, shipping providers, AWS S3 workflows, and hardware devices through serial communication.',
-                'easyplay.subtitle': 'Player integrated with Twitter<br>(academic project)',
-                'easyplay.summary.title': 'Summary',
-                'easyplay.summary.content': 'EasyPlay, a music player integrated with Twitter, is an academic project developed during my technical training in 2010. Focused on object-oriented modeling and architectural documentation, the system was designed to practice software design concepts, UML diagrams, and version control.',
-                'easyplay.responsibilities.title': 'My Responsibilities',
-                'easyplay.responsibilities.item1': 'System modeling and architecture',
-                'easyplay.responsibilities.item2': 'Task management',
-                'easyplay.responsibilities.item3': 'Back-end development and integrations',
-                'easyplay.stack.title': 'Stack & Architecture',
-                'easyplay.challenges.title': 'Technical Challenges',
-                'easyplay.challenges.item1.title': 'Database modeling',
-                'easyplay.challenges.item1.description': 'Structuring entities and relationships.',
-                'easyplay.challenges.item2.title': 'Architectural Documentation',
-                'easyplay.challenges.item2.description': 'Clear representation of the system through diagrams, facilitating understanding and technical communication.',
-                'uniflix.subtitle': 'Movie recommendation system<br>(academic project)',
-                'uniflix.summary.title': 'Summary',
-                'uniflix.summary.content': 'uniflix is a study project focused on developing a recommendation system, exploring different approaches to suggest content based on available data. The main goal was to analyze distinct recommendation strategies and understand their impacts on precision, scalability, and implementation complexity.',
-                'uniflix.responsibilities.title': 'My Responsibilities',
-                'uniflix.responsibilities.item1': 'Implementation of recommendation logic',
-                'uniflix.responsibilities.item2': 'Analysis and comparison of different approaches',
-                'uniflix.responsibilities.item3': 'Modeling of data used by the system',
-                'uniflix.responsibilities.item4': 'Application organization and business rules',
-                'uniflix.stack.title': 'Stack & Architecture',
-                'uniflix.challenges.title': 'Technical Challenges',
-                'uniflix.challenges.item1.title': 'Recommendation Logic',
-                'uniflix.challenges.item1.description': 'Implementation and comparison of multiple recommendation strategies, evaluating advantages and limitations of each approach.',
-                'uniflix.challenges.item2.title': 'Data Analysis',
-                'uniflix.challenges.item2.description': 'Efficient structuring and processing of data to generate relevant recommendations consistently.',
-                'otherProjects.title': 'Other projects',
-                'otherProjects.content': 'If you want to see more projects I contributed to or built, feel free to get in touch on <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> or <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>!'
+                'page.kicker': 'case studies',
+                'page.title': 'Software Engineering case studies',
+                'page.lede': 'Production systems, applied AI, and a short archive of earlier work.',
+                'hero.status': 'Available for remote contracts & consulting',
+                'hero.role': 'Senior Backend Engineer',
+                'hero.pitch': ' specializing in production architectures, high-volume APIs, and pragmatic AI integrations.',
+                'hero.context': 'Engineering robust systems across Python/FastAPI, AWS, and modern data workflows.<br>Based in Rio de Janeiro, Brazil · Working remotely worldwide.',
+                'hero.resume': 'Resume',
+                'section.production': 'Production systems',
+                'section.ai': 'Applied AI',
+                'section.archive': 'Selected & academic',
+                'arch.label': 'Integration layer',
+                'meetal.domain': 'Industrial ERP & Logistics',
+                'meetal.status': 'In Production · 2025–Present',
+                'meetal.summary': 'Recycling and industrial logistics operations had outgrown a DynamoDB backend that could not carry financial workflows or plant-floor hardware. Meetal now runs on FastAPI and PostgreSQL after a zero-downtime migration, with RS-232 scales and structured OpenAI workflows on the same operational core.',
+                'meetal.m1.label': 'Migration',
+                'meetal.m1.value': 'Zero-downtime DynamoDB → FastAPI & PostgreSQL',
+                'meetal.m2.label': 'Hardware',
+                'meetal.m2.value': 'Industrial scale RS-232 serial communication',
+                'meetal.m3.label': 'AI',
+                'meetal.m3.value': 'OpenAI structured API workflows',
+                'meetal.arch.a': 'RS-232 scale',
+                'meetal.arch.sub': 'OpenAI structured API · AWS Lambda · DynamoDB cutover, zero downtime',
+                'vandal.domain': 'High-Concurrency E-Commerce',
+                'vandal.status': 'Production · 2015–2021',
+                'vandal.summary': 'A print-on-demand marketplace had to turn designs from more than 10k artists into fulfilled orders through traffic spikes. The Rails platform carried 70k+ products on Sidekiq and Redis, with payment gateways, freight calculation, and AWS S3 production pipelines.',
+                'vandal.m1.label': 'Scale',
+                'vandal.m1.value': '70k+ products, 10k+ artists',
+                'vandal.m2.label': 'Async',
+                'vandal.m2.value': 'Sidekiq + Redis heavy background queues',
+                'vandal.m3.label': 'Integrations',
+                'vandal.m3.value': 'Payment gateways, freight calculation, and AWS S3 pipelines',
+                'vandal.arch.a': 'Storefront',
+                'vandal.arch.sub': 'Sidekiq + Redis → payments, freight, S3, Elasticsearch',
+                'ta.domain': 'Applied AI & EdTech',
+                'ta.status': 'Live',
+                'ta.summary': 'Teachers needed lesson support grounded in real curricula rather than generic model output. The assistant orchestrates BNCC and Massachusetts framework context, connects directly to the Schoology REST API, and persists no student data in application storage.',
+                'ta.m1.label': 'Grounding',
+                'ta.m1.value': 'Zero-hallucination context orchestration (BNCC & Massachusetts)',
+                'ta.m2.label': 'LMS',
+                'ta.m2.value': 'Direct Schoology REST API connection',
+                'ta.m3.label': 'Privacy',
+                'ta.m3.value': 'Zero student data persistence in application storage',
+                'ta.arch.a': 'Teacher prompt',
+                'ta.arch.sub': 'BNCC + Massachusetts context → Schoology REST · no student data stored',
+                'ta.demo': 'Live Demo',
+                'archive.caption': 'Selected and academic projects',
+                'archive.reusa.desc': '— Geospatial water-resource MVP for industrial reuse in Rio de Janeiro.',
+                'archive.classroom.desc': '— Modular backend for classroom operations and API workflows.',
+                'archive.classroom.gh': 'classroom-ops on GitHub',
+                'archive.data.desc': '— CLI for schema-based pandas datasets and AI-assisted schemas.',
+                'archive.data.gh': 'data_generator on GitHub',
+                'archive.uniflix.desc': '— Academic study of movie recommendation strategies.',
+                'archive.uniflix.gh': 'uniflix on GitHub',
+                'archive.easyplay.desc': '— Archived 2010 music player with Twitter integration.',
+                'archive.easyplay.gh': 'EasyPlay on GitHub',
+                'projects.more': 'More on <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>.'
             },
             es: {
                 'nav.projects': 'Proyectos',
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contacto',
                 'nav.cv': 'Currículum',
-                'meetal.summary.content': 'Meetal es una plataforma ERP en rápida evolución orientada a la gestión operativa, financiera y de inventarios en el sector del reciclaje y la logística industrial.<br><br>La plataforma opera en entornos de producción con clientes activos e iteración continua del producto, combinando servicios de <i>back-end</i>, flujos operativos, funcionalidades con IA y integraciones externas.',
-                'meetal.responsibilities.title': 'Contribuciones clave',
-                'meetal.responsibilities.item1': 'Desarrollo de servicios de <i>back-end</i> y <i>APIs</i> para flujos operativos y financieros',
-                'meetal.responsibilities.item2': 'Integraciones con plataformas externas, hardware industrial y servicios con IA',
-                'meetal.responsibilities.item3': 'Participación en decisiones arquitectónicas relacionadas con escalabilidad y mantenibilidad a largo plazo',
-                'meetal.responsibilities.item4': 'Depuración, refactorización y optimización del rendimiento en flujos críticos en producción',
-                'meetal.stack.title': '<i>Stack</i> y Arquitectura',
-                'meetal.challenges.title': 'Desafíos Técnicos',
-                'meetal.challenges.performance.title': 'Rendimiento',
-                'meetal.challenges.performance.description': 'Optimización de flujos críticos en producción y cuellos de botella de rendimiento en sistemas operativos de rápido crecimiento.',
-                'meetal.challenges.integrations.title': 'Integraciones con Servicios Externos',
-                'meetal.challenges.integrations.description': 'Desarrollo de integraciones que involucran <i>APIs</i> externas, servicios con IA y hardware industrial mediante comunicación serial.',
-                'reusa.summary.content': 'ReUsa es una plataforma para la gestión, el mapeo y la comercialización de recursos hídricos de reutilización en el estado de Río de Janeiro.<br><br>El proyecto se desarrolló en el marco de una iniciativa de investigación e innovación con agencias gubernamentales, empresas de servicios de agua y equipos interdisciplinarios, con el objetivo de apoyar operaciones industriales de agua de reutilización mediante datos geoespaciales y operacionales.',
-                'reusa.responsibilities.title': 'Contribuciones clave',
-                'reusa.responsibilities.item1': 'Liderazgo técnico y definición de arquitectura para un MVP funcional presentado a organismos públicos y stakeholders de la industria',
-                'reusa.responsibilities.item2': 'Desarrollo de <i>back-end</i>, modelado de sistemas e implementación de integraciones geoespaciales con Google Maps APIs',
-                'reusa.responsibilities.item3': 'Definición de una arquitectura flexible y adaptable, orientada a iteración rápida y requisitos en evolución',
-                'reusa.responsibilities.item4': 'Documentación técnica, coordinación de entregas y comunicación orientada a stakeholders a lo largo del proyecto',
-                'reusa.stack.title': '<i>Stack</i> y Arquitectura',
-                'reusa.challenges.title': 'Desafíos Técnicos',
-                'reusa.challenges.geospatial.title': 'Integraciones geoespaciales',
-                'reusa.challenges.geospatial.description': 'Implementación de geolocalización y mapas con Google Maps APIs para visualización de recursos industriales y flujos operativos.',
-                'reusa.challenges.modeling.title': 'Modelado complejo',
-                'reusa.challenges.modeling.description': 'Traducción de cálculos de dominio, reglas operativas y requisitos interdisciplinarios en lógica de aplicación mantenible.',
-                'vandal.summary.content': 'Marketplace de print-on-demand y plataforma de producción en rápido crecimiento centrados en prendas personalizadas y diseños generados por usuarios.<br><br>Para entonces, la plataforma soportaba más de 70 mil diseños de producto creados por más de 10 mil artistas, combinando <i>e-commerce</i>, flujos operativos, logística de producción y sistemas de <i>back-end</i> en un entorno de <i>startup</i> con alta autonomía.',
-                'vandal.responsibilities.title': 'Contribuciones clave',
-                'vandal.responsibilities.item1': 'Desarrollo de sistemas de <i>back-end</i> que soportaban operaciones del marketplace, flujos de producción y logística',
-                'vandal.responsibilities.item2': 'Diseño e implementación de un módulo a medida de <i>back-office</i> y gestión de la producción',
-                'vandal.responsibilities.item3': 'Integraciones con pasarelas de pago, proveedores de envío, flujos en AWS S3 y dispositivos de hardware mediante comunicación serial',
-                'vandal.responsibilities.item4': 'Participación en decisiones de infraestructura, arquitectura de <i>back-end</i>, depuración y mantenimiento a largo plazo de sistemas en producción',
-                'vandal.responsibilities.item5': 'Traducción de requisitos de negocio y operación en soluciones técnicas escalables',
-                'vandal.stack.title': '<i>Stack</i> y Arquitectura',
-                'vandal.challenges.title': 'Desafíos Técnicos',
-                'vandal.challenges.scalability.title': 'Escalabilidad operativa',
-                'vandal.challenges.scalability.description': 'Optimización del procesamiento de alto volumen de pedidos y flujos de producción durante picos de tráfico y periodos promocionales.',
-                'vandal.challenges.external.title': 'Integraciones externas',
-                'vandal.challenges.external.description': 'Desarrollo de integraciones que involucran pasarelas de pago, proveedores de envío, flujos en AWS S3 y dispositivos de hardware mediante comunicación serial.',
-                'easyplay.subtitle': 'Reproductor integrado con Twitter<br>(proyecto académico)',
-                'easyplay.summary.title': 'Resumen',
-                'easyplay.summary.content': 'EasyPlay, un software de reproducción de música integrado con Twitter, es un proyecto académico desarrollado durante mi formación técnica en 2010. Enfocado en modelado orientado a objetos y documentación arquitectural, el sistema fue diseñado para ejercitar conceptos de diseño de software, diagramas UML y control de versiones.',
-                'easyplay.responsibilities.title': 'Mis responsabilidades',
-                'easyplay.responsibilities.item1': 'Modelado y arquitectura del sistema',
-                'easyplay.responsibilities.item2': 'Gestión de tareas',
-                'easyplay.responsibilities.item3': 'Desarrollo <i>back-end</i> e integraciones',
-                'easyplay.stack.title': '<i>Stack</i> y Arquitectura',
-                'easyplay.challenges.title': 'Desafíos Técnicos',
-                'easyplay.challenges.item1.title': 'Modelado de la base de datos',
-                'easyplay.challenges.item1.description': 'Estructuración de entidades y relaciones.',
-                'easyplay.challenges.item2.title': 'Documentación Arquitectural',
-                'easyplay.challenges.item2.description': 'Representación clara del sistema a través de diagramas, facilitando comprensión y comunicación técnica.',
-                'uniflix.subtitle': 'Sistema de recomendación de películas<br>(proyecto académico)',
-                'uniflix.summary.title': 'Resumen',
-                'uniflix.summary.content': 'Uniflix es un estudio enfocado en el desarrollo de un sistema de recomendación, explorando diferentes enfoques para sugerir contenidos con base en los datos registrados. El objetivo principal fue analizar estrategias distintas de recomendación y comprender sus impactos en precisión, escalabilidad y complejidad de implementación.',
-                'uniflix.responsibilities.title': 'Mis responsabilidades',
-                'uniflix.responsibilities.item1': 'Implementación de las lógicas de recomendación',
-                'uniflix.responsibilities.item2': 'Análisis y comparación de diferentes enfoques',
-                'uniflix.responsibilities.item3': 'Organización de la aplicación y reglas de negocio',
-                'uniflix.stack.title': '<i>Stack</i> y Arquitectura',
-                'uniflix.challenges.title': 'Desafíos Técnicos',
-                'uniflix.challenges.item1.title': 'Lógica de Recomendación',
-                'uniflix.challenges.item1.description': 'Implementación y comparación de múltiples estrategias de recomendación, evaluando ventajas y limitaciones de cada enfoque.',
-                'uniflix.challenges.item2.title': 'Análisis de Datos',
-                'uniflix.challenges.item2.description': 'Estructuración y tratamiento eficiente de los datos para generar recomendaciones relevantes de forma consistente.',
-                'otherProjects.title': 'Otros proyectos',
-                'otherProjects.content': 'Si quieres ver más proyectos en los que participé o que desarrollé, contáctame en <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> o en <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>!'
+                'page.kicker': 'estudios de caso',
+                'page.title': 'Estudios de caso de ingeniería de software',
+                'page.lede': 'Sistemas en producción, IA aplicada y un archivo breve de trabajos anteriores.',
+                'hero.status': 'Disponible para contratos remotos y consultoría',
+                'hero.role': 'Ingeniero de backend sénior',
+                'hero.pitch': ' especializado en arquitecturas de producción, APIs de alto volumen e integraciones pragmáticas de IA.',
+                'hero.context': 'Ingeniería de sistemas robustos en Python/FastAPI, AWS y flujos de datos modernos.<br>Río de Janeiro, Brasil · Trabajo remoto en todo el mundo.',
+                'hero.resume': 'Currículum',
+                'section.production': 'Sistemas en producción',
+                'section.ai': 'IA aplicada',
+                'section.archive': 'Seleccionados y académicos',
+                'arch.label': 'Capa de integración',
+                'meetal.domain': 'ERP industrial y logística',
+                'meetal.status': 'En producción · 2025–presente',
+                'meetal.summary': 'Las operaciones de reciclaje y logística industrial habían superado un backend en DynamoDB, incapaz de sostener flujos financieros y hardware de planta. Meetal pasó a ejecutarse en FastAPI y PostgreSQL tras una migración sin downtime, con básculas RS-232 y flujos estructurados de OpenAI en el mismo núcleo operativo.',
+                'meetal.m1.label': 'Migración',
+                'meetal.m1.value': 'DynamoDB → FastAPI y PostgreSQL, sin downtime',
+                'meetal.m2.label': 'Hardware',
+                'meetal.m2.value': 'Comunicación serial RS-232 con báscula industrial',
+                'meetal.m3.label': 'IA',
+                'meetal.m3.value': 'Flujos estructurados de la API de OpenAI',
+                'meetal.arch.a': 'Báscula RS-232',
+                'meetal.arch.sub': 'API estructurada de OpenAI · AWS Lambda · corte de DynamoDB, sin downtime',
+                'vandal.domain': 'E-commerce de alta concurrencia',
+                'vandal.status': 'Producción · 2015–2021',
+                'vandal.summary': 'Un marketplace de print-on-demand necesitaba convertir diseños de más de 10 mil artistas en pedidos producidos, también en picos de tráfico. La plataforma en Rails sostuvo más de 70 mil productos con Sidekiq y Redis, pasarelas de pago, cálculo de flete y pipelines de producción en AWS S3.',
+                'vandal.m1.label': 'Escala',
+                'vandal.m1.value': '70 mil+ productos, 10 mil+ artistas',
+                'vandal.m2.label': 'Asíncrono',
+                'vandal.m2.value': 'Colas pesadas con Sidekiq + Redis',
+                'vandal.m3.label': 'Integraciones',
+                'vandal.m3.value': 'Pagos, cálculo de flete y pipelines en AWS S3',
+                'vandal.arch.a': 'Tienda',
+                'vandal.arch.sub': 'Sidekiq + Redis → pagos, flete, S3, Elasticsearch',
+                'ta.domain': 'IA aplicada y EdTech',
+                'ta.status': 'En vivo',
+                'ta.summary': 'Los docentes necesitaban apoyo para las clases anclado en un currículo real, y no en una salida genérica del modelo. El asistente orquesta el contexto de la BNCC y de los frameworks de Massachusetts, se conecta directo a la API REST de Schoology y no persiste datos de estudiantes en el almacenamiento de la aplicación.',
+                'ta.m1.label': 'Anclaje',
+                'ta.m1.value': 'Orquestación de contexto sin alucinación (BNCC y Massachusetts)',
+                'ta.m2.label': 'LMS',
+                'ta.m2.value': 'Conexión directa con la API REST de Schoology',
+                'ta.m3.label': 'Privacidad',
+                'ta.m3.value': 'Ningún dato de estudiante persistido en el almacenamiento de la aplicación',
+                'ta.arch.a': 'Prompt del docente',
+                'ta.arch.sub': 'contexto BNCC + Massachusetts → Schoology REST · ningún dato de estudiante almacenado',
+                'ta.demo': 'Demo en vivo',
+                'archive.caption': 'Proyectos seleccionados y académicos',
+                'archive.reusa.desc': '— MVP geoespacial de recursos hídricos de reúso industrial en Río de Janeiro.',
+                'archive.classroom.desc': '— Backend modular para la operación del aula y flujos de API.',
+                'archive.classroom.gh': 'classroom-ops en GitHub',
+                'archive.data.desc': '— CLI para datasets de pandas basados en schema y schemas asistidos por IA.',
+                'archive.data.gh': 'data_generator en GitHub',
+                'archive.uniflix.desc': '— Estudio académico de estrategias de recomendación de películas.',
+                'archive.uniflix.gh': 'uniflix en GitHub',
+                'archive.easyplay.desc': '— Reproductor de música archivado de 2010, integrado con Twitter.',
+                'archive.easyplay.gh': 'EasyPlay en GitHub',
+                'projects.more': 'Más en <a href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub</a> y en <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener noreferrer">LinkedIn</a>.'
             }
         };
 
-        // Initial language: saved -> browser -> EN fallback
+        const htmlLang = { pt: 'pt-BR', en: 'en', es: 'es' };
+
         function getInitialLanguage() {
             const saved = localStorage.getItem('language');
             if (saved) return saved;
@@ -654,38 +538,30 @@
 
         let currentLanguage = getInitialLanguage();
 
-        // Function to change language
         function changeLanguage(lang) {
             currentLanguage = lang;
             localStorage.setItem('language', lang);
             applyTranslations();
         }
 
-        // Function to apply translations
         function applyTranslations() {
+            document.documentElement.lang = htmlLang[currentLanguage] || 'en';
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
                 if (translations[currentLanguage] && translations[currentLanguage][key]) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.value = translations[currentLanguage][key];
-                    } else {
-                        element.innerHTML = translations[currentLanguage][key];
-                    }
+                    element.innerHTML = translations[currentLanguage][key];
                 }
             });
-            
-            // Update language selector
+
             const languageSelect = document.getElementById('languageSelect');
             if (languageSelect) {
                 languageSelect.value = currentLanguage;
             }
         }
 
-        // Initialize translations on page load
         document.addEventListener('DOMContentLoaded', function() {
             applyTranslations();
-            
-            // Highlight active page in navigation
+
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             document.querySelectorAll('nav a').forEach(link => {
                 if (link.getAttribute('href') === currentPage) {
@@ -693,57 +569,6 @@
                 }
             });
         });
-
-        // Função para scroll suave para a próxima seção
-        function scrollToNextSection(button) {
-            const currentSection = button.closest('.project-section');
-            let nextElement = currentSection.nextElementSibling;
-
-            while (nextElement) {
-                if (nextElement.classList.contains('section-divider')) {
-                    nextElement = nextElement.nextElementSibling;
-                    continue;
-                }
-                if (nextElement.classList.contains('project-section')) {
-                    if (nextElement.classList.contains('project-section--record-only')) {
-                        nextElement = nextElement.nextElementSibling;
-                        continue;
-                    }
-                    nextElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    return;
-                }
-                nextElement = nextElement.nextElementSibling;
-            }
-        }
-
-        // Função para scroll suave para a seção anterior
-        function scrollToPreviousSection(button) {
-            const currentSection = button.closest('.project-section');
-            let previousElement = currentSection.previousElementSibling;
-
-            while (previousElement) {
-                if (previousElement.classList.contains('section-divider')) {
-                    previousElement = previousElement.previousElementSibling;
-                    continue;
-                }
-                if (previousElement.classList.contains('project-section')) {
-                    if (previousElement.classList.contains('project-section--record-only')) {
-                        previousElement = previousElement.previousElementSibling;
-                        continue;
-                    }
-                    previousElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    return;
-                }
-                previousElement = previousElement.previousElementSibling;
-            }
-        }
     </script>
 </body>
 </html>
-
