@@ -6,6 +6,11 @@
     padding: 8px 0 0;
 }
 
+/* Wider than the default page wrap so the contact cards can breathe */
+.contact-container.projects-wrap {
+    max-width: 1240px;
+}
+
 .about-container::before,
 .contact-container::before {
     content: "";
@@ -267,7 +272,7 @@
 
 .contact-card {
     margin: 0;
-    padding: 22px 20px 18px;
+    padding: 32px 32px 28px;
     background: rgba(17, 19, 26, 0.75);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -285,8 +290,16 @@
 }
 
 .contact-icon {
-    margin-bottom: 14px;
-    font-size: 1.35rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.22);
+    background: rgba(16, 185, 129, 0.08);
+    color: #34d399;
     line-height: 1;
 }
 
@@ -365,7 +378,7 @@
     }
 
     .contact-card {
-        padding: 18px 16px 16px;
+        padding: 22px 20px 20px;
     }
 }
 
