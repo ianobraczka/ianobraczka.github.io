@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ianobraczka | about</title>
-    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/icons/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="theme-color" content="#090a0f">
@@ -40,72 +41,88 @@
                     <div class="about-head">
                         <div class="about-head__photo">
                             <div class="about-photo" style="display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.9em;">
-                                <img src="assets/images/Ian Andrade (1).jpg" alt="Profile Photo" style="width: 100%; height: 100%; object-fit: cover; object-position: center 21%; border-radius: 50%;" onerror="this.style.display='none'; this.parentElement.textContent='Foto';">
+                                <img src="assets/images/profile.webp" alt="Profile Photo" style="width: 100%; height: 100%; object-fit: cover; object-position: center 21%; border-radius: 50%;" onerror="this.style.display='none'; this.parentElement.textContent='Foto';">
                             </div>
                         </div>
                         <div class="about-head__intro">
                             <p class="intro-text" data-translate="about.intro.content">
-                                Hello, I'm Ian, and I'm a backend engineer focused on production systems, APIs, integrations, and long-term maintainability. Over the years, I've worked on fast-evolving products, operational platforms, and high-autonomy startup environments, helping translate real business needs into reliable software solutions.<br><br>My work combines backend engineering, technical decision-making, and pragmatic problem solving — especially in systems that require scalability, operational reliability, and continuous evolution.
+                                I am a Senior Backend Engineer based in Rio de Janeiro, Brazil, with over a decade of experience architecting systems and APIs, scaling distributed data pipelines, and maintaining mission-critical platforms in production.<br><br>My engineering approach is pragmatic and ownership-driven: I prioritize clean system boundaries, long-term maintainability, and building software that directly solves operational bottlenecks. Across startups and scaling businesses, I have led zero-downtime database migrations, built custom production-floor ERP modules, and integrated industrial hardware alongside modern applied AI workflows.
                             </p>
                         </div>
                     </div>
 
                     <section class="about-section">
-                        <h2 class="section-title" data-translate="about.experience.title">Experiência profissional</h2>
+                        <h2 class="section-title" data-translate="about.experience.title">Liderança técnica e comunicação</h2>
                         <p class="experience-text" data-translate="about.experience.content">
-                            Experiência na construção e manutenção de sistemas em produção, serviços de <i>back-end</i> e plataformas operacionais em ambientes de ritmo acelerado. Foco em arquiteturas escaláveis, integrações de <i>APIs</i>, manutenibilidade a longo prazo e práticas de engenharia pragmáticas.
+                            Além de escrever código confiável, minha ampla trajetória em educação e programas formais de liderança moldou profundamente a forma como atuo em equipes de engenharia. Com minhas habilidades de comunicação, atuo naturalmente como ponte entre a profundidade técnica e os <i>stakeholders</i> de negócio.
                         </p>
                     </section>
 
                     <section class="about-section">
-                        <h2 class="section-title" data-translate="about.focus.title">Foco profissional</h2>
-                        <p class="focus-text" data-translate="about.focus.content">
-                            I work best in environments that value ownership, technical responsibility and close collaboration between engineering, product, and business. Particularly interested in systems that involve operational complexity, integrations, scalability challenges, and long-term product evolution.
-                        </p>
+                        <h2 class="section-title" data-translate="about.focus.title">Como eu trabalho e foco profissional</h2>
+                        <ul class="work-principles focus-list">
+                            <li data-translate="about.focus.i1"><strong>Sistemas de alto impacto:</strong> Atuo bem em ambientes com complexidade operacional real — lidando com picos de tráfego concorrente, filas assíncronas em segundo plano e integridade de dados relacionais em escala.</li>
+                            <li data-translate="about.focus.i2"><strong>IA pragmática e integrações:</strong> Experiência em integrar LLMs a plataformas existentes com saídas validadas por <i>schema</i> e ancoragem contextual, evitando <i>wrappers</i> superficiais em favor de valor de negócio mensurável.</li>
+                            <li data-translate="about.focus.i3"><strong>Colaboração autônoma:</strong> Confortável em liderar iniciativas de ponta a ponta, definir <i>roadmaps</i> técnicos e colaborar de perto com designers de produto, operações e liderança para entregar soluções confiáveis em ciclos rápidos de produto.</li>
+                        </ul>
+                        <p class="focus-text focus-closing" data-translate="about.focus.closing">Atualmente aberto a contratos remotos de <i>back-end</i>, consultoria técnica e projetos internacionais de engenharia em qualquer lugar do mundo.</p>
                     </section>
 
                     <div class="about-stack-skills-row">
                     <section class="about-section about-section--stack about-stack-skills-row__col">
                         <div class="stack-category">
-                            <h3 class="category-title" data-translate="about.stack.languages">Linguagens</h3>
+                            <h3 class="category-title" data-translate="about.stack.languages">Linguagens e runtimes</h3>
                             <div class="tech-list">
                                 <span class="tech-item">Python</span>
+                                <span class="tech-item">Ruby</span>
                                 <span class="tech-item">Java</span>
                                 <span class="tech-item">Kotlin</span>
-                                <span class="tech-item">Ruby</span>
+                                <span class="tech-item">TypeScript</span>
                             </div>
                         </div>
 
                         <div class="stack-category">
-                            <h3 class="category-title" data-translate="about.stack.databases">Dados e armazenamento</h3>
+                            <h3 class="category-title" data-translate="about.stack.frameworks">Frameworks e core</h3>
+                            <div class="tech-list">
+                                <span class="tech-item">FastAPI</span>
+                                <span class="tech-item">Ruby on Rails</span>
+                                <span class="tech-item">Next.js</span>
+                                <span class="tech-item">REST APIs</span>
+                            </div>
+                        </div>
+
+                        <div class="stack-category">
+                            <h3 class="category-title" data-translate="about.stack.databases">Dados e filas assíncronas</h3>
                             <div class="tech-list">
                                 <span class="tech-item">PostgreSQL</span>
                                 <span class="tech-item">MongoDB</span>
                                 <span class="tech-item">DynamoDB</span>
+                                <span class="tech-item">Redis</span>
+                                <span class="tech-item">Sidekiq</span>
                                 <span class="tech-item">Elasticsearch</span>
                             </div>
                         </div>
 
                         <div class="stack-category">
-                            <h3 class="category-title" data-translate="about.stack.cloud">Cloud / Infra</h3>
+                            <h3 class="category-title" data-translate="about.stack.cloud">Cloud e protocolos</h3>
                             <div class="tech-list">
                                 <span class="tech-item">AWS</span>
                                 <span class="tech-item">Docker</span>
-                                <span class="tech-item">FastAPI</span>
-                                <span class="tech-item">API Gateway</span>
                                 <span class="tech-item">CI/CD</span>
+                                <span class="tech-item">OpenAI/Gemini APIs</span>
+                                <span class="tech-item">Hardware integration</span>
                             </div>
                         </div>
                     </section>
 
                     <section class="about-section about-stack-skills-row__col">
-                        <h2 class="section-title" data-translate="about.work.title">Outras habilidades</h2>
+                        <h2 class="section-title" data-translate="about.work.title">Liderança e entrega de engenharia</h2>
                         <ul class="work-principles">
-                            <li data-translate="about.work.principle1">Inglês fluente</li>
-                            <li data-translate="about.work.principle2">Liderança técnica e mentoria</li>
-                            <li data-translate="about.work.principle3">Práticas de desenvolvimento ágil</li>
-                            <li data-translate="about.work.principle4">Mentalidade de engenharia orientada a produto</li>
-                            <li data-translate="about.work.principle5">Comunicação clara entre contextos técnicos e de negócio</li>
+                            <li data-translate="about.work.principle1">Liderança técnica e mentoria</li>
+                            <li data-translate="about.work.principle2">Arquitetura de sistemas e migrações de dados</li>
+                            <li data-translate="about.work.principle3">Alta concorrência e gestão de tráfego</li>
+                            <li data-translate="about.work.principle4">Alinhamento entre equipes</li>
+                            <li data-translate="about.work.principle5">Documentação técnica clara e comunicação assíncrona</li>
                         </ul>
                     </section>
                     </div>
@@ -121,60 +138,72 @@
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contato',
                 'nav.cv': 'Currículo',
-                'about.intro.content': 'Olá, sou o Ian, e sou engenheiro de <i>back-end</i> focado em sistemas em produção, <i>APIs</i>, integrações e manutenibilidade a longo prazo. Ao longo dos anos, trabalhei em produtos em rápida evolução, plataformas operacionais e ambientes de <i>startups</i> com alta autonomia, ajudando a traduzir necessidades reais de negócio em soluções de software confiáveis.<br><br>Meu trabalho combina engenharia de <i>back-end</i>, tomada de decisão técnica e resolução pragmática de problemas — sobretudo em sistemas que exigem escalabilidade, confiabilidade operacional e evolução contínua.',
-                'about.work.title': 'Outras habilidades',
-                'about.work.principle1': 'Inglês fluente',
-                'about.work.principle2': 'Liderança técnica e mentoria',
-                'about.work.principle3': 'Práticas de desenvolvimento ágil',
-                'about.work.principle4': 'Mentalidade de engenharia orientada a produto',
-                'about.work.principle5': 'Comunicação clara entre contextos técnicos e de negócio',
-                'about.stack.languages': 'Linguagens',
-                'about.stack.databases': 'Dados e armazenamento',
-                'about.stack.cloud': 'Cloud / Infra',
-                'about.experience.title': 'Experiência profissional',
-                'about.experience.content': 'Experiência na construção e manutenção de sistemas em produção, serviços de <i>back-end</i> e plataformas operacionais em ambientes de ritmo acelerado. Foco em arquiteturas escaláveis, integrações de <i>APIs</i>, manutenibilidade a longo prazo e práticas de engenharia pragmáticas.',
-                'about.focus.title': 'Foco profissional',
-                'about.focus.content': 'Tenho melhor desempenho em ambientes que valorizam senso de dono, responsabilidade técnica e colaboração próxima entre engenharia, produto e negócios. Interesse especial em sistemas que envolvam complexidade operacional, integrações, desafios de escalabilidade e evolução de produto a longo prazo.'
+                'about.intro.content': 'Sou engenheiro de <i>back-end</i> sênior, baseado no Rio de Janeiro, Brasil, com mais de uma década de experiência na arquitetura de sistemas e <i>APIs</i>, no escalonamento de <i>pipelines</i> de dados distribuídos e na manutenção de plataformas críticas em produção.<br><br>Minha abordagem de engenharia é pragmática e orientada ao senso de dono: priorizo limites de sistema bem definidos, manutenibilidade a longo prazo e a construção de software que resolva diretamente gargalos operacionais. Em <i>startups</i> e empresas em crescimento, liderei migrações de banco de dados sem <i>downtime</i>, construí módulos de ERP personalizados para o chão de fábrica e integrei <i>hardware</i> industrial a fluxos modernos de IA aplicada.',
+                'about.work.title': 'Liderança e entrega de engenharia',
+                'about.work.principle1': 'Liderança técnica e mentoria',
+                'about.work.principle2': 'Arquitetura de sistemas e migrações de dados',
+                'about.work.principle3': 'Alta concorrência e gestão de tráfego',
+                'about.work.principle4': 'Alinhamento entre equipes',
+                'about.work.principle5': 'Documentação técnica clara e comunicação assíncrona',
+                'about.stack.languages': 'Linguagens e runtimes',
+                'about.stack.frameworks': 'Frameworks e core',
+                'about.stack.databases': 'Dados e filas assíncronas',
+                'about.stack.cloud': 'Cloud e protocolos',
+                'about.experience.title': 'Liderança técnica e comunicação',
+                'about.experience.content': 'Além de escrever código confiável, minha ampla trajetória em educação e programas formais de liderança moldou profundamente a forma como atuo em equipes de engenharia. Com minhas habilidades de comunicação, atuo naturalmente como ponte entre a profundidade técnica e os <i>stakeholders</i> de negócio.',
+                'about.focus.title': 'Como eu trabalho e foco profissional',
+                'about.focus.i1': '<strong>Sistemas de alto impacto:</strong> Atuo bem em ambientes com complexidade operacional real — lidando com picos de tráfego concorrente, filas assíncronas em segundo plano e integridade de dados relacionais em escala.',
+                'about.focus.i2': '<strong>IA pragmática e integrações:</strong> Experiência em integrar LLMs a plataformas existentes com saídas validadas por <i>schema</i> e ancoragem contextual, evitando <i>wrappers</i> superficiais em favor de valor de negócio mensurável.',
+                'about.focus.i3': '<strong>Colaboração autônoma:</strong> Confortável em liderar iniciativas de ponta a ponta, definir <i>roadmaps</i> técnicos e colaborar de perto com designers de produto, operações e liderança para entregar soluções confiáveis em ciclos rápidos de produto.',
+                'about.focus.closing': 'Atualmente aberto a contratos remotos de <i>back-end</i>, consultoria técnica e projetos internacionais de engenharia em qualquer lugar do mundo.'
             },
             en: {
                 'nav.projects': 'Projects',
                 'nav.about': 'About',
                 'nav.contact': 'Contact',
                 'nav.cv': 'Resume',
-                'about.intro.content': 'Hello, I\'m Ian, and I\'m a backend engineer focused on production systems, APIs, integrations, and long-term maintainability. Over the years, I\'ve worked on fast-evolving products, operational platforms, and high-autonomy startup environments, helping translate real business needs into reliable software solutions.<br><br>My work combines backend engineering, technical decision-making, and pragmatic problem solving — especially in systems that require scalability, operational reliability, and continuous evolution.',
-                'about.work.title': 'Other skills',
-                'about.work.principle1': 'Fluent English',
-                'about.work.principle2': 'Technical leadership & mentoring',
-                'about.work.principle3': 'Agile development practices',
-                'about.work.principle4': 'Product-oriented engineering mindset',
-                'about.work.principle5': 'Clear communication across technical and business contexts',
-                'about.stack.languages': 'Languages',
-                'about.stack.databases': 'Data & storage',
-                'about.stack.cloud': 'Cloud / Infra',
-                'about.experience.title': 'Professional experience',
-                'about.experience.content': 'Experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments. Focused on scalable architectures, API integrations, long-term maintainability, and pragmatic engineering practices.',
-                'about.focus.title': 'Professional focus',
-                'about.focus.content': 'I work best in environments that value ownership, technical responsibility and close collaboration between engineering, product, and business. Particularly interested in systems that involve operational complexity, integrations, scalability challenges, and long-term product evolution.'
+                'about.intro.content': 'I am a Senior Backend Engineer based in Rio de Janeiro, Brazil, with over a decade of experience architecting systems and APIs, scaling distributed data pipelines, and maintaining mission-critical platforms in production.<br><br>My engineering approach is pragmatic and ownership-driven: I prioritize clean system boundaries, long-term maintainability, and building software that directly solves operational bottlenecks. Across startups and scaling businesses, I have led zero-downtime database migrations, built custom production-floor ERP modules, and integrated industrial hardware alongside modern applied AI workflows.',
+                'about.work.title': 'Engineering leadership & delivery',
+                'about.work.principle1': 'Technical Leadership & Mentoring',
+                'about.work.principle2': 'System Architecture & Data Migrations',
+                'about.work.principle3': 'High-Concurrency & Traffic Management',
+                'about.work.principle4': 'Cross-Team Alignment',
+                'about.work.principle5': 'Clear Technical Documentation & Asynchronous Communication',
+                'about.stack.languages': 'Languages & runtimes',
+                'about.stack.frameworks': 'Frameworks & core',
+                'about.stack.databases': 'Data & async queues',
+                'about.stack.cloud': 'Cloud & protocols',
+                'about.experience.title': 'Technical leadership & communication',
+                'about.experience.content': 'Beyond writing reliable code, my extensive background in education and formal leadership programs has deeply shaped how I operate in engineering teams. Using my communication skills, I naturally act as a bridge between technical depth and business stakeholders.',
+                'about.focus.title': 'How I work & professional focus',
+                'about.focus.i1': '<strong>High-Impact Systems:</strong> I thrive in environments with real operational complexity—handling concurrent traffic spikes, asynchronous background queues, and relational data integrity at scale.',
+                'about.focus.i2': '<strong>Pragmatic AI & Integrations:</strong> Experienced in integrating LLMs into existing platforms using schema-enforced outputs and contextual grounding, avoiding superficial wrappers in favor of measurable business value.',
+                'about.focus.i3': '<strong>Autonomous Collaboration:</strong> Comfortable leading initiatives end-to-end, defining technical roadmaps, and collaborating closely with product designers, operations, and leadership to deliver reliable solutions under fast product cycles.',
+                'about.focus.closing': 'Currently open to remote backend contracts, technical consultancy, and international engineering engagements worldwide.'
             },
             es: {
                 'nav.projects': 'Proyectos',
                 'nav.about': 'Sobre',
                 'nav.contact': 'Contacto',
                 'nav.cv': 'Currículum',
-                'about.intro.content': 'Hola, soy Ian, y soy ingeniero de <i>back-end</i> centrado en sistemas en producción, <i>APIs</i>, integraciones y mantenibilidad a largo plazo. A lo largo de los años he trabajado en productos de rápida evolución, plataformas operativas y entornos de <i>startups</i> con alta autonomía, ayudando a traducir necesidades reales de negocio en soluciones de software fiables.<br><br>Mi trabajo combina ingeniería de <i>back-end</i>, toma de decisiones técnicas y resolución pragmática de problemas — sobre todo en sistemas que requieren escalabilidad, fiabilidad operativa y evolución continua.',
-                'about.work.title': 'Otras habilidades',
-                'about.work.principle1': 'Inglés fluido',
-                'about.work.principle2': 'Liderazgo técnico y mentoría',
-                'about.work.principle3': 'Prácticas de desarrollo ágil',
-                'about.work.principle4': 'Mentalidad de ingeniería orientada al producto',
-                'about.work.principle5': 'Comunicación clara entre contextos técnicos y de negocio',
-                'about.stack.languages': 'Lenguajes',
-                'about.stack.databases': 'Datos y almacenamiento',
-                'about.stack.cloud': 'Cloud / Infra',
-                'about.experience.title': 'Experiencia profesional',
-                'about.experience.content': 'Experiencia construyendo y manteniendo sistemas en producción, servicios de <i>back-end</i> y plataformas operativas en entornos de ritmo acelerado. Enfoque en arquitecturas escalables, integraciones de <i>APIs</i>, mantenibilidad a largo plazo y prácticas de ingeniería pragmáticas.',
-                'about.focus.title': 'Enfoque profesional',
-                'about.focus.content': 'Trabajo mejor en entornos que valoran el <i>ownership</i>, la responsabilidad técnica y la colaboración cercana entre ingeniería, producto y negocio. Interés particular en sistemas que impliquen complejidad operacional, integraciones, retos de escalabilidad y evolución del producto a largo plazo.'
+                'about.intro.content': 'Soy ingeniero de <i>back-end</i> sénior, radicado en Río de Janeiro, Brasil, con más de una década de experiencia en la arquitectura de sistemas y <i>APIs</i>, el escalado de <i>pipelines</i> de datos distribuidos y el mantenimiento de plataformas críticas en producción.<br><br>Mi enfoque de ingeniería es pragmático y orientado al <i>ownership</i>: priorizo límites de sistema claros, mantenibilidad a largo plazo y la construcción de software que resuelva directamente cuellos de botella operativos. En <i>startups</i> y empresas en crecimiento, he liderado migraciones de bases de datos sin <i>downtime</i>, construido módulos de ERP personalizados para el piso de producción e integrado <i>hardware</i> industrial con flujos modernos de IA aplicada.',
+                'about.work.title': 'Liderazgo y entrega de ingeniería',
+                'about.work.principle1': 'Liderazgo técnico y mentoría',
+                'about.work.principle2': 'Arquitectura de sistemas y migraciones de datos',
+                'about.work.principle3': 'Alta concurrencia y gestión de tráfico',
+                'about.work.principle4': 'Alineación entre equipos',
+                'about.work.principle5': 'Documentación técnica clara y comunicación asíncrona',
+                'about.stack.languages': 'Lenguajes y runtimes',
+                'about.stack.frameworks': 'Frameworks y core',
+                'about.stack.databases': 'Datos y colas asíncronas',
+                'about.stack.cloud': 'Cloud y protocolos',
+                'about.experience.title': 'Liderazgo técnico y comunicación',
+                'about.experience.content': 'Más allá de escribir código confiable, mi amplia trayectoria en educación y programas formales de liderazgo ha moldeado profundamente la forma en que trabajo en equipos de ingeniería. Gracias a mis habilidades de comunicación, actúo de forma natural como puente entre la profundidad técnica y los <i>stakeholders</i> de negocio.',
+                'about.focus.title': 'Cómo trabajo y enfoque profesional',
+                'about.focus.i1': '<strong>Sistemas de alto impacto:</strong> Me desenvuelvo bien en entornos con complejidad operativa real: picos de tráfico concurrente, colas asíncronas en segundo plano e integridad de datos relacionales a escala.',
+                'about.focus.i2': '<strong>IA pragmática e integraciones:</strong> Experiencia integrando LLMs en plataformas existentes con salidas validadas por <i>schema</i> y anclaje contextual, evitando <i>wrappers</i> superficiales en favor de valor de negocio medible.',
+                'about.focus.i3': '<strong>Colaboración autónoma:</strong> Cómodo liderando iniciativas de punta a punta, definiendo <i>roadmaps</i> técnicos y colaborando de cerca con diseñadores de producto, operaciones y liderazgo para entregar soluciones fiables en ciclos de producto rápidos.',
+                'about.focus.closing': 'Actualmente abierto a contratos remotos de <i>back-end</i>, consultoría técnica y proyectos internacionales de ingeniería en cualquier parte del mundo.'
             }
         };
 

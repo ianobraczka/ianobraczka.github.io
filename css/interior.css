@@ -44,7 +44,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: clamp(24px, 4vw, 56px);
-    margin-bottom: 36px;
+    margin-bottom: 50px;
     width: 100%;
 }
 
@@ -69,7 +69,7 @@
 
 .about-section {
     width: 100%;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
     text-align: left;
 }
 
@@ -78,21 +78,32 @@
     margin-bottom: 0;
 }
 
-.about-single__inner > section:nth-child(2) {
-    margin-bottom: 28px;
-}
-
+.about-single__inner > section:nth-child(2),
 .about-single__inner > section:nth-child(3) {
     margin-bottom: 40px;
 }
 
-.section-title {
+.section-title,
+.about-page .section-title {
     margin: 0 0 12px;
-    font-size: clamp(1.45rem, 2.4vw, 1.85rem);
-    font-weight: 600;
-    letter-spacing: -0.03em;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
     line-height: 1.15;
+    text-transform: uppercase;
+    color: #34d399;
     text-align: left;
+}
+
+/* Skills box: right-column title aligns with the left-column category titles */
+.about-page .about-stack-skills-row .section-title {
+    margin-bottom: 10px;
+}
+
+/* Section titles outside the skills box */
+.about-page .about-single__inner > .about-section > .section-title {
+    font-size: 14px;
 }
 
 .intro-text,
@@ -150,12 +161,14 @@
     margin-bottom: 0;
 }
 
-.category-title {
+.category-title,
+.about-page .category-title {
     margin: 0 0 10px;
     font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.08em;
+    line-height: 1.15;
     text-transform: uppercase;
     color: #34d399;
 }
@@ -193,6 +206,27 @@
     font-size: 0.98rem;
     line-height: 1.55;
     text-align: left;
+}
+
+.focus-list li {
+    padding: 7px 0 7px 18px;
+    color: #a1a1aa;
+    font-size: 1.02rem;
+    line-height: 1.65;
+    max-width: 99.36ch;
+}
+
+.focus-list li::before {
+    top: 17px;
+}
+
+.focus-list strong {
+    color: #e4e4e7;
+    font-weight: 600;
+}
+
+.focus-closing {
+    margin-top: 14px;
 }
 
 .work-principles li::before {
@@ -322,9 +356,6 @@
         grid-template-columns: 1fr;
     }
 
-    .section-title {
-        font-size: 1.45rem;
-    }
 }
 
 @media (max-width: 480px) {

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ian Andrade Obraczka | CV</title>
-    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/icons/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -361,12 +362,12 @@
             background: #2c5282;
         }
 
-        /* Hanging alignment on wrap: bullet via ::before + flex (not text-indent) */
+        /* Char bullets: absolute marker so <strong>Label</strong>: text stays one inline run
+           (flex was inserting gap between the strong and the colon). */
         .cv-block ul.cv-list-char-bullets li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.4em;
-            padding-left: 0;
+            display: block;
+            position: relative;
+            padding-left: 1.15em;
             text-indent: 0;
             min-width: 0;
         }
@@ -375,15 +376,14 @@
         }
         .cv-block ul.cv-list-char-bullets li::before {
             content: '•';
-            position: static !important;
-            left: auto !important;
-            top: auto !important;
+            position: absolute !important;
+            left: 0;
+            top: 0;
             width: auto !important;
             height: auto !important;
             border-radius: 0 !important;
             background: none !important;
             background-color: transparent !important;
-            flex-shrink: 0;
             margin: 0;
             padding: 0;
             color: #444;
@@ -476,6 +476,21 @@
             .cv-section:has(> h2[data-translate="cv.section.exp.tech"]) .cv-timeline .cv-block li {
                 margin-bottom: 3px !important;
             }
+            /* PT/ES copy wraps taller than EN — reclaim a few lines on page 1 */
+            html[lang="pt"] .cv-section:has(> h2[data-translate="cv.section.exp.tech"]) .cv-timeline-item,
+            html[lang="es"] .cv-section:has(> h2[data-translate="cv.section.exp.tech"]) .cv-timeline-item {
+                padding-bottom: 10px !important;
+            }
+            html[lang="pt"] .cv-section:has(> h2[data-translate="cv.section.exp.tech"]) .cv-block li,
+            html[lang="es"] .cv-section:has(> h2[data-translate="cv.section.exp.tech"]) .cv-block li {
+                margin-bottom: 2px !important;
+                line-height: 1.36;
+            }
+            html[lang="pt"] .cv-section:has(> h2[data-translate="cv.section.exp.tech"]) .cv-block > p.cv-job-desc,
+            html[lang="es"] .cv-section:has(> h2[data-translate="cv.section.exp.tech"]) .cv-block > p.cv-job-desc {
+                margin-bottom: 4px !important;
+                line-height: 1.36;
+            }
             .cv-block ul { margin-bottom: 8px; }
             .cv-block ul:last-child { margin-bottom: 8px; }
             .cv-block li { font-size: calc(0.76rem - 2px) !important; margin-bottom: 5px; line-height: 1.42; }
@@ -496,10 +511,9 @@
                 line-height: inherit !important;
             }
             .cv-block ul.cv-list-char-bullets li {
-                display: flex;
-                align-items: flex-start;
-                gap: 0.35em;
-                padding-left: 0;
+                display: block;
+                position: relative;
+                padding-left: 1.05em;
                 text-indent: 0;
                 min-width: 0;
             }
@@ -508,14 +522,13 @@
             }
             .cv-block ul.cv-list-char-bullets li::before {
                 content: '•';
-                position: static !important;
-                left: auto !important;
-                top: auto !important;
+                position: absolute !important;
+                left: 0;
+                top: 0;
                 width: auto !important;
                 height: auto !important;
                 border-radius: 0 !important;
                 background: none !important;
-                flex-shrink: 0;
                 margin: 0;
                 padding: 0;
                 color: #444;
@@ -540,9 +553,6 @@
             }
             .cv-section:has(> h2[data-translate="cv.section.skills"]) {
                 padding-top: 12px !important;
-            }
-            .cv-section:has(> h2[data-translate="cv.section.exp.edu"]) .cv-list-char-bullets li strong {
-                margin-right: -0.24em;
             }
             .cv-edu-cert-row .cv-edu-item,
             .cv-edu-cert-row .cv-workshop-item { padding: 6px 0; page-break-inside: avoid; }
@@ -602,7 +612,7 @@
                 <p class="cv-summary" data-translate="cv.summary">
                     Backend Engineer with experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments.<br><br>Focused on APIs, system integrations, scalable architectures, and long-term maintainability, with a pragmatic approach to technical decision-making and product development. Strong background working close to business and operational contexts, translating real-world requirements into reliable software solutions.<br><br>Experience in technical leadership, mentoring, and education reinforces clear communication, collaboration, and problem-solving across multidisciplinary teams.
                 </p>
-                <p class="cv-summary cv-summary--pdf" aria-hidden="true">Backend Engineer with experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments. Focused on APIs, system integrations, scalable architectures, and long-term maintainability, with a pragmatic approach to technical decision making and product development.<br><br>Strong background working close to business and operational contexts, translating real-world requirements into reliable software solutions. Experience in technical leadership, mentoring, and education reinforces clear communication, collaboration, and problem-solving across multidisciplinary teams.</p>
+                <p class="cv-summary cv-summary--pdf" data-translate="cv.summary.pdf" aria-hidden="true">Backend Engineer with experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments. Focused on APIs, system integrations, scalable architectures, and long-term maintainability, with a pragmatic approach to technical decision making and product development.<br><br>Strong background working close to business and operational contexts, translating real-world requirements into reliable software solutions. Experience in technical leadership, mentoring, and education reinforces clear communication, collaboration, and problem-solving across multidisciplinary teams.</p>
             </section>
 
             <section class="cv-section">
@@ -782,10 +792,11 @@
                 'nav.about': 'Sobre',
                 'nav.cv': 'Currículo',
                 'nav.contact': 'Contato',
-                'cv.headline': 'Engenheiro de Backend | Sistemas em Produção | Liderança técnica',
+                'cv.headline': 'Backend | Sistemas em Produção | Liderança técnica',
                 'cv.meta.location': '📍 Brasil — aberto a trabalho remoto',
                 'cv.section.summary': 'Resumo',
                 'cv.summary': 'Engenheiro de <i>back-end</i> com experiência na construção e manutenção de sistemas em produção, serviços de <i>back-end</i> e plataformas operacionais em ambientes de ritmo acelerado.<br><br>Foco em <i>APIs</i>, integrações entre sistemas, arquiteturas escaláveis e manutenibilidade a longo prazo, com abordagem pragmática à tomada de decisão técnica e ao desenvolvimento de produto. Forte atuação próxima a contextos de negócio e operação, traduzindo necessidades do mundo real em soluções de software confiáveis.<br><br>Experiência em liderança técnica, mentoria e educação reforça comunicação clara, colaboração e resolução de problemas em equipes multidisciplinares.',
+                'cv.summary.pdf': 'Engenheiro de <i>back-end</i> com experiência na construção e manutenção de sistemas em produção, serviços de <i>back-end</i> e plataformas operacionais em ritmos acelerados. Foco em <i>APIs</i>, integrações, arquiteturas escaláveis e manutenibilidade, com abordagem pragmática à decisão técnica e ao produto.<br><br>Atuação próxima a negócio e operação, traduzindo necessidades reais em software confiável. Liderança técnica, mentoria e educação reforçam comunicação, colaboração e resolução de problemas em equipes multidisciplinares.',
                 'cv.section.education': 'Formação',
                 'cv.section.exp.tech': 'Experiência Profissional — Tecnologia',
                 'cv.section.exp.edu': 'Experiência Profissional — Educação e Liderança',
@@ -802,7 +813,7 @@
                 'cv.edu.4.meta': 'Universidade Federal do Estado do Rio de Janeiro -<br>UNIRIO (2019)',
                 'cv.edu.6.title': 'Pós-graduação em Educação e Psicopedagogia',
                 'cv.edu.6.meta': 'UniBF (2023)',
-                'cv.tech.1.title': 'Engenheiro de Backend',
+                'cv.tech.1.title': 'Backend Engineer',
                 'cv.tech.1.meta': 'Meetal · 2025 – presente',
                 'cv.tech.1.intro': 'Desenvolvimento de <i>back-end</i> para uma plataforma ERP em rápida evolução voltada à gestão operacional, financeira e de estoques.',
                 'cv.tech.1.1': 'Concepção e evolução de serviços de <i>back-end</i> e <i>APIs</i> que sustentam fluxos operacionais e financeiros',
@@ -819,7 +830,7 @@
                 'cv.tech.2.4': 'Atuação com requisitos operacionais complexos, cálculos de domínio e regras de negócio em evolução em ambiente interdisciplinar de pesquisa, mantendo diálogo constante com stakeholders e organizações do setor público no estado do Rio de Janeiro.',
                 'cv.tech.2.5': 'Produção de documentação técnica e coordenação de entregas, com foco em qualidade e cumprimento de prazos',
                 'cv.tech.2.tech': 'Tecnologias: Java, Kotlin, Firebase, Google Maps APIs, Android XML',
-                'cv.tech.3.title': 'Líder Técnico | Engenheiro de Backend',
+                'cv.tech.3.title': 'Líder Técnico | Backend',
                 'cv.tech.3.meta': 'Vandal · 2015 – 2021',
                 'cv.tech.3.intro': 'Atuei no desenvolvimento de <i>back-end</i> para um marketplace de print-on-demand e plataforma de produção em forte crescimento. Tornei-me gradualmente o principal referencial técnico para sistemas de <i>back-end</i> e decisões de infraestrutura em ambiente de <i>startup</i> com alta autonomia.',
                 'cv.tech.3.1': 'Concepção e implementação de um módulo customizado de <i>back-office</i> e gestão responsável pelo processamento de pedidos e fluxo produtivo',
@@ -875,6 +886,7 @@
                 'cv.meta.location': '📍 Brazil — open to remote work',
                 'cv.section.summary': 'Summary',
                 'cv.summary': 'Backend Engineer with experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments.<br><br>Focused on APIs, system integrations, scalable architectures, and long-term maintainability, with a pragmatic approach to technical decision-making and product development. Strong background working close to business and operational contexts, translating real-world requirements into reliable software solutions.<br><br>Experience in technical leadership, mentoring, and education reinforces clear communication, collaboration, and problem-solving across multidisciplinary teams.',
+                'cv.summary.pdf': 'Backend Engineer with experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments. Focused on APIs, system integrations, scalable architectures, and long-term maintainability, with a pragmatic approach to technical decision making and product development.<br><br>Strong background working close to business and operational contexts, translating real-world requirements into reliable software solutions. Experience in technical leadership, mentoring, and education reinforces clear communication, collaboration, and problem-solving across multidisciplinary teams.',
                 'cv.section.education': 'Education',
                 'cv.section.exp.tech': 'Professional Experience — Technology',
                 'cv.section.exp.edu': 'Professional Experience — Education & Leadership',
@@ -964,6 +976,7 @@
                 'cv.meta.location': '📍 Brasil — abierto a trabajo remoto',
                 'cv.section.summary': 'Resumen',
                 'cv.summary': 'Ingeniero de <i>back-end</i> con experiencia en la construcción y el mantenimiento de sistemas en producción, servicios de <i>back-end</i> y plataformas operativas en entornos de ritmo acelerado.<br><br>Enfoque en <i>APIs</i>, integraciones entre sistemas, arquitecturas escalables y mantenibilidad a largo plazo, con un enfoque pragmático de la toma de decisiones técnicas y del desarrollo de producto. Sólida experiencia trabajando cerca de los contextos de negocio y operación, traduciendo requisitos del mundo real en soluciones de software fiables.<br><br>La experiencia en liderazgo técnico, mentoría y educación refuerza la comunicación clara, la colaboración y la resolución de problemas en equipos multidisciplinarios.',
+                'cv.summary.pdf': 'Ingeniero de <i>back-end</i> con experiencia en la construcción y el mantenimiento de sistemas en producción, servicios de <i>back-end</i> y plataformas operativas en ritmos acelerados. Enfoque en <i>APIs</i>, integraciones, arquitecturas escalables y mantenibilidad, con un enfoque pragmático de la decisión técnica y del producto.<br><br>Trabajo cercano a negocio y operación, traduciendo requisitos reales en software fiable. Liderazgo técnico, mentoría y educación refuerzan comunicación, colaboración y resolución de problemas en equipos multidisciplinarios.',
                 'cv.section.education': 'Formación',
                 'cv.section.exp.tech': 'Experiencia Profesional — Tecnología',
                 'cv.section.exp.edu': 'Experiencia Profesional — Educación y Liderazgo',
@@ -1064,9 +1077,45 @@
 
         let currentLanguage = getInitialLanguage();
 
+        // Condensed job copy applied only for print — keeps on-screen PT/ES full length
+        // while reclaiming the lines EN already fits on page 1 of the PDF.
+        const pdfCopyOverrides = {
+            pt: {
+                'cv.tech.1.intro': 'Desenvolvimento de <i>back-end</i> para ERP em rápida evolução (gestão operacional, financeira e de estoques).',
+                'cv.tech.2.meta': 'UERJ · 2020 – 2023',
+                'cv.tech.2.1': 'Definição da arquitetura e abordagem de desenvolvimento, priorizando flexibilidade e iteração rápida',
+                'cv.tech.2.3': 'Serviços de <i>back-end</i>, modelos de dados, autenticação e integrações geoespaciais com Google Maps APIs',
+                'cv.tech.3.intro': 'Desenvolvimento de <i>back-end</i> para marketplace print-on-demand e plataforma de produção em forte crescimento. Tornei-me o principal referencial técnico de <i>back-end</i> e infraestrutura em <i>startup</i> com alta autonomia.',
+                'cv.tech.3.1': 'Módulo customizado de <i>back-office</i> e gestão para processamento de pedidos e fluxo produtivo',
+                'cv.tech.3.2': 'Otimização do processamento de alto volume de pedidos e fluxos operacionais em picos de tráfego.',
+                'cv.tech.3.4': 'Arquitetura de <i>back-end</i>, confiabilidade da infraestrutura, depuração e manutenção de sistemas em produção',
+                'cv.tech.3.6': 'Apoio ao crescimento de plataforma com mais de 70 mil designs criados por mais de 10 mil artistas',
+                'cv.tech.4.intro': 'Desenvolvimento e manutenção de sistema de <i>back-end</i> interno em Java, apoiando fluxos operacionais e de negócio.',
+                'cv.tech.5.intro': 'Manutenção de plataforma educacional em Ruby on Rails no início da carreira. Apoio a arquitetura, <i>back-end</i> e PostgreSQL.'
+            },
+            es: {
+                'cv.tech.1.intro': 'Desarrollo de <i>back-end</i> para un ERP en rápida evolución (gestión operativa, financiera y de inventarios).',
+                'cv.tech.2.meta': 'UERJ · 2020 – 2023',
+                'cv.tech.2.1': 'Definición de la arquitectura y el enfoque de desarrollo, priorizando flexibilidad e iteración rápida',
+                'cv.tech.2.2': 'Implementación del MVP usado en presentaciones a organismos públicos, utilities de agua y stakeholders',
+                'cv.tech.2.3': 'Servicios de <i>back-end</i>, modelos de datos, autenticación e integraciones geoespaciales con Google Maps APIs',
+                'cv.tech.3.intro': 'Desarrollo de <i>back-end</i> para marketplace print-on-demand y plataforma de producción en rápido crecimiento. Pasé a ser el principal referente técnico de <i>back-end</i> e infraestructura en un entorno de <i>startup</i> con alta autonomía.',
+                'cv.tech.3.1': 'Módulo personalizado de <i>back-office</i> y gestión para procesamiento de pedidos y flujo productivo',
+                'cv.tech.3.2': 'Optimización del procesamiento de alto volumen de pedidos y flujos operativos en picos de tráfico.',
+                'cv.tech.3.3': 'Integraciones con pasarelas de pago, transportistas y flujos en AWS S3.',
+                'cv.tech.3.4': 'Arquitectura de <i>back-end</i>, fiabilidad de la infraestructura, depuración y mantenimiento de sistemas en producción',
+                'cv.tech.3.6': 'Apoyo al crecimiento de una plataforma con más de 70 mil diseños creados por más de 10 mil artistas',
+                'cv.tech.4.intro': 'Desarrollo y mantenimiento de un sistema de <i>back-end</i> interno en Java, apoyando flujos operativos y de negocio.',
+                'cv.tech.5.intro': 'Mantenimiento de una plataforma educativa en Ruby on Rails al inicio de la carrera. Apoyo a arquitectura, <i>back-end</i> y PostgreSQL.'
+            }
+        };
+
+        const pdfOriginalHtml = new WeakMap();
+
         function changeLanguage(lang) {
             currentLanguage = lang;
             localStorage.setItem('language', lang);
+            document.documentElement.lang = lang;
             applyTranslations();
         }
 
@@ -1141,12 +1190,40 @@
             });
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            applyTranslations();
-            window.addEventListener('beforeprint', applyPdfSkillLabelTweaks);
-            window.addEventListener('afterprint', function () {
-                renderSkillsLists(currentLanguage);
+        function applyPdfCopyOverrides() {
+            const overrides = pdfCopyOverrides[currentLanguage];
+            if (!overrides) return;
+            document.querySelectorAll('[data-translate]').forEach(function (el) {
+                const key = el.getAttribute('data-translate');
+                if (!overrides[key]) return;
+                pdfOriginalHtml.set(el, el.innerHTML);
+                el.innerHTML = overrides[key];
             });
+        }
+
+        function restorePdfCopyOverrides() {
+            document.querySelectorAll('[data-translate]').forEach(function (el) {
+                if (!pdfOriginalHtml.has(el)) return;
+                el.innerHTML = pdfOriginalHtml.get(el);
+                pdfOriginalHtml.delete(el);
+            });
+        }
+
+        function preparePdfExport() {
+            applyPdfCopyOverrides();
+            applyPdfSkillLabelTweaks();
+        }
+
+        function restoreAfterPdfExport() {
+            restorePdfCopyOverrides();
+            renderSkillsLists(currentLanguage);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.documentElement.lang = currentLanguage;
+            applyTranslations();
+            window.addEventListener('beforeprint', preparePdfExport);
+            window.addEventListener('afterprint', restoreAfterPdfExport);
             var dlBtn = document.getElementById('cv-download-btn');
             if (dlBtn) {
                 dlBtn.addEventListener('click', function(e) {
