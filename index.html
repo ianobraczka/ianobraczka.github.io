@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#090a0f">
     <title>ianobraczka | portfolio</title>
-    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/icons/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -42,9 +43,12 @@
                 <div class="hero-copy">
                     <h1>Ian Obraczka</h1>
                     <p class="hero-pitch">
-                        <span class="hero-role" data-translate="hero.role">Engenheiro de backend sênior</span><span data-translate="hero.pitch"> especializado em arquiteturas de produção, APIs de alto volume e integrações pragmáticas de IA.</span>
+                        <span class="hero-role" data-translate="hero.role">Engenheiro de backend</span><span data-translate="hero.pitch"> especializado em arquiteturas de produção, APIs de alto volume, integrações e manutenibilidade a longo prazo.</span>
                     </p>
-                    <p class="hero-context" data-translate="hero.context">Engenharia de sistemas robustos em Python/FastAPI, AWS e fluxos de dados modernos.<br>Rio de Janeiro, Brasil · Trabalho remoto no mundo todo.</p>
+                    <div class="hero-context">
+                        <p data-translate="hero.context">Ao longo dos anos, trabalhei em produtos em rápida evolução, plataformas operacionais e ambientes de startups, ajudando a traduzir necessidades reais de negócio em soluções de software confiáveis ao combinar engenharia prática com liderança técnica, mentoria e comunicação clara.</p>
+                        <p class="hero-place" data-translate="hero.place">Rio de Janeiro, Brasil · Trabalho remoto no mundo todo.</p>
+                    </div>
                 </div>
                 <div class="hero-actions">
                     <a class="hero-link" href="https://github.com/ianobraczka" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
@@ -68,93 +72,123 @@
                 <div class="case-list case-list--timeline">
                     <article class="case-card">
                         <div class="case-head">
-                            <h3>Meetal ERP Platform</h3>
+                            <div class="case-title">
+                                <img class="case-logo" src="assets/images/meetal-logo.png" alt="" width="40" height="40">
+                                <h3>Meetal ERP</h3>
+                            </div>
                             <div class="case-badges">
                                 <span class="badge" data-translate="meetal.domain">ERP industrial e logística</span>
                                 <span class="badge badge-status live" data-translate="meetal.status">Em produção · 2025–presente</span>
                             </div>
                         </div>
-                        <p class="case-summary" data-translate="meetal.summary">Operações de reciclagem e logística industrial tinham superado um backend em DynamoDB, incapaz de sustentar fluxos financeiros e hardware de chão de fábrica. A Meetal passou a rodar em FastAPI e PostgreSQL após uma migração sem downtime, com balanças RS-232 e fluxos estruturados da OpenAI no mesmo núcleo operacional.</p>
+                        <p class="case-summary" data-translate="meetal.summary">A Meetal é uma plataforma ERP B2B em evolução que gerencia estoque, finanças e logística em tempo real para unidades industriais de reciclagem.</p>
+                        <p class="case-summary" data-translate="meetal.role">Como engenheiro de back-end principal, ajudo a escalar a plataforma em ambientes de produção ativos. Entre as principais iniciativas estão a liderança da migração de arquitetura sem downtime de um modelo serverless em DynamoDB para FastAPI e PostgreSQL, a construção de integrações seriais (RS-232) com balanças industriais no local e a automação de fluxos operacionais com pipelines estruturados da OpenAI.</p>
                         <ul class="metrics">
                             <li>
-                                <span class="metric-label" data-translate="meetal.m1.label">Migração</span>
-                                <span class="metric-value" data-translate="meetal.m1.value">DynamoDB → FastAPI e PostgreSQL, sem downtime</span>
+                                <span class="metric-label" data-translate="meetal.m1.label">Migração de dados</span>
+                                <span class="metric-value" data-translate="meetal.m1.value">Corte sem downtime do DynamoDB para FastAPI e PostgreSQL</span>
                             </li>
                             <li>
-                                <span class="metric-label" data-translate="meetal.m2.label">Hardware</span>
-                                <span class="metric-value" data-translate="meetal.m2.value">Comunicação serial RS-232 com balança industrial</span>
+                                <span class="metric-label" data-translate="meetal.m2.label">Camada de hardware</span>
+                                <span class="metric-value" data-translate="meetal.m2.value">Balança industrial RS-232 e comunicação serial em tempo real</span>
                             </li>
                             <li>
-                                <span class="metric-label" data-translate="meetal.m3.label">IA</span>
-                                <span class="metric-value" data-translate="meetal.m3.value">Fluxos estruturados da API OpenAI</span>
+                                <span class="metric-label" data-translate="meetal.m3.label">Assistente de consultas com IA</span>
+                                <span class="metric-value" data-translate="meetal.m3.value">Assistente em linguagem natural para consultas de usuários com a API da OpenAI</span>
                             </li>
                         </ul>
                         <div class="arch">
-                            <p class="arch-label" data-translate="arch.label">Camada de integração</p>
+                            <p class="arch-label" data-translate="meetal.arch.label">Stack</p>
                             <p class="arch-flow">
-                                <span class="arch-node" data-translate="meetal.arch.a">Balança RS-232</span>
-                                <span class="arch-arrow" aria-hidden="true">→</span>
-                                <span class="arch-node arch-node--core">FastAPI</span>
-                                <span class="arch-arrow" aria-hidden="true">→</span>
+                                <span class="arch-node">DynamoDB</span>
+                                <span class="arch-node">Python</span>
+                                <span class="arch-node">FastAPI</span>
                                 <span class="arch-node">PostgreSQL</span>
-                                <span class="arch-sub"><span class="arch-hash" aria-hidden="true">#</span> <span data-translate="meetal.arch.sub">API estruturada da OpenAI · AWS Lambda · corte do DynamoDB, sem downtime</span></span>
+                                <span class="arch-node">Amazon Web Services</span>
+                                <span class="arch-node">Docker</span>
+                                <span class="arch-node">OpenAI API</span>
+                                <span class="arch-node">Streamlit</span>
                             </p>
-                        </div>
-                        <div class="case-foot">
-                            <ul class="pills">
-                                <li>Python</li>
-                                <li>FastAPI</li>
-                                <li>PostgreSQL</li>
-                                <li>AWS Lambda</li>
-                                <li>Docker</li>
-                                <li>OpenAI API</li>
-                            </ul>
                         </div>
                     </article>
 
                     <article class="case-card">
                         <div class="case-head">
-                            <h3>Vandal Production Platform</h3>
+                            <div class="case-title">
+                                <img class="case-logo" src="assets/images/reusa-logo.png" alt="" width="40" height="40">
+                                <h3>ReUsa App</h3>
+                            </div>
                             <div class="case-badges">
-                                <span class="badge" data-translate="vandal.domain">E-commerce de alta concorrência</span>
-                                <span class="badge badge-status" data-translate="vandal.status">Produção · 2015–2021</span>
+                                <span class="badge" data-translate="reusa.domain">Geoespacial e gestão de recursos hídricos</span>
+                                <span class="badge badge-status" data-translate="reusa.status">MVP Governo/Concessionárias · 2020–2023</span>
                             </div>
                         </div>
-                        <p class="case-summary" data-translate="vandal.summary">Um marketplace de print-on-demand precisava transformar designs de mais de 10 mil artistas em pedidos produzidos, inclusive em picos de tráfego. A plataforma em Rails sustentou mais de 70 mil produtos com Sidekiq e Redis, gateways de pagamento, cálculo de frete e pipelines de produção na AWS S3.</p>
+                        <p class="case-summary" data-translate="reusa.summary">A ReUsa é um aplicativo orientado a dados criado para mapear, gerenciar e comercializar recursos hídricos de reúso em todo o estado do Rio de Janeiro.</p>
+                        <p class="case-summary" data-translate="reusa.role">Atuando como líder técnico em uma iniciativa que conecta a UERJ, órgãos governamentais e operadoras de água, projetei do zero a aplicação principal e as camadas de dados. As principais entregas incluíram serviços de back-end e fluxos de autenticação, funcionalidades de mapeamento geoespacial com as APIs do Google Maps e a modelagem de fórmulas complexas específicas do domínio para alocação de recursos hídricos.</p>
                         <ul class="metrics">
                             <li>
-                                <span class="metric-label" data-translate="vandal.m1.label">Escala</span>
-                                <span class="metric-value" data-translate="vandal.m1.value">70 mil+ produtos, 10 mil+ artistas</span>
+                                <span class="metric-label" data-translate="reusa.m1.label">Liderança técnica</span>
+                                <span class="metric-value" data-translate="reusa.m1.value">Arquitetura de ponta a ponta e roadmap técnico entre stakeholders públicos e da indústria</span>
                             </li>
                             <li>
-                                <span class="metric-label" data-translate="vandal.m2.label">Assíncrono</span>
-                                <span class="metric-value" data-translate="vandal.m2.value">Filas pesadas com Sidekiq + Redis</span>
+                                <span class="metric-label" data-translate="reusa.m2.label">Camada geoespacial</span>
+                                <span class="metric-value" data-translate="reusa.m2.value">Integração com a API do Google Maps e mapeamento de ativos e recursos em tempo real</span>
                             </li>
                             <li>
-                                <span class="metric-label" data-translate="vandal.m3.label">Integrações</span>
-                                <span class="metric-value" data-translate="vandal.m3.value">Pagamentos, cálculo de frete e pipelines na AWS S3</span>
+                                <span class="metric-label" data-translate="reusa.m3.label">Modelagem de domínio</span>
+                                <span class="metric-value" data-translate="reusa.m3.value">Motores de cálculo e modelos de dados especializados para fluxos de reúso industrial</span>
                             </li>
                         </ul>
                         <div class="arch">
-                            <p class="arch-label" data-translate="arch.label">Camada de integração</p>
+                            <p class="arch-label" data-translate="reusa.arch.label">Stack</p>
                             <p class="arch-flow">
-                                <span class="arch-node" data-translate="vandal.arch.a">Vitrine</span>
-                                <span class="arch-arrow" aria-hidden="true">→</span>
-                                <span class="arch-node arch-node--core">Rails</span>
-                                <span class="arch-arrow" aria-hidden="true">→</span>
-                                <span class="arch-node">MongoDB</span>
-                                <span class="arch-sub"><span class="arch-hash" aria-hidden="true">#</span> <span data-translate="vandal.arch.sub">Sidekiq + Redis → pagamentos, frete, S3, Elasticsearch</span></span>
+                                <span class="arch-node">Java</span>
+                                <span class="arch-node">Kotlin</span>
+                                <span class="arch-node">Google Firebase</span>
+                                <span class="arch-node">Google Maps APIs</span>
+                                <span class="arch-node">REST APIs</span>
                             </p>
                         </div>
-                        <div class="case-foot">
-                            <ul class="pills">
-                                <li>Ruby on Rails</li>
-                                <li>Sidekiq</li>
-                                <li>Elasticsearch</li>
-                                <li>MongoDB</li>
-                                <li>Docker</li>
-                                <li>AWS S3</li>
-                            </ul>
+                    </article>
+
+                    <article class="case-card">
+                        <div class="case-head">
+                            <div class="case-title">
+                                <img class="case-logo" src="assets/images/vandal-logo.png" alt="" width="40" height="40">
+                                <h3>Vandal Platform</h3>
+                            </div>
+                            <div class="case-badges">
+                                <span class="badge" data-translate="vandal.domain">Marketplace de alta escala e logística</span>
+                                <span class="badge badge-status" data-translate="vandal.status">5+ anos como líder técnico · 2015–2021</span>
+                            </div>
+                        </div>
+                        <p class="case-summary" data-translate="vandal.summary">A Vandal é um marketplace de print-on-demand de alto volume que conecta mais de 10.000 artistas independentes a usuários em todo o Brasil.</p>
+                        <p class="case-summary" data-translate="vandal.role">Ao longo de mais de cinco anos como líder técnico de back-end, fui a principal referência tanto em arquitetura quanto em infraestrutura. Projetei e mantive os motores centrais que lidam com picos de tráfego e flash sales, construí um back-office interno personalizado para as operações do chão de produção e escalei pipelines assíncronos entre gateways de pagamento, transportadoras e fluxos na AWS S3.</p>
+                        <ul class="metrics">
+                            <li>
+                                <span class="metric-label" data-translate="vandal.m1.label">Escala e vazão</span>
+                                <span class="metric-value" data-translate="vandal.m1.value">70 mil+ designs ativos e gestão de tráfego de flash sales de alta concorrência</span>
+                            </li>
+                            <li>
+                                <span class="metric-label" data-translate="vandal.m2.label">Filas assíncronas</span>
+                                <span class="metric-value" data-translate="vandal.m2.value">Pipelines pesados em segundo plano com Sidekiq, Redis e Elasticsearch</span>
+                            </li>
+                            <li>
+                                <span class="metric-label" data-translate="vandal.m3.label">Núcleo operacional</span>
+                                <span class="metric-value" data-translate="vandal.m3.value">Back-office ERP personalizado e fluxos automatizados de fulfillment da produção</span>
+                            </li>
+                        </ul>
+                        <div class="arch">
+                            <p class="arch-label" data-translate="vandal.arch.label">Stack</p>
+                            <p class="arch-flow">
+                                <span class="arch-node">Ruby on Rails</span>
+                                <span class="arch-node">Sidekiq</span>
+                                <span class="arch-node">Redis</span>
+                                <span class="arch-node">Elasticsearch</span>
+                                <span class="arch-node">MongoDB</span>
+                                <span class="arch-node">Docker</span>
+                                <span class="arch-node">AWS S3</span>
+                            </p>
                         </div>
                     </article>
                 </div>
@@ -168,45 +202,39 @@
                 <div class="case-list">
                     <article class="case-card">
                         <div class="case-head">
-                            <h3>Teaching Assistant (AI)</h3>
+                            <h3>Teaching Assistant Platform</h3>
                             <div class="case-badges">
                                 <span class="badge" data-translate="ta.domain">IA aplicada e EdTech</span>
-                                <span class="badge badge-status live" data-translate="ta.status">No ar</span>
+                                <span class="badge badge-status live" data-translate="ta.status">PoC open source · Demo ao vivo</span>
                             </div>
                         </div>
-                        <p class="case-summary" data-translate="ta.summary">Professores precisavam de apoio a aulas ancorado em currículo real, e não em saída genérica de modelo. O assistente orquestra o contexto da BNCC e dos frameworks de Massachusetts, conecta-se direto à API REST do Schoology e não persiste dados de estudantes no armazenamento da aplicação.</p>
+                        <p class="case-summary" data-translate="ta.summary">O Teaching Assistant é uma plataforma educacional open source projetada para automatizar o planejamento de aulas alinhado ao currículo, atividades interdisciplinares e fluxos de avaliação no LMS.</p>
+                        <p class="case-summary" data-translate="ta.role">Projetada e construída de ponta a ponta para eliminar as alucinações comuns de LLMs em ferramentas de sala de aula, a plataforma leva padrões institucionais estruturados diretamente para o fluxo de trabalho dos professores. As principais decisões de arquitetura incluem ancoragem rigorosa de prompts com o Google Gemini, integração REST protegida por OAuth com o LMS Schoology e uma arquitetura stateless com privacidade por design.</p>
                         <ul class="metrics">
                             <li>
-                                <span class="metric-label" data-translate="ta.m1.label">Ancoragem</span>
-                                <span class="metric-value" data-translate="ta.m1.value">Orquestração de contexto sem alucinação (BNCC e Massachusetts)</span>
+                                <span class="metric-label" data-translate="ta.m1.label">Ancoragem de contexto</span>
+                                <span class="metric-value" data-translate="ta.m1.value">Orquestração de schemas few-shot ancorada nos currículos oficiais (BNCC e DLCS)</span>
                             </li>
                             <li>
-                                <span class="metric-label" data-translate="ta.m2.label">LMS</span>
-                                <span class="metric-value" data-translate="ta.m2.value">Conexão direta com a API REST do Schoology</span>
+                                <span class="metric-label" data-translate="ta.m2.label">Integração com LMS</span>
+                                <span class="metric-value" data-translate="ta.m2.value">Conexão com a API REST do Schoology para hierarquias de cursos e sincronização de atividades</span>
                             </li>
                             <li>
-                                <span class="metric-label" data-translate="ta.m3.label">Privacidade</span>
-                                <span class="metric-value" data-translate="ta.m3.value">Nenhum dado de estudante persistido no armazenamento da aplicação</span>
+                                <span class="metric-label" data-translate="ta.m3.label">Privacidade de dados</span>
+                                <span class="metric-value" data-translate="ta.m3.value">Arquitetura com privacidade por design e zero persistência de dados de estudantes</span>
                             </li>
                         </ul>
                         <div class="arch">
-                            <p class="arch-label" data-translate="arch.label">Camada de integração</p>
+                            <p class="arch-label" data-translate="ta.arch.label">Stack</p>
                             <p class="arch-flow">
-                                <span class="arch-node" data-translate="ta.arch.a">Prompt do professor</span>
-                                <span class="arch-arrow" aria-hidden="true">→</span>
-                                <span class="arch-node arch-node--core">Next.js</span>
-                                <span class="arch-arrow" aria-hidden="true">→</span>
-                                <span class="arch-node">Gemini</span>
-                                <span class="arch-sub"><span class="arch-hash" aria-hidden="true">#</span> <span data-translate="ta.arch.sub">contexto BNCC + Massachusetts → Schoology REST · nenhum dado de estudante armazenado</span></span>
+                                <span class="arch-node">TypeScript</span>
+                                <span class="arch-node">Next.js</span>
+                                <span class="arch-node">Google Gemini API</span>
+                                <span class="arch-node">TailwindCSS</span>
+                                <span class="arch-node">REST APIs</span>
                             </p>
                         </div>
                         <div class="case-foot">
-                            <ul class="pills">
-                                <li>TypeScript</li>
-                                <li>Next.js</li>
-                                <li>Google Gemini API</li>
-                                <li>TailwindCSS</li>
-                            </ul>
                             <div class="case-actions">
                                 <a class="btn btn-primary" href="https://teaching-assistant-2027.vercel.app/" target="_blank" rel="noopener noreferrer">
                                     <span data-translate="ta.demo">Demo ao vivo</span>
@@ -222,30 +250,74 @@
                 </div>
             </section>
 
-            <section class="tier" aria-labelledby="archive-heading">
+            <section class="tier" aria-labelledby="leadership-heading">
                 <div class="tier-label">
                     <span class="tier-index">03</span>
+                    <h2 id="leadership-heading" data-translate="section.leadership">Liderança e educação</h2>
+                </div>
+                <div class="case-list">
+                    <article class="case-card">
+                        <div class="case-head">
+                            <div class="lead-title">
+                                <h3 data-translate="lead.1.title">Professor de AP Computer Science A</h3>
+                                <span class="metric-label">Our Lady of Mercy School</span>
+                            </div>
+                            <div class="case-badges">
+                                <span class="badge badge-status live" data-translate="lead.1.period">2022–presente</span>
+                            </div>
+                        </div>
+                        <p class="case-summary" data-translate="lead.1.desc">Ensino avançado de ciência da computação em inglês, seguindo o currículo do College Board.</p>
+                    </article>
+
+                    <article class="case-card">
+                        <div class="case-head">
+                            <div class="lead-title">
+                                <h3>LEAD Program</h3>
+                                <span class="metric-label">World ORT</span>
+                            </div>
+                            <div class="case-badges">
+                                <span class="badge badge-status">2021</span>
+                            </div>
+                        </div>
+                        <p class="case-summary" data-translate="lead.2.desc">Workshop sobre Liderança em Educação, Administração e Desenvolvimento.</p>
+                    </article>
+
+                    <article class="case-card">
+                        <div class="case-head">
+                            <div class="lead-title">
+                                <h3 data-translate="lead.3.title">Liderança e Educação</h3>
+                                <span class="metric-label" data-translate="lead.3.org">Machon LeMadrichim (Jerusalém)</span>
+                            </div>
+                            <div class="case-badges">
+                                <span class="badge badge-status">2014</span>
+                            </div>
+                        </div>
+                        <p class="case-summary" data-translate="lead.3.desc">Curso internacional de Liderança, Dinâmica de Grupo e Tomada de Decisão.</p>
+                    </article>
+
+                    <article class="case-card">
+                        <div class="case-head">
+                            <div class="lead-title">
+                                <h3 data-translate="lead.4.title">Professor de Linguagens de Programação</h3>
+                                <span class="metric-label" data-translate="lead.4.org">Instituto de Tecnologia ORT</span>
+                            </div>
+                            <div class="case-badges">
+                                <span class="badge badge-status">2019–2022</span>
+                            </div>
+                        </div>
+                        <p class="case-summary" data-translate="lead.4.desc">Ensino de técnicas avançadas de programação e paradigmas de engenharia de software para alunos de curso técnico.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="tier" aria-labelledby="archive-heading">
+                <div class="tier-label">
+                    <span class="tier-index">04</span>
                     <h2 id="archive-heading" data-translate="section.archive">Selecionados e acadêmicos</h2>
                 </div>
                 <table class="archive">
                     <caption class="sr-only" data-translate="archive.caption">Projetos selecionados e acadêmicos</caption>
                     <tbody>
-                        <tr>
-                            <td class="archive-main">
-                                <span class="archive-name">ReUsa</span>
-                                <span class="archive-desc" data-translate="archive.reusa.desc">— MVP geoespacial de recursos hídricos de reúso industrial no Rio de Janeiro.</span>
-                            </td>
-                            <td>
-                                <div class="archive-side">
-                                    <ul class="pills">
-                                        <li>Kotlin</li>
-                                        <li>Java</li>
-                                        <li>Google Maps APIs</li>
-                                        <li>UERJ</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
                         <tr>
                             <td class="archive-main">
                                 <span class="archive-name">classroom-ops</span>
@@ -337,50 +409,71 @@
                 'page.title': 'Estudos de caso de engenharia de software',
                 'page.lede': 'Sistemas em produção, IA aplicada e um arquivo curto de trabalhos anteriores.',
                 'hero.status': 'Disponível para contratos remotos e consultoria',
-                'hero.role': 'Engenheiro de backend sênior',
-                'hero.pitch': ' especializado em arquiteturas de produção, APIs de alto volume e integrações pragmáticas de IA.',
-                'hero.context': 'Engenharia de sistemas robustos em Python/FastAPI, AWS e fluxos de dados modernos.<br>Rio de Janeiro, Brasil · Trabalho remoto no mundo todo.',
+                'hero.role': 'Engenheiro de backend',
+                'hero.pitch': ' especializado em arquiteturas de produção, APIs de alto volume, integrações e manutenibilidade a longo prazo.',
+                'hero.context': 'Ao longo dos anos, trabalhei em produtos em rápida evolução, plataformas operacionais e ambientes de startups, ajudando a traduzir necessidades reais de negócio em soluções de software confiáveis ao combinar engenharia prática com liderança técnica, mentoria e comunicação clara.',
+                'hero.place': 'Rio de Janeiro, Brasil · Trabalho remoto no mundo todo.',
                 'hero.resume': 'Currículo',
                 'section.production': 'Sistemas em produção',
                 'section.ai': 'IA aplicada',
+                'section.leadership': 'Liderança e educação',
+                'lead.1.title': 'Professor de AP Computer Science A',
+                'lead.1.period': '2022–presente',
+                'lead.1.desc': 'Ensino avançado de ciência da computação em inglês, seguindo o currículo do College Board.',
+                'lead.2.desc': 'Workshop sobre Liderança em Educação, Administração e Desenvolvimento.',
+                'lead.3.title': 'Liderança e Educação',
+                'lead.3.org': 'Machon LeMadrichim (Jerusalém)',
+                'lead.3.desc': 'Curso internacional de Liderança, Dinâmica de Grupo e Tomada de Decisão.',
+                'lead.4.title': 'Professor de Linguagens de Programação',
+                'lead.4.org': 'Instituto de Tecnologia ORT',
+                'lead.4.desc': 'Ensino de técnicas avançadas de programação e paradigmas de engenharia de software para alunos de curso técnico.',
                 'section.archive': 'Selecionados e acadêmicos',
-                'arch.label': 'Camada de integração',
                 'meetal.domain': 'ERP industrial e logística',
                 'meetal.status': 'Em produção · 2025–presente',
-                'meetal.summary': 'Operações de reciclagem e logística industrial tinham superado um backend em DynamoDB, incapaz de sustentar fluxos financeiros e hardware de chão de fábrica. A Meetal passou a rodar em FastAPI e PostgreSQL após uma migração sem downtime, com balanças RS-232 e fluxos estruturados da OpenAI no mesmo núcleo operacional.',
-                'meetal.m1.label': 'Migração',
-                'meetal.m1.value': 'DynamoDB → FastAPI e PostgreSQL, sem downtime',
-                'meetal.m2.label': 'Hardware',
-                'meetal.m2.value': 'Comunicação serial RS-232 com balança industrial',
-                'meetal.m3.label': 'IA',
-                'meetal.m3.value': 'Fluxos estruturados da API OpenAI',
-                'meetal.arch.a': 'Balança RS-232',
-                'meetal.arch.sub': 'API estruturada da OpenAI · AWS Lambda · corte do DynamoDB, sem downtime',
-                'vandal.domain': 'E-commerce de alta concorrência',
-                'vandal.status': 'Produção · 2015–2021',
-                'vandal.summary': 'Um marketplace de print-on-demand precisava transformar designs de mais de 10 mil artistas em pedidos produzidos, inclusive em picos de tráfego. A plataforma em Rails sustentou mais de 70 mil produtos com Sidekiq e Redis, gateways de pagamento, cálculo de frete e pipelines de produção na AWS S3.',
-                'vandal.m1.label': 'Escala',
-                'vandal.m1.value': '70 mil+ produtos, 10 mil+ artistas',
-                'vandal.m2.label': 'Assíncrono',
-                'vandal.m2.value': 'Filas pesadas com Sidekiq + Redis',
-                'vandal.m3.label': 'Integrações',
-                'vandal.m3.value': 'Pagamentos, cálculo de frete e pipelines na AWS S3',
-                'vandal.arch.a': 'Vitrine',
-                'vandal.arch.sub': 'Sidekiq + Redis → pagamentos, frete, S3, Elasticsearch',
+                'meetal.summary': 'A Meetal é uma plataforma ERP B2B em evolução que gerencia estoque, finanças e logística em tempo real para unidades industriais de reciclagem.',
+                'meetal.role': 'Como engenheiro de back-end principal, ajudo a escalar a plataforma em ambientes de produção ativos. Entre as principais iniciativas estão a liderança da migração de arquitetura sem downtime de um modelo serverless em DynamoDB para FastAPI e PostgreSQL, a construção de integrações seriais (RS-232) com balanças industriais no local e a automação de fluxos operacionais com pipelines estruturados da OpenAI.',
+                'meetal.m1.label': 'Migração de dados',
+                'meetal.m1.value': 'Corte sem downtime do DynamoDB para FastAPI e PostgreSQL',
+                'meetal.m2.label': 'Camada de hardware',
+                'meetal.m2.value': 'Balança industrial RS-232 e comunicação serial em tempo real',
+                'meetal.m3.label': 'Assistente de consultas com IA',
+                'meetal.m3.value': 'Assistente em linguagem natural para consultas de usuários com a API da OpenAI',
+                'meetal.arch.label': 'Stack',
+                'reusa.domain': 'Geoespacial e gestão de recursos hídricos',
+                'reusa.status': 'MVP Governo/Concessionárias · 2020–2023',
+                'reusa.summary': 'A ReUsa é um aplicativo orientado a dados criado para mapear, gerenciar e comercializar recursos hídricos de reúso em todo o estado do Rio de Janeiro.',
+                'reusa.role': 'Atuando como líder técnico em uma iniciativa que conecta a UERJ, órgãos governamentais e operadoras de água, projetei do zero a aplicação principal e as camadas de dados. As principais entregas incluíram serviços de back-end e fluxos de autenticação, funcionalidades de mapeamento geoespacial com as APIs do Google Maps e a modelagem de fórmulas complexas específicas do domínio para alocação de recursos hídricos.',
+                'reusa.m1.label': 'Liderança técnica',
+                'reusa.m1.value': 'Arquitetura de ponta a ponta e roadmap técnico entre stakeholders públicos e da indústria',
+                'reusa.m2.label': 'Camada geoespacial',
+                'reusa.m2.value': 'Integração com a API do Google Maps e mapeamento de ativos e recursos em tempo real',
+                'reusa.m3.label': 'Modelagem de domínio',
+                'reusa.m3.value': 'Motores de cálculo e modelos de dados especializados para fluxos de reúso industrial',
+                'reusa.arch.label': 'Stack',
+                'vandal.domain': 'Marketplace de alta escala e logística',
+                'vandal.status': '5+ anos como líder técnico · 2015–2021',
+                'vandal.summary': 'A Vandal é um marketplace de print-on-demand de alto volume que conecta mais de 10.000 artistas independentes a usuários em todo o Brasil.',
+                'vandal.role': 'Ao longo de mais de cinco anos como líder técnico de back-end, fui a principal referência tanto em arquitetura quanto em infraestrutura. Projetei e mantive os motores centrais que lidam com picos de tráfego e flash sales, construí um back-office interno personalizado para as operações do chão de produção e escalei pipelines assíncronos entre gateways de pagamento, transportadoras e fluxos na AWS S3.',
+                'vandal.m1.label': 'Escala e vazão',
+                'vandal.m1.value': '70 mil+ designs ativos e gestão de tráfego de flash sales de alta concorrência',
+                'vandal.m2.label': 'Filas assíncronas',
+                'vandal.m2.value': 'Pipelines pesados em segundo plano com Sidekiq, Redis e Elasticsearch',
+                'vandal.m3.label': 'Núcleo operacional',
+                'vandal.m3.value': 'Back-office ERP personalizado e fluxos automatizados de fulfillment da produção',
+                'vandal.arch.label': 'Stack',
                 'ta.domain': 'IA aplicada e EdTech',
-                'ta.status': 'No ar',
-                'ta.summary': 'Professores precisavam de apoio a aulas ancorado em currículo real, e não em saída genérica de modelo. O assistente orquestra o contexto da BNCC e dos frameworks de Massachusetts, conecta-se direto à API REST do Schoology e não persiste dados de estudantes no armazenamento da aplicação.',
-                'ta.m1.label': 'Ancoragem',
-                'ta.m1.value': 'Orquestração de contexto sem alucinação (BNCC e Massachusetts)',
-                'ta.m2.label': 'LMS',
-                'ta.m2.value': 'Conexão direta com a API REST do Schoology',
-                'ta.m3.label': 'Privacidade',
-                'ta.m3.value': 'Nenhum dado de estudante persistido no armazenamento da aplicação',
-                'ta.arch.a': 'Prompt do professor',
-                'ta.arch.sub': 'contexto BNCC + Massachusetts → Schoology REST · nenhum dado de estudante armazenado',
+                'ta.status': 'PoC open source · Demo ao vivo',
+                'ta.summary': 'O Teaching Assistant é uma plataforma educacional open source projetada para automatizar o planejamento de aulas alinhado ao currículo, atividades interdisciplinares e fluxos de avaliação no LMS.',
+                'ta.role': 'Projetada e construída de ponta a ponta para eliminar as alucinações comuns de LLMs em ferramentas de sala de aula, a plataforma leva padrões institucionais estruturados diretamente para o fluxo de trabalho dos professores. As principais decisões de arquitetura incluem ancoragem rigorosa de prompts com o Google Gemini, integração REST protegida por OAuth com o LMS Schoology e uma arquitetura stateless com privacidade por design.',
+                'ta.m1.label': 'Ancoragem de contexto',
+                'ta.m1.value': 'Orquestração de schemas few-shot ancorada nos currículos oficiais (BNCC e DLCS)',
+                'ta.m2.label': 'Integração com LMS',
+                'ta.m2.value': 'Conexão com a API REST do Schoology para hierarquias de cursos e sincronização de atividades',
+                'ta.m3.label': 'Privacidade de dados',
+                'ta.m3.value': 'Arquitetura com privacidade por design e zero persistência de dados de estudantes',
+                'ta.arch.label': 'Stack',
                 'ta.demo': 'Demo ao vivo',
                 'archive.caption': 'Projetos selecionados e acadêmicos',
-                'archive.reusa.desc': '— MVP geoespacial de recursos hídricos de reúso industrial no Rio de Janeiro.',
                 'archive.classroom.desc': '— Backend modular para operação de sala de aula e fluxos de API.',
                 'archive.classroom.gh': 'classroom-ops no GitHub',
                 'archive.data.desc': '— CLI para datasets pandas baseados em schema e schemas assistidos por IA.',
@@ -400,50 +493,71 @@
                 'page.title': 'Software Engineering case studies',
                 'page.lede': 'Production systems, applied AI, and a short archive of earlier work.',
                 'hero.status': 'Available for remote contracts & consulting',
-                'hero.role': 'Senior Backend Engineer',
-                'hero.pitch': ' specializing in production architectures, high-volume APIs, and pragmatic AI integrations.',
-                'hero.context': 'Engineering robust systems across Python/FastAPI, AWS, and modern data workflows.<br>Based in Rio de Janeiro, Brazil · Working remotely worldwide.',
+                'hero.role': 'Backend Engineer',
+                'hero.pitch': ' specializing in production architectures, high-volume APIs, integrations, and long-term maintainability.',
+                'hero.context': 'Over the years, I\'ve worked on fast-evolving products, operational platforms, and startup environments, helping translate real business needs into reliable software solutions by combining hands-on engineering with technical leadership, mentorship, and clear communication.',
+                'hero.place': 'Based in Rio de Janeiro, Brazil · Working remotely worldwide.',
                 'hero.resume': 'Resume',
                 'section.production': 'Production systems',
                 'section.ai': 'Applied AI',
+                'section.leadership': 'Leadership & education',
+                'lead.1.title': 'AP Computer Science A Teacher',
+                'lead.1.period': '2022–Present',
+                'lead.1.desc': 'Advanced computer science instruction in English, following the College Board curriculum.',
+                'lead.2.desc': 'Workshop on Leadership in Education, Administration, and Development.',
+                'lead.3.title': 'Leadership & Education',
+                'lead.3.org': 'Machon LeMadrichim (Jerusalem)',
+                'lead.3.desc': 'International course in Leadership, Group Dynamics, and Decision Making.',
+                'lead.4.title': 'Programming Languages Teacher',
+                'lead.4.org': 'ORT Technical Institute Rio de Janeiro',
+                'lead.4.desc': 'Taught advanced programming techniques and software engineering paradigms to technical diploma students.',
                 'section.archive': 'Selected & academic',
-                'arch.label': 'Integration layer',
                 'meetal.domain': 'Industrial ERP & Logistics',
                 'meetal.status': 'In Production · 2025–Present',
-                'meetal.summary': 'Recycling and industrial logistics operations had outgrown a DynamoDB backend that could not carry financial workflows or plant-floor hardware. Meetal now runs on FastAPI and PostgreSQL after a zero-downtime migration, with RS-232 scales and structured OpenAI workflows on the same operational core.',
-                'meetal.m1.label': 'Migration',
-                'meetal.m1.value': 'Zero-downtime DynamoDB → FastAPI & PostgreSQL',
-                'meetal.m2.label': 'Hardware',
-                'meetal.m2.value': 'Industrial scale RS-232 serial communication',
-                'meetal.m3.label': 'AI',
-                'meetal.m3.value': 'OpenAI structured API workflows',
-                'meetal.arch.a': 'RS-232 scale',
-                'meetal.arch.sub': 'OpenAI structured API · AWS Lambda · DynamoDB cutover, zero downtime',
-                'vandal.domain': 'High-Concurrency E-Commerce',
-                'vandal.status': 'Production · 2015–2021',
-                'vandal.summary': 'A print-on-demand marketplace had to turn designs from more than 10k artists into fulfilled orders through traffic spikes. The Rails platform carried 70k+ products on Sidekiq and Redis, with payment gateways, freight calculation, and AWS S3 production pipelines.',
-                'vandal.m1.label': 'Scale',
-                'vandal.m1.value': '70k+ products, 10k+ artists',
-                'vandal.m2.label': 'Async',
-                'vandal.m2.value': 'Sidekiq + Redis heavy background queues',
-                'vandal.m3.label': 'Integrations',
-                'vandal.m3.value': 'Payment gateways, freight calculation, and AWS S3 pipelines',
-                'vandal.arch.a': 'Storefront',
-                'vandal.arch.sub': 'Sidekiq + Redis → payments, freight, S3, Elasticsearch',
+                'meetal.summary': 'Meetal is an evolving B2B ERP platform managing real-time inventory, finances, and logistics for industrial recycling facilities.',
+                'meetal.role': 'As a core backend engineer, I help scale the platform across active production environments. Key initiatives include leading the zero-downtime architecture migration from a serverless DynamoDB model to FastAPI and PostgreSQL, building on-site industrial scale serial integrations (RS-232), and automating operational workflows with structured OpenAI pipelines.',
+                'meetal.m1.label': 'Data Migration',
+                'meetal.m1.value': 'Zero-downtime cutover from DynamoDB to FastAPI & PostgreSQL',
+                'meetal.m2.label': 'Hardware Layer',
+                'meetal.m2.value': 'Real-time RS-232 industrial scale & serial communication',
+                'meetal.m3.label': 'AI Query Assistant',
+                'meetal.m3.value': 'Natural language assistant for user queries using OpenAI API',
+                'meetal.arch.label': 'Stack',
+                'reusa.domain': 'Geospatial & Water Resource Management',
+                'reusa.status': 'Gov/Utility MVP · 2020–2023',
+                'reusa.summary': 'ReUsa is a data-driven app built to map, manage, and commercialize reused water resources across the state of Rio de Janeiro.',
+                'reusa.role': 'Acting as Technical Lead in an initiative connecting UERJ, government agencies, and water utility operators, I architected the core application and data layers from scratch. Key deliverables included building backend services and authentication flows, designing geospatial mapping features with Google Maps APIs, and modeling complex domain-specific formulas for water resource allocation.',
+                'reusa.m1.label': 'Technical Leadership',
+                'reusa.m1.value': 'End-to-end architecture & technical roadmap across public & industry stakeholders',
+                'reusa.m2.label': 'Geospatial Layer',
+                'reusa.m2.value': 'Google Maps API integration with real-time asset & resource mapping',
+                'reusa.m3.label': 'Domain Modeling',
+                'reusa.m3.value': 'Specialized calculation engines & data models for industrial reuse workflows',
+                'reusa.arch.label': 'Stack',
+                'vandal.domain': 'High-Scale Marketplace & Logistics',
+                'vandal.status': '5+ Years Tech Lead · 2015–2021',
+                'vandal.summary': 'Vandal is a high-volume print-on-demand marketplace connecting over 10,000 independent artists with users across Brazil.',
+                'vandal.role': 'Over more than five years as Backend Technical Lead, I served as the primary reference for both architecture and infrastructure. I architected and maintained core engines handling traffic spikes and flash sales, built a custom internal back-office for production floor operations, and scaled async pipelines across payment gateways, shipping providers, and AWS S3 workflows.',
+                'vandal.m1.label': 'Scale & Throughput',
+                'vandal.m1.value': '70k+ active designs & high-concurrency flash sale traffic management',
+                'vandal.m2.label': 'Async Queues',
+                'vandal.m2.value': 'Heavy background pipelines with Sidekiq, Redis & Elasticsearch',
+                'vandal.m3.label': 'Operational Core',
+                'vandal.m3.value': 'Custom ERP back-office & automated production fulfillment workflows',
+                'vandal.arch.label': 'Stack',
                 'ta.domain': 'Applied AI & EdTech',
-                'ta.status': 'Live',
-                'ta.summary': 'Teachers needed lesson support grounded in real curricula rather than generic model output. The assistant orchestrates BNCC and Massachusetts framework context, connects directly to the Schoology REST API, and persists no student data in application storage.',
-                'ta.m1.label': 'Grounding',
-                'ta.m1.value': 'Zero-hallucination context orchestration (BNCC & Massachusetts)',
-                'ta.m2.label': 'LMS',
-                'ta.m2.value': 'Direct Schoology REST API connection',
-                'ta.m3.label': 'Privacy',
-                'ta.m3.value': 'Zero student data persistence in application storage',
-                'ta.arch.a': 'Teacher prompt',
-                'ta.arch.sub': 'BNCC + Massachusetts context → Schoology REST · no student data stored',
+                'ta.status': 'Open Source PoC · Live Demo',
+                'ta.summary': 'This teaching assistant is an open-source educational platform designed to automate curriculum-aligned lesson planning, interdisciplinary activities, and LMS evaluation workflows.',
+                'ta.role': 'Designed and built end-to-end to eliminate common LLM hallucinations in classroom tooling, the platform bridges structured institutional standards directly into teacher workflows. Key architectural decisions include strict prompt grounding with Google Gemini, OAuth-guarded REST integration with the Schoology LMS, and a privacy-by-design stateless architecture.',
+                'ta.m1.label': 'Context grounding',
+                'ta.m1.value': 'Few-shot schema orchestration anchored to official curricula (BNCC & DLCS)',
+                'ta.m2.label': 'LMS integration',
+                'ta.m2.value': 'Schoology REST API connection for course hierarchies & assignment sync',
+                'ta.m3.label': 'Data privacy',
+                'ta.m3.value': 'Privacy-by-design architecture with zero student data persistence',
+                'ta.arch.label': 'Stack',
                 'ta.demo': 'Live Demo',
                 'archive.caption': 'Selected and academic projects',
-                'archive.reusa.desc': '— Geospatial water-resource MVP for industrial reuse in Rio de Janeiro.',
                 'archive.classroom.desc': '— Modular backend for classroom operations and API workflows.',
                 'archive.classroom.gh': 'classroom-ops on GitHub',
                 'archive.data.desc': '— CLI for schema-based pandas datasets and AI-assisted schemas.',
@@ -463,50 +577,71 @@
                 'page.title': 'Estudios de caso de ingeniería de software',
                 'page.lede': 'Sistemas en producción, IA aplicada y un archivo breve de trabajos anteriores.',
                 'hero.status': 'Disponible para contratos remotos y consultoría',
-                'hero.role': 'Ingeniero de backend sénior',
-                'hero.pitch': ' especializado en arquitecturas de producción, APIs de alto volumen e integraciones pragmáticas de IA.',
-                'hero.context': 'Ingeniería de sistemas robustos en Python/FastAPI, AWS y flujos de datos modernos.<br>Río de Janeiro, Brasil · Trabajo remoto en todo el mundo.',
+                'hero.role': 'Ingeniero de backend',
+                'hero.pitch': ' especializado en arquitecturas de producción, APIs de alto volumen, integraciones y mantenibilidad a largo plazo.',
+                'hero.context': 'A lo largo de los años, he trabajado en productos de rápida evolución, plataformas operativas y entornos de startups, ayudando a traducir necesidades reales de negocio en soluciones de software fiables al combinar ingeniería práctica con liderazgo técnico, mentoría y comunicación clara.',
+                'hero.place': 'Río de Janeiro, Brasil · Trabajo remoto en todo el mundo.',
                 'hero.resume': 'Currículum',
                 'section.production': 'Sistemas en producción',
                 'section.ai': 'IA aplicada',
+                'section.leadership': 'Liderazgo y educación',
+                'lead.1.title': 'Docente de AP Computer Science A',
+                'lead.1.period': '2022–presente',
+                'lead.1.desc': 'Enseñanza avanzada de ciencias de la computación en inglés, siguiendo el currículo del College Board.',
+                'lead.2.desc': 'Taller sobre Liderazgo en Educación, Administración y Desarrollo.',
+                'lead.3.title': 'Liderazgo y Educación',
+                'lead.3.org': 'Machon LeMadrichim (Jerusalén)',
+                'lead.3.desc': 'Curso internacional de Liderazgo, Dinámica de Grupos y Toma de Decisiones.',
+                'lead.4.title': 'Docente de Lenguajes de Programación',
+                'lead.4.org': 'Instituto de Tecnología ORT Río de Janeiro',
+                'lead.4.desc': 'Enseñanza de técnicas avanzadas de programación y paradigmas de ingeniería de software a estudiantes de carrera técnica.',
                 'section.archive': 'Seleccionados y académicos',
-                'arch.label': 'Capa de integración',
                 'meetal.domain': 'ERP industrial y logística',
                 'meetal.status': 'En producción · 2025–presente',
-                'meetal.summary': 'Las operaciones de reciclaje y logística industrial habían superado un backend en DynamoDB, incapaz de sostener flujos financieros y hardware de planta. Meetal pasó a ejecutarse en FastAPI y PostgreSQL tras una migración sin downtime, con básculas RS-232 y flujos estructurados de OpenAI en el mismo núcleo operativo.',
-                'meetal.m1.label': 'Migración',
-                'meetal.m1.value': 'DynamoDB → FastAPI y PostgreSQL, sin downtime',
-                'meetal.m2.label': 'Hardware',
-                'meetal.m2.value': 'Comunicación serial RS-232 con báscula industrial',
-                'meetal.m3.label': 'IA',
-                'meetal.m3.value': 'Flujos estructurados de la API de OpenAI',
-                'meetal.arch.a': 'Báscula RS-232',
-                'meetal.arch.sub': 'API estructurada de OpenAI · AWS Lambda · corte de DynamoDB, sin downtime',
-                'vandal.domain': 'E-commerce de alta concurrencia',
-                'vandal.status': 'Producción · 2015–2021',
-                'vandal.summary': 'Un marketplace de print-on-demand necesitaba convertir diseños de más de 10 mil artistas en pedidos producidos, también en picos de tráfico. La plataforma en Rails sostuvo más de 70 mil productos con Sidekiq y Redis, pasarelas de pago, cálculo de flete y pipelines de producción en AWS S3.',
-                'vandal.m1.label': 'Escala',
-                'vandal.m1.value': '70 mil+ productos, 10 mil+ artistas',
-                'vandal.m2.label': 'Asíncrono',
-                'vandal.m2.value': 'Colas pesadas con Sidekiq + Redis',
-                'vandal.m3.label': 'Integraciones',
-                'vandal.m3.value': 'Pagos, cálculo de flete y pipelines en AWS S3',
-                'vandal.arch.a': 'Tienda',
-                'vandal.arch.sub': 'Sidekiq + Redis → pagos, flete, S3, Elasticsearch',
+                'meetal.summary': 'Meetal es una plataforma ERP B2B en evolución que gestiona inventario, finanzas y logística en tiempo real para plantas industriales de reciclaje.',
+                'meetal.role': 'Como ingeniero de back-end principal, ayudo a escalar la plataforma en entornos de producción activos. Entre las iniciativas clave están liderar la migración de arquitectura sin downtime de un modelo serverless en DynamoDB a FastAPI y PostgreSQL, construir integraciones seriales (RS-232) con básculas industriales en sitio y automatizar flujos operativos con pipelines estructurados de OpenAI.',
+                'meetal.m1.label': 'Migración de datos',
+                'meetal.m1.value': 'Corte sin downtime de DynamoDB a FastAPI y PostgreSQL',
+                'meetal.m2.label': 'Capa de hardware',
+                'meetal.m2.value': 'Báscula industrial RS-232 y comunicación serial en tiempo real',
+                'meetal.m3.label': 'Asistente de consultas con IA',
+                'meetal.m3.value': 'Asistente en lenguaje natural para consultas de usuarios con la API de OpenAI',
+                'meetal.arch.label': 'Stack',
+                'reusa.domain': 'Geoespacial y gestión de recursos hídricos',
+                'reusa.status': 'MVP Gobierno/Servicios · 2020–2023',
+                'reusa.summary': 'ReUsa es una aplicación basada en datos creada para mapear, gestionar y comercializar recursos hídricos de reutilización en todo el estado de Río de Janeiro.',
+                'reusa.role': 'Como líder técnico en una iniciativa que conecta a la UERJ, organismos gubernamentales y operadores de servicios de agua, diseñé desde cero la aplicación principal y las capas de datos. Los principales entregables incluyeron servicios de back-end y flujos de autenticación, funcionalidades de mapeo geoespacial con las APIs de Google Maps y el modelado de fórmulas complejas específicas del dominio para la asignación de recursos hídricos.',
+                'reusa.m1.label': 'Liderazgo técnico',
+                'reusa.m1.value': 'Arquitectura de extremo a extremo y hoja de ruta técnica entre actores públicos e industriales',
+                'reusa.m2.label': 'Capa geoespacial',
+                'reusa.m2.value': 'Integración con la API de Google Maps y mapeo de activos y recursos en tiempo real',
+                'reusa.m3.label': 'Modelado de dominio',
+                'reusa.m3.value': 'Motores de cálculo y modelos de datos especializados para flujos de reutilización industrial',
+                'reusa.arch.label': 'Stack',
+                'vandal.domain': 'Marketplace de alta escala y logística',
+                'vandal.status': '5+ años como líder técnico · 2015–2021',
+                'vandal.summary': 'Vandal es un marketplace de print-on-demand de alto volumen que conecta a más de 10.000 artistas independientes con usuarios en todo Brasil.',
+                'vandal.role': 'Durante más de cinco años como líder técnico de back-end, fui la principal referencia tanto en arquitectura como en infraestructura. Diseñé y mantuve los motores centrales que manejan picos de tráfico y flash sales, construí un back-office interno personalizado para las operaciones del piso de producción y escalé pipelines asíncronos entre pasarelas de pago, transportistas y flujos en AWS S3.',
+                'vandal.m1.label': 'Escala y rendimiento',
+                'vandal.m1.value': '70 mil+ diseños activos y gestión de tráfico de flash sales de alta concurrencia',
+                'vandal.m2.label': 'Colas asíncronas',
+                'vandal.m2.value': 'Pipelines pesados en segundo plano con Sidekiq, Redis y Elasticsearch',
+                'vandal.m3.label': 'Núcleo operativo',
+                'vandal.m3.value': 'Back-office ERP personalizado y flujos automatizados de fulfillment de producción',
+                'vandal.arch.label': 'Stack',
                 'ta.domain': 'IA aplicada y EdTech',
-                'ta.status': 'En vivo',
-                'ta.summary': 'Los docentes necesitaban apoyo para las clases anclado en un currículo real, y no en una salida genérica del modelo. El asistente orquesta el contexto de la BNCC y de los frameworks de Massachusetts, se conecta directo a la API REST de Schoology y no persiste datos de estudiantes en el almacenamiento de la aplicación.',
-                'ta.m1.label': 'Anclaje',
-                'ta.m1.value': 'Orquestación de contexto sin alucinación (BNCC y Massachusetts)',
-                'ta.m2.label': 'LMS',
-                'ta.m2.value': 'Conexión directa con la API REST de Schoology',
-                'ta.m3.label': 'Privacidad',
-                'ta.m3.value': 'Ningún dato de estudiante persistido en el almacenamiento de la aplicación',
-                'ta.arch.a': 'Prompt del docente',
-                'ta.arch.sub': 'contexto BNCC + Massachusetts → Schoology REST · ningún dato de estudiante almacenado',
+                'ta.status': 'PoC open source · Demo en vivo',
+                'ta.summary': 'Teaching Assistant es una plataforma educativa open source diseñada para automatizar la planificación de clases alineada al currículo, actividades interdisciplinarias y flujos de evaluación en el LMS.',
+                'ta.role': 'Diseñada y construida de punta a punta para eliminar las alucinaciones comunes de los LLM en herramientas de aula, la plataforma lleva estándares institucionales estructurados directamente al flujo de trabajo de los docentes. Las principales decisiones de arquitectura incluyen un anclaje riguroso de prompts con Google Gemini, integración REST protegida con OAuth con el LMS Schoology y una arquitectura stateless con privacidad por diseño.',
+                'ta.m1.label': 'Anclaje de contexto',
+                'ta.m1.value': 'Orquestación de schemas few-shot anclada en los currículos oficiales (BNCC y DLCS)',
+                'ta.m2.label': 'Integración con LMS',
+                'ta.m2.value': 'Conexión con la API REST de Schoology para jerarquías de cursos y sincronización de tareas',
+                'ta.m3.label': 'Privacidad de datos',
+                'ta.m3.value': 'Arquitectura con privacidad por diseño y cero persistencia de datos de estudiantes',
+                'ta.arch.label': 'Stack',
                 'ta.demo': 'Demo en vivo',
                 'archive.caption': 'Proyectos seleccionados y académicos',
-                'archive.reusa.desc': '— MVP geoespacial de recursos hídricos de reúso industrial en Río de Janeiro.',
                 'archive.classroom.desc': '— Backend modular para la operación del aula y flujos de API.',
                 'archive.classroom.gh': 'classroom-ops en GitHub',
                 'archive.data.desc': '— CLI para datasets de pandas basados en schema y schemas asistidos por IA.',
