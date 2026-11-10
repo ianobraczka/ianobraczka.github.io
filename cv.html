@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="256x256" href="assets/icons/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         /* Isolar layout do CV do main global: forçar bloco único e largura total do conteúdo */
@@ -113,13 +113,28 @@
         .cv-meta-inline {
             display: inline-flex;
             align-items: center;
-            gap: 0;
+            gap: 8px;
             max-width: 100%;
         }
         .cv-meta-inline a {
             overflow-wrap: anywhere;
             word-break: break-word;
         }
+        .cv-meta-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            border-radius: 7px;
+            border: 1px solid rgba(16, 185, 129, 0.22);
+            background: rgba(16, 185, 129, 0.08);
+            color: #059669;
+            line-height: 1;
+        }
+        .cv-meta-icon svg { width: 14px; height: 14px; display: block; }
+        body.cv-dark .cv-meta-icon { color: #34d399; }
         .cv-meta-sep {
             color: rgba(0, 0, 0, 0.22);
             padding: 0 0.5em;
@@ -693,17 +708,17 @@
             <div class="cv-header">
                 <h1 class="cv-name">Ian Andrade Obraczka</h1>
                 <p class="cv-headline">
-                    <span data-translate="cv.headline">Backend Engineer | Production Systems | Technical Leadership</span><span class="cv-headline-location-print-only" aria-hidden="true"><span class="cv-meta-sep" aria-hidden="true">·</span><span data-translate="cv.meta.location">📍 Brazil — open to remote work</span></span>
+                    <span data-translate="cv.headline">Backend Engineer | Production Systems | Technical Leadership</span><span class="cv-headline-location-print-only" aria-hidden="true"><span class="cv-meta-sep" aria-hidden="true">·</span><span data-translate="cv.meta.location">Brazil — open to remote work</span></span>
                 </p>
                 <p class="cv-meta">
                     <span class="cv-meta-row">
-                        <span class="cv-meta-inline cv-meta-line--location" data-translate="cv.meta.location">📍 Brazil — open to remote work</span>
+                        <span class="cv-meta-inline cv-meta-line--location"><span class="cv-meta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.75-5.6-6.75-11.25a6.75 6.75 0 0 1 13.5 0C18.75 15.4 12 21 12 21z"/><circle cx="12" cy="9.75" r="2.4"/></svg></span><span data-translate="cv.meta.location">Brazil — open to remote work</span></span>
                         <span class="cv-meta-sep" aria-hidden="true">·</span>
-                        <span class="cv-meta-inline">📧 <a href="mailto:ianobraczka@gmail.com">ianobraczka@gmail.com</a></span>
+                        <span class="cv-meta-inline"><span class="cv-meta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.75" y="5" width="18.5" height="14" rx="3.25"/><path d="M3.75 7.75 12 13.5l8.25-5.75"/></svg></span><a href="mailto:ianobraczka@gmail.com">ianobraczka@gmail.com</a></span>
                         <span class="cv-meta-sep" aria-hidden="true">·</span>
-                        <span class="cv-meta-inline">💼 <a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener">linkedin.com/in/ianobraczka</a></span>
+                        <span class="cv-meta-inline"><span class="cv-meta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></span><a href="https://linkedin.com/in/ianobraczka" target="_blank" rel="noopener">linkedin.com/in/ianobraczka</a></span>
                         <span class="cv-meta-sep" aria-hidden="true">·</span>
-                        <span class="cv-meta-inline">💻 <a href="https://github.com/ianobraczka" target="_blank" rel="noopener">github.com/ianobraczka</a></span>
+                        <span class="cv-meta-inline"><span class="cv-meta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.75" y="4" width="18.5" height="16" rx="3.25"/><path d="m7.25 9.5 3 2.5-3 2.5"/><path d="M12.75 14.75h4"/></svg></span><a href="https://github.com/ianobraczka" target="_blank" rel="noopener">github.com/ianobraczka</a></span>
                     </span>
                 </p>
             </div>
@@ -894,7 +909,7 @@
                 'nav.cv': 'Currículo',
                 'nav.contact': 'Contato',
                 'cv.headline': 'Backend | Sistemas em Produção | Liderança técnica',
-                'cv.meta.location': '📍 Brasil — aberto a trabalho remoto',
+                'cv.meta.location': 'Brasil — aberto a trabalho remoto',
                 'cv.section.summary': 'Resumo',
                 'cv.summary': 'Engenheiro de <i>back-end</i> com experiência na construção e manutenção de sistemas em produção, serviços de <i>back-end</i> e plataformas operacionais em ambientes de ritmo acelerado.<br><br>Foco em <i>APIs</i>, integrações entre sistemas, arquiteturas escaláveis e manutenibilidade a longo prazo, com abordagem pragmática à tomada de decisão técnica e ao desenvolvimento de produto. Forte atuação próxima a contextos de negócio e operação, traduzindo necessidades do mundo real em soluções de software confiáveis.<br><br>Experiência em liderança técnica, mentoria e educação reforça comunicação clara, colaboração e resolução de problemas em equipes multidisciplinares.',
                 'cv.summary.pdf': 'Engenheiro de <i>back-end</i> com experiência na construção e manutenção de sistemas em produção, serviços de <i>back-end</i> e plataformas operacionais em ritmos acelerados. Foco em <i>APIs</i>, integrações, arquiteturas escaláveis e manutenibilidade, com abordagem pragmática à decisão técnica e ao produto.<br><br>Atuação próxima a negócio e operação, traduzindo necessidades reais em software confiável. Liderança técnica, mentoria e educação reforçam comunicação, colaboração e resolução de problemas em equipes multidisciplinares.',
@@ -984,7 +999,7 @@
                 'nav.cv': 'Resume',
                 'nav.contact': 'Contact',
                 'cv.headline': 'Backend Engineer | Production Systems | Technical Leadership',
-                'cv.meta.location': '📍 Brazil — open to remote work',
+                'cv.meta.location': 'Brazil — open to remote work',
                 'cv.section.summary': 'Summary',
                 'cv.summary': 'Backend Engineer with experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments.<br><br>Focused on APIs, system integrations, scalable architectures, and long-term maintainability, with a pragmatic approach to technical decision-making and product development. Strong background working close to business and operational contexts, translating real-world requirements into reliable software solutions.<br><br>Experience in technical leadership, mentoring, and education reinforces clear communication, collaboration, and problem-solving across multidisciplinary teams.',
                 'cv.summary.pdf': 'Backend Engineer with experience building and maintaining production systems, backend services, and operational platforms in fast-moving environments. Focused on APIs, system integrations, scalable architectures, and long-term maintainability, with a pragmatic approach to technical decision making and product development.<br><br>Strong background working close to business and operational contexts, translating real-world requirements into reliable software solutions. Experience in technical leadership, mentoring, and education reinforces clear communication, collaboration, and problem-solving across multidisciplinary teams.',
@@ -1074,7 +1089,7 @@
                 'nav.cv': 'Currículum',
                 'nav.contact': 'Contacto',
                 'cv.headline': 'Ingeniero de Backend | Sistemas en Producción | Liderazgo técnico',
-                'cv.meta.location': '📍 Brasil — abierto a trabajo remoto',
+                'cv.meta.location': 'Brasil — abierto a trabajo remoto',
                 'cv.section.summary': 'Resumen',
                 'cv.summary': 'Ingeniero de <i>back-end</i> con experiencia en la construcción y el mantenimiento de sistemas en producción, servicios de <i>back-end</i> y plataformas operativas en entornos de ritmo acelerado.<br><br>Enfoque en <i>APIs</i>, integraciones entre sistemas, arquitecturas escalables y mantenibilidad a largo plazo, con un enfoque pragmático de la toma de decisiones técnicas y del desarrollo de producto. Sólida experiencia trabajando cerca de los contextos de negocio y operación, traduciendo requisitos del mundo real en soluciones de software fiables.<br><br>La experiencia en liderazgo técnico, mentoría y educación refuerza la comunicación clara, la colaboración y la resolución de problemas en equipos multidisciplinarios.',
                 'cv.summary.pdf': 'Ingeniero de <i>back-end</i> con experiencia en la construcción y el mantenimiento de sistemas en producción, servicios de <i>back-end</i> y plataformas operativas en ritmos acelerados. Enfoque en <i>APIs</i>, integraciones, arquitecturas escalables y mantenibilidad, con un enfoque pragmático de la decisión técnica y del producto.<br><br>Trabajo cercano a negocio y operación, traduciendo requisitos reales en software fiable. Liderazgo técnico, mentoría y educación refuerzan comunicación, colaboración y resolución de problemas en equipos multidisciplinarios.',
